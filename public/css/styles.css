@@ -302,7 +302,10 @@ i.social {
   text-align: left;
 }
 .contactPageSocialMedia {
-  margin-top: 20px;
+  margin: 50px auto 20vh auto;
+}
+.contactPageSocialMedia a {
+  padding: 20px auto;
 }
 
 /* Photography */
