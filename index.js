@@ -7,11 +7,11 @@ const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 
 
-app.use(express.static("public") );
+app.use(express.static("/public") );
 
 app.get("/", function(req, res){
 
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/contact.html");
 });
 
 app.get("/contact", function(req, res){
