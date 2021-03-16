@@ -1,0 +1,418 @@
+/* Tages */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+body.mine {
+  text-align: center;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #ce6262;
+}
+h2 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #214252;
+}
+h3 {
+  font-size: 1.375rem;
+  font-weight: 500;
+  color: #ce6262;
+}
+p {
+  font-size: 1.125rem;
+  color: #214252;
+  width: 25rem;
+}
+hr {
+  border-top: dotted 7px #ccc;
+  background: transparent;
+  display: inline-block;
+  width: 20%;
+}
+i.social {
+  margin-right: 10px;
+}
+
+/* Components */
+.textButton {
+  font-size: 1.375rem;
+  color: #ebac4e;
+}
+
+/* Classes */
+/* Section 1 */
+.heroText {
+  margin-top: 7vh;
+  position: relative;
+  z-index: 2;
+}
+.heroContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.heroImageBox {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+}
+.heroPhoto {
+  position: relative;
+  margin: 0 auto;
+  bottom: 35vh;
+  right: 0.5vw;
+  width: 154px;
+  height: inherit;
+}
+.heroImage {
+  position: relative;
+  margin: 0 auto;
+  top: 0;
+  z-index: 1;
+  width: 806px;
+}
+.intro {
+  background-color: #214252;
+  height: 100vh;
+}
+.nav-link {
+  color: #ce6262 !important;
+}
+
+/* Section 2 */
+.helloContent {
+  display: inline-block;
+  justify-content: center;
+  height: 1080px;
+}
+
+.helloContent p {
+  padding-top: 2.5rem;
+}
+.profilePhoto {
+  width: 207px;
+  border-radius: 50%;
+  margin-top: 207px;
+}
+.helloHr {
+  margin-top: 206px;
+}
+
+/* Section 3 */
+.mySkillsContent {
+  padding-top: 150px;
+}
+.col-lg-6 {
+  margin: auto;
+}
+.row {
+  padding: 100px 0 100px 0;
+}
+.skillItem .imageBox {
+  display: flex;
+  height: 360px;
+}
+.skillItem .illustration {
+  display: flex;
+  margin: auto;
+}
+.skillItem h2 {
+  display: flex;
+  justify-content: start;
+}
+.skillItem p {
+  display: flex;
+  justify-content: start;
+  text-align: left;
+}
+.skillItem a {
+  display: flex;
+  justify-content: start;
+  text-align: left;
+}
+.skillItem .descriptionBox {
+}
+.toRight {
+  position: relative;
+  left: 70px;
+}
+.toMoreRight {
+  position: relative;
+  left: 120px;
+}
+.skillsHr {
+  margin-top: 150px;
+  width: 5%;
+}
+
+/* Section 4 */
+.contactContent {
+  margin-top: 50px;
+}
+.contact {
+  position: relative;
+  padding-bottom: 60px;
+  display: inline-block;
+}
+.paragraph {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+.CTA {
+  margin-bottom: 150px;
+}
+.filledButton {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   color: #214252;
+   font-size: 18px;
+   padding: 32px;
+   background-color: #EBAC4E;
+   -webkit-box-shadow: 1px 1px 20px 0 #EBAC4E;
+   -moz-box-shadow: 1px 1px 20px 0 #EBAC4E;
+   box-shadow: 1px 1px 20px 0 #EBAC4E;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.filledButton:hover {
+   background: #FFAC31;
+   border: solid #FFAC31 0;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
+   color: #214252;
+}
+.footer {
+  margin-top: 200px;
+  background-color: #214252;
+  padding-top: 30px;
+}
+.socialMedia a {
+  padding: 0 20px 0 20px;
+}
+.footer p {
+  color: #EEEEEE;
+  font-size: 0.75rem;
+  display: inline-block;
+  justify-content: center;
+  padding: 80px 0 40px 0;
+}
+
+/* Floating btn */
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#214252;
+	color:#ccc;
+	border-radius:50px;
+	text-align:center;
+}
+
+.my-float{
+	margin-top:13px;
+}
+
+/* Styles of my projects */
+/* Section 1 */
+.BerlinEats p {
+  width: 40rem;
+}
+.BerlinEatsHeroImage {
+  width: 682px;
+}
+.BerlinEatsLogo {
+  width: 480px;
+}
+.BerlinEatsHomepage {
+  position: absolute;
+  bottom: -86px;
+  right: -100px;
+  width: 350px;
+}
+.BerlinEats .box {
+  background-color: #484E5E;
+  height: 1080px;
+  margin-top: 30px;
+}
+.BerlinEats .rightBox {
+  position: relative;
+}
+.BerlinEats .leftBox {
+  position: relative;
+}
+.BerlinEats .tagline {
+  width: 25rem;
+  margin: 0;
+}
+.BerlinEats .caption {
+  position: relative;
+  bottom: 3vh;
+  margin: 0;
+}
+.rightAlign {
+  position: relative;
+  left: 6vw;
+}
+.pushToRight {
+  position: relative;
+  left: 2vw;
+}
+
+/* Section 2 */
+.dialog {
+  margin-top: 30vh;
+}
+
+/* Footer */
+.footer {
+  margin-top: 0;
+}
+
+/* Contact Page CSS */
+#contactPage .row {
+  padding: 0 0 0 0;
+}
+#contactPage p {
+  text-align: left;
+  margin: 0;
+}
+#contactPage .imageBox {
+  text-align: left;
+}
+.myInfoBox {
+  margin-top: 80px;
+}
+.educationDescription {
+  margin: 20px auto;
+}
+.contactInfo {
+  text-align: left;
+}
+.contactPageSocialMedia {
+  margin-top: 20px;
+}
+
+/* Photography */
+body.photography {
+    background-color: #214252;
+    min-height: 100vh;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.container.gallery-container {
+    border: 1px solid #EBAC4E;
+    border-radius: 32% 68% 19% 81% / 63% 38% 62% 37% ;
+    min-height: 100vh;
+    padding: 30px 50px;
+    margin: 80px auto;
+}
+
+.gallery-container h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Droid Sans', sans-serif;
+    font-weight: bold;
+}
+
+.gallery-container p.page-description {
+    text-align: center;
+    margin: 25px auto;
+    font-size: 18px;
+    color: #999;
+}
+
+.tz-gallery {
+    padding: 40px;
+}
+
+/* Override bootstrap column paddings */
+.tz-gallery .row > div {
+    padding: 2px;
+}
+
+.tz-gallery .lightbox img {
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+}
+
+/* .tz-gallery .lightbox:before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
+    opacity: 0;
+    color: #fff;
+    font-size: 26px;
+    font-family: 'Glyphicons Halflings';
+    content: '\e003';
+    pointer-events: none;
+    z-index: 9000;
+    transition: 0.4s;
+}
+
+
+.tz-gallery .lightbox:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: rgba(46, 132, 206, 0.7);
+    content: '';
+    transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+    opacity: 1;
+} */
+
+.baguetteBox-button {
+    background-color: transparent !important;
+}
+
+@media(max-width: 768px) {
+    .photography body {
+        padding: 0;
+    }
+}
+
+/* additional css */
+.hide {
+  visibility: hidden !important;
+}
+.active {
+  font-weight: 700;
+}
+.Montserrat-Alternates {
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+.Poppins {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Target viewport */
+@media ( max-width: 991px ) {
+  .BerlinEatsHomepage {
+    right: 18vw;
+  }
+}
