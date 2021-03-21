@@ -9,6 +9,8 @@ const $ = require( "jquery" )( window );
 
 app.use(express.static("public") );
 
+app.set("view engine", "ejs");
+
 app.get("/", function(req, res){
 
   res.sendFile(__dirname + "/index.html");
@@ -19,7 +21,19 @@ app.get("/contact", function(req, res){
 });
 
 app.get("/photography", function(req, res){
-  res.sendFile(__dirname + "/photography.html");
+  res.render("photography");
+});
+
+app.get("/lockdown", function(req, res){
+  res.render("lockdown");
+});
+
+app.get("/foreigner", function(req, res){
+  res.render("foreigner");
+});
+
+app.get("/berlinWall", function(req, res){
+  res.render("berlinWall");
 });
 
 app.get("/webProjects", function(req, res){

@@ -1,0 +1,37 @@
+<%- include("photographyHeader") -%>
+
+  <div class="container gallery-container">
+    <h1>FOREIGNER</h1>
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="/photography">Overview</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/lockdown">Lockdown</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/berlinWall">Berlin Wall</a>
+      </li>
+    </ul>
+
+    <div class="tz-gallery">
+
+      <div class="row">
+        <% let imgCounts = 10; %>
+        <% for(let i = 1; i <= imgCounts; i++){ %>
+          <div class="col-sm-6">
+            <% let currImg = "images/photography/Foreigner/foreigner_" + i + ".jpg" %>
+            <a class="lightbox" href=<%= currImg %>>
+              <img class="thumbnail" src=<%= currImg %>>
+            </a>
+          </div>
+        <% } %>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+<%- include("photographyFooter") -%>
