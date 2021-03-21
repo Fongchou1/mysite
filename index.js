@@ -11,7 +11,7 @@ app.use(express.static("public") );
 
 app.get("/", function(req, res){
 
-  res.sendFile(__dirname + "/contact.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.get("/contact", function(req, res){
