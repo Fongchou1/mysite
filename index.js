@@ -1,4 +1,6 @@
 const express = require("express");
+var path = require('path');
+var ejs = require('ejs');
 
 const app = express();
 
@@ -8,7 +10,7 @@ const $ = require( "jquery" )( window );
 
 
 app.use(express.static("public"));
-app.set('views', path.join(__dirname, './views'));
+app.set('views', path.join(__dirname, 'views'));
 
 app.set("view engine", "ejs");
 
