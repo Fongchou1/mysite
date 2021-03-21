@@ -7,7 +7,8 @@ const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 
 
-app.use(express.static("public") );
+app.use(express.static("public"));
+app.use(express.static("views"));
 
 app.set("view engine", "ejs");
 
