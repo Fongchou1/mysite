@@ -7,82 +7,43 @@
       <a class="nav-link" href="/lockdown">Lockdown</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/foreigner">Foreigner</a>
+      <a class="nav-link" href="/foreign">Foreign</a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="/berlinWall">Berlin Wall</a>
     </li>
   </ul>
 
+<% const projects = ["Corona", "Foreigner", "Berlin_Wall"]; %>
+<% const imgNamePrefix = ["lockdown_", "foreigner_", "berlinWall_"]; %>
+<% const imgCounts = [37, 10, 13]; %>
+
+<% let allPaths = []; %>
+<% for(let i = 0; i < projects.length; i++) { %>
+  <% for(let j = 1; j < (imgCounts[i] + 1); j++){ %>
+    <% let currPath = "images/photography/" + projects[i] + "/" + imgNamePrefix[i] + j + ".jpg" %>
+    <% allPaths.push(currPath); %>
+  <% } %>
+<% } %>
+
+<% let randomPathIndex = 0 %>
+<% let path = "" %>
+
+
   <div class="tz-gallery">
 
     <div class="row">
 
-      <div class="col-sm-12 col-md-4">
-        <a class="lightbox" href="images/photography/Unuseful stuff/Ling-Hao in my room surrounding by his stuff.jpg">
-          <img class="thumbnail" src="images/photography/Unuseful stuff/Ling-Hao in my room surrounding by his stuff.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Foreigner/foreigner_9.jpg">
-          <img class="thumbnail" src="images/photography/Foreigner/foreigner_9.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Foreigner/foreigner_1.jpg">
-          <img class="thumbnail" src="images/photography/Foreigner/foreigner_1.jpg">
-        </a>
-      </div>
-      <div class="col-sm-12 col-md-8">
-        <a class="lightbox" href="images/photography/Berlin_Wall/berlinWall_2.jpg">
-          <img class="thumbnail" src="images/photography/Berlin_Wall/berlinWall_2.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Corona/lockdown_2.jpg">
-          <img class="thumbnail" src="images/photography/Corona/lockdown_2.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Foreigner/foreigner_8.jpg">
-          <img class="thumbnail" src="images/photography/Foreigner/foreigner_8.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Corona/lockdown_15.jpg">
-          <img class="thumbnail" src="images/photography/Corona/lockdown_15.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Lale/FON00900.jpg">
-          <img class="thumbnail" src="images/photography/Lale/FON00900.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Life in an object/1.jpg">
-          <img class="thumbnail" src="images/photography/Life in an object/1.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-8">
-        <a class="lightbox" href="images/photography/Corona/lockdown_25.jpg">
-          <img class="thumbnail" src="images/photography/Corona/lockdown_25.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Untitled/FON01187_1.jpg">
-          <img class="thumbnail" src="images/photography/Untitled/FON01187_1.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Untitled/FON01191_1.jpg">
-          <img class="thumbnail" src="images/photography/Untitled/FON01191_1.jpg">
-        </a>
-      </div>
-      <div class="col-sm-6 col-md-4">
-        <a class="lightbox" href="images/photography/Untitled/FON00023.jpg">
-          <img class="thumbnail" src="images/photography/Untitled/FON00023.jpg">
-        </a>
-      </div>
+      <% for(let i = 0; i < 15; i++){ %>
+        <div class="col-sm-12 col-md-4">
+          <% randomPathIndex = Math.floor(Math.random() * allPaths.length) %>
+          <% path = allPaths[randomPathIndex] %>
+          <a class="lightbox" href=<%= path %>>
+            <img class="thumbnail" src=<%= path %>>
+          </a>
+        </div>
+        <% allPaths.splice(randomPathIndex, 1) %>
+      <% } %>
 
     </div>
 

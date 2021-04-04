@@ -9,6 +9,7 @@ const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 
 
+
 app.use(express.static("public"));
 app.set('views', path.join(__dirname, 'views'));
 
