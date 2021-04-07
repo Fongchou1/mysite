@@ -35,13 +35,15 @@
     <div class="row">
 
       <% for(let i = 0; i < 15; i++){ %>
+        <!-- code for animation .image _blank zoom zoom-image -->
         <div class="col-sm-12 col-md-4">
           <% randomPathIndex = Math.floor(Math.random() * allPaths.length) %>
           <% path = allPaths[randomPathIndex] %>
           <a class="lightbox" href=<%= path %>>
-            <img class="thumbnail" src=<%= path %>>
+            <img class="thumbnail" src=<%= path %> alt="Fong's Photography image">
           </a>
         </div>
+
         <% allPaths.splice(randomPathIndex, 1) %>
       <% } %>
 
