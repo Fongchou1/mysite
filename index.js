@@ -32,8 +32,8 @@ app.get("/lockdown", function(req, res){
   res.render("lockdown");
 });
 
-app.get("/foreigner", function(req, res){
-  res.render("foreigner");
+app.get("/foreign", function(req, res){
+  res.render("foreign");
 });
 
 app.get("/berlinWall", function(req, res){
