@@ -285,51 +285,20 @@ i.social {
 
 /* Styles of my projects */
 /* Section 1 */
-.BerlinEats p {
-  width: 40rem;
-}
-.BerlinEatsHeroImage {
-  width: 682px;
-}
-.BerlinEatsLogo {
-  width: 480px;
-}
-.BerlinEatsHomepage {
-  position: absolute;
-  bottom: -86px;
-  right: -100px;
-  width: 350px;
-}
-.BerlinEats .box {
-  background-color: #484E5E;
-  height: 1080px;
-  margin-top: 30px;
-}
-.BerlinEats .rightBox {
-  position: relative;
-}
-.BerlinEats .leftBox {
-  position: relative;
-}
-.BerlinEats .tagline {
-  width: 25rem;
-  margin: 0;
-}
-.BerlinEats .caption {
-  position: relative;
-  bottom: 3vh;
-  margin: 0;
-}
-.rightAlign {
-  position: relative;
-  left: 6vw;
-}
-.pushToRight {
-  position: relative;
-  left: 2vw;
-}
+
 
 /* Section 2 */
+.berlineatsLogo {
+  display: block;
+  margin: 100px auto 0 auto;
+  width: 300px;
+}
+p.caption {
+  display: block;
+  width: auto;
+  justify-content: center;
+  margin-top: 30px;
+}
 .dialog {
   margin-top: 30vh;
 }
@@ -460,12 +429,6 @@ img.thumbnail {
     background-color: transparent !important;
 }
 
-@media(max-width: 768px) {
-    .photography body {
-        padding: 0;
-    }
-}
-
 /* additional css */
 .hide {
   visibility: hidden !important;
@@ -487,5 +450,10 @@ img.thumbnail {
 @media ( max-width: 991px ) {
   .BerlinEatsHomepage {
     right: 18vw;
+  }
+}
+@media(max-width: 768px) {
+  .photography body {
+      padding: 0;
   }
 }
