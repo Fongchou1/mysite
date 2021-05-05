@@ -44,6 +44,10 @@ app.get("/webProjects", function(req, res){
   res.sendFile(__dirname + "/webProjects.html");
 });
 
+// app.get("/drawings", function(req, res){
+//   res.sendFile(__dirname + "/personalwebsite/public/index.html");
+// });
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("Server started at port 3000.");
 });
