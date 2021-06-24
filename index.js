@@ -17,11 +17,13 @@ app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
 
-  res.sendFile(__dirname + "/index.html");
+  // res.sendFile(__dirname + "/index.html");
+  res.render("index");
 });
 
 app.get("/contact", function(req, res){
-  res.sendFile(__dirname + "/contact.html");
+  // res.sendFile(__dirname + "/contact.html");
+  res.render("contact");
 });
 
 app.get("/photography", function(req, res){
@@ -41,7 +43,8 @@ app.get("/berlinWall", function(req, res){
 });
 
 app.get("/webProjects", function(req, res){
-  res.sendFile(__dirname + "/webProjects.html");
+  // res.sendFile(__dirname + "/webProjects.html");
+  res.render("designProjects");
 });
 
 // app.get("/drawings", function(req, res){

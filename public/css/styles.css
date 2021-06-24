@@ -1,6 +1,7 @@
 /* Tages */
 body {
   font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 body.mine {
   text-align: center;
@@ -251,11 +252,17 @@ i.social {
 }
 
 .footer {
-  margin-top: 200px;
+  margin-top: 13em;
   background-color: #214252;
-  padding-top: 30px;
+  padding-top: 2em;
 }
-.socialMedia a {
+
+.socialMedia {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.socialMedia-item {
   padding: 0 20px 0 20px;
 }
 .footer p {
@@ -331,6 +338,7 @@ p.caption {
 }
 .contactInfo {
   text-align: left;
+  margin-bottom: 13em;
 }
 .contactPageSocialMedia {
   margin: 50px auto 20vh auto;
