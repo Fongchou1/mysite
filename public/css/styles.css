@@ -1,7 +1,7 @@
 /* Tages */
 body {
   font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: 22px;
 }
 body.mine {
   text-align: center;
@@ -24,6 +24,7 @@ h3 {
 p {
   font-size: 1.125em;
   color: #214252;
+  max-width: 50rem;
 }
 hr {
   border-top: dotted 7px #ccc;
@@ -338,6 +339,9 @@ p.caption {
 .educationDescription {
   margin: 20px auto;
 }
+.educationDescription .row {
+  margin-bottom: 24px;
+}
 .contactInfo {
   text-align: left;
   margin-bottom: 13em;
@@ -461,7 +465,7 @@ img.thumbnail {
 }
 @media screen and (max-width: 768px) {
   body {
-    font-size: 22px;
+    font-size: 30px;
   }
   .photography body {
       padding: 0;
