@@ -286,11 +286,12 @@ i.social {
 	background-color:#214252;
 	color:#ccc;
 	border-radius:50px;
-	text-align:center;
 }
 
-.my-float{
-	margin-top:13px;
+.my-float {
+	position: absolute;
+  top: 17px;
+  left: 20px;
 }
 
 /* Styles of my projects */
@@ -470,12 +471,12 @@ img.thumbnail {
       padding: 0;
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 850px) {
   .heroPhoto {
     bottom: 300px;
   }
 
   .intro {
-    height: 800px;
+    height: 850px;
   }
 }
