@@ -24,7 +24,6 @@ h3 {
 p {
   font-size: 1.125em;
   color: #214252;
-  width: 25rem;
 }
 hr {
   border-top: dotted 7px #ccc;
@@ -73,7 +72,11 @@ i.social {
   margin: 0 auto;
   top: 0;
   z-index: 1;
-  width: 806px;
+  max-width: 806px;
+  object-fit: cover;
+}
+.heroImage.mountainBox {
+  width: 100vw;
 }
 .intro {
   background-color: #214252;
@@ -136,11 +139,11 @@ i.social {
 }
 .toRight {
   position: relative;
-  left: 70px;
+  padding-left: 70px;
 }
 .toMoreRight {
   position: relative;
-  left: 120px;
+  padding-left: 120px;
 }
 .skillsHr {
   margin-top: 150px;
@@ -456,7 +459,10 @@ img.thumbnail {
 /* Target viewport */
 @media ( max-width: 991px ) {
 }
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 22px;
+  }
   .photography body {
       padding: 0;
   }
