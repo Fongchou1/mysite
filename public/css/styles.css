@@ -122,7 +122,7 @@ i.social {
 .col-lg-6 {
   margin: auto;
 }
-.row {
+.photography.row {
   padding: 100px 0 100px 0;
 }
 .skillItem .imageBox {
@@ -307,10 +307,7 @@ i.social {
 /* Section 1 */
 .container {
   box-sizing: border-box;
-}
-
-.row {
-  width: 100%;
+  width: 100vw;
 }
 
 /* Section 2 */
