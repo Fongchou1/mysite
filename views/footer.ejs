@@ -1,20 +1,12 @@
-    <section>
-        <div class="footer">
-            <div class="socialMedia">
-                <div class="socialMedia-item">
-                    <a class="textButton" href="https://www.linkedin.com/in/fon-chou/" target="_blank"><i class="fab fa-linkedin social"></i>LinkedIn</a>
-                </div>
-                <div class="socialMedia-item">
-                    <a class="textButton" href="https://www.instagram.com/fon.chou/" target="_blank"><i class="fab fa-instagram social"></i>Instagram</a>
-                </div>
-                <div class="socialMedia-item">
-                    <a class="textButton" href="https://www.facebook.com/fonchouTW/" target="_blank"><i class="fab fa-facebook-square social"></i>Facebook</a>
-                </div>
-            </div>
-            <% const date = new Date(); %>
-            <% let currYear = date.getYear(); %>
-            <% currYear = currYear + 1900; %>
-            <p>© <%= currYear %> Fong Feng-En Chou.</p>
+    <div class="footer">
+        <div class="socialMedia">
+            <a class="textButton" href="https://www.linkedin.com/in/fon-chou/" target="_blank"><i class="fab fa-linkedin social"></i>LinkedIn</a>
+            <a class="textButton" href="https://www.instagram.com/fon.chou/" target="_blank"><i class="fab fa-instagram social"></i>Instagram</a>
+            <a class="textButton" href="https://www.facebook.com/fonchouTW/" target="_blank"><i class="fab fa-facebook-square social"></i>Facebook</a>
         </div>
-    </section>
+        <% const date = new Date(); %>
+        <% let currYear = date.getYear(); %>
+        <% currYear = currYear + 1900; %>
+        <p>© <%= currYear %> Fong Feng-En Chou.</p>
+    </div>
 </html>

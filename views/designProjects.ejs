@@ -1,48 +1,47 @@
 <%- include("header") -%>
-<body class="mine BerlinEats Montserrat-Alternates">
+<body class="mine">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="images/logoCircle.svg" alt="Logo" width="48" height="48"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse txt-center" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Design Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/photography">Photography</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Section 1 -->
-    <section id="BerlinEats_intro">
-      <div class="BerlinEats_intro">
-        <nav class="navbar navbar-expand-lg navbar-light Poppins">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="images/LogoDark.svg" alt="Logo" width="150"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="/">About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="#BerlinEats_intro">Design Projects</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/photography">Photography</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </section>
-    <section id="projects">
-      <img class="berlineatsLogo" src="images/LogoBerlinEats@2x.png" alt="Logo of BerlinEats">
-      <iframe src="https://app.pitch.com/app/embed/70c28140-e45d-4164-87d0-ef3b73317acf" allow="fullscreen" allowfullscreen="" width="560" height="315" style="border:0"></iframe>
-      <p class="caption">Role: Research & UX/UI <span style="margin-left: 2.5rem"></span> TimeLine: Aug. - Oct. 2020</p>
-      <div class="box">
-        <h1 class="dialog">Work in Progress<br>To Be Continued...</h1>
-      </div>
-    </section>
+    <div class="container">
+      <div class="row">
+        <img class="berlineatsLogo" src="images/LogoBerlinEats@2x.png" alt="Logo of BerlinEats">
+        <iframe src="https://app.pitch.com/app/embed/70c28140-e45d-4164-87d0-ef3b73317acf" allow="fullscreen" allowfullscreen="" width="560" height="315" style="border:0"></iframe>
+        <p class="caption">Role: Research & UX/UI <span style="margin-left: 2.5rem"></span> TimeLine: Aug. - Oct. 2020</p>
+        <div class="box">
+          <h1 class="dialog">Work in Progress<br>To Be Continued...</h1>
+        </div>
 
-    <a href="#BerlinEats_intro" class="float">
-    <i class="fas fa-arrow-up fa-1x my-float"></i>
-    </a>
+        <a href="#BerlinEats_intro" class="float">
+        <i class="fas fa-arrow-up fa-1x my-float"></i>
+        </a>
+      </div>
+    </div>
 
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <!-- <script type="text/javascript" src="index.js" charset="utf-8"></script> -->
   </body>
