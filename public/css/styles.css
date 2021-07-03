@@ -471,10 +471,10 @@ img.thumbnail {
 }
 @media screen and (max-width: 768px) {
   body {
-    font-size: 30px;
+    font-size: 22px;
   }
-  .photography body {
-      padding: 0;
+  body.photography {
+      margin: 0 16px;
   }
 }
 @media screen and (max-height: 850px) {
