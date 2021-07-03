@@ -69,16 +69,22 @@ i.social {
   height: inherit;
 }
 .heroImage {
-  position: relative;
+  background-image: url("../images/heroImage.svg");
+  /* background-color: #ccc; */
+  height: 536px;
+  width: 100%;
+  max-width: 825px;
+  position: absolute;
   margin: 0 auto;
-  top: 0;
+  bottom: 0;
   z-index: 1;
-  max-width: 806px;
-  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.heroImage.mountainBox {
+/* .heroImage.mountainBox {
   width: 100vw;
-}
+} */
 .intro {
   background-color: #214252;
   height: 100vh;
