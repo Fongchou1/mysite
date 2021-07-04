@@ -63,8 +63,9 @@ i.social {
   position: absolute;
   bottom: 0;
   margin: 0 auto;
+  z-index: 2;
 }
-.heroPhoto {
+img.heroPhoto {
   position: relative;
   margin: 0 auto;
   bottom: 35vh;
