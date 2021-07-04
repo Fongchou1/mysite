@@ -49,7 +49,7 @@ i.social {
   background-color: #214252;
 }
 .heroText {
-  padding-top: 30px;
+  padding: 30px 16px 0 16px;
   position: relative;
   z-index: 3;
 }
@@ -518,7 +518,7 @@ img.thumbnail {
     margin: 0 auto;
   }
   img.introText {
-    width: 100vw;
+    width: 80vw;
     height: 100%;
   }
   .imageBox.illustration {
