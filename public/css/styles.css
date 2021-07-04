@@ -92,7 +92,7 @@ img.heroPhoto {
 .intro {
   position: relative;
   background-color: #214252;
-  height: 90vh;
+  height: 100vh;
   z-index: 1;
 
 }
@@ -564,9 +564,9 @@ img.thumbnail {
     height: 250px;
   }
 }
-@media screen and (max-height: 850px) {
+@media screen and (max-height: 750px) {
   .heroPhoto {
-    bottom: 300px;
+    bottom: 300px !important;
   }
 
   .intro {
