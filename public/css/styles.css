@@ -101,10 +101,17 @@ img.heroPhoto {
 }
 
 /* Section 2 */
+section#hello {
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+}
 .helloContent {
+  position: relative;
   display: inline-block;
   justify-content: center;
   height: 1080px;
+  z-index: 5;
 }
 
 .helloContent p {
@@ -120,6 +127,11 @@ img.heroPhoto {
 }
 
 /* Section 3 */
+section#myProjects {
+  background-color: #fff;
+  position: relative;
+  z-index: 5;
+}
 .mySkillsContent {
   padding-top: 150px;
 }
@@ -343,8 +355,10 @@ p.caption {
 
 /* Footer */
 .footer {
+  position: relative;
   margin-top: 0;
   text-align: center;
+  z-index: 5;
 }
 
 /* Contact Page CSS */
