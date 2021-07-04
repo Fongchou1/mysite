@@ -150,6 +150,9 @@ img.heroPhoto {
   justify-content: start;
   text-align: left;
 }
+h2.descriptionBox {
+  text-align: left;
+}
 .toRight {
   position: relative;
   padding-left: 70px;
@@ -502,8 +505,14 @@ img.thumbnail {
     height: 100px;
   }
   h1 {
-    font-size: 1.5em;
+    font-size: 2em;
     width: 100vw;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
   }
   div {
     margin: 0 auto;
