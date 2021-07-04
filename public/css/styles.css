@@ -287,19 +287,19 @@ img.heroPhoto {
 /* Floating btn */
 .float{
 	position:fixed;
-	width:60px;
-	height:60px;
+	width:2em;
+	height:2em;
 	bottom:40px;
 	right:40px;
 	background-color:#214252;
 	color:#ccc;
-	border-radius:50px;
+	border-radius: 50%;
 }
 
 .my-float {
-	position: absolute;
-  top: 17px;
-  left: 20px;
+	display: inline-block;
+  justify-content: center;
+  margin-top: .5em;
 }
 
 /* Styles of my projects */
@@ -485,8 +485,9 @@ img.thumbnail {
 
 /* Target viewport */
 @media screen and (max-width: 340px) {
-  .smallIframe {
-    display: none !important;
+  iframe.smallIframe {
+    width: 80vw;
+    height: auto;
   }
   .toRight {
     padding: 0;
@@ -519,6 +520,10 @@ img.thumbnail {
   }
   a.descriptionBox {
     font-size: 1vh;
+  }
+  .float {
+    bottom: 16px;
+    right: 16px;
   }
 }
 @media screen and (max-width: 768px) {
