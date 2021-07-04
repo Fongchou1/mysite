@@ -534,6 +534,18 @@ img.thumbnail {
   .berlineatsLogo {
     width: 200px;
   }
+  img.thumbnail {
+    height: 200px;
+    margin-bottom: 4px;
+  }
+  .container.gallery-container {
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  img.thumbnail {
+    height: 250px;
+  }
 }
 @media screen and (max-height: 850px) {
   .heroPhoto {
