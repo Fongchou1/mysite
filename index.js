@@ -1,6 +1,7 @@
 const express = require("express");
 var path = require('path');
 var ejs = require('ejs');
+// var scripts = require(__dirname + '/public/js/scripts.js');
 
 const app = express();
 
@@ -16,7 +17,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 app.get("/", function(req, res){
-
   // res.sendFile(__dirname + "/index.html");
   res.render("index");
 });
@@ -43,8 +43,7 @@ app.get("/berlinWall", function(req, res){
 });
 
 app.get("/webProjects", function(req, res){
-  // res.sendFile(__dirname + "/webProjects.html");
-  res.render("designProjects");
+  res.render("designProjects")
 });
 
 // app.get("/drawings", function(req, res){

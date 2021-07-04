@@ -51,7 +51,7 @@ i.social {
 .heroText {
   padding-top: 30px;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 .heroContainer {
   position: relative;
@@ -80,7 +80,7 @@ i.social {
   position: absolute;
   margin: 0 auto;
   bottom: 0;
-  z-index: 1;
+  z-index: 2;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,8 +89,11 @@ i.social {
   width: 100vw;
 } */
 .intro {
+  position: relative;
   background-color: #214252;
   height: 90vh;
+  z-index: 1;
+
 }
 .nav-link {
   color: #ce6262 !important;
@@ -125,13 +128,12 @@ i.social {
 .photography.row {
   padding: 100px 0 100px 0;
 }
-.skillItem .imageBox {
-  display: flex;
-  height: 360px;
+.skillItem {
+  margin: 50px auto;
 }
 .skillItem .illustration {
-  display: flex;
-  margin: auto;
+  width: 360px;
+  height: 100%;
 }
 .skillItem h2 {
   display: flex;
@@ -269,10 +271,6 @@ i.social {
   padding-top: 2em;
 }
 
-.socialMedia {
-  display: flex;
-  justify-content: space-evenly;
-}
 
 .socialMedia-item {
   padding: 0 20px 0 20px;
@@ -309,12 +307,21 @@ i.social {
   box-sizing: border-box;
   width: 100vw;
 }
+.smallIframe {
+  display: none;
+}
 
 /* Section 2 */
 .berlineatsLogo {
+  background-image: url('../images/LogoBerlinEats@2x.png');
   display: block;
   margin: 100px auto 0 auto;
-  width: 300px;
+  height: 100px;
+  width: 600px;
+  box-sizing: border-box;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 p.caption {
   display: block;
@@ -323,6 +330,11 @@ p.caption {
 }
 .dialog {
   margin-top: 30vh;
+}
+.box {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 }
 
 /* Footer */
@@ -471,12 +483,55 @@ img.thumbnail {
 }
 
 /* Target viewport */
+@media screen and (max-width: 340px) {
+  .smallIframe {
+    display: none !important;
+  }
+  .toRight {
+    padding: 0;
+  }
+  .toMoreRight {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 478px) {
+  h1 {
+    font-size: 2em;
+  }
+  div {
+    margin: 0 auto;
+  }
+  img.introText {
+    width: 100vw;
+    height: 100%;
+  }
+  .imageBox.illustration {
+    width: 200px;
+    height: 100%;
+  }
+  .imageBox {
+    box-sizing: border-box;
+  }
+  .skillItem .illustration {
+    width: 200px;
+    height: 100%;
+  }
+  a.descriptionBox {
+    font-size: 1vh;
+  }
+}
 @media screen and (max-width: 768px) {
   body {
-    font-size: 22px;
+    font-size: 18px;
   }
-  body {
-      margin: 0 16px;
+  .largeIframe {
+    display: none;
+  }
+  .smallIframe {
+    display: inline-block;
+  }
+  .berlineatsLogo {
+    width: 200px;
   }
 }
 @media screen and (max-height: 850px) {
