@@ -485,7 +485,7 @@ img.thumbnail {
 
 /* Target viewport */
 @media screen and (max-width: 340px) {
-  iframe.smallIframe {
+  iframe.berlineatsIframe {
     width: 80vw;
     height: auto;
   }
@@ -497,8 +497,13 @@ img.thumbnail {
   }
 }
 @media screen and (max-width: 478px) {
+  div.berlineatsLogo {
+    width: 80vw;
+    height: 100px;
+  }
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
+    width: 100vw;
   }
   div {
     margin: 0 auto;
@@ -530,11 +535,9 @@ img.thumbnail {
   body {
     font-size: 18px;
   }
-  .largeIframe {
-    display: none;
-  }
-  .smallIframe {
-    display: inline-block;
+  .berlineatsIframe {
+    width: 300px;
+    height: auto;
   }
   .berlineatsLogo {
     width: 200px;
