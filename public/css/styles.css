@@ -42,6 +42,10 @@ i.social {
   font-size: 1.375rem;
   color: #ebac4e;
 }
+section#snow {
+  position: relative;
+  z-index: 4;
+}
 
 /* Classes */
 /* Section 1 */
