@@ -1,4 +1,4 @@
-<%- include("photographyHeader") -%>
+<%- include("header") -%>
 
   <div class="container gallery-container">
     <h1>LOCKDOWN</h1>
@@ -24,7 +24,7 @@
           <% } else { %>
             <div class="col-sm-6">
           <% } %>
-            <% let currImg = "images/photography/Corona/lockdown_" + i + ".jpg" %>
+            <% let currImg = "images/photography/lockdown/lockdown_" + i + ".jpg" %>
             <a class="lightbox" href=<%= currImg %>>
               <img class="thumbnail" src=<%= currImg %>>
             </a>
@@ -38,4 +38,4 @@
 
   </div>
 
-<%- include("photographyFooter") -%>
+<%- include("footer") -%>
