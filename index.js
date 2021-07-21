@@ -1,7 +1,6 @@
 const express = require("express");
 var path = require('path');
 var ejs = require('ejs');
-var Airtable = require('airtable');
 // var scripts = require(__dirname + '/public/js/scripts.js');
 
 const app = express();
@@ -10,17 +9,7 @@ const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
 const $ = require( "jquery" )( window );
 
-//Airtable
-var basePhoto = new Airtable({apiKey: 'keyUVmbar6wiZjmrx'}).base('appSfjdiCQWegHcDt');
-const tableLockdown = basePhoto('lockdown');
 
-let count_lockdown = 0;
-const countRecords_lockdown = async () => {
-  const records = await tableLockdown
-      .select()
-      .firstPage();
-  count_lockdown = records.length;
-};
 
 app.use(express.static("public"));
 app.set('views', path.join(__dirname, 'views'));
@@ -42,14 +31,7 @@ app.get("/photography", function(req, res){
 });
 
 app.get("/lockdown", function(req, res){
-
-  countRecords_lockdown();
-
-  res.render("lockdown", {
-    project: "lockdown",
-    title: "Lockdown",
-    imageCount: count_lockdown
-  });
+  res.render("lockdown");
 });
 
 app.get("/foreign", function(req, res){
