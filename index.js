@@ -28,6 +28,7 @@ var airtable = new Airtable({apiKey: 'keyUVmbar6wiZjmrx'});
 var photographyBase = airtable.base('appSfjdiCQWegHcDt');
 var landingPageBase = airtable.base('appKYRnm4BMdQAbEs');
 var footerBase = airtable.base('appW37UpLfSwnHVtS');
+var e_missionWebBase = airtable.base('apppg3kkNAKUNbBzl');
 
 function readFields( outputObject , records ){
   for( let i = 0; i < records.length; i++){
@@ -44,6 +45,8 @@ app.get("/", async function(req, res){
   let images = {};
   let videos = {};
   let projects = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
 
   // airtable
   await landingPageBase('root-texts').select({
@@ -94,17 +97,43 @@ app.get("/", async function(req, res){
             
             // projects fetched from airtable
             readFields(projects, records);
-    
-            // fetched all required data and send
-            res.render("index",
-              {
-                rootTexts: rootTexts,
-                links: links,
-                images: images,
-                videos: videos,
-                projects: projects
-              }
-            );
+
+            //fetch footer root text
+            footerBase('root-texts').select({
+              view: 'DB'
+            }).all(function(err, records) {
+        
+              if(err) { console.error(err); return; }
+              
+              // footer root text fetched from airtable
+              readFields(footerRootTexts, records);
+
+              // fetch footer links
+              footerBase('links').select({
+                view: 'DB'
+              }).all(function(err, records) {
+          
+                if(err) { console.error(err); return; }
+                
+                // footer links fetched from airtable
+                readFields(footerLinks, records);
+        
+                // fetched all required data and send
+                res.render("index",
+                  {
+                    rootTexts: rootTexts,
+                    links: links,
+                    images: images,
+                    videos: videos,
+                    projects: projects,
+                    footerRootTexts: footerRootTexts,
+                    footerLinks: footerLinks
+                  }
+                );
+          
+              })
+        
+            })
       
           })
     
@@ -117,6 +146,82 @@ app.get("/", async function(req, res){
   })
   
 
+});
+
+app.get("/e-mission-web", function(req, res){
+
+  let rootTexts = {};
+  let links = {};
+  let sections = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch e-mission web root texts
+      e_missionWebBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // e-mission web root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch e-mission web links
+        e_missionWebBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // e-mission web links fetched from airtable
+          readFields(links, records);
+          
+          // fetch e-mission web sections
+          e_missionWebBase('sections').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // e-mission web sections fetched from airtable
+            readFields(sections, records);
+            
+            // fetched all required data and send
+            res.render("project",
+              {
+                rootTexts: rootTexts,
+                links: links,
+                sections: sections,
+                footerRootTexts: footerRootTexts,
+                footerLinks: footerLinks
+              }
+            );
+      
+          })
+        })
+      })
+    })
+  })
 });
 
 app.get("/contact", function(req, res){

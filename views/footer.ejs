@@ -1,20 +1,66 @@
-    <div class="footer">
-        <div class="socialMedia container">
-            <div class="row">
-                <div class="socialMedia-item col-lg-4 col-sm-12">
-                    <a class="textButton" href="https://www.linkedin.com/in/fon-chou/" target="_blank"><i class="fab fa-linkedin social"></i>LinkedIn</a>
-                </div>
-                <div class="socialMedia-item col-lg-4 col-sm-12">
-                    <a class="textButton" href="https://www.instagram.com/fon.chou/" target="_blank"><i class="fab fa-instagram social"></i>Instagram</a>
-                </div>
-                <div class="socialMedia-item col-lg-4 col-sm-12">
-                    <a class="textButton" href="https://www.facebook.com/fonchouTW/" target="_blank"><i class="fab fa-facebook-square social"></i>Facebook</a>
-                </div>
+    <section id="footer">
+        <div class="footer-header ubuntu-h3-48px-bold">
+            <%= footerRootTexts.greeting.en %>
+        </div>
+        <div class="footer-email ubuntu-body1-18px-regular">
+            <%= footerRootTexts.email.en %>
+        </div>
+        <div class="footer-links">
+            <div class="footer-links-1">
+                <a 
+                    class="footer-links-link btn btn-link"
+                    href=<%= footerLinks.instagram.url %>
+                    target='_blank'
+                    rel="noreferrer noopener"
+                    role="button"
+                >
+                    <%= footerRootTexts['extra-link-1'].en %>
+                </a>
+            </div>
+            <div class="footer-links-2">
+                <a 
+                    class="footer-links-link btn btn-link"
+                    href=<%= footerLinks.linkedin.url %>
+                    target='_blank'
+                    rel="noreferrer noopener"
+                    role="button"
+                >
+                    <%= footerRootTexts['extra-link-2'].en %>
+                </a>
+            </div>
+            <div class="footer-links-3">
+                <a 
+                    class="footer-links-link btn btn-link"
+                    href=<%= footerLinks.photography.url %>
+                    target='_blank'
+                    rel="noreferrer noopener"
+                    role="button"
+                >
+                    <%= footerRootTexts['extra-link-3'].en %>
+                </a>
+            </div>
+            <div class="footer-links-4">
+                <a 
+                    class="footer-links-link btn btn-link"
+                    href=<%= footerLinks.illustration.url %>
+                    target='_blank'
+                    rel="noreferrer noopener"
+                    role="button"
+                >
+                    <%= footerRootTexts['extra-link-4'].en %>
+                </a>
             </div>
         </div>
         <% const date = new Date(); %>
         <% let currYear = date.getYear(); %>
         <% currYear = currYear + 1900; %>
-        <p>© <%= currYear %> Fong Feng-En Chou.</p>
-    </div>
+        <div class="footer-hr">
+            <div class='hr-tertiary'></div>
+        </div>
+        <div class="footer-patent">
+            <p class="ubuntu-body1-18px-regular">© <%= currYear %> Fong Feng-En Chou.</p>
+        </div>
+    </section>
+    
+
 </html>
