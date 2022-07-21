@@ -15,53 +15,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <%= rootTexts['active-page'].en %>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    href=<%= links['nav-page-1'].url %>
-                                >
-                                    <%= rootTexts['nav-page-1'].en %>
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    href=<%= links['nav-page-2'].url %>
-                                >
-                                    <%= rootTexts['nav-page-2'].en %>
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    href=<%= links['nav-page-3'].url %>
-                                >
-                                    <%= rootTexts['nav-page-3'].en %>
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    href=<%= links['nav-page-4'].url %>
-                                >
-                                    <%= rootTexts['nav-page-4'].en %>
-                                </a>
-                            </li>
-                            <!-- <li>
-                                <hr class="dropdown-divider">
-                            </li> -->
-                        </ul>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li> -->
-                </ul>
+                <div class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
+                    <%= rootTexts['active-page'].en %>
+                </div>
                 <div>
                     <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
                         <li class="nav-item px-1">
@@ -100,12 +56,12 @@
                         <li class="nav-item px-1">
                             <a 
                                 class="btn btn-link navbar navbar-expand-lg bg-dark" 
-                                href=<%= links.graphics.url %>
+                                href=<%= links.design.url %>
                                 rel="noreferrer noopener" 
                                 role="button"
                                 target='_blank'
                             >
-                                <%= rootTexts['graphics'].en %>
+                                <%= rootTexts['design'].en %>
                             </a>
                         </li>
                     </ul>
@@ -127,42 +83,6 @@
                     <%= rootTexts['project-description'].en %>
                 </div>
             </div>
-            <% if ( rootTexts['project-assignment'] && rootTexts['project-objective'] && rootTexts['project-scope'] && rootTexts['project-yearTitle'] ) { %>
-                <div class="project-hero-content-features">
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-assignment'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-assignment-content'].en %>
-                        </div>
-                    </div>
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-objective'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-objective-content'].en %>
-                        </div>
-                    </div>
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-scope'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-scope-content'].en %>
-                        </div>
-                    </div>
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-yearTitle'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-year'].en %>
-                        </div>
-                    </div>
-                </div>
-            <% } %>
         </div>
         <div class="project-hero-hr">
             <div class='hr-main'></div>
@@ -492,35 +412,38 @@
                         </div>
                     </div>
                 </div>
+            <% } else if ( Object.values(sections)[i].type === 'setOf3Images' ) { %>
+                <div class="graphics-setOf3Images">
+                    <div class="graphics-setOf3Images-content">
+                        <!-- device 1 -->
+                        <div class="graphics-setOf3Images-content-imageHolder">
+                            <img 
+                                class="graphics-setOf3Images-content-imageHolder-image"
+                                src=<%= Object.values(sections)[i]['setOf3Images-1'][0].url %>
+                                alt=<%= Object.values(sections)[i]['setOf3Images-1-alt'] %>
+                            >
+                        </div>
+                        <!-- device 2 -->
+                        <div class="graphics-setOf3Images-content-imageHolder">
+                            <img 
+                                class="graphics-setOf3Images-content-imageHolder-image"
+                                src=<%= Object.values(sections)[i]['setOf3Images-2'][0].url %>
+                                alt=<%= Object.values(sections)[i]['setOf3Images-2-alt'] %>
+                            >
+                        </div>
+                        <!-- device 3 -->
+                        <div class="graphics-setOf3Images-content-imageHolder">
+                            <img 
+                                class="graphics-setOf3Images-content-imageHolder-image"
+                                src=<%= Object.values(sections)[i]['setOf3Images-3'][0].url %>
+                                alt=<%= Object.values(sections)[i]['setOf3Images-3-alt'] %>
+                            >
+                        </div>
+                    </div>
+                </div>
             <% } %>
         <% } %>
     </section>
-    <% if ( links['cta-button'].url ) { %>
-        <section id="project-cta">
-            <div class="project-cta-hr">
-                <div class='hr-main'></div>
-            </div>
-            <div class="project-cta-title ubuntu-h3-48px-bold">
-                <%= rootTexts['cta-title'].en %>
-            </div>
-            <div class="project-cta-description">
-    
-            </div>
-            <div class="project-cta-button">
-                <a 
-                    class="project-cta-button-text-primary" 
-                    href=<%= links['cta-button'].url %> 
-                    rel="noreferrer noopener" 
-                    role="button"
-                    target='_blank'
-                >
-                    <button type="button" class="btn btn-primary" >
-                        <%= rootTexts['cta-button'].en %>
-                    </button>
-                </a>
-            </div>
-        </section>
-    <% } %>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

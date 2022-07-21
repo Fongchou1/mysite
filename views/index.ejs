@@ -59,7 +59,7 @@
             </a>
           </div>
           <div class="hero-infoAndDescription-description-links-link">
-            <a class="btn btn-link" href=<%= links.illustration.url %> target='_blank' rel="noreferrer noopener" role="button" >
+            <a class="btn btn-link" href=<%= links.graphics.url %> target='_blank' rel="noreferrer noopener" role="button" >
               <%= rootTexts['extra-link-4'].en %>
             </a>
           </div>
@@ -78,7 +78,7 @@
       <div class="projects-project">
         <div class="projects-project-texts">
           <div class="projects-project-texts-title ubuntu-body1-18px-medium">
-            <%= rootTexts['project-label'].en %>
+            <%= Object.values(projects)[i]['project-label'] %>
           </div>
           <div class="projects-project-texts-content">
             <div class="projects-project-texts-content-title ubuntu-h3-48px-bold">
