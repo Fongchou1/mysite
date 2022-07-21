@@ -172,7 +172,7 @@
             <% if ( Object.values(sections)[i].type === 'simpleVideo' ) { %>
                 <div class="project-projects-simpleVideo">
                     <div class="project-projects-simpleVideo-videoHolder">
-                        <video class="project-projects-simpleVideo-video" autoplay muted loop playsinline>
+                        <video class="project-projects-simpleVideo-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
                             <source 
                               src=<%= Object.values(sections)[i]['attachment'][0].url %>
                               type="video/mp4"
@@ -296,7 +296,7 @@
                         <!-- device 1 -->
                         <div class="project-projects-mobile3Video-content-deviceHolder">
                             <div class="project-projects-mobile3Video-content-deviceHolder-videoHolder">
-                                <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" playsinline autoplay muted loop>
+                                <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
                                     <source 
                                         src=<%= Object.values(sections)[i]['mobileMedia-1'][0].url %>
                                         type="video/mp4"
@@ -328,7 +328,7 @@
                         <!-- device 2 -->
                         <div class="project-projects-mobile3Video-content-deviceHolder">
                             <div class="project-projects-mobile3Video-content-deviceHolder-videoHolder">
-                                <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" playsinline autoplay muted loop>
+                                <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
                                     <source 
                                         src=<%= Object.values(sections)[i]['mobileMedia-2'][0].url %>
                                         type="video/mp4"
@@ -360,7 +360,7 @@
                         <!-- device 3 -->
                         <div class="project-projects-mobile3Video-content-deviceHolder">
                             <div class="project-projects-mobile3Video-content-deviceHolder-videoHolder">
-                                <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" playsinline autoplay muted loop>
+                                <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
                                     <source 
                                         src=<%= Object.values(sections)[i]['mobileMedia-3'][0].url %>
                                         type="video/mp4"
@@ -395,7 +395,7 @@
                 <div class="project-projects-laptopVideo">
                     <div class="project-projects-laptopVideo-macbook">
                         <div class="project-projects-laptopVideo-macbook-videoHolder">
-                          <video class="project-projects-laptopVideo-macbook-videoHolder-video" playsinline autoplay muted loop >
+                          <video class="project-projects-laptopVideo-macbook-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop >
                             <source 
                               src=<%= Object.values(sections)[i]['attachment'][0].url %>
                               type="video/mp4"
@@ -460,7 +460,7 @@
                 <div class="project-projects-mobileSE1Video">
                     <div class="project-projects-mobileSE1Video-mobile">
                         <div class="project-projects-mobileSE1Video-mobile-videoHolder">
-                          <video class="project-projects-mobileSE1Video-mobile-videoHolder-video" playsinline autoplay muted loop>
+                          <video class="project-projects-mobileSE1Video-mobile-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
                             <source 
                               src=<%= Object.values(sections)[i]['attachment'][0].url %>
                               type="video/mp4"

@@ -108,7 +108,7 @@
               <div 
                 class="projects-project-device-macbook-maskGroup-videoHolder"
               >
-                <video class="projects-project-device-macbook-maskGroup-video" autoplay muted loop playsinline>
+                <video class="projects-project-device-macbook-maskGroup-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
                   <source 
                     src=<%= Object.values(projects)[i]['attachment'][0].url %>
                     type="video/mp4"
@@ -141,7 +141,7 @@
           <% } else if ( Object.values(projects)[i].device === 'mobile' ) { %>
             <div class="projects-project-device-mobile">
               <div class="projects-project-device-mobile-videoHolder">
-                <video class="projects-project-device-mobile-videoHolder-video" autoplay muted loop playsinline>
+                <video class="projects-project-device-mobile-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
                   <source 
                     src=<%= Object.values(projects)[i]['attachment'][0].url %>
                     type="video/mp4"
