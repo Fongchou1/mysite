@@ -279,6 +279,7 @@ section#snow {
   justify-content: center;
   position: relative;
   width: calc(var(--projectMacbookWidth)*(0.8233));
+  /* width: calc(var(--projectMacbookWidth)); */
 }
 .projects-project-device-macbook-maskGroup-video{
 
@@ -400,10 +401,12 @@ section#snow {
   flex-direction: row;
   flex-grow: 1;
   gap: 16px;
-
+  /* min-width: 0; */
+  
 }
 .services-content-group-item {
   display: flex;
+  flex-basis: 0;
   flex-direction: column;
   flex-grow: 1;
   gap: 16px;
@@ -882,6 +885,7 @@ section#snow {
     width: var(--projectMacbookWidth-mobile);
   }
   .projects-project-device-macbook-maskGroup-videoHolder {
+    border-radius: 5px;
     width: calc(var(--projectMacbookWidth-mobile)*(0.8233));
   }
   .projects-project-device-macbook-maskGroup-video{
@@ -995,16 +999,13 @@ section#snow {
   .project-projects-mobile3Image-content-deviceHolder-imageHolder {
     border-radius: 7px;
   }
-  .project-projects-mobile3Image-content-deviceHolder-imageHolder-image {
-    border-radius: 7px;
-  }
   /* mobile with 3 videos */
   .project-projects-mobile3Video {
     background-color: var(--background-600);
     margin: 16px 0;
     padding: 16px 0;
   }
-  .project-projects-mobile3Video-content-deviceHolder-imageHolder {
+  .project-projects-mobile3Video-content-deviceHolder-videoHolder {
     border-radius: 7px;
   }
   /* laptop video */

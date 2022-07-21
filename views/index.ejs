@@ -54,12 +54,12 @@
             </a>
           </div>
           <div class="hero-infoAndDescription-description-links-link">
-            <a class="btn btn-link" href=<%= links.photography.url %> target='_blank' rel="noreferrer noopener" role="button" >
+            <a class="btn btn-link" href=<%= links.photography.url %> rel="noreferrer noopener" role="button" >
               <%= rootTexts['extra-link-3'].en %>
             </a>
           </div>
           <div class="hero-infoAndDescription-description-links-link">
-            <a class="btn btn-link" href=<%= links.graphics.url %> target='_blank' rel="noreferrer noopener" role="button" >
+            <a class="btn btn-link" href=<%= links.graphics.url %> rel="noreferrer noopener" role="button" >
               <%= rootTexts['extra-link-4'].en %>
             </a>
           </div>
@@ -105,8 +105,10 @@
         <div class="projects-project-device">
           <% if ( Object.values(projects)[i].device === 'laptop' ) { %>
             <div class="projects-project-device-macbook">
-              <div class="projects-project-device-macbook-maskGroup-videoHolder">
-                <video class="projects-project-device-macbook-maskGroup-video" autoplay muted loop>
+              <div 
+                class="projects-project-device-macbook-maskGroup-videoHolder"
+              >
+                <video class="projects-project-device-macbook-maskGroup-video" autoplay muted loop playsinline>
                   <source 
                     src=<%= Object.values(projects)[i]['attachment'][0].url %>
                     type="video/mp4"
@@ -139,7 +141,7 @@
           <% } else if ( Object.values(projects)[i].device === 'mobile' ) { %>
             <div class="projects-project-device-mobile">
               <div class="projects-project-device-mobile-videoHolder">
-                <video class="projects-project-device-mobile-videoHolder-video" autoplay muted loop>
+                <video class="projects-project-device-mobile-videoHolder-video" autoplay muted loop playsinline>
                   <source 
                     src=<%= Object.values(projects)[i]['attachment'][0].url %>
                     type="video/mp4"
