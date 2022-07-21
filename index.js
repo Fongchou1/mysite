@@ -11,7 +11,7 @@ const app = express();
 
 const { JSDOM } = require( "jsdom" );
 const { window } = new JSDOM( "" );
-const $ = require( "jquery" )( window );
+const $ = require( "jquery" );
 
 app.use(cors());
 app.use(bp.urlencoded({ extended: false }));

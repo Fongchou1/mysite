@@ -1,4 +1,17 @@
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
     <section id="footer">
+
+        <div class="footer-backToTop">
+            <a 
+                class="footer-backToTop-a btn btn-link" 
+                rel="noreferrer noopener" 
+                role="button"
+              >
+                <i class="fa-solid fa-arrow-up-long"></i>  &nbsp;  <%= footerRootTexts.backToTop.en %>
+            </a>
+        </div>
+
         <div class="footer-header ubuntu-h3-48px-bold">
             <%= footerRootTexts.greeting.en %>
         </div>
@@ -9,8 +22,7 @@
             <div class="footer-links-1">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.instagram.url %>
-                    target='_blank'
+                    href=<%= footerLinks.home.url %>
                     rel="noreferrer noopener"
                     role="button"
                 >
@@ -20,7 +32,7 @@
             <div class="footer-links-2">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.linkedin.url %>
+                    href=<%= footerLinks.instagram.url %>
                     target='_blank'
                     rel="noreferrer noopener"
                     role="button"
@@ -31,7 +43,8 @@
             <div class="footer-links-3">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.photography.url %>
+                    href=<%= footerLinks.linkedin.url %>
+                    target='_blank'
                     rel="noreferrer noopener"
                     role="button"
                 >
@@ -41,11 +54,31 @@
             <div class="footer-links-4">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.graphics.url %>
+                    href=<%= footerLinks.design.url %>
                     rel="noreferrer noopener"
                     role="button"
                 >
                     <%= footerRootTexts['extra-link-4'].en %>
+                </a>
+            </div>
+            <div class="footer-links-5">
+                <a 
+                    class="footer-links-link btn btn-link"
+                    href=<%= footerLinks.photography.url %>
+                    rel="noreferrer noopener"
+                    role="button"
+                >
+                    <%= footerRootTexts['extra-link-5'].en %>
+                </a>
+            </div>
+            <div class="footer-links-6">
+                <a 
+                    class="footer-links-link btn btn-link"
+                    href=<%= footerLinks.graphics.url %>
+                    rel="noreferrer noopener"
+                    role="button"
+                >
+                    <%= footerRootTexts['extra-link-6'].en %>
                 </a>
             </div>
         </div>
@@ -60,5 +93,12 @@
         </div>
     </section>
     
+    <script>
+        $('.footer-backToTop').click(function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // $(this).toggleClass('on');
+            // $('.DownvoteButton').removeClass('on');
+        });
+    </script>
 
 </html>

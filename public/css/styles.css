@@ -156,10 +156,10 @@ section#snow {
   background-color: var(--primary-100);
   color: var(--background-400);
   flex-direction: column;
-  padding: 80px 24px;
+  padding: 64px 24px 80px 24px;
 }
-.footer-header {
-
+.footer-backToTop {
+  margin-bottom: 16px;
 }
 .footer-email {
   margin-top: 32px;
