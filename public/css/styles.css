@@ -22,6 +22,8 @@
   --projectMobileWidth-fullscreen: 250px;
   --projectMobileWidth-fullscreen-mobile: calc(100vw*0.8);
   --projectsIphone12Width: calc(100vw*332/1400);
+
+  --photography-images-width-desktop: calc(100vw*650/1400);
 }
 
 /* Tages */
@@ -794,6 +796,82 @@ section#snow {
 }
 .graphics-setOf3Images-content-imageHolder-image {
   width: 100%
+}
+
+/*  */
+/*  */
+/* photography */
+#photography-board {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.photography-board-nav {
+  /* background-color: black; */
+  flex-grow: 0;
+}
+.photography-board-content {
+  flex-grow: 1;
+  height: 100%;
+  /* overflow-x: scroll; */
+  position: relative;
+}
+.photography-board-content-navLinks {
+  position: absolute;
+  top: 25%;
+  left: 24px;
+}
+.photography-board-logo {
+  width: 48px;
+}
+.photography-board-content-activePage {
+  color: white;
+}
+/* photography sections */
+.photography-board-content-sections {
+  color: white;
+  display: flex;
+  height: 100%;
+  gap: 32px;
+  overflow-x: hidden;
+  padding: 16px 100px 40px 240px;
+}
+.photography-board-content-sections-image {
+  width: var(--photography-images-width-desktop);
+}
+.photography-board-content-sections-imageTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.photography-board-content-sections-imageBottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.photography-board-content-sections-textTop {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.photography-board-content-sections-textMiddle {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: var(--photography-images-width-desktop);
+}
+.photography-board-content-sections-textBottom {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: var(--photography-images-width-desktop);
+}
+.photography-board-content-sections-textTitle {
+  max-width: var(--photography-images-width-desktop);
 }
 
 @media screen and (max-width: 600px) {
