@@ -778,6 +778,366 @@ app.get("/photography-lockdown", function(req, res){
   })
 });
 
+app.get("/photography-embodiment", function(req, res){
+
+  let rootTexts = {};
+  let links = {};
+  let sections = {};
+  let images = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch photographyBase root texts
+      photographyBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // graphics root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch graphics links
+        photographyBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // graphics links fetched from airtable
+          readFields(links, records);
+          
+          // fetch graphics sections
+          photographyBase('embodiment-sections').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // graphics sections fetched from airtable
+            readFields(sections, records);
+            
+            // fetch graphics images
+            photographyBase('images').select({
+              view: 'DB'
+            }).all(function(err, records) {
+        
+              if(err) { console.error(err); return; }
+              
+              // graphics images fetched from airtable
+              readFields(images, records);
+              
+              // fetched all required data and send
+              res.render("photography",
+                {
+                  page: req.url,
+                  rootTexts: rootTexts,
+                  links: links,
+                  sections: sections,
+                  images: images,
+                  footerRootTexts: footerRootTexts,
+                  footerLinks: footerLinks
+                }
+              );
+        
+            })
+          })
+        })
+      })
+    })
+  })
+});
+
+app.get("/photography-the-third", function(req, res){
+
+  let rootTexts = {};
+  let links = {};
+  let sections = {};
+  let images = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch photographyBase root texts
+      photographyBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // graphics root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch graphics links
+        photographyBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // graphics links fetched from airtable
+          readFields(links, records);
+          
+          // fetch graphics sections
+          photographyBase('the-third-sections').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // graphics sections fetched from airtable
+            readFields(sections, records);
+            
+            // fetch graphics images
+            photographyBase('images').select({
+              view: 'DB'
+            }).all(function(err, records) {
+        
+              if(err) { console.error(err); return; }
+              
+              // graphics images fetched from airtable
+              readFields(images, records);
+              
+              // fetched all required data and send
+              res.render("photography",
+                {
+                  page: req.url,
+                  rootTexts: rootTexts,
+                  links: links,
+                  sections: sections,
+                  images: images,
+                  footerRootTexts: footerRootTexts,
+                  footerLinks: footerLinks
+                }
+              );
+        
+            })
+          })
+        })
+      })
+    })
+  })
+});
+
+app.get("/photography-berlin-wall", function(req, res){
+
+  let rootTexts = {};
+  let links = {};
+  let sections = {};
+  let images = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch photographyBase root texts
+      photographyBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // graphics root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch graphics links
+        photographyBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // graphics links fetched from airtable
+          readFields(links, records);
+          
+          // fetch graphics sections
+          photographyBase('berlin-wall-sections').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // graphics sections fetched from airtable
+            readFields(sections, records);
+            
+            // fetch graphics images
+            photographyBase('images').select({
+              view: 'DB'
+            }).all(function(err, records) {
+        
+              if(err) { console.error(err); return; }
+              
+              // graphics images fetched from airtable
+              readFields(images, records);
+              
+              // fetched all required data and send
+              res.render("photography",
+                {
+                  page: req.url,
+                  rootTexts: rootTexts,
+                  links: links,
+                  sections: sections,
+                  images: images,
+                  footerRootTexts: footerRootTexts,
+                  footerLinks: footerLinks
+                }
+              );
+        
+            })
+          })
+        })
+      })
+    })
+  })
+});
+
+app.get("/photography-untitled", function(req, res){
+
+  let rootTexts = {};
+  let links = {};
+  let sections = {};
+  let images = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch photographyBase root texts
+      photographyBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // graphics root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch graphics links
+        photographyBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // graphics links fetched from airtable
+          readFields(links, records);
+          
+          // fetch graphics sections
+          photographyBase('untitled-sections').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // graphics sections fetched from airtable
+            readFields(sections, records);
+            
+            // fetch graphics images
+            photographyBase('images').select({
+              view: 'DB'
+            }).all(function(err, records) {
+        
+              if(err) { console.error(err); return; }
+              
+              // graphics images fetched from airtable
+              readFields(images, records);
+              
+              // fetched all required data and send
+              res.render("photography",
+                {
+                  page: req.url,
+                  rootTexts: rootTexts,
+                  links: links,
+                  sections: sections,
+                  images: images,
+                  footerRootTexts: footerRootTexts,
+                  footerLinks: footerLinks
+                }
+              );
+        
+            })
+          })
+        })
+      })
+    })
+  })
+});
+
 app.get("/contact", function(req, res){
   // res.sendFile(__dirname + "/contact.html");
   res.render("contact");

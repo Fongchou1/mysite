@@ -85,10 +85,66 @@
                 alt=<%= Object.values(sections)[i].alt %>
               >
             </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-middle' ) { %>
+            <div class="photography-board-content-sections-imageMiddle">
+              <img 
+                class="photography-board-content-sections-image"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom' ) { %>
             <div class="photography-board-content-sections-imageBottom">
               <img 
                 class="photography-board-content-sections-image"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-top-medium' ) { %>
+            <div class="photography-board-content-sections-imageTop">
+              <img 
+                class="photography-board-content-sections-image-medium"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-middle-medium' ) { %>
+            <div class="photography-board-content-sections-imageMiddle">
+              <img 
+                class="photography-board-content-sections-image-medium"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-bottom-medium' ) { %>
+            <div class="photography-board-content-sections-imageBottom">
+              <img 
+                class="photography-board-content-sections-image-medium"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-top-small' ) { %>
+            <div class="photography-board-content-sections-imageTop">
+              <img 
+                class="photography-board-content-sections-image-small"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-middle-small' ) { %>
+            <div class="photography-board-content-sections-imageMiddle">
+              <img 
+                class="photography-board-content-sections-image-small"
+                src=<%= Object.values(sections)[i].photo[0].url %>
+                alt=<%= Object.values(sections)[i].alt %>
+              >
+            </div>
+          <% } else if ( Object.values(sections)[i].type === 'image-bottom-small' ) { %>
+            <div class="photography-board-content-sections-imageBottom">
+              <img 
+                class="photography-board-content-sections-image-small"
                 src=<%= Object.values(sections)[i].photo[0].url %>
                 alt=<%= Object.values(sections)[i].alt %>
               >
@@ -135,7 +191,7 @@
       event.preventDefault();
 
       element.scrollBy({
-        left: event.deltaY < 0 ? -5 : 5,
+        left: event.deltaY < 0 ? -30 : 30,
         
       });
     });

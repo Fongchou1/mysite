@@ -24,6 +24,8 @@
   --projectsIphone12Width: calc(100vw*332/1400);
 
   --photography-images-width-desktop: calc(100vw*650/1400);
+  --photography-images-medium-width-desktop: calc(100vw*400/1400);
+  --photography-images-small-width-desktop: calc(100vw*200/1400);
 }
 
 /* Tages */
@@ -840,10 +842,21 @@ section#snow {
 .photography-board-content-sections-image {
   width: var(--photography-images-width-desktop);
 }
+.photography-board-content-sections-image-medium {
+  width: var(--photography-images-medium-width-desktop);
+}
+.photography-board-content-sections-image-small {
+  width: var(--photography-images-small-width-desktop);
+}
 .photography-board-content-sections-imageTop {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+.photography-board-content-sections-imageMiddle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .photography-board-content-sections-imageBottom {
   display: flex;
