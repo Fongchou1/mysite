@@ -1,4 +1,5 @@
 <%- include("header") -%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <body class="photography">
 
@@ -27,7 +28,7 @@
                 <%= rootTexts['design-works'].en %>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item photography-board-nav-gallery">
               <a 
                 class="nav-link active" 
                 aria-current="page" 
@@ -36,6 +37,38 @@
                 <%= rootTexts['gallery'].en %>
               </a>
             </li>
+            <!-- dropdown -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <%= rootTexts['gallery'].en %>
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                  <% for( let i = 0; i < Object.values(links).length; i++ ) { %>
+                    <li class="photography-board-content-navLinks-link">
+                      <% if ( page.indexOf(Object.values(links)[i].title) !== -1 ) { %>
+                        <a 
+                          class="photography-board-content-activePage dropdown-item" 
+                          href=<%= links[Object.values(links)[i].title].url %> 
+                          rel="noreferrer noopener" 
+                          role="button" 
+                        >
+                          <%= rootTexts[Object.values(links)[i].title].en %>
+                        </a>
+                      <% } else { %>
+                        <a 
+                          class="btn btn-link dropdown-item" 
+                          href=<%= links[Object.values(links)[i].title].url %>
+                          rel="noreferrer noopener" 
+                          role="button" 
+                        >
+                          <%= rootTexts[Object.values(links)[i].title].en %>
+                        </a>
+                      <% } %>
+                    </li>
+                  <% } %>
+              </ul>
+            </li>
+
             <li class="nav-item">
               <a 
                 class="nav-link" 
@@ -72,6 +105,13 @@
               </a>
             <% } %>
           </div>
+        <% } %>
+      </div>
+      <div class="photography-board-content-projectTitle">
+        <% for( let i = 0; i < Object.values(links).length; i++ ) { %>
+          <% if ( page.indexOf(Object.values(links)[i].title) !== -1 ) { %>
+            <%= rootTexts[Object.values(links)[i].title].en %>
+          <% } %>
         <% } %>
       </div>
       <div class="photography-board-content-sections snaps-inline">
@@ -212,6 +252,23 @@
     var i = 0
     const initialWidth = ( w / scrollContainerWidth ) *100 ;
     var width = initialWidth;
+    
+    $(document).ready(function(){
+      var elem = document.getElementById("bar");
+      elem.style.width = initialWidth + "%";
+
+      var screenWidth = $(window).width();
+      if( screenWidth > 991 ) {
+        $(".photography-board-nav-gallery").removeClass('hide');
+        $(".dropdown").addClass('hide');
+        $(".photography-board-content-navLinks").removeClass('hide');
+      } else {
+        $(".photography-board-nav-gallery").addClass('hide');
+        $(".dropdown").removeClass('hide');
+        $(".photography-board-content-navLinks").addClass('hide');
+      }
+    });
+
     function move(offset) {
       var widthMemory = width;
       if (i == 0) {
@@ -237,12 +294,34 @@
         // }
       }
     }
+
     scrollContainer.addEventListener("wheel", (evt) => {
-        evt.preventDefault();
-        scrollContainer.scrollLeft += evt.deltaY;
-        move(evt.deltaY);
+      var screenWidth = $(window).width();
+      if ( screenWidth >= 600 ) {
+          evt.preventDefault();
+          scrollContainer.scrollLeft += evt.deltaY;
+          move(evt.deltaY); 
+        } else {
+          scrollContainer.scrollUp += evt.deltaY;
+        }
     });
 
+    // toggle dropdown on nav
+    $(window).resize(function() {
+      var screenWidth = $(window).width();
+      if( screenWidth > 991 ) {
+        $(".photography-board-nav-gallery").removeClass('hide');
+        $(".dropdown").addClass('hide');
+        $(".photography-board-content-navLinks").removeClass('hide');
+        $(".photography-board-content-projectTitle").addClass('hide');
+      } else {
+        $(".photography-board-nav-gallery").addClass('hide');
+        $(".dropdown").removeClass('hide');
+        $(".photography-board-content-navLinks").addClass('hide');
+        $(".photography-board-content-projectTitle").removeClass('hide');
+      }
+    });
+    
     // console.log(scrollContainerWidth)
 
 
