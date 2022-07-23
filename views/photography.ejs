@@ -74,11 +74,10 @@
           </div>
         <% } %>
       </div>
-      <div class="photography-board-content-sections">
+      <div class="photography-board-content-sections snaps-inline">
         <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
-          <% console.log(i) %>
           <% if ( Object.values(sections)[i].type === 'image-top' ) { %>
-            <div class="photography-board-content-sections-imageTop">
+            <div class="photography-board-content-sections-imageTop photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -86,7 +85,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-middle' ) { %>
-            <div class="photography-board-content-sections-imageMiddle">
+            <div class="photography-board-content-sections-imageMiddle photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -94,7 +93,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom' ) { %>
-            <div class="photography-board-content-sections-imageBottom">
+            <div class="photography-board-content-sections-imageBottom photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -102,7 +101,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-top-medium' ) { %>
-            <div class="photography-board-content-sections-imageTop">
+            <div class="photography-board-content-sections-imageTop photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image-medium"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -110,7 +109,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-middle-medium' ) { %>
-            <div class="photography-board-content-sections-imageMiddle">
+            <div class="photography-board-content-sections-imageMiddle photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image-medium"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -118,7 +117,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom-medium' ) { %>
-            <div class="photography-board-content-sections-imageBottom">
+            <div class="photography-board-content-sections-imageBottom photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image-medium"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -126,15 +125,15 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-top-small' ) { %>
-            <div class="photography-board-content-sections-imageTop">
+            <div class="photography-board-content-sections-imageTop photography-board-content-sections-element">
               <img 
-                class="photography-board-content-sections-image-small"
+                class="photography-board-content-sections-image-small photography-board-content-sections-element"
                 src=<%= Object.values(sections)[i].photo[0].url %>
                 alt=<%= Object.values(sections)[i].alt %>
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-middle-small' ) { %>
-            <div class="photography-board-content-sections-imageMiddle">
+            <div class="photography-board-content-sections-imageMiddle photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image-small"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -142,7 +141,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom-small' ) { %>
-            <div class="photography-board-content-sections-imageBottom">
+            <div class="photography-board-content-sections-imageBottom photography-board-content-sections-element">
               <img 
                 class="photography-board-content-sections-image-small"
                 src=<%= Object.values(sections)[i].photo[0].url %>
@@ -150,7 +149,7 @@
               >
             </div>
           <% } else if ( Object.values(sections)[i].type === 'text-top' ) { %>
-            <div class="photography-board-content-sections-textTop">
+            <div class="photography-board-content-sections-textTop photography-board-content-sections-element">
               <div class="photography-board-content-sections-textTitle ubuntu-h5-24px-bold">
                 <%= Object.values(sections)[i]['title-en'] %>
               </div>
@@ -159,8 +158,8 @@
               </div>
             </div>
           <%} else if ( Object.values(sections)[i].type === 'text-middle' ) { %>
-            <div class="photography-board-content-sections-textMiddle ubuntu-h5-24px-bold">
-              <div class="photography-board-content-sections-textTitle">
+            <div class="photography-board-content-sections-textMiddle">
+              <div class="photography-board-content-sections-textTitle ubuntu-h5-24px-bold">
                 <%= Object.values(sections)[i]['title-en'] %>
               </div>
               <div class="photography-board-content-sections-textDescription">
@@ -168,8 +167,8 @@
               </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'text-bottom' ) { %>
-            <div class="photography-board-content-sections-textBottom ubuntu-h5-24px-bold">
-              <div class="photography-board-content-sections-textTitle">
+            <div class="photography-board-content-sections-textBottom photography-board-content-sections-element">
+              <div class="photography-board-content-sections-textTitle ubuntu-h5-24px-bold">
                 <%= Object.values(sections)[i]['title-en'] %>
               </div>
               <div class="photography-board-content-sections-textDescription">
@@ -178,6 +177,11 @@
             </div>
           <% } %>
         <% } %>
+      </div>
+    </div>
+    <div class="galleryFooter">
+      <div class="progress">
+        <div id="bar"></div>
       </div>
     </div>
   </section>
@@ -196,12 +200,52 @@
     //   });
     // });
 
-    const scrollContainer = document.querySelector(".photography-board-content-sections");
+    var w = window.innerWidth;
+    var h = window.innerHeight;
 
+    var x = document.getElementById("demo");
+
+    const scrollContainer = document.querySelector(".photography-board-content-sections");
+    const scrollContainerWidth = scrollContainer.scrollWidth;
+    const scrollContainerHeight = scrollContainer.scrollHeight;
+    
+    var i = 0
+    const initialWidth = ( w / scrollContainerWidth ) *100 ;
+    var width = initialWidth;
+    function move(offset) {
+      var widthMemory = width;
+      if (i == 0) {
+        // i = 1;
+        var elem = document.getElementById("bar");
+        widthMemory = widthMemory + ( ( offset / scrollContainerWidth ) * 100 );
+        // elem.style.width = width + offset;
+        if ( widthMemory > initialWidth && widthMemory <= 101 ) {
+          width = widthMemory;
+        }
+        elem.style.width = width + "%";
+        // console.log(elem.style.width);
+        // console.log(offset);
+        // var id = setInterval(frame, 10);
+        // function frame() {
+          // if (width >= 100) {
+            // clearInterval(id);
+            // i = 0;
+          // } else {
+            // width++;
+            // elem.innerHTML = width + "%";
+          // }
+        // }
+      }
+    }
     scrollContainer.addEventListener("wheel", (evt) => {
         evt.preventDefault();
         scrollContainer.scrollLeft += evt.deltaY;
+        move(evt.deltaY);
     });
+
+    // console.log(scrollContainerWidth)
+
+
   
   </script>
 
@@ -210,5 +254,5 @@
   <!-- <script type="text/javascript" src="index.js" charset="utf-8"></script> -->
 
 </body>
-</html>
+
 <%- include("footer") -%>
