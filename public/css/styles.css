@@ -1265,7 +1265,11 @@ section#snow {
   }
 }
 @media screen and (max-width: 991px) {
-  
+  .photography-board-content-projectTitle {
+    color: white;
+    padding: 16px 24px;
+    text-align: left;
+  }
   .photography-board-content-sections {
     color: white;
     display: flex;
