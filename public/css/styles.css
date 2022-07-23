@@ -840,12 +840,18 @@ section#snow {
   padding: 16px 100px 40px 240px;
 }
 .photography-board-content-sections-image {
+  max-height: 100%;
+  object-fit: contain;
   width: var(--photography-images-width-desktop);
 }
 .photography-board-content-sections-image-medium {
+  max-height: 100%;
+  object-fit: contain;
   width: var(--photography-images-medium-width-desktop);
 }
 .photography-board-content-sections-image-small {
+  max-height: 100%;
+  object-fit: contain;
   width: var(--photography-images-small-width-desktop);
 }
 .photography-board-content-sections-imageTop {

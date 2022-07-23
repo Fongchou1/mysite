@@ -185,15 +185,22 @@
   
   <script>
 
-    const element = document.querySelector(".photography-board-content-sections");
+    // const element = document.querySelector(".photography-board-content-sections");
 
-    element.addEventListener('wheel', (event) => {
-      event.preventDefault();
+    // element.addEventListener('wheel', (event) => {
+    //   event.preventDefault();
 
-      element.scrollBy({
-        left: event.deltaY < 0 ? -30 : 30,
+    //   element.scrollBy({
+    //     left: event.deltaY < 0 ? -30 : 30,
         
-      });
+    //   });
+    // });
+
+    const scrollContainer = document.querySelector(".photography-board-content-sections");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
     });
   
   </script>
