@@ -242,6 +242,7 @@
 
     var w = window.innerWidth;
     var h = window.innerHeight;
+    var screenWidth = $(window).width();
 
     var x = document.getElementById("demo");
 
@@ -273,8 +274,7 @@
         $(".progress").addClass('hide');
       }
 
-      var screenWidth = $(window).width();
-      if( screenWidth > 991 ) {
+      if( w > 991 ) {
         $(".photography-board-nav-gallery").removeClass('hide');
         $(".dropdown").addClass('hide');
         $(".photography-board-content-navLinks").removeClass('hide');
@@ -314,7 +314,7 @@
     }
 
     scrollContainer.addEventListener("wheel", (evt) => {
-      var screenWidth = $(window).width();
+
       if ( screenWidth >= 600 ) {
           evt.preventDefault();
           scrollContainer.scrollLeft += evt.deltaY;
