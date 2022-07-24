@@ -253,21 +253,22 @@
     const initialWidth = ( w / scrollContainerWidth ) *100 ;
     var width = initialWidth;
     
+    //detect device
+    const deviceType = () => {
+      const ua = navigator.userAgent;
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+        return "tablet";
+      }
+      else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+        return "mobile";
+      }
+      return "desktop";
+    };
+
     $(document).ready(function(){
       var elem = document.getElementById("bar");
       elem.style.width = initialWidth + "%";
 
-      //detect device
-      const deviceType = () => {
-        const ua = navigator.userAgent;
-        if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-            return "tablet";
-        }
-        else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-            return "mobile";
-        }
-        return "desktop";
-      };
       if ( deviceType() === 'mobile' || deviceType() === 'tablet' ) {
         $(".progress").addClass('hide');
       }
@@ -325,6 +326,10 @@
 
     // toggle dropdown on nav
     $(window).resize(function() {
+      if ( deviceType() === 'mobile' || deviceType() === 'tablet' ) {
+        $(".progress").addClass('hide');
+      }
+
       var screenWidth = $(window).width();
       if( screenWidth > 991 ) {
         $(".photography-board-nav-gallery").removeClass('hide');
