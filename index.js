@@ -35,6 +35,7 @@ var posAppBase = airtable.base('appumdk46LYqsypYu');
 var berlineatsBase = airtable.base('appOMXVGZbdHaqfVx');
 var graphicsBase = airtable.base('app8jeAyfHpy7jXmX');
 var photographyBase = airtable.base('appSfjdiCQWegHcDt');
+var contactBase = airtable.base('appOWuesPEqLFvSF8');
 
 function readFields( outputObject , records ){
   for( let i = 0; i < records.length; i++){
@@ -1139,8 +1140,78 @@ app.get("/photography-untitled", function(req, res){
 });
 
 app.get("/contact", function(req, res){
-  // res.sendFile(__dirname + "/contact.html");
-  res.render("contact");
+
+  let rootTexts = {};
+  let links = {};
+  let images = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch photographyBase root texts
+      contactBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // graphics root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch graphics links
+        contactBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // graphics links fetched from airtable
+          readFields(links, records);
+          
+          // fetch graphics sections
+          contactBase('images').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // graphics sections fetched from airtable
+            readFields(images, records);
+            
+            // fetched all required data and send
+            res.render("contact",
+            {
+              rootTexts: rootTexts,
+              links: links,
+              images: images,
+              footerRootTexts: footerRootTexts,
+              footerLinks: footerLinks
+            }
+          );
+          })
+        })
+      })
+    })
+  })
 });
 
 app.get("/photography", function(req, res){
