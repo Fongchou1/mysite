@@ -306,13 +306,13 @@
 
     let lastScreenLeft = 0;
     scrollContainer.addEventListener("wheel", (evt) => {
-      if ( screenWidth >= 600 && deviceType() === 'desktop' ) {
+      if ( screenWidth >= 600 ) {
         evt.preventDefault();
         lastScreenLeft = scrollContainer.scrollLeft;
         scrollContainer.scrollLeft += evt.deltaY;
         move(evt.deltaY); 
       } else {
-        // scrollContainer.scrollUp += evt.deltaY;
+
       }
     });
     scrollContainer.addEventListener("scroll", function(evt) {
