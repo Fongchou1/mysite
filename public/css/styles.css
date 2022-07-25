@@ -1336,6 +1336,7 @@ section#snow {
     width: 100%;
     overflow-x: unset;
     overscroll-behavior-inline: unset;
+    padding: 16px 16px 40px 16px;
   }
   .photography-board-content-sections-element {
     display: flex;
@@ -1367,7 +1368,7 @@ section#snow {
     flex-direction: column;
   }
 }
-@media screen and (max-width: 991px) {
+@media (min-width: 601px) and (max-width: 991px) {
   .photography-board-content-projectTitle {
     color: white;
     padding: 16px 24px;
