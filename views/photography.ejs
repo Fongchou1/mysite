@@ -220,8 +220,24 @@
       </div>
     </div>
     <div class="galleryFooter">
-      <div class="progress">
-        <div id="bar"></div>
+      <div 
+      class="bar-mask"
+      style="
+          mask-image: url(<%= images['wave'].attachment[0].url %>);
+          -webkit-mask-image: url(<%= images['wave'].attachment[0].url %>);
+          -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+          mask-size: 100%;
+          -webkit-mask-size: 100%;  
+          "
+      >
+        <div class="progress">
+          <div id="bar"></div>
+          <!-- <img
+            class="bar-mask-image"
+            src=<%= images['wave'].attachment[0].url %>
+          > -->
+        </div>
       </div>
     </div>
   </section>
@@ -310,6 +326,8 @@
         lastScreenLeft = scrollContainer.scrollLeft;
         // scrollContainer.scrollLeft += evt.deltaY;
         move(deltaY); 
+      } else {
+        
       }
     });
 
@@ -335,7 +353,6 @@
     
     // console.log(scrollContainerWidth)
 
-
   
   </script>
 
@@ -345,4 +362,4 @@
 
 </body>
 
-<%- include("footer") -%>
+</html>
