@@ -290,22 +290,27 @@
 
     let lastScreenLeft = 0;
     scrollContainer.addEventListener("wheel", (evt) => {
-      
-      if ( screenWidth >= 600 ) {
+      if ( screenWidth >= 600 && deviceType() === 'desktop' ) {
         evt.preventDefault();
         lastScreenLeft = scrollContainer.scrollLeft;
         scrollContainer.scrollLeft += evt.deltaY;
         move(evt.deltaY); 
       } else {
-        scrollContainer.scrollUp += evt.deltaY;
+        // scrollContainer.scrollUp += evt.deltaY;
       }
     });
     scrollContainer.addEventListener("scroll", function(evt) {
-      // handling code
-      let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
-      lastScreenLeft = scrollContainer.scrollLeft;
-      move(deltaY);
-      // move(evt.deltaY); 
+      // let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
+      // lastScreenLeft = scrollContainer.scrollLeft;
+      // move(deltaY);
+      if ( screenWidth >= 600 && scrollContainer.scrollLeft && deviceType() !== "desktop" ) {
+        // evt.preventDefault();
+        console.log(deviceType())
+        let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
+        lastScreenLeft = scrollContainer.scrollLeft;
+        // scrollContainer.scrollLeft += evt.deltaY;
+        move(deltaY); 
+      }
     });
 
     // toggle dropdown on nav
