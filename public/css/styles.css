@@ -854,7 +854,7 @@ section#snow {
   box-sizing: border-box;
   flex-grow: 1;
   height: 100%;
-  max-height: calc(100vw*9/16);
+  /* max-height: calc(100vw*9/16); */
   /* overflow-x: scroll; */
   position: relative;
   resize: horizontal;
@@ -920,28 +920,38 @@ section#snow {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  min-width: var(--photography-images-width-desktop);
-  max-width: 100%;
+  flex-grow: 1;
   justify-content: flex-start;
+  max-height: 100%;
+  max-width: 600px;
+  min-width: 400px;
+  width: calc(var(--photography-images-width-desktop));
 }
 .photography-board-content-sections-textMiddle {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: center;
-  min-width: var(--photography-images-width-desktop);
-  max-width: 100%;
+  max-height: 100%;
+  max-width: 600px;
+  min-width: 400px;
+  width: calc(var(--photography-images-width-desktop));
 }
 .photography-board-content-sections-textBottom {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   justify-content: flex-end;
-  min-width: var(--photography-images-width-desktop);
-  max-width: 100%;
+  max-height: 100%;
+  max-width: 600px;
+  min-width: 400px;
+  width: calc(var(--photography-images-width-desktop));
 }
 .photography-board-content-sections-textTitle {
-  max-width: var(--photography-images-width-desktop);
+  width: 100%;
+
 }
 #photography-board > .galleryFooter {
   display: flex;
@@ -1379,17 +1389,23 @@ section#snow {
     width: 60vw;
   }
   .photography-board-content-sections-textTop {
+    min-width: unset;
     width: 100%;
   }
   .photography-board-content-sections-textMiddle {
+    min-width: unset;
     width: 100%;
   }
   .photography-board-content-sections-textBottom {
+    min-width: unset;
     width: 100%;
   }
   .photography-board-content-sections-textTitle {
     width: 100%;
     max-width: 100%;
+  }
+  .photography-board-content-sections-textDescription {
+    width: 100%;
   }
   #photography-board > .galleryFooter {
     display: none;
