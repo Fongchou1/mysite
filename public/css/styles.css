@@ -918,17 +918,27 @@ section#snow {
 }
 .photography-board-content-sections-textTop {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-width: var(--photography-images-width-desktop);
+  max-width: 100%;
   justify-content: flex-start;
 }
 .photography-board-content-sections-textMiddle {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  width: var(--photography-images-width-desktop);
+  min-width: var(--photography-images-width-desktop);
+  max-width: 100%;
 }
 .photography-board-content-sections-textBottom {
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   justify-content: flex-end;
-  width: var(--photography-images-width-desktop);
+  min-width: var(--photography-images-width-desktop);
+  max-width: 100%;
 }
 .photography-board-content-sections-textTitle {
   max-width: var(--photography-images-width-desktop);
@@ -1367,6 +1377,19 @@ section#snow {
   }
   .photography-board-content-sections-image-small {
     width: 60vw;
+  }
+  .photography-board-content-sections-textTop {
+    width: 100%;
+  }
+  .photography-board-content-sections-textMiddle {
+    width: 100%;
+  }
+  .photography-board-content-sections-textBottom {
+    width: 100%;
+  }
+  .photography-board-content-sections-textTitle {
+    width: 100%;
+    max-width: 100%;
   }
   #photography-board > .galleryFooter {
     display: none;
