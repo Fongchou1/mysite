@@ -1,0 +1,204 @@
+@use 'abstracts' as a;
+@use './landing-page';
+@use './project';
+@use './photography';
+@use './contact';
+@use './footer';
+
+:root { 
+  --background-400: #F3F3F3;
+  --background-600: #E5E7EA;
+  
+  --link-400: #898C8F;
+
+  --primary-100: #00070D;
+  --primary-400: #2185D5;
+  
+  --secondary-400: #3A4750;
+  
+  --text-400: #303841;
+  --text-900: #E1E1E2;
+
+  --projectMacbookWidth: calc(100vw*833/1400);
+  --projectMacbookWidth-mobile: 80vw;
+  --projectMacbookWidth-fullscreen: calc(100vw*1172/1400);
+  --projectMacbookWidth-fullscreen-mobile: calc(100vw*0.8);
+  --projectMobileWidth: 246px;
+  --projectMobileWidth-mobile: 60vw;
+  /* --projectMobileWidth-fullscreen: calc(100vw*250/1400); */
+  --projectMobileWidth-fullscreen: 250px;
+  --projectMobileWidth-fullscreen-mobile: calc(100vw*0.8);
+  --projectsIphone12Width: calc(100vw*332/1400);
+
+  --photography-images-width-desktop: 36vw;
+  --photography-images-medium-width-desktop: calc(100vw*400/1400);
+  --photography-images-small-width-desktop: calc(100vw*200/1400);
+}
+
+/* Tages */
+body {
+  font-family: 'Ubuntu','Poppins', sans-serif;
+  font-size: 18px;
+  color: a.$text-400;
+  margin: 0;
+  padding: 0;
+}
+body.mine {
+  /* text-align: center; */
+}
+h1 {
+  font-size: 3.5em;
+  font-weight: 500;
+}
+h2 {
+  font-size: 2.25em;
+  font-weight: 500;
+}
+h3 {
+  font-size: 1.375em;
+  font-weight: 500;
+}
+p {
+  font-size: 1.125em;
+  font-weight: 400;
+}
+a {
+  color: a.$link-400;
+  text-decoration : none;
+}
+.btn-link {
+  color: a.$link-400;
+  margin: 0;
+  padding: 0;
+  text-decoration : none;
+}
+div {
+  margin: 0;
+  padding: 0;
+}
+.ubuntu-9xl-144px-bold {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 144px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+}
+.ubuntu-h3-48px-bold {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+.ubuntu-h5-24px-bold {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+}
+.ubuntu-body1-18px-regular {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+.ubuntu-body1-18px-light {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 150%;
+}
+.ubuntu-body1-18px-medium {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 150%;
+}
+.ubuntu-body1-18px-bold {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+}
+.hr-main {
+  border: 0 none;
+  border-top: 4px solid a.$secondary-400;
+}
+.hr-secondary {
+  border: 0 none;
+  border-top: 4px solid a.$background-600;
+}
+.hr-tertiary {
+  border: 0 none;
+  border-top: 4px solid a.$text-400;
+}
+i.social {
+  margin-right: 0.625rem;
+}
+.photography-board-content-sections::-webkit-scrollbar{
+  height: 4px;
+  width: 4px;
+  /* background: gray; */
+}
+.photography-board-content-sections::-webkit-scrollbar:horizontal{
+  display: none;
+  /* height: 8px; */
+  /* background-color: red; */
+}
+@supports ( scrollbar-color: grey grey ) {
+  *{
+    /* scrollbar-color: transparent; */
+    scrollbar-width: none;
+  }
+}
+
+/* Components */
+.textButton {
+  font-size: 1.375rem;
+  color: #ebac4e;
+}
+section#snow {
+  position: relative;
+  z-index: 4;
+}
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  /* scroll-padding-inline: 240px; */
+}
+/* .snaps-inline > * {
+  scroll-snap-align: start;
+} */
+.hide {
+  display: none;
+}
+
+/* Bootstrap */
+.btn-primary {
+  background-color: a.$primary-400;
+}
+.dropdown-item {
+  padding: 4px 16px;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  /* root stylings */
+  .ubuntu-9xl-144px-bold {
+    font-size: 24vw;
+  }
+  .ubuntu-h3-48px-bold {
+    font-size: max(8vw, 24px);
+  }
+  .ubuntu-h5-24px-bold {
+    font-size: max(4vw, 18px);
+  }
+
+}

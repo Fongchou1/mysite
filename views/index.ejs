@@ -1,3 +1,4 @@
+
 <%- include("header") -%>
 <body class="mine">
   
@@ -75,12 +76,12 @@
   <section id="projects">
     <% for( let i = 0; i < Object.values(projects).length; i++ ) { %>
     
-      <div class="projects-project">
-        <div class="projects-project-texts">
-          <div class="projects-project-texts-title ubuntu-body1-18px-medium">
+      <div class="projects-project" data-scroll-container>
+        <div class="projects-project-texts" data-scroll-section >
+          <div class="projects-project-texts-title ubuntu-body1-18px-medium" data-scroll data-scroll-speed="1">
             <%= Object.values(projects)[i]['project-label'] %>
           </div>
-          <div class="projects-project-texts-content">
+          <div class="projects-project-texts-content" data-scroll data-scroll-speed="2">
             <div class="projects-project-texts-content-title ubuntu-h3-48px-bold">
               <%= Object.values(projects)[i]['title-en'] %>
             </div>
@@ -258,6 +259,13 @@
       <div class='hr-tertiary'></div>
     </div>
   </section>
+
+  <script src="js/locomotive-scroll.min.js"></script>
+  <script>
+      (function () {
+          var scroll = new LocomotiveScroll();
+      })() ;
+  </script>
 
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

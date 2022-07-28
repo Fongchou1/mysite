@@ -1,0 +1,381 @@
+@use './abstracts' as a;
+/*  */
+/*  */
+/* Landing page */
+/* New Section 1 */
+#hero {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    margin: 0 24px;
+}
+.hero-nameAndLogo {
+margin-top: calc(100vh*16/90);
+}
+.hero-nameAndLogo-logo {
+width: 98px;
+/* height: 98px; */
+}
+.hero-nameAndLogo-name {
+
+}
+.hero-infoAndDescription {
+/* bottom: calc(100vh*80/900); */
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin-top: auto;
+margin-bottom: calc(100vh*80/900);
+/* position: absolute; */
+}
+.hero-infoAndDescription-info {
+
+}
+.hero-infoAndDescription-description {
+margin-top: auto;
+width: 440px;
+}
+.hero-infoAndDescription-description-links {
+display: flex;
+gap: 16px;
+}
+.hero-infoAndDescription-description-links-link {
+color: a.$link-400;
+}
+.hero-hr {
+margin-top: 0;
+margin-bottom: calc(100vh*72/900);
+}
+
+/* New Seciton 2 */
+#projects {
+margin: 0 24px;
+}
+.projects-project {
+display: flex;
+margin-top: calc(100vh*80/900);
+gap: 16px;
+}
+.projects-project-texts {
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+width: calc(100vw*440/1400);
+word-wrap: break-word;
+}
+.projects-project-texts-content-title {
+margin-bottom: 16px;
+}
+.projects-project-texts-content-subtitle {
+margin-bottom: 24px;
+}
+.projects-project-texts-content-description {
+margin-bottom: 40px;
+}
+.projects-project-device {
+align-items: flex-end;
+display: flex;
+justify-content: center;
+width: calc(100vw*896/1400);
+}
+.projects-hr {
+margin-top: calc(100vh*80/900);
+margin-bottom: calc(100vh*80/900);
+}
+/* macbook device styling */
+.projects-project-device-macbook {
+display: flex;
+height: a.$projectMacbookHeight;
+justify-content: center;
+overflow: hidden;
+position: relative;
+width: a.$projectMacbookWidth;
+}
+.projects-project-device-macbook-maskGroup-videoHolder {
+align-items: center;
+background-color: black;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+height: inherit;
+justify-content: center;
+position: relative;
+width: a.$projectMacbookContentWidth;
+/* width: calc(var(--projectMacbookWidth)); */
+}
+.projects-project-device-macbook-maskGroup-video{
+
+position: relative;
+/* left: 8.8725%; */
+/* top: 1.8526%; */
+top: 0.57%;
+
+width: a.$projectMacbookContentWidth;
+/* height: 240px; */
+
+}
+.projects-project-device-macbook-maskGroup {
+
+position: absolute;
+left: 0;
+top: 0;
+
+width: a.$projectMacbookWidth;
+/* height: 100px; */
+
+}
+.projects-project-device-macbook-macbookBody {
+width: a.$projectMacbookWidth;
+/* height: 100px; */
+
+}
+/* mobile device styling */
+.projects-project-device-mobile {
+align-items: center;
+display: flex;
+height: a.$projectMobileHeight;
+justify-content: center;
+overflow: hidden;
+position: relative;
+width: a.$projectMobileWidth;
+}
+.projects-project-device-mobile-videoHolder {
+align-items: center;
+background-color: black;
+border-radius: 10px;
+display: flex;
+flex-direction: column;
+height: a.$projectMobileContentHeight;
+justify-content: center;
+width: a.$projectMobileContentWidth;
+}
+.projects-project-device-mobile-videoHolder-video{
+
+width: a.$projectMobileContentWidth;
+/* height: 240px; */
+
+}
+.projects-project-device-mobile-maskGroup {
+
+position: absolute;
+left: 0;
+top: 0;
+
+width: a.$projectMobileWidth;
+/* height: 100px; */
+
+}
+.projects-project-device-mobile-mobileBody {
+width: a.$projectMobileWidth;
+/* height: 100px; */
+
+}
+
+/* New Section 3 */
+#aboutMe {
+background-color: a.$primary-100;
+color: a.$background-400;
+padding: calc(100vh*80/742) 24px;
+}
+.aboutMe-header {
+margin-bottom: 40px;
+}
+.aboutMe-content {
+display: flex;
+}
+.aboutMe-content-portraitHolder-portrait {
+width: calc(100vw*440/1400);
+}
+.aboutMe-content-texts {
+display: flex;
+flex-direction: column;
+gap: 24px;
+margin-left: calc( 100vw*130/1400 );
+margin-top: auto;
+width: calc(100vw*554/1400);
+}
+.aboutMe-hr {
+margin-top: calc(100vh*40/742);
+}
+
+/* New Section 4 */
+#services {
+background-color: a.$primary-100;
+color: a.$background-400;
+padding: calc(100vh*80/695) 24px;
+}
+.services-header {
+display: flex;
+flex-direction: column;
+gap: 16px;
+}
+.services-header-description {
+padding-right: calc(100vw*342/1400);
+}
+.services-content {
+display: flex;
+flex-direction: column;
+gap: 40px;
+margin-top: calc(100vh*72/695);
+}
+.services-content-group {
+display: flex;
+flex-direction: row;
+flex-grow: 1;
+gap: 16px;
+/* min-width: 0; */
+
+}
+.services-content-group-item {
+display: flex;
+flex-basis: 0;
+flex-direction: column;
+flex-grow: 1;
+gap: 16px;
+}
+.services-hr {
+margin-top: calc(100vh*40/695);
+}
+
+@media screen and (max-width: 600px) {
+    /*  */
+    /*  */
+    /* Landing page */
+    /* New Section 1 */
+    #hero {
+    height: 100vh;
+    margin: 0 16px;
+    }
+    .hero-nameAndLogo {
+    margin-top: 32px;
+    }
+    .hero-infoAndDescription {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    }
+    .hero-infoAndDescription-description {
+    margin-top: 32px;
+    margin-bottom: 0;
+    width: 100%;
+    }
+    .hero-infoAndDescription-description-links {
+    display: none;
+    /* flex-direction: column; */
+    /* gap: 8px; */
+    }
+    .hero-hr {
+    margin-bottom: 56px;
+    }
+
+    /* New Seciton 2 */
+    #projects {
+    margin: 0 16px;
+    }
+    .projects-project {
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 16px;
+    }
+    .projects-project-texts {
+    width: 100%;
+    }
+    .projects-project-texts-content-description {
+    margin-bottom: 8px;
+    }
+    .projects-project-texts-content-button {
+    margin-bottom: 32px;
+    }
+    .projects-project-device {
+    align-items: center;
+    width: 100%;
+    }
+    .projects-hr {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    }
+    /* macbook device styling */
+    .projects-project-device-macbook {
+    height: calc(var(--projectMacbookWidth-mobile)*(0.6));
+    width: var(--projectMacbookWidth-mobile);
+    }
+    .projects-project-device-macbook-maskGroup-videoHolder {
+    border-radius: 5px;
+    width: calc(var(--projectMacbookWidth-mobile)*(0.8233));
+    }
+    .projects-project-device-macbook-maskGroup-video{
+    width: calc(var(--projectMacbookWidth-mobile)*(0.8233));
+    }
+    .projects-project-device-macbook-maskGroup {
+    width: calc(var(--projectMacbookWidth-mobile));
+    }
+    .projects-project-device-macbook-macbookBody {
+    width: var(--projectMacbookWidth-mobile);
+    }
+    /* mobile device styling */
+    .projects-project-device-mobile {
+    height: calc(var(--projectMobileWidth-mobile)*(2.0325));
+    width: var(--projectMobileWidth-mobile);
+    }
+    .projects-project-device-mobile-videoHolder {
+    height: calc(var(--projectMobileWidth-mobile)*(2.0325)*0.8);
+    width: calc(var(--projectMobileWidth-mobile)*(0.8724));
+    }
+    .projects-project-device-mobile-videoHolder-video{
+    width: calc(var(--projectMobileWidth-mobile)*(0.8724));
+    }
+    .projects-project-device-mobile-maskGroup {
+    width: calc(var(--projectMobileWidth-mobile));
+    }
+    .projects-project-device-mobile-mobileBody {
+    width: var(--projectMobileWidth-mobile);
+    }
+
+    /* New Section 3 */
+    #aboutMe {
+    padding: 40px 16px;
+    }
+    .aboutMe-content {
+    flex-direction: column;
+    width: 100%;
+    }
+    .aboutMe-content-portraitHolder-portrait {
+    width: 32vw;
+    }
+    .aboutMe-content-texts {
+    margin-top: 32px;
+    margin-left: 0;
+    width: 100%;
+    }
+    .aboutMe-hr {
+    margin-top: 80px;
+    }
+
+    /* New Section 4 */
+    #services {
+    padding: 80px 24px;
+    }
+    .services-header-description {
+    width: 100%;
+    max-width: 320px;
+    padding-right: 0;
+    }
+    .services-content {
+    gap: 24px;
+    margin-top: 32px;
+    }
+    .services-content-group {
+    flex-direction: column;
+    gap: 24px;
+
+    }
+    .services-content-group-item {
+    gap: 8px;
+    }
+    .services-hr {
+    margin-top: 80px;
+    }
+}

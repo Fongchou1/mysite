@@ -1214,6 +1214,30 @@ app.get("/contact", function(req, res){
   })
 });
 
+app.post("/post-message", function(req, res){
+  const postBody = req.body;
+  contactBase('message').create([
+    {
+      "fields": {
+        "email": postBody.email,
+        'name': postBody.name,
+        'phone': postBody.phone,
+        'message': postBody.message
+      }
+    }
+  ], function(err, records) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    // records.forEach(function (record) {
+      // console.log(record.getId());
+    // });
+  });
+  console.log(postBody)
+  res.send(postBody)
+});
+
 app.get("/photography", function(req, res){
   res.render("photography");
 });

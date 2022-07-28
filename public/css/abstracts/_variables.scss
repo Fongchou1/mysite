@@ -1,0 +1,24 @@
+
+$projectMacbookWidth: 100vw * 833 / 1400;
+$projectMacbookHeight: $projectMacbookWidth * 0.6;
+$projectMacbookContentWidth: $projectMacbookWidth * 0.8233;
+
+$projectMacbookWidth-mobile: 80vw;
+$projectMacbookWidth-fullscreen: 100vw * 1172 / 1400;
+$projectMacbookWidth-fullscreen-mobile: 100vw * 0.8;
+
+$projectMobileWidth: 246px;
+$projectMobileHeight: $projectMobileWidth * 2.0325;
+$projectMobileContentWidth: $projectMobileWidth * 0.8724;
+$projectMobileContentHeight: $projectMobileHeight * 0.8;
+
+$projectMobileWidth-mobile: 60vw;
+$projectMobileHeight-mobile: 60vw;
+/* --projectMobileWidth-fullscreen: calc(100vw*250/1400); */
+$projectMobileWidth-fullscreen: 250px;
+$projectMobileWidth-fullscreen-mobile: 100vw * 0.8;
+$projectsIphone12Width: 100vw * 332 / 1400;
+
+$photography-images-width-desktop: 36vw;
+$photography-images-medium-width-desktop: 100vw * 400 / 1400;
+$photography-images-small-width-desktop: 100vw * 200 / 1400;

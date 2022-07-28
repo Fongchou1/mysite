@@ -1,0 +1,229 @@
+@use './abstracts' as a;
+/*  */
+/*  */
+/* photography */
+.photography {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  #photography-board {
+    /* background-color: #cccccc; */
+    background-color: a.$primary-100;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  .photography-board-nav {
+    /* background-color: black; */
+    flex-grow: 0;
+  }
+  .photography-board-content {
+    box-sizing: border-box;
+    flex-grow: 1;
+    height: 100%;
+    /* max-height: calc(100vw*9/16); */
+    /* overflow-x: scroll; */
+    position: relative;
+    resize: horizontal;
+  }
+  .photography-board-content-navLinks {
+    position: absolute;
+    top: 25%;
+    left: 24px;
+  }
+  .photography-board-logo {
+    width: 48px;
+  }
+  .photography-board-content-activePage {
+    color: white;
+  }
+  /* photography sections */
+  .photography-board-content-sections {
+    color: white;
+    display: flex;
+    height: 100%;
+    gap: 32px;
+    overflow-x: scroll;
+    overscroll-behavior-inline: contain;
+    padding: 16px 100px 40px 240px;
+  
+  }
+  .photography-board-content-sections-element {
+    display: flex;
+    flex-direction: column;
+  }
+  .photography-board-content-sections-image {
+    inline-size: 100%;
+    max-height: 100%;
+    min-width: a.$photography-images-width-desktop;
+    max-width: 100%;
+    object-fit: contain;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  }
+  .photography-board-content-sections-image-medium {
+    inline-size: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    min-width: a.$photography-images-medium-width-desktop;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  }
+  .photography-board-content-sections-image-small {
+    inline-size: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: a.$photography-images-small-width-desktop;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  }
+  .photography-board-content-sections-imageTop {
+    justify-content: flex-start;
+  }
+  .photography-board-content-sections-imageMiddle {
+    justify-content: center;
+  }
+  .photography-board-content-sections-imageBottom {
+    justify-content: flex-end;
+  }
+  .photography-board-content-sections-textTop {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-start;
+    max-height: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    width: a.$photography-images-width-desktop;
+  }
+  .photography-board-content-sections-textMiddle {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    max-height: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    width: a.$photography-images-width-desktop;
+  }
+  .photography-board-content-sections-textBottom {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: flex-end;
+    max-height: 100%;
+    max-width: 600px;
+    min-width: 400px;
+    width: a.$photography-images-width-desktop;
+  }
+  .photography-board-content-sections-textTitle {
+    width: 100%;
+  
+  }
+  #photography-board > .galleryFooter {
+    display: flex;
+    height: 40px;
+    justify-content: center;
+  }
+  #photography-board > .galleryFooter > .progress {
+    /* width: 60px; */
+    /* height: 4px; */
+    align-items: center;
+    /* background-color: var(--secondary-400); */
+    background-color: a.$primary-400;
+    display: flex;
+    height: 100%;
+  }
+  #photography-board > .galleryFooter > .bar-mask > .progress > #bar {
+    /* width: 100vw; */
+    width: 60px;
+    height: 30px;
+    /* background-color: var(--primary-400); */
+    background-color: a.$primary-100;
+    position: absolute;
+  }
+  .bar-mask {
+    width: 60px;
+    height: inherit;
+    position: relative;
+  }
+
+  @media screen and (max-width: 600px) {
+    /*  */
+    /*  */
+    /* photography */
+    #photography-board {
+      height: unset;
+    }
+    .photography-board-content {
+      height: unset;
+      max-height: unset;
+    }
+    .photography-board-content-projectTitle {
+      color: white;
+      padding: 16px auto;
+      text-align: center;
+    }
+    .photography-board-content-sections {
+      flex-direction: column;
+      height: unset;
+      justify-content: center;
+      width: 100%;
+      overflow-x: unset;
+      overscroll-behavior-inline: unset;
+      padding: 16px 16px 40px 16px;
+    }
+    .photography-board-content-sections-element {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .photography-board-content-sections-image-medium {
+      width: 80vw;
+    }
+    .photography-board-content-sections-image-small {
+      width: 60vw;
+    }
+    .photography-board-content-sections-textTop {
+      min-width: unset;
+      width: 100%;
+    }
+    .photography-board-content-sections-textMiddle {
+      min-width: unset;
+      width: 100%;
+    }
+    .photography-board-content-sections-textBottom {
+      min-width: unset;
+      width: 100%;
+    }
+    .photography-board-content-sections-textTitle {
+      width: 100%;
+      max-width: 100%;
+    }
+    .photography-board-content-sections-textDescription {
+      width: 100%;
+    }
+    #photography-board > .galleryFooter {
+      display: none;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 991px) {
+    .photography-board-content-projectTitle {
+      color: white;
+      padding: 16px 24px;
+      text-align: left;
+    }
+    .photography-board-content-sections {
+      color: white;
+      display: flex;
+      height: 100%;
+      gap: 32px;
+      overflow-x: scroll;
+      overscroll-behavior-inline: contain;
+      padding: 16px 40px 40px 40px;
+    }
+  }
