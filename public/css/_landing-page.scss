@@ -9,9 +9,9 @@
 #hero {
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    position: relative;
     margin: 0 24px;
+    min-height: 100vh;
+    position: relative;
 }
 .hero-nameAndLogo {
 margin-top: calc(100vh*16/90);
@@ -247,7 +247,7 @@ margin-top: calc(100vh*40/695);
     /* Landing page */
     /* New Section 1 */
     #hero {
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 16px;
     }
     .hero-nameAndLogo {
