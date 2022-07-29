@@ -228,3 +228,25 @@
       padding: 16px 40px 40px 40px;
     }
   }
+
+  @media screen and (min-width: 1400px) {
+    .photography-board-content-sections {
+      padding: 16px 100px 40px 16vw;
+    }
+    .photography-board-content-sections-textTop {
+      flex-basis: 0;
+      max-width: 32vw;
+      min-width: 32vw;
+      width: 32vw;
+    }
+    .photography-board-content-sections-textMiddle {
+      max-width: 32vw;
+      min-width: 32vw;
+      width: 32vw;
+    }
+    .photography-board-content-sections-textBottom {
+      max-width: 32vw;
+      min-width: 32vw;
+      width: 32vw;
+    }
+  }

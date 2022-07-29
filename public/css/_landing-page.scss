@@ -382,3 +382,9 @@ margin-top: calc(100vh*40/695);
     margin-top: 80px;
     }
 }
+
+@media screen and (min-width: 1400px) {
+    .hero-infoAndDescription-description {
+        width: 32vw;
+    }
+}

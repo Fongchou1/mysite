@@ -502,3 +502,9 @@ width: 100%
     flex-direction: column;
     }
 }
+
+@media screen and (min-width: 1400px) {
+    .project-hero-content-features-item {
+        max-width: 23vw;
+    }
+  }

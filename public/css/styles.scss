@@ -10,7 +10,8 @@ body {
   font-family: 'Ubuntu','Poppins', sans-serif;
   font-size: 18px;
   color: a.$text-400;
-  margin: 0;
+  margin: 0 auto;
+  // max-width: 1400px;
   padding: 0;
 }
 body.mine {
@@ -279,4 +280,38 @@ section#snow {
     font-size: max(4vw, 18px);
   }
 
+}
+
+@media screen and (min-width: 1400px) {
+  body{
+    font-size: 1.2vw;
+  }
+  a {
+    font-size: 1.2vw;
+  }
+  .btn-link {
+    font-size: 1.2vw;
+  }
+  .ubuntu-9xl-144px-bold {
+    font-size: 10vw;
+  }
+  .ubuntu-h3-48px-bold {
+    font-size: 3vw;
+  }
+  .ubuntu-h5-24px-bold {
+    font-size: 1.8vw;
+  }
+  .ubuntu-body1-18px-regular {
+    font-size: 1.2vw;
+  }
+  .ubuntu-body1-18px-light {
+    font-size: 1.2vw;
+  }
+  .ubuntu-body1-18px-medium {
+    font-size: 1.2vw;
+  }
+  .ubuntu-body1-18px-bold {
+    font-size: 1.2vw;
+  }
+  
 }

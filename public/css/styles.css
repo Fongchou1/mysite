@@ -394,6 +394,11 @@
     margin-top: 80px;
   }
 }
+@media screen and (min-width: 1400px) {
+  .hero-infoAndDescription-description {
+    width: 32vw;
+  }
+}
 /*  */
 /*  */
 /* Project page */
@@ -911,6 +916,11 @@
     flex-direction: column;
   }
 }
+@media screen and (min-width: 1400px) {
+  .project-hero-content-features-item {
+    max-width: 23vw;
+  }
+}
 /*  */
 /*  */
 /* photography */
@@ -1161,6 +1171,27 @@
     padding: 16px 40px 40px 40px;
   }
 }
+@media screen and (min-width: 1400px) {
+  .photography-board-content-sections {
+    padding: 16px 100px 40px 16vw;
+  }
+  .photography-board-content-sections-textTop {
+    flex-basis: 0;
+    max-width: 32vw;
+    min-width: 32vw;
+    width: 32vw;
+  }
+  .photography-board-content-sections-textMiddle {
+    max-width: 32vw;
+    min-width: 32vw;
+    width: 32vw;
+  }
+  .photography-board-content-sections-textBottom {
+    max-width: 32vw;
+    min-width: 32vw;
+    width: 32vw;
+  }
+}
 /*  */
 /*  */
 /* contact page */
@@ -1341,7 +1372,7 @@ body {
   font-family: "Ubuntu", "Poppins", sans-serif;
   font-size: 18px;
   color: #303841;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -1664,5 +1695,37 @@ section#snow {
   }
   .ubuntu-h5-24px-bold {
     font-size: max(4vw, 18px);
+  }
+}
+@media screen and (min-width: 1400px) {
+  body {
+    font-size: 1.2vw;
+  }
+  a {
+    font-size: 1.2vw;
+  }
+  .btn-link {
+    font-size: 1.2vw;
+  }
+  .ubuntu-9xl-144px-bold {
+    font-size: 10vw;
+  }
+  .ubuntu-h3-48px-bold {
+    font-size: 3vw;
+  }
+  .ubuntu-h5-24px-bold {
+    font-size: 1.8vw;
+  }
+  .ubuntu-body1-18px-regular {
+    font-size: 1.2vw;
+  }
+  .ubuntu-body1-18px-light {
+    font-size: 1.2vw;
+  }
+  .ubuntu-body1-18px-medium {
+    font-size: 1.2vw;
+  }
+  .ubuntu-body1-18px-bold {
+    font-size: 1.2vw;
   }
 }/*# sourceMappingURL=styles.css.map */
