@@ -5,36 +5,6 @@
 @use './contact';
 @use './footer';
 
-:root { 
-  --background-400: #F3F3F3;
-  --background-600: #E5E7EA;
-  
-  --link-400: #898C8F;
-
-  --primary-100: #00070D;
-  --primary-400: #2185D5;
-  
-  --secondary-400: #3A4750;
-  
-  --text-400: #303841;
-  --text-900: #E1E1E2;
-
-  --projectMacbookWidth: calc(100vw*833/1400);
-  --projectMacbookWidth-mobile: 80vw;
-  --projectMacbookWidth-fullscreen: calc(100vw*1172/1400);
-  --projectMacbookWidth-fullscreen-mobile: calc(100vw*0.8);
-  --projectMobileWidth: 246px;
-  --projectMobileWidth-mobile: 60vw;
-  /* --projectMobileWidth-fullscreen: calc(100vw*250/1400); */
-  --projectMobileWidth-fullscreen: 250px;
-  --projectMobileWidth-fullscreen-mobile: calc(100vw*0.8);
-  --projectsIphone12Width: calc(100vw*332/1400);
-
-  --photography-images-width-desktop: 36vw;
-  --photography-images-medium-width-desktop: calc(100vw*400/1400);
-  --photography-images-small-width-desktop: calc(100vw*200/1400);
-}
-
 /* Tages */
 body {
   font-family: 'Ubuntu','Poppins', sans-serif;
@@ -142,6 +112,84 @@ div {
 i.social {
   margin-right: 0.625rem;
 }
+#globalLightTransitionCover {
+  @include a.flexRowCenterXY;
+  // left: 0;
+  // background-color: rgba(0,0,0,0.5);
+  background-color: black;
+  height: 100%;
+  position: fixed;
+  bottom: 0%;
+  // display: block;
+  width: 100%;
+  z-index: 99;
+}
+.globalLightTransitionCover-animation-box {
+  width: 98px;
+  height: 98px;
+  // border: 1px dashed rgba(255,255,255,0.4);
+  position: relative;
+  
+  
+}
+.globalLightTransitionCover-animation-spinContainer {
+  width: 100%;
+  height: 100%;
+  animation: spin 12s linear infinite;
+  position: relative;
+}
+// .globalLightTransitionCover-animation-holder {
+//   border-radius: 30% 70% 32% 68% / 36% 30% 70% 64%;
+//   height: 98px;
+//   margin: auto;
+//   overflow: hidden;
+//   position: relative;
+//   width: 98px;
+//   z-index: 999;
+// }
+.globalLightTransitionCover-animation-holder {
+  width: 100%;
+  height: 100%;
+  transition: border-radius 1s ease-out;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morph 8s ease-in-out infinite both alternate;
+  position: absolute;
+  overflow: hidden;
+  z-index: 999;
+}
+.globalLightTransitionCover-animation-holder-bd {
+  width: 142%;
+  height: 142%;
+  position: absolute;
+  left: -21%;
+  top: -21%;
+  // background: url(https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=2868fd5c3f30697d38732224e0ef51ed);
+  background-size: 100%;
+  background-position: center center;
+  display: flex;
+  color: #003;
+  font-size: 5vw;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-transform: uppercase;
+  animation: spin 12s linear infinite reverse;
+  opacity: 1;
+  z-index: 2;
+}
+.globalLightTransitionCover-animation-img {
+  width: 80%;
+  height: 80%;
+}
+.show-globalLightTransitionCover {
+  animation: revealCover 0.5s forwards;
+  -webkit-animation: revealCover 0.5s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
+}
+.hide-globalLightTransitionCover {
+  animation: putCover 0.5s forwards;
+  -webkit-animation: putCover 0.3s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
+}
 .photography-board-content-sections::-webkit-scrollbar{
   height: 4px;
   width: 4px;
@@ -156,6 +204,32 @@ i.social {
   *{
     /* scrollbar-color: transparent; */
     scrollbar-width: none;
+  }
+}
+@keyframes revealCover {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: 100%;
+  }
+}
+@keyframes putCover {
+  from {
+    bottom: 100%;
+  }
+  to {
+    bottom: 0%;
+  }
+}
+@keyframes morph {
+  0% {border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;} 
+  100% {border-radius: 40% 60%;} 
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
   }
 }
 

@@ -1,13 +1,30 @@
 <%- include("header") -%>
 
 <body id="contact-body">
+
+  <div id="globalLightTransitionCover">
+    <div class="globalLightTransitionCover-animation-box">
+      <div class="globalLightTransitionCover-animation-spinContainer">
+        <div class="globalLightTransitionCover-animation-holder">
+          <div class="globalLightTransitionCover-animation-holder-bd">
+            <img 
+              class="globalLightTransitionCover-animation-img"
+              src='<%= images.loading.attachment[0].url %>'
+              alt='<%= images.loading.alt %>'
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="contact">
     <section id="contact-nav">
       <nav class="navbar navbar-expand-lg navbar-dark contact-content-nav">
         <div class="container-fluid">
           <a 
             class="navbar-brand" 
-            href=<%= rootTexts['design-works-url'].en %>
+            onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
           >
             <img
               class="photography-board-logo"
@@ -22,22 +39,29 @@
               <li class="nav-item">
                 <a 
                   class="nav-link" 
-                  href=<%= rootTexts['design-works-url'].en %>
+                  onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
                 >
                   <%= rootTexts['design-works'].en %>
                 </a>
               </li>
               <!-- dropdown -->
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a 
+                  class="nav-link dropdown-toggle" 
+                  onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
+                  id="navbarDropdown" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
                     <%= rootTexts['gallery'].en %>
                 </a>
                 <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
                     <% for( let i = 0; i < Object.values(links).length; i++ ) { %>
                       <li class="photography-board-content-navLinks-link">
                         <a 
-                          class="btn btn-link dropdown-item" 
-                          href=<%= links[Object.values(links)[i].title].url %>
+                          class="btn btn-link dropdown-item"
+                          onclick='redirect(`<%= links[Object.values(links)[i].title].url %>`)' 
                           rel="noreferrer noopener" 
                           role="button" 
                         >
@@ -51,7 +75,7 @@
               <li class="nav-item">
                 <a 
                   class="nav-link active" 
-                  href=<%= rootTexts['contact-url'].en %>
+                  onclick='redirect(`<%= rootTexts['contact-url'].en %>`)' 
                 >
                   <%= rootTexts['contact'].en %>
                 </a>
@@ -168,6 +192,22 @@
         alert(`<%= rootTexts['alert-success'].en %>`)
       }
     }
+
+    //transition
+    function startTransitionOverlay() {
+      document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
+    }
+    function endTransitionOverlay() {
+      document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
+    }
+    function redirectAction(url) {
+      window.location.href = url;
+    }
+    function redirect(url) {
+      endTransitionOverlay();
+      const myTimeout = setTimeout(redirectAction(url), 100);
+    }
+    startTransitionOverlay()
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

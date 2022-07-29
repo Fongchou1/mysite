@@ -1,8 +1,9 @@
+@use 'abstracts' as a;
 /*  */
 /*  */
 /* contact page */
 .contact {
-background-color: var(--primary-100);
+background-color: a.$primary-100;
 display: flex;
 flex-direction: column;
 min-height: 800px;
@@ -12,7 +13,7 @@ height: 100vh;
 flex-grow: 0;
 }
 #contact-content {
-background-color: var(--secondary-400);
+background-color: a.$secondary-400;
 display: flex;
 flex-grow: 1;
 height: 100%
@@ -25,15 +26,15 @@ flex-grow: 1;
 justify-content: center;
 }
 .contact-content-formFrameTitle {
-color: var(--text-900);
+color: a.$text-900;
 display: flex;
 justify-content: center;
 margin: 32px auto;
 text-align: center;
 }
 .form-control {
-background-color: var(--secondary-400);
-color: var(--text-900);
+background-color: a.$secondary-400;
+color: a.$text-900;
 }
 .contact-content-formFrameElement {
 width: min( 800px , 80% );
@@ -47,19 +48,19 @@ flex-basis: 0;
 padding: 16px 16px;
 }
 .contact-content-formFrame-form-inputs-helperText {
-color: var(--text-900);
+color: a.$text-900;
 margin: 0 16px;
 }
 .contact-content-formFrame-form-message {
-background-color: var(--secondary-400);
-color: var(--text-900);
+background-color: a.$secondary-400;
+color: a.$text-900;
 flex-grow: 1;
 flex-basis: 0;
 padding: 16px 16px;
 }
 #formControlTextarea {
-background-color: var(--secondary-400);
-color: var(--text-900);
+background-color: a.$secondary-400;
+color: a.$text-900;
 }
 .contact-content-formFrame-button {
 display: flex;

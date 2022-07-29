@@ -1,11 +1,27 @@
 <%- include("header") -%>
 <body class="mine">
 
+  <div id="globalLightTransitionCover">
+    <div class="globalLightTransitionCover-animation-box">
+      <div class="globalLightTransitionCover-animation-spinContainer">
+        <div class="globalLightTransitionCover-animation-holder">
+          <div class="globalLightTransitionCover-animation-holder-bd">
+            <img 
+              class="globalLightTransitionCover-animation-img"
+              src='<%= images.loading.attachment[0].url %>'
+              alt='<%= images.loading.alt %>'
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
             <a 
                 class="btn btn-link navbar navbar-expand-lg bg-dark" 
-                href=<%= links.home.url %>
+                onclick='redirect(`<%= links.home.url %>`)' 
                 rel="noreferrer noopener" 
                 role="button"
               >
@@ -45,7 +61,7 @@
                         <li class="nav-item px-1">
                             <a 
                                 class="btn btn-link navbar navbar-expand-lg bg-dark" 
-                                href=<%= links.photography.url %>
+                                onclick='redirect(`<%= links.photography.url %>`)' 
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
@@ -55,7 +71,7 @@
                         <li class="nav-item px-1">
                             <a 
                                 class="btn btn-link navbar navbar-expand-lg bg-dark" 
-                                href=<%= links.design.url %>
+                                onclick='redirect(`<%= links.design.url %>`)' 
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
@@ -442,6 +458,24 @@
             <% } %>
         <% } %>
     </section>
+
+    <script>
+      //transition
+      function startTransitionOverlay() {
+      document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
+      }
+      function endTransitionOverlay() {
+        document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
+      }
+      function redirectAction(url) {
+        window.location.href = url;
+      }
+      function redirect(url) {
+        endTransitionOverlay();
+        const myTimeout = setTimeout(redirectAction(url), 100);
+      }
+      startTransitionOverlay()
+    </script>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

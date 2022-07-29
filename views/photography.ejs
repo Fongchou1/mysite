@@ -3,12 +3,28 @@
 
 <body class="photography">
 
+  <div id="globalLightTransitionCover">
+    <div class="globalLightTransitionCover-animation-box">
+      <div class="globalLightTransitionCover-animation-spinContainer">
+        <div class="globalLightTransitionCover-animation-holder">
+          <div class="globalLightTransitionCover-animation-holder-bd">
+            <img 
+              class="globalLightTransitionCover-animation-img"
+              src='<%= images.loading.attachment[0].url %>'
+              alt='<%= images.loading.alt %>'
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <section id="photography-board">
     <nav class="navbar navbar-expand-lg navbar-dark photography-board-nav">
       <div class="container-fluid">
         <a 
           class="navbar-brand" 
-          href=<%= rootTexts['design-works-url'].en %>
+          onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
         >
           <img
             class="photography-board-logo"
@@ -23,7 +39,7 @@
             <li class="nav-item">
               <a 
                 class="nav-link" 
-                href=<%= rootTexts['design-works-url'].en %>
+                onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
               >
                 <%= rootTexts['design-works'].en %>
               </a>
@@ -32,7 +48,7 @@
               <a 
                 class="nav-link active" 
                 aria-current="page" 
-                href=<%= links['lockdown'].url %>
+                onclick='redirect(`<%= links['lockdown'].url %>`)'
               >
                 <%= rootTexts['gallery'].en %>
               </a>
@@ -48,7 +64,7 @@
                       <% if ( page.indexOf(Object.values(links)[i].title) !== -1 ) { %>
                         <a 
                           class="photography-board-content-activePage dropdown-item" 
-                          href=<%= links[Object.values(links)[i].title].url %> 
+                          onclick='redirect(`<%= links[Object.values(links)[i].title].url %>`)'
                           rel="noreferrer noopener" 
                           role="button" 
                         >
@@ -57,7 +73,7 @@
                       <% } else { %>
                         <a 
                           class="btn btn-link dropdown-item" 
-                          href=<%= links[Object.values(links)[i].title].url %>
+                          onclick='redirect(`<%= links[Object.values(links)[i].title].url %>`)'
                           rel="noreferrer noopener" 
                           role="button" 
                         >
@@ -72,7 +88,7 @@
             <li class="nav-item">
               <a 
                 class="nav-link" 
-                href=<%= rootTexts['contact-url'].en %>
+                onclick='redirect(`<%= rootTexts['contact-url'].en %>`)'
               >
                 <%= rootTexts['contact'].en %>
               </a>
@@ -88,7 +104,7 @@
             <% if ( page.indexOf(Object.values(links)[i].title) !== -1 ) { %>
               <a 
                 class="photography-board-content-activePage" 
-                href=<%= links[Object.values(links)[i].title].url %> 
+                onclick='redirect(`<%= links[Object.values(links)[i].title].url %>`)'
                 rel="noreferrer noopener" 
                 role="button" 
               >
@@ -97,7 +113,7 @@
             <% } else { %>
               <a 
                 class="btn btn-link" 
-                href=<%= links[Object.values(links)[i].title].url %>
+                onclick='redirect(`<%= links[Object.values(links)[i].title].url %>`)'
                 rel="noreferrer noopener" 
                 role="button" 
               >
@@ -352,6 +368,22 @@
     });
     
     // console.log(scrollContainerWidth)
+
+    //transition
+    function startTransitionOverlay() {
+      document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
+    }
+    function endTransitionOverlay() {
+      document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
+    }
+    function redirectAction(url) {
+      window.location.href = url;
+    }
+    function redirect(url) {
+      endTransitionOverlay();
+      const myTimeout = setTimeout(redirectAction(url), 100);
+    }
+    startTransitionOverlay()
 
   
   </script>

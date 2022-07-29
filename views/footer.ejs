@@ -22,7 +22,7 @@
             <div class="footer-links-1">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.home.url %>
+                    onclick='redirect(`<%= footerLinks.home.url %>`)'
                     rel="noreferrer noopener"
                     role="button"
                 >
@@ -54,7 +54,7 @@
             <div class="footer-links-4">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.design.url %>
+                    onclick='redirect(`<%= footerLinks.design.url %>`)'
                     rel="noreferrer noopener"
                     role="button"
                 >
@@ -64,7 +64,7 @@
             <div class="footer-links-5">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.photography.url %>
+                    onclick='redirect(`<%= footerLinks.photography.url %>`)'
                     rel="noreferrer noopener"
                     role="button"
                 >
@@ -74,7 +74,7 @@
             <div class="footer-links-6">
                 <a 
                     class="footer-links-link btn btn-link"
-                    href=<%= footerLinks.graphics.url %>
+                    onclick='redirect(`<%= footerLinks.graphics.url %>`)'
                     rel="noreferrer noopener"
                     role="button"
                 >
@@ -99,6 +99,22 @@
             // $(this).toggleClass('on');
             // $('.DownvoteButton').removeClass('on');
         });
+
+        //transition
+        function startTransitionOverlay() {
+        document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
+        }
+        function endTransitionOverlay() {
+            document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
+        }
+        function redirectAction(url) {
+            window.location.href = url;
+        }
+        function redirect(url) {
+            endTransitionOverlay();
+            const myTimeout = setTimeout(redirectAction(url), 100);
+        }
+        startTransitionOverlay()
     </script>
 
 </html>

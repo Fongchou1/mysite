@@ -1,3 +1,4 @@
+@use 'abstracts' as a;
 /*  */
 /*  */
 /* Project page */
@@ -53,7 +54,7 @@ margin: 0 24px;
 /* simple video */
 .project-projects-simpleVideo {
 display: flex;
-background-color: var(--background-600);
+background-color: a.$background-600;
 justify-content: center;
 margin: 16px 0;
 }
@@ -66,7 +67,7 @@ width: 100%;
 /* simple image */
 .project-projects-simpleImage {
 display: flex;
-background-color: var(--background-600);
+background-color: a.$background-600;
 justify-content: center;
 margin: 16px 0;
 }
@@ -85,7 +86,7 @@ width: 100%;
 }
 /* mobile with 3 images */
 .project-projects-mobile3Image {
-background-color: var(--background-600);
+background-color: a.$background-600;
 margin: 16px 0;
 padding: 40px 0;
 }
@@ -97,11 +98,11 @@ gap: 16px;
 .project-projects-mobile3Image-content-deviceHolder {
 align-items: center;
 display: flex;
-height: calc(var(--projectsIphone12Width)*(2.018));
+height: a.$projectsIphone12Height;
 justify-content: center;
 overflow: hidden;
 position: relative;
-width: var(--projectsIphone12Width);
+width: a.$projectsIphone12Width;
 }
 .project-projects-mobile3Image-content-deviceHolder-imageHolder {
 align-items: center;
@@ -113,13 +114,13 @@ height: calc(var(--projectsIphone12Width)*(2.018)*0.96);
 justify-content: center;
 overflow: hidden;
 position: absolute;
-left: calc(var(--projectsIphone12Width)*0.05277);
-top: calc(var(--projectsIphone12Width)*(0.04684));
-width: calc(var(--projectsIphone12Width)*(0.88804));
+left: a.$projectsIphone12Width * 0.05277;
+top: a.$projectsIphone12Width * 0.04684;
+width: a.$projectsIphone12ContentWidth;
 }
 .project-projects-mobile3Image-content-deviceHolder-imageHolder-image {
 
-width: calc(var(--projectsIphone12Width)*(0.88804));
+width: a.$projectsIphone12ContentWidth;
 /* height: 240px; */
 
 }
@@ -129,17 +130,17 @@ position: absolute;
 left: 0;
 top: 0;
 
-width: calc(var(--projectsIphone12Width));
+width: a.$projectsIphone12Width;
 /* height: 100px; */
 
 }
 .project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12 {
-width: var(--projectsIphone12Width);
+width: a.$projectsIphone12Width;
 /* height: 100px; */
 }
 /* mobile with 3 video */
 .project-projects-mobile3Video {
-background-color: var(--background-600);
+background-color: a.$background-600;
 margin: 16px 0;
 padding: 40px 0;
 }
@@ -151,11 +152,11 @@ gap: 16px;
 .project-projects-mobile3Video-content-deviceHolder {
 align-items: center;
 display: flex;
-height: calc(var(--projectsIphone12Width)*(2.018));
+height: a.$projectsIphone12Height;
 justify-content: center;
 overflow: hidden;
 position: relative;
-width: var(--projectsIphone12Width);
+width: a.$projectsIphone12Width;
 }
 .project-projects-mobile3Video-content-deviceHolder-videoHolder {
 align-items: center;
@@ -163,17 +164,17 @@ background-color: black;
 border-radius: 15px;
 display: flex;
 flex-direction: column;
-height: calc(var(--projectsIphone12Width)*(2.018)*0.96);
+height: a.$projectsIphone12ContentHeight;
 justify-content: center;
 overflow: hidden;
 position: absolute;
-left: calc(var(--projectsIphone12Width)*0.05277);
-top: calc(var(--projectsIphone12Width)*(0.04858));
-width: calc(var(--projectsIphone12Width)*(0.88804));
+left: a.$projectsIphone12Width * 0.05277;
+top: a.$projectsIphone12Width * 0.04858 ;
+width: a.$projectsIphone12ContentWidth;
 }
 .project-projects-mobile3Video-content-deviceHolder-videoHolder-video {
 
-width: calc(var(--projectsIphone12Width)*(0.88804));
+width: a.$projectsIphone12ContentWidth;
 /* height: 240px; */
 
 }
@@ -183,17 +184,17 @@ position: absolute;
 left: 0;
 top: 0;
 
-width: calc(var(--projectsIphone12Width));
+width: a.$projectsIphone12Width;
 /* height: 100px; */
 
 }
 .project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12 {
-width: var(--projectsIphone12Width);
+width: a.$projectsIphone12Width;
 /* height: 100px; */
 }
 /* laptop video */
 .project-projects-laptopVideo {
-background-color: var(--background-600);
+background-color: a.$background-600;
 display: flex;
 justify-content: center;
 margin: 16px 0;
@@ -201,11 +202,11 @@ padding: 40px 0;
 }
 .project-projects-laptopVideo-macbook {
 display: flex;
-height: calc(var(--projectMacbookWidth-fullscreen)*(0.6));
+height: a.$projectMacbookHeight-fullscreen;
 justify-content: center;
 overflow: hidden;
 position: relative;
-width: var(--projectMacbookWidth-fullscreen);
+width: a.$projectMacbookWidth-fullscreen;
 }
 .project-projects-laptopVideo-macbook-videoHolder {
 align-items: center;
@@ -216,7 +217,7 @@ flex-direction: column;
 height: inherit;
 justify-content: center;
 position: relative;
-width: calc(var(--projectMacbookWidth-fullscreen)*(0.8233));
+width: a.$projectMacbookContentWidth-fullscreen;
 }
 .project-projects-laptopVideo-macbook-videoHolder-video {
 
@@ -225,7 +226,7 @@ position: relative;
 /* top: 1.8526%; */
 top: 0.57%;
 
-width: calc(var(--projectMacbookWidth-fullscreen)*(0.8233));
+width: a.$projectMacbookContentWidth-fullscreen;
 /* height: 240px; */
 
 }
@@ -235,18 +236,18 @@ position: absolute;
 left: 0;
 top: 0;
 
-width: calc(var(--projectMacbookWidth-fullscreen));
+width: a.$projectMacbookWidth-fullscreen;
 /* height: 100px; */
 
 }
 .project-projects-laptopVideo-maskGroup-macbookBody {
-width: var(--projectMacbookWidth-fullscreen);
+width: a.$projectMacbookWidth-fullscreen;
 /* height: 100px; */
 
 }
 /* laptop image */
 .project-projects-laptopImage {
-background-color: var(--background-600);
+background-color: a.$background-600;
 display: flex;
 justify-content: center;
 margin: 16px 0;
@@ -254,11 +255,11 @@ padding: 40px 0;
 }
 .project-projects-laptopImage-macbook {
 display: flex;
-height: calc(var(--projectMacbookWidth-fullscreen)*(0.6));
+height: a.$projectMacbookHeight-fullscreen;
 justify-content: center;
 overflow: hidden;
 position: relative;
-width: var(--projectMacbookWidth-fullscreen);
+width: a.$projectMacbookWidth-fullscreen;
 }
 .project-projects-laptopImage-macbook-imageHolder {
 align-items: center;
@@ -269,7 +270,7 @@ flex-direction: column;
 height: inherit;
 justify-content: center;
 position: relative;
-width: calc(var(--projectMacbookWidth-fullscreen)*(0.8233));
+width: a.$projectMacbookContentWidth-fullscreen;
 }
 .project-projects-laptopImage-macbook-imageHolder-image {
 
@@ -278,7 +279,7 @@ position: relative;
 /* top: 1.8526%; */
 top: 0.57%;
 
-width: calc(var(--projectMacbookWidth-fullscreen)*(0.8233));
+width: a.$projectMacbookContentWidth-fullscreen;
 /* height: 240px; */
 
 }
@@ -288,18 +289,18 @@ position: absolute;
 left: 0;
 top: 0;
 
-width: calc(var(--projectMacbookWidth-fullscreen));
+width: a.$projectMacbookWidth-fullscreen;
 /* height: 100px; */
 
 }
 .project-projects-laptopImage-maskGroup-macbookBody {
-width: var(--projectMacbookWidth-fullscreen);
+width: a.$projectMacbookWidth-fullscreen;
 /* height: 100px; */
 
 }
 /* mobile se 1 video */
 .project-projects-mobileSE1Video {
-background-color: var(--background-600);
+background-color: a.$background-600;
 display: flex;
 justify-content: center;
 margin: 16px 0;
@@ -308,11 +309,11 @@ padding: 40px 0;
 .project-projects-mobileSE1Video-mobile {
 align-items: center;
 display: flex;
-height: calc(var(--projectMobileWidth-fullscreen)*(2.0325));
+height: a.$projectMobileHeight-fullscreen;
 justify-content: center;
 overflow: hidden;
 position: relative;
-width: var(--projectMobileWidth-fullscreen);
+width: a.$projectMobileWidth-fullscreen;
 }
 .project-projects-mobileSE1Video-mobile-videoHolder {
 align-items: center;
@@ -320,14 +321,14 @@ background-color: black;
 border-radius: 10px;
 display: flex;
 flex-direction: column;
-height: calc(var(--projectMobileWidth-fullscreen)*(2.0325)*0.8);
+height: a.$projectMobileContentHeight-fullscreen;
 justify-content: center;
 overflow: hidden;
-width: calc(var(--projectMobileWidth-fullscreen)*(0.8724));
+width: a.$projectMobileContentWidth-fullscreen;
 }
 .project-projects-mobileSE1Video-mobile-videoHolder-video{
 
-width: calc(var(--projectMobileWidth-fullscreen)*(0.8724));
+width: a.$projectMobileContentWidth-fullscreen;
 /* height: 240px; */
 
 }
@@ -337,12 +338,12 @@ position: absolute;
 left: 0;
 top: 0;
 
-width: calc(var(--projectMobileWidth-fullscreen));
+width: a.$projectMobileWidth-fullscreen;
 /* height: 100px; */
 
 }
 .project-projects-mobileSE1Video-mobile-mobileBody {
-width: var(--projectMobileWidth-fullscreen);
+width: a.$projectMobileWidth-fullscreen;
 /* height: 100px; */
 
 }
@@ -372,7 +373,7 @@ display: flex;
 width: 100%;
 }
 .graphics-setOf3Images-content-imageHolder {
-background-color: var(--background-600);
+background-color: a.$background-600;
 margin: 16px 8px;
 padding: 40px 40px;
 width: 100%
@@ -413,7 +414,7 @@ width: 100%
     }
     /* mobile with 3 images */
     .project-projects-mobile3Image {
-    background-color: var(--background-600);
+    background-color: a.$background-600;
     margin: 16px 0;
     padding: 16px 0;
     }
@@ -422,7 +423,7 @@ width: 100%
     }
     /* mobile with 3 videos */
     .project-projects-mobile3Video {
-    background-color: var(--background-600);
+    background-color: a.$background-600;
     margin: 16px 0;
     padding: 16px 0;
     }
@@ -435,21 +436,21 @@ width: 100%
     padding: 16px 0;
     }
     .project-projects-laptopVideo-macbook {
-    height: calc(var(--projectMacbookWidth-fullscreen-mobile)*(0.6));
-    width: var(--projectMacbookWidth-fullscreen-mobile);
+    height: a.$projectMacbookHeight-fullscreen-mobile;
+    width: a.$projectMacbookWidth-fullscreen-mobile;
     }
     .project-projects-laptopVideo-macbook-videoHolder {
     border-radius: 5px;
-    width: calc(var(--projectMacbookWidth-fullscreen-mobile)*(0.8233));
+    width: a.$projectMacbookContentWidth-fullscreen-mobile;
     }
     .project-projects-laptopVideo-macbook-videoHolder-video {
-    width: calc(var(--projectMacbookWidth-fullscreen-mobile)*(0.8233));
+    width: a.$projectMacbookContentWidth-fullscreen-mobile;
     }
     .project-projects-laptopVideo-maskGroup {
-    width: calc(var(--projectMacbookWidth-fullscreen-mobile));
+    width: a.$projectMacbookWidth-fullscreen-mobile;
     }
     .project-projects-laptopVideo-maskGroup-macbookBody {
-    width: var(--projectMacbookWidth-fullscreen-mobile);
+    width: a.$projectMacbookWidth-fullscreen-mobile;
     }
     /* laptop image */
     .project-projects-laptopImage {
@@ -457,21 +458,21 @@ width: 100%
     padding: 16px 0;
     }
     .project-projects-laptopImage-macbook {
-    height: calc(var(--projectMacbookWidth-fullscreen-mobile)*(0.6));
-    width: var(--projectMacbookWidth-fullscreen-mobile);
+    height: a.$projectMacbookHeight-fullscreen-mobile;
+    width: a.$projectMacbookWidth-fullscreen-mobile;
     }
     .project-projects-laptopImage-macbook-imageHolder {
     border-radius: 5px;
-    width: calc(var(--projectMacbookWidth-fullscreen-mobile)*(0.8233));
+    width: a.$projectMacbookContentWidth-fullscreen-mobile;
     }
     .project-projects-laptopImage-macbook-imageHolder-image {
-    width: calc(var(--projectMacbookWidth-fullscreen-mobile)*(0.8233));
+    width: a.$projectMacbookContentWidth-fullscreen-mobile;
     }
     .project-projects-laptopImage-maskGroup {
-    width: calc(var(--projectMacbookWidth-fullscreen-mobile));
+    width: a.$projectMacbookWidth-fullscreen-mobile;
     }
     .project-projects-laptopImage-maskGroup-macbookBody {
-    width: var(--projectMacbookWidth-fullscreen-mobile);
+    width: a.$projectMacbookWidth-fullscreen-mobile;
     }
     /* mobile se 1 video */
     .project-projects-mobileSE1Video {
@@ -479,22 +480,22 @@ width: 100%
     padding: 16px 0;
     }
     .project-projects-mobileSE1Video-mobile {
-    height: calc(var(--projectMobileWidth-fullscreen-mobile)*(2.0325));
-    width: var(--projectMobileWidth-fullscreen-mobile);
+    height: a.$projectMobileHeight-fullscreen-mobile;
+    width: a.$projectMobileWidth-fullscreen-mobile;
     }
     .project-projects-mobileSE1Video-mobile-videoHolder {
     border-radius: 5px;
-    height: calc(var(--projectMobileWidth-fullscreen-mobile)*(2.0325)*0.8);
-    width: calc(var(--projectMobileWidth-fullscreen-mobile)*(0.8724));
+    height: a.$projectMobileContentHeight-fullscreen-mobile;
+    width: a.$projectMobileContentWidth-fullscreen-mobile;
     }
     .project-projects-mobileSE1Video-mobile-videoHolder-video {
-    width: calc(var(--projectMobileWidth-fullscreen-mobile)*(0.8724));
+    width: a.$projectMobileContentWidth-fullscreen-mobile;
     }
     .project-projects-mobileSE1Video-mobile-maskGroup {
-    width: calc(var(--projectMobileWidth-fullscreen-mobile));
+    width: a.$projectMobileWidth-fullscreen-mobile;
     }
     .project-projects-mobileSE1Video-mobile-mobileBody {
-    width: var(--projectMobileWidth-fullscreen-mobile);
+    width: a.$projectMobileWidth-fullscreen-mobile;
     }
     /* set of 3 images */
     .graphics-setOf3Images-content {

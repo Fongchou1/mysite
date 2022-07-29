@@ -1,11 +1,17 @@
 
-$projectMacbookWidth: 100vw * 833 / 1400;
+$projectMacbookWidth: calc(100vw * 833 / 1400);
 $projectMacbookHeight: $projectMacbookWidth * 0.6;
 $projectMacbookContentWidth: $projectMacbookWidth * 0.8233;
 
 $projectMacbookWidth-mobile: 80vw;
-$projectMacbookWidth-fullscreen: 100vw * 1172 / 1400;
+
+$projectMacbookWidth-fullscreen: calc(100vw * 1172 / 1400);
+$projectMacbookHeight-fullscreen: $projectMacbookWidth-fullscreen * 0.6;
+$projectMacbookContentWidth-fullscreen: $projectMacbookWidth-fullscreen * 0.8233;
+
 $projectMacbookWidth-fullscreen-mobile: 100vw * 0.8;
+$projectMacbookHeight-fullscreen-mobile: $projectMacbookWidth-fullscreen-mobile * 0.6;
+$projectMacbookContentWidth-fullscreen-mobile: $projectMacbookWidth-fullscreen-mobile * 0.8233;
 
 $projectMobileWidth: 246px;
 $projectMobileHeight: $projectMobileWidth * 2.0325;
@@ -16,9 +22,19 @@ $projectMobileWidth-mobile: 60vw;
 $projectMobileHeight-mobile: 60vw;
 /* --projectMobileWidth-fullscreen: calc(100vw*250/1400); */
 $projectMobileWidth-fullscreen: 250px;
+$projectMobileHeight-fullscreen: $projectMobileWidth-fullscreen * 2.0325;
+$projectMobileContentHeight-fullscreen: $projectMobileHeight-fullscreen * 0.8;
+$projectMobileContentWidth-fullscreen: $projectMobileWidth-fullscreen * 0.8724;
 $projectMobileWidth-fullscreen-mobile: 100vw * 0.8;
-$projectsIphone12Width: 100vw * 332 / 1400;
+$projectMobileHeight-fullscreen-mobile: $projectMobileWidth-fullscreen-mobile * 2.0325;
+$projectMobileContentWidth-fullscreen-mobile: $projectMobileWidth-fullscreen-mobile * 0.8724;
+$projectMobileContentHeight-fullscreen-mobile: $projectMobileHeight-fullscreen-mobile * 0.8;
+
+$projectsIphone12Width: calc(100vw * 332 / 1400);
+$projectsIphone12Height: $projectsIphone12Width * 2.018;
+$projectsIphone12ContentWidth: $projectsIphone12Width * 0.8923;
+$projectsIphone12ContentHeight: $projectsIphone12Height * 0.96;
 
 $photography-images-width-desktop: 36vw;
-$photography-images-medium-width-desktop: 100vw * 400 / 1400;
-$photography-images-small-width-desktop: 100vw * 200 / 1400;
+$photography-images-medium-width-desktop: calc(100vw * 400 / 1400);
+$photography-images-small-width-desktop: calc(100vw * 200 / 1400);
