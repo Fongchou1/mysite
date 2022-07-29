@@ -990,14 +990,16 @@
   max-height: 100%;
   min-width: 36vw;
   max-width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .photography-board-content-sections-image-medium {
   inline-size: 100%;
   max-height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   min-width: 28.5714285714vw;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
@@ -1005,7 +1007,8 @@
 .photography-board-content-sections-image-small {
   inline-size: 100%;
   max-height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 14.2857142857vw;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
@@ -1512,7 +1515,8 @@ i.social {
 .globalLightTransitionCover-animation-spinContainer {
   width: 100%;
   height: 100%;
-  animation: spin 12s linear infinite;
+  -webkit-animation: spin 12s linear infinite;
+          animation: spin 12s linear infinite;
   position: relative;
 }
 
@@ -1521,7 +1525,8 @@ i.social {
   height: 100%;
   transition: border-radius 1s ease-out;
   border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
-  animation: morph 8s ease-in-out infinite both alternate;
+  -webkit-animation: morph 8s ease-in-out infinite both alternate;
+          animation: morph 8s ease-in-out infinite both alternate;
   position: absolute;
   overflow: hidden;
   z-index: 999;
@@ -1579,6 +1584,17 @@ i.social {
     scrollbar-width: none;
   }
 }
+@-webkit-keyframes revealCover {
+  0% {
+    bottom: 0%;
+  }
+  99% {
+    bottom: 100%;
+  }
+  100% {
+    bottom: 100%;
+  }
+}
 @keyframes revealCover {
   0% {
     bottom: 0%;
@@ -1590,6 +1606,14 @@ i.social {
     bottom: 100%;
   }
 }
+@-webkit-keyframes putCover {
+  from {
+    bottom: 100%;
+  }
+  to {
+    bottom: 0%;
+  }
+}
 @keyframes putCover {
   from {
     bottom: 100%;
@@ -1598,12 +1622,25 @@ i.social {
     bottom: 0%;
   }
 }
+@-webkit-keyframes morph {
+  0% {
+    border-radius: 40% 60% 60% 40%/60% 30% 70% 40%;
+  }
+  100% {
+    border-radius: 40% 60%;
+  }
+}
 @keyframes morph {
   0% {
     border-radius: 40% 60% 60% 40%/60% 30% 70% 40%;
   }
   100% {
     border-radius: 40% 60%;
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    transform: rotate(1turn);
   }
 }
 @keyframes spin {
@@ -1623,7 +1660,8 @@ section#snow {
 }
 
 .snaps-inline {
-  scroll-snap-type: inline mandatory;
+  -ms-scroll-snap-type: inline mandatory;
+      scroll-snap-type: inline mandatory;
   /* scroll-padding-inline: 240px; */
 }
 
@@ -1637,6 +1675,10 @@ section#snow {
 /* Bootstrap */
 .btn-primary {
   background-color: #2185D5;
+}
+
+.link-400 {
+  color: #898C8F;
 }
 
 .dropdown-item {
@@ -1686,6 +1728,4 @@ section#snow {
   .ubuntu-body1-18px-bold {
     font-size: 1.2vw;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
