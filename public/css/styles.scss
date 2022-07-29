@@ -126,12 +126,10 @@ i.social {
   z-index: 99;
 }
 .globalLightTransitionCover-animation-box {
-  width: 98px;
-  height: 98px;
+  width: 16vw;
+  height: 16vw;
   // border: 1px dashed rgba(255,255,255,0.4);
   position: relative;
-  
-  
 }
 .globalLightTransitionCover-animation-spinContainer {
   width: 100%;
@@ -198,8 +196,6 @@ i.social {
 }
 .photography-board-content-sections::-webkit-scrollbar:horizontal{
   display: none;
-  /* height: 8px; */
-  /* background-color: red; */
 }
 @supports ( scrollbar-color: grey grey ) {
   *{
@@ -216,7 +212,6 @@ i.social {
   }
   100% {
     bottom: 100%;
-    display: none;
   }
 }
 @keyframes putCover {
@@ -313,5 +308,5 @@ section#snow {
   .ubuntu-body1-18px-bold {
     font-size: 1.2vw;
   }
-  
+
 }

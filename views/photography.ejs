@@ -370,20 +370,22 @@
     // console.log(scrollContainerWidth)
 
     //transition
+    //transition
     function startTransitionOverlay() {
-      document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
-    }
-    function endTransitionOverlay() {
-      document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
-    }
-    function redirectAction(url) {
-      window.location.href = url;
-    }
-    function redirect(url) {
-      endTransitionOverlay();
-      const myTimeout = setTimeout(redirectAction(url), 100);
-    }
-    startTransitionOverlay()
+        document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
+        }
+        function endTransitionOverlay() {
+          document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
+        }
+        function redirectAction(url) {
+            window.location.href = url;
+        }
+        function redirect(url) {
+            endTransitionOverlay();
+            const myTimeout = setTimeout(redirectAction(url), 300);
+        }
+        startTransitionOverlay()
+        // const myTimeout = setTimeout(startTransitionOverlay, 2000);
 
   
   </script>

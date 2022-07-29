@@ -4,7 +4,8 @@
   "description": "Fong's personal website",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "parcel index.ejs",
+    "build": "parcel build index.ejs"
   },
   "author": "",
   "license": "ISC",
@@ -20,5 +21,8 @@
     "morgan": "^1.10.0",
     "node-fetch": "^3.2.6",
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "sass": "^1.54.0"
   }
 }
