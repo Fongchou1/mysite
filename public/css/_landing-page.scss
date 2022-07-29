@@ -302,39 +302,39 @@ margin-top: calc(100vh*40/695);
     }
     /* macbook device styling */
     .projects-project-device-macbook {
-    height: calc(var(--projectMacbookWidth-mobile)*(0.6));
-    width: var(--projectMacbookWidth-mobile);
+    height: a.$projectMacbookHeight-mobile;
+    width: a.$projectMacbookWidth-mobile;
     }
     .projects-project-device-macbook-maskGroup-videoHolder {
     border-radius: 5px;
-    width: calc(var(--projectMacbookWidth-mobile)*(0.8233));
+    width: a.$projectMacbookContentWidth-mobile;
     }
     .projects-project-device-macbook-maskGroup-video{
-    width: calc(var(--projectMacbookWidth-mobile)*(0.8233));
+    width: a.$projectMacbookContentWidth-mobile;
     }
     .projects-project-device-macbook-maskGroup {
-    width: calc(var(--projectMacbookWidth-mobile));
+    width: a.$projectMacbookWidth-mobile;
     }
     .projects-project-device-macbook-macbookBody {
-    width: var(--projectMacbookWidth-mobile);
+    width: a.$projectMacbookWidth-mobile;
     }
     /* mobile device styling */
     .projects-project-device-mobile {
-    height: calc(var(--projectMobileWidth-mobile)*(2.0325));
-    width: var(--projectMobileWidth-mobile);
+    height: a.$projectMobileHeight-mobile;
+    width: a.$projectMobileWidth-mobile;
     }
     .projects-project-device-mobile-videoHolder {
-    height: calc(var(--projectMobileWidth-mobile)*(2.0325)*0.8);
-    width: calc(var(--projectMobileWidth-mobile)*(0.8724));
+    height: a.$projectMobileContentHeight-mobile;
+    width: a.$projectMobileContentWidth-mobile;
     }
     .projects-project-device-mobile-videoHolder-video{
-    width: calc(var(--projectMobileWidth-mobile)*(0.8724));
+    width: a.$projectMobileContentWidth-mobile;
     }
     .projects-project-device-mobile-maskGroup {
-    width: calc(var(--projectMobileWidth-mobile));
+    width: a.$projectMobileWidth-mobile;
     }
     .projects-project-device-mobile-mobileBody {
-    width: var(--projectMobileWidth-mobile);
+    width: a.$projectMobileWidth-mobile;
     }
 
     /* New Section 3 */

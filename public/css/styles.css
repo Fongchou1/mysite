@@ -317,39 +317,39 @@
   }
   /* macbook device styling */
   .projects-project-device-macbook {
-    height: calc(var(--projectMacbookWidth-mobile) * 0.6);
-    width: var(--projectMacbookWidth-mobile);
+    height: 48vw;
+    width: 80vw;
   }
   .projects-project-device-macbook-maskGroup-videoHolder {
     border-radius: 5px;
-    width: calc(var(--projectMacbookWidth-mobile) * 0.8233);
+    width: 65.864vw;
   }
   .projects-project-device-macbook-maskGroup-video {
-    width: calc(var(--projectMacbookWidth-mobile) * 0.8233);
+    width: 65.864vw;
   }
   .projects-project-device-macbook-maskGroup {
-    width: calc(var(--projectMacbookWidth-mobile));
+    width: 80vw;
   }
   .projects-project-device-macbook-macbookBody {
-    width: var(--projectMacbookWidth-mobile);
+    width: 80vw;
   }
   /* mobile device styling */
   .projects-project-device-mobile {
-    height: calc(var(--projectMobileWidth-mobile) * 2.0325);
-    width: var(--projectMobileWidth-mobile);
+    height: 121.95vw;
+    width: 60vw;
   }
   .projects-project-device-mobile-videoHolder {
-    height: calc(var(--projectMobileWidth-mobile) * 2.0325 * 0.8);
-    width: calc(var(--projectMobileWidth-mobile) * 0.8724);
+    height: 97.56vw;
+    width: 52.344vw;
   }
   .projects-project-device-mobile-videoHolder-video {
-    width: calc(var(--projectMobileWidth-mobile) * 0.8724);
+    width: 52.344vw;
   }
   .projects-project-device-mobile-maskGroup {
-    width: calc(var(--projectMobileWidth-mobile));
+    width: 60vw;
   }
   .projects-project-device-mobile-mobileBody {
-    width: var(--projectMobileWidth-mobile);
+    width: 60vw;
   }
   /* New Section 3 */
   #aboutMe {
@@ -1112,9 +1112,9 @@
     padding: 16px 16px 40px 16px;
   }
   .photography-board-content-sections-element {
+    align-items: center;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
   }
   .photography-board-content-sections-image-medium {
     width: 80vw;

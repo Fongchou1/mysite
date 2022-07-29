@@ -4,6 +4,9 @@ $projectMacbookHeight: $projectMacbookWidth * 0.6;
 $projectMacbookContentWidth: $projectMacbookWidth * 0.8233;
 
 $projectMacbookWidth-mobile: 80vw;
+$projectMacbookHeight-mobile: $projectMacbookWidth-mobile * 0.6;
+$projectMacbookContentWidth-mobile: $projectMacbookWidth-mobile * 0.8233;
+
 
 $projectMacbookWidth-fullscreen: calc(100vw * 1172 / 1400);
 $projectMacbookHeight-fullscreen: $projectMacbookWidth-fullscreen * 0.6;
@@ -19,7 +22,11 @@ $projectMobileContentWidth: $projectMobileWidth * 0.8724;
 $projectMobileContentHeight: $projectMobileHeight * 0.8;
 
 $projectMobileWidth-mobile: 60vw;
-$projectMobileHeight-mobile: 60vw;
+$projectMobileHeight-mobile: $projectMobileWidth-mobile * 2.0325;
+$projectMobileContentWidth-mobile: $projectMobileWidth-mobile * 0.8724;
+$projectMobileContentHeight-mobile: $projectMobileHeight-mobile * 0.8;
+
+
 /* --projectMobileWidth-fullscreen: calc(100vw*250/1400); */
 $projectMobileWidth-fullscreen: 250px;
 $projectMobileHeight-fullscreen: $projectMobileWidth-fullscreen * 2.0325;

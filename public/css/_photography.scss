@@ -177,9 +177,10 @@
       padding: 16px 16px 40px 16px;
     }
     .photography-board-content-sections-element {
+      align-items: center;
       display: flex;
-      flex-direction: row;
-      justify-content: center;
+      flex-direction: column;
+      // justify-content: center;
     }
     .photography-board-content-sections-image-medium {
       width: 80vw;
