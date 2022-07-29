@@ -207,11 +207,15 @@ i.social {
   }
 }
 @keyframes revealCover {
-  from {
+  0% {
     bottom: 0%;
   }
-  to {
+  99% {
     bottom: 100%;
+  }
+  100% {
+    bottom: 100%;
+    display: none;
   }
 }
 @keyframes putCover {
