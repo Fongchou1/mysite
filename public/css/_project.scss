@@ -110,7 +110,7 @@ background-color: black;
 border-radius: 15px;
 display: flex;
 flex-direction: column;
-height: calc(var(--projectsIphone12Width)*(2.018)*0.96);
+height: a.$projectsIphone12ContentHeight;
 justify-content: center;
 overflow: hidden;
 position: absolute;

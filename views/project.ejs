@@ -1,22 +1,23 @@
 <%- include("header") -%>
 <body class="mine">
-
+    <div data-scroll-container>
+    
     <div id="globalLightTransitionCover">
         <div class="globalLightTransitionCover-animation-box">
             <div class="globalLightTransitionCover-animation-spinContainer">
-            <div class="globalLightTransitionCover-animation-holder">
-                <div class="globalLightTransitionCover-animation-holder-bd">
-                <img 
-                    class="globalLightTransitionCover-animation-img"
-                    src='<%= images.loading.attachment[0].url %>'
-                    alt='<%= images.loading.alt %>'
-                >
+                <div class="globalLightTransitionCover-animation-holder">
+                    <div class="globalLightTransitionCover-animation-holder-bd">
+                        <img 
+                        class="globalLightTransitionCover-animation-img"
+                        src='<%= images.loading.attachment[0].url %>'
+                        alt='<%= images.loading.alt %>'
+                        >
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>
-
+    
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
             <a 
@@ -127,8 +128,7 @@
             </div>
         </div>
     </nav>
-
-    <section id="project-hero">
+    <section id="project-hero" data-scroll-section>
         <div class="project-hero-content">
             <div class="project-hero-content-header">
                 <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
@@ -183,21 +183,21 @@
         </div>
     </section>
 
-    <section id="project-projects">
+    <section id="project-projects" data-scroll-section>
         <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
             <% if ( Object.values(sections)[i].type === 'simpleVideo' ) { %>
                 <div class="project-projects-simpleVideo">
                     <div class="project-projects-simpleVideo-videoHolder">
                         <video class="project-projects-simpleVideo-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
                             <source 
-                              src=<%= Object.values(sections)[i]['attachment'][0].url %>
-                              type="video/mp4"
+                                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                                type="video/mp4"
                             >
                             <source
-                              src=<%= Object.values(sections)[i]['attachment'][0].url %>
-                              type="video/ogg"
+                                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                                type="video/ogg"
                             >
-                          Your browser does not support the video tag.
+                            Your browser does not support the video tag.
                         </video>
                     </div>
                 </div>
@@ -229,79 +229,79 @@
                         <!-- device 1 -->
                         <div class="project-projects-mobile3Image-content-deviceHolder">
                             <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
-                              <img 
+                                <img 
                                     class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image"
                                     src=<%= Object.values(sections)[i]['mobileMedia-1'][0].url %>
                                     alt=<%= Object.values(sections)[i]['mobileMedia-1-alt'] %>
                                 >
                             </div>
                             <div 
-                              class="project-projects-mobile3Image-content-deviceHolder-maskGroup"
-                              style="
+                                class="project-projects-mobile3Image-content-deviceHolder-maskGroup"
+                                style="
                                 mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-repeat: no-repeat;
                                 mask-repeat: no-repeat;
                                 mask-size: 100%;
                                 -webkit-mask-size: 100%;  
-                              "
+                                "
                             >
-                              <img
+                                <img
                                 class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12"
                                 src=<%= images['mobile-body-iphone12'].attachment[0].url %>
-                              >
+                                >
                             </div>
                         </div>
                         <!-- device 2 -->
                         <div class="project-projects-mobile3Image-content-deviceHolder">
                             <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
-                              <img 
+                                <img 
                                     class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image"
                                     src=<%= Object.values(sections)[i]['mobileMedia-2'][0].url %>
                                     alt=<%= Object.values(sections)[i]['mobileMedia-2-alt'] %>
                                 >
                             </div>
                             <div 
-                              class="project-projects-mobile3Image-content-deviceHolder-maskGroup"
-                              style="
+                                class="project-projects-mobile3Image-content-deviceHolder-maskGroup"
+                                style="
                                 mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-repeat: no-repeat;
                                 mask-repeat: no-repeat;
                                 mask-size: 100%;
                                 -webkit-mask-size: 100%;  
-                              "
+                                "
                             >
-                              <img
+                                <img
                                 class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12"
                                 src=<%= images['mobile-body-iphone12'].attachment[0].url %>
-                              >
+                                >
                             </div>
                         </div>
                         <!-- device 3 -->
                         <div class="project-projects-mobile3Image-content-deviceHolder">
                             <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
-                              <img 
+                                <img 
                                     class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image"
                                     src=<%= Object.values(sections)[i]['mobileMedia-3'][0].url %>
                                     alt=<%= Object.values(sections)[i]['mobileMedia-3-alt'] %>
                                 >
                             </div>
                             <div 
-                              class="project-projects-mobile3Image-content-deviceHolder-maskGroup"
-                              style="
+                                class="project-projects-mobile3Image-content-deviceHolder-maskGroup"
+                                style="
                                 mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-repeat: no-repeat;
                                 mask-repeat: no-repeat;
                                 mask-size: 100%;
                                 -webkit-mask-size: 100%;  
-                              "
+                                "
                             >
-                              <img
+                                <img
                                 class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12"
                                 src=<%= images['mobile-body-iphone12'].attachment[0].url %>
-                              >
+                                >
                             </div>
                         </div>
                     </div>
@@ -325,20 +325,20 @@
                                 </video>
                             </div>
                             <div 
-                              class="project-projects-mobile3Video-content-deviceHolder-maskGroup"
-                              style="
+                                class="project-projects-mobile3Video-content-deviceHolder-maskGroup"
+                                style="
                                 mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-repeat: no-repeat;
                                 mask-repeat: no-repeat;
                                 mask-size: 100%;
                                 -webkit-mask-size: 100%;  
-                              "
+                                "
                             >
-                              <img
+                                <img
                                 class="project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12"
                                 src=<%= images['mobile-body-iphone12'].attachment[0].url %>
-                              >
+                                >
                             </div>
                         </div>
                         <!-- device 2 -->
@@ -357,20 +357,20 @@
                                 </video>
                             </div>
                             <div 
-                              class="project-projects-mobile3Video-content-deviceHolder-maskGroup"
-                              style="
+                                class="project-projects-mobile3Video-content-deviceHolder-maskGroup"
+                                style="
                                 mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-repeat: no-repeat;
                                 mask-repeat: no-repeat;
                                 mask-size: 100%;
                                 -webkit-mask-size: 100%;  
-                              "
+                                "
                             >
-                              <img
+                                <img
                                 class="project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12"
                                 src=<%= images['mobile-body-iphone12'].attachment[0].url %>
-                              >
+                                >
                             </div>
                         </div>
                         <!-- device 3 -->
@@ -389,20 +389,20 @@
                                 </video>
                             </div>
                             <div 
-                              class="project-projects-mobile3Video-content-deviceHolder-maskGroup"
-                              style="
+                                class="project-projects-mobile3Video-content-deviceHolder-maskGroup"
+                                style="
                                 mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
                                 -webkit-mask-repeat: no-repeat;
                                 mask-repeat: no-repeat;
                                 mask-size: 100%;
                                 -webkit-mask-size: 100%;  
-                              "
+                                "
                             >
-                              <img
+                                <img
                                 class="project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12"
                                 src=<%= images['mobile-body-iphone12'].attachment[0].url %>
-                              >
+                                >
                             </div>
                         </div>
                     </div>
@@ -411,34 +411,34 @@
                 <div class="project-projects-laptopVideo">
                     <div class="project-projects-laptopVideo-macbook">
                         <div class="project-projects-laptopVideo-macbook-videoHolder">
-                          <video class="project-projects-laptopVideo-macbook-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop >
+                            <video class="project-projects-laptopVideo-macbook-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop >
                             <source 
-                              src=<%= Object.values(sections)[i]['attachment'][0].url %>
-                              type="video/mp4"
+                                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                                type="video/mp4"
                             >
                             <source
-                              src=<%= Object.values(sections)[i]['attachment'][0].url %>
-                              type="video/ogg"
+                                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                                type="video/ogg"
                             >
                             Your browser does not support the video tag.
-                          </video>
+                            </video>
                         </div>
                         <div 
-                          class="project-projects-laptopVideo-maskGroup"
-                          style="
+                            class="project-projects-laptopVideo-maskGroup"
+                            style="
                             mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
                             -webkit-mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
                             -webkit-mask-repeat: no-repeat;
                             mask-repeat: no-repeat;
                             mask-size: 100%;
                             -webkit-mask-size: 100%;  
-                          "
+                            "
                         >
-                          <img
+                            <img
                             class="project-projects-laptopVideo-maskGroup-macbookBody"
                             src=<%= images['macbook-body'].attachment[0].url %>
                             <!-- mask="url(#mask)" -->
-                          >
+                            >
                         </div>
                     </div>
                 </div>
@@ -454,21 +454,21 @@
                             >
                         </div>
                         <div 
-                          class="project-projects-laptopImage-maskGroup"
-                          style="
+                            class="project-projects-laptopImage-maskGroup"
+                            style="
                             mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
                             -webkit-mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
                             -webkit-mask-repeat: no-repeat;
                             mask-repeat: no-repeat;
                             mask-size: 100%;
                             -webkit-mask-size: 100%;  
-                          "
+                            "
                         >
-                          <img
+                            <img
                             class="project-projects-laptopImage-maskGroup-macbookBody"
                             src=<%= images['macbook-body'].attachment[0].url %>
                             <!-- mask="url(#mask)" -->
-                          >
+                            >
                         </div>
                     </div>
                 </div>
@@ -476,33 +476,33 @@
                 <div class="project-projects-mobileSE1Video">
                     <div class="project-projects-mobileSE1Video-mobile">
                         <div class="project-projects-mobileSE1Video-mobile-videoHolder">
-                          <video class="project-projects-mobileSE1Video-mobile-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
+                            <video class="project-projects-mobileSE1Video-mobile-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
                             <source 
-                              src=<%= Object.values(sections)[i]['attachment'][0].url %>
-                              type="video/mp4"
+                                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                                type="video/mp4"
                             >
                             <source
-                              src=<%= Object.values(sections)[i]['attachment'][0].url %>
-                              type="video/ogg"
+                                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                                type="video/ogg"
                             >
-                          Your browser does not support the video tag.
-                          </video>
+                            Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div 
-                          class="project-projects-mobileSE1Video-mobile-maskGroup"
-                          style="
+                            class="project-projects-mobileSE1Video-mobile-maskGroup"
+                            style="
                             mask-image: url(<%= images['mobile-mask'].attachment[0].url %>);
                             -webkit-mask-image: url(<%= images['mobile-mask'].attachment[0].url %>);
                             -webkit-mask-repeat: no-repeat;
                             mask-repeat: no-repeat;
                             mask-size: 100%;
                             -webkit-mask-size: 100%;  
-                          "
+                            "
                         >
-                          <img
+                            <img
                             class="project-projects-mobileSE1Video-mobile-mobileBody"
                             src=<%= images['mobile-body'].attachment[0].url %>
-                          >
+                            >
                         </div>
                     </div>
                 </div>
@@ -510,7 +510,7 @@
         <% } %>
     </section>
     <% if ( links['cta-button'].url ) { %>
-        <section id="project-cta">
+        <section id="project-cta" data-scroll-section>
             <div class="project-cta-hr">
                 <div class='hr-main'></div>
             </div>
@@ -536,10 +536,14 @@
         </section>
     <% } %>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <!-- <script type="text/javascript" src="index.js" charset="utf-8"></script> -->
-
-</body>
+    <script>
+        (function () {
+            var scroll = new LocomotiveScroll({
+              el: document.querySelector('[data-scroll-container]'),
+              smooth: true,
+              multiplier: 0.8
+            });
+        })();
+    </script>
 
 <%- include("footer") -%>
