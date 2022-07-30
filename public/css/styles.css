@@ -1367,12 +1367,18 @@
     flex-direction: column;
   }
 }
+* {
+  box-sizing: border-box;
+}
+
 /* Tages */
 body {
+  box-sizing: border-box;
   font-family: "Ubuntu", "Poppins", sans-serif;
   font-size: 18px;
   color: #303841;
   margin: 0 auto;
+  overscroll-behavior-y: none;
   padding: 0;
 }
 

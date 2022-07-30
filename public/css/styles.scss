@@ -5,13 +5,18 @@
 @use './contact';
 @use './footer';
 
+* {
+  box-sizing: border-box;
+}
 /* Tages */
 body {
+  box-sizing: border-box;
   font-family: 'Ubuntu','Poppins', sans-serif;
   font-size: 18px;
   color: a.$text-400;
   margin: 0 auto;
   // max-width: 1400px;
+  overscroll-behavior-y: none;
   padding: 0;
 }
 body.mine {
