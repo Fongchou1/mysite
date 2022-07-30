@@ -451,6 +451,7 @@
 #project-projects {
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: 16px;
   margin: 0 24px;
 }
@@ -1378,7 +1379,6 @@ body {
   font-size: 18px;
   color: #303841;
   margin: 0 auto;
-  overscroll-behavior-y: none;
   padding: 0;
 }
 

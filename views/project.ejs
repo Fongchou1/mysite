@@ -1,7 +1,5 @@
 <%- include("header") -%>
 <body class="mine">
-    <div data-scroll-container>
-    
     <div id="globalLightTransitionCover">
         <div class="globalLightTransitionCover-animation-box">
             <div class="globalLightTransitionCover-animation-spinContainer">
@@ -17,7 +15,9 @@
             </div>
         </div>
     </div>
-    
+
+    <div>
+
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
         <div class="container-fluid">
             <a 
@@ -25,7 +25,7 @@
                 onclick='redirect(`<%= links.home.url %>`)'
                 rel="noreferrer noopener" 
                 role="button"
-              >
+            >
                 <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home.en %>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +42,8 @@
                                 <a 
                                     class="dropdown-item" 
                                     onclick='redirect(`<%= links['nav-page-1'].url %>`)'
+                                    rel="noreferrer noopener" 
+                                    role="button"
                                 >
                                     <%= rootTexts['nav-page-1'].en %>
                                 </a>
@@ -50,6 +52,8 @@
                                 <a 
                                     class="dropdown-item" 
                                     onclick='redirect(`<%= links['nav-page-2'].url %>`)'
+                                    rel="noreferrer noopener" 
+                                    role="button"
                                 >
                                     <%= rootTexts['nav-page-2'].en %>
                                 </a>
@@ -58,6 +62,8 @@
                                 <a 
                                     class="dropdown-item" 
                                     onclick='redirect(`<%= links['nav-page-3'].url %>`)'
+                                    rel="noreferrer noopener" 
+                                    role="button"
                                 >
                                     <%= rootTexts['nav-page-3'].en %>
                                 </a>
@@ -66,6 +72,8 @@
                                 <a 
                                     class="dropdown-item" 
                                     onclick='redirect(`<%= links['nav-page-4'].url %>`)'
+                                    rel="noreferrer noopener" 
+                                    role="button"
                                 >
                                     <%= rootTexts['nav-page-4'].en %>
                                 </a>
@@ -128,7 +136,7 @@
             </div>
         </div>
     </nav>
-    <section id="project-hero" data-scroll-section>
+    <section id="project-hero">
         <div class="project-hero-content">
             <div class="project-hero-content-header">
                 <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
@@ -183,7 +191,7 @@
         </div>
     </section>
 
-    <section id="project-projects" data-scroll-section>
+    <section id="project-projects">
         <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
             <% if ( Object.values(sections)[i].type === 'simpleVideo' ) { %>
                 <div class="project-projects-simpleVideo">
@@ -510,7 +518,7 @@
         <% } %>
     </section>
     <% if ( links['cta-button'].url ) { %>
-        <section id="project-cta" data-scroll-section>
+        <section id="project-cta">
             <div class="project-cta-hr">
                 <div class='hr-main'></div>
             </div>
@@ -535,15 +543,5 @@
             </div>
         </section>
     <% } %>
-
-    <script>
-        (function () {
-            var scroll = new LocomotiveScroll({
-              el: document.querySelector('[data-scroll-container]'),
-              smooth: true,
-              multiplier: 0.8
-            });
-        })();
-    </script>
 
 <%- include("footer") -%>

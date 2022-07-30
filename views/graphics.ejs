@@ -1,6 +1,6 @@
 <%- include("header") -%>
 <body class="mine">
-  <div data-scroll-container>
+  <div>
 
   <div id="globalLightTransitionCover">
     <div class="globalLightTransitionCover-animation-box">
@@ -84,7 +84,7 @@
       </div>
   </nav>
 
-    <section id="project-hero" data-scroll-section>
+    <section id="project-hero">
         <div class="project-hero-content">
             <div class="project-hero-content-header">
                 <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <section id="project-projects" data-scroll-section>
+    <section id="project-projects" >
         <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
             <% if ( Object.values(sections)[i].type === 'simpleVideo' ) { %>
                 <div class="project-projects-simpleVideo">

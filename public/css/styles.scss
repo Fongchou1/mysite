@@ -16,7 +16,7 @@ body {
   color: a.$text-400;
   margin: 0 auto;
   // max-width: 1400px;
-  overscroll-behavior-y: none;
+  // overscroll-behavior-y: none;
   padding: 0;
 }
 body.mine {
@@ -271,7 +271,6 @@ section#snow {
 .dropdown-item {
   padding: 4px 16px;
 }
-
 
 @media screen and (max-width: 600px) {
 
