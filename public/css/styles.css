@@ -936,7 +936,6 @@
   background-color: #00070D;
   display: flex;
   flex-direction: column;
-  /* height: 100%; */
   flex-grow: 1;
   justify-content: space-between;
 }
@@ -947,9 +946,10 @@
 }
 
 .photography-board-content {
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   flex-grow: 1;
-  height: 100%;
   /* max-height: calc(100vw*9/16); */
   /* overflow-x: scroll; */
   position: relative;
@@ -984,13 +984,12 @@
 .photography-board-content-sections-element {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
 .photography-board-content-sections-image {
   inline-size: 100%;
-  max-height: 100%;
-  min-width: 36vw;
-  max-width: 100%;
+  width: 36vw;
   -o-object-fit: contain;
      object-fit: contain;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -998,19 +997,17 @@
 
 .photography-board-content-sections-image-medium {
   inline-size: 100%;
-  max-height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  min-width: 28.5714285714vw;
+  width: 28.8vw;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .photography-board-content-sections-image-small {
   inline-size: 100%;
-  max-height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  width: 14.2857142857vw;
+  width: 21.6vw;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
@@ -1026,20 +1023,29 @@
   justify-content: flex-end;
 }
 
+.photography-board-content-sections-alt {
+  color: #303841;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .photography-board-content-sections-textTop {
   box-sizing: border-box;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   justify-content: flex-start;
-  max-height: 100%;
+  height: 100%;
   max-width: 600px;
   min-width: 400px;
+  overflow: scroll;
   width: 36vw;
 }
 
 .photography-board-content-sections-textMiddle {
   box-sizing: border-box;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1047,11 +1053,13 @@
   max-height: 100%;
   max-width: 600px;
   min-width: 400px;
+  overflow: scroll;
   width: 36vw;
 }
 
 .photography-board-content-sections-textBottom {
   box-sizing: border-box;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -1059,6 +1067,7 @@
   max-height: 100%;
   max-width: 600px;
   min-width: 400px;
+  overflow: scroll;
   width: 36vw;
 }
 
@@ -1127,11 +1136,17 @@
     display: flex;
     flex-direction: column;
   }
+  .photography-board-content-sections-image {
+    width: 100%;
+  }
   .photography-board-content-sections-image-medium {
     width: 80vw;
   }
   .photography-board-content-sections-image-small {
     width: 60vw;
+  }
+  .photography-board-content-sections-alt {
+    display: none;
   }
   .photography-board-content-sections-textTop {
     min-width: unset;
@@ -1157,6 +1172,10 @@
   }
 }
 @media (min-width: 601px) and (max-width: 991px) {
+  .photography-board-content {
+    flex-direction: column;
+    flex-grow: 1;
+  }
   .photography-board-content-projectTitle {
     color: white;
     padding: 16px 24px;
@@ -1380,6 +1399,7 @@ body {
   color: #303841;
   margin: 0 auto;
   padding: 0;
+  position: relative;
 }
 
 body.mine {
@@ -1485,6 +1505,14 @@ nav {
   line-height: 150%;
 }
 
+.ubuntu-body2-14px-light {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 160%;
+}
+
 .hr-main {
   border: 0 none;
   border-top: 4px solid #3A4750;
@@ -1517,8 +1545,8 @@ i.social {
 }
 
 .globalLightTransitionCover-animation-box {
-  width: 16vw;
-  height: 16vw;
+  width: 8vw;
+  height: 8vw;
   position: relative;
 }
 
