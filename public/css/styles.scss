@@ -282,6 +282,11 @@ section#snow {
 
 @media screen and (max-width: 600px) {
 
+  .globalLightTransitionCover-animation-box {
+    width: 98px;
+    height: 98px;
+  }
+
   /* root stylings */
   .ubuntu-9xl-144px-bold {
     font-size: 24vw;

@@ -12,6 +12,7 @@
     background-color: a.$primary-100;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     // height: calc(100vh - 59px);
     flex-grow: 1;
     justify-content: space-between;
@@ -21,11 +22,12 @@
     flex-grow: 0;
   }
   .photography-board-content {
+    background-color: a.$primary-100;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
     flex-grow: 1;
-    // height: 100%;
+    height: auto;
     /* max-height: calc(100vw*9/16); */
     /* overflow-x: scroll; */
     position: relative;
@@ -44,8 +46,11 @@
   }
   /* photography sections */
   .photography-board-content-sections {
+    align-self: stretch;
+    background-color: a.$primary-100;
     color: white;
     display: flex;
+    flex-shrink: 1;
     height: 100%;
     gap: 32px;
     overflow-x: scroll;
@@ -54,15 +59,20 @@
   
   }
   .photography-board-content-sections-element {
+    align-self: stretch;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    flex-shrink: 1;
     // width: a.$photography-images-width-desktop;
     // max-height: 100%;
   }
   .photography-board-content-sections-image {
+    align-self: center;
     inline-size: 100%;
+    // height: 100%;
     // height: min(calc(100vh - 100px), 80vh);
+    // max-height: 100%;
     width: a.$photography-images-width-desktop;
     object-fit: contain;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -83,13 +93,19 @@
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   }
   .photography-board-content-sections-imageTop {
+    align-self: stretch;
     justify-content: flex-start;
+    max-height: 100%;
   }
   .photography-board-content-sections-imageMiddle {
+    align-self: stretch;
     justify-content: center;
+    max-height: 100%;
   }
   .photography-board-content-sections-imageBottom {
+    align-self: stretch;
     justify-content: flex-end;
+    max-height: 100%;
   }
   .photography-board-content-sections-alt {
     color: a.$text-400;
@@ -97,49 +113,63 @@
     justify-content: flex-end;
   }
   .photography-board-content-sections-textTop {
+    align-self: stretch;
     box-sizing: border-box;
     color: a.$background-400;
-    display: flex;
+    // display: flex;
+    flex: 1;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: flex-start;
-    height: 100%;
-    max-width: 600px;
-    min-width: 400px;
+    flex-shrink: 1;
+    // flex-basis: 0;
+    // height: 100px;
+    // max-height: 80vh;
+    // justify-content: flex-start;
+    min-width: a.$photography-images-width-desktop;
     overflow: scroll;
-    width: a.$photography-images-width-desktop;
   }
   .photography-board-content-sections-textMiddle {
+    align-self: stretch;
     box-sizing: border-box;
     color: a.$background-400;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    flex-shrink: 1;
+    height: 100%;
     justify-content: center;
-    max-height: 100%;
-    max-width: 600px;
-    min-width: 400px;
+    // max-height: 80vh;
+    // max-width: 600px;
+    min-width: a.$photography-images-width-desktop;
     overflow: scroll;
     width: a.$photography-images-width-desktop;
   }
   .photography-board-content-sections-textBottom {
+    align-self: stretch;
     box-sizing: border-box;
     color: a.$background-400;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    height: 100%;
     justify-content: flex-end;
-    max-height: 100%;
+    max-height: 80vh;
     max-width: 600px;
-    min-width: 400px;
+    min-width: a.$photography-images-width-desktop;
     overflow: scroll;
     width: a.$photography-images-width-desktop;
   }
   .photography-board-content-sections-textTitle {
+    // height: 100%;
     width: 100%;
-  
+  }
+  .photography-board-content-sections-textDescription {
+    // flex-shrink: 1;
+    // height: 100px;
+    width: 100%;
   }
   #photography-board > .galleryFooter {
+    background-color: a.$primary-100;
     display: flex;
     height: 40px;
     justify-content: center;
@@ -211,15 +241,27 @@
       display: none;
     }
     .photography-board-content-sections-textTop {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
       min-width: unset;
+      padding: 32px 0;
       width: 100%;
     }
     .photography-board-content-sections-textMiddle {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
       min-width: unset;
+      padding: 32px auto;
       width: 100%;
     }
     .photography-board-content-sections-textBottom {
+      display: flex;
+      flex-direction: column;
+      flex: auto;
       min-width: unset;
+      padding: 32px auto;
       width: 100%;
     }
     .photography-board-content-sections-textTitle {
@@ -236,6 +278,7 @@
   }
 
   @media (min-width: 601px) and (max-width: 991px) {
+
     .photography-board-content {
       flex-direction: column;
       flex-grow: 1;
@@ -253,6 +296,15 @@
       overflow-x: scroll;
       overscroll-behavior-inline: contain;
       padding: 16px 40px 40px 40px;
+    }
+    .photography-board-content-sections-textTop {
+      min-width: 600px;
+    }
+    .photography-board-content-sections-textMiddle {
+      min-width: 600px;
+    }
+    .photography-board-content-sections-textBottom {
+      min-width: 600px;
     }
   }
 

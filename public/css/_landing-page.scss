@@ -247,8 +247,9 @@ margin-top: calc(100vh*40/695);
     /* Landing page */
     /* New Section 1 */
     #hero {
-    min-height: 100vh;
+    height: 100vh;
     margin: 0 16px;
+    min-height: 500px;
     }
     .hero-nameAndLogo {
     margin-top: 32px;

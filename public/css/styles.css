@@ -263,8 +263,9 @@
   /* Landing page */
   /* New Section 1 */
   #hero {
-    min-height: 100vh;
+    height: 100vh;
     margin: 0 16px;
+    min-height: 500px;
   }
   .hero-nameAndLogo {
     margin-top: 32px;
@@ -936,6 +937,7 @@
   background-color: #00070D;
   display: flex;
   flex-direction: column;
+  height: 100vh;
   flex-grow: 1;
   justify-content: space-between;
 }
@@ -946,10 +948,12 @@
 }
 
 .photography-board-content {
+  background-color: #00070D;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   flex-grow: 1;
+  height: auto;
   /* max-height: calc(100vw*9/16); */
   /* overflow-x: scroll; */
   position: relative;
@@ -972,8 +976,11 @@
 
 /* photography sections */
 .photography-board-content-sections {
+  align-self: stretch;
+  background-color: #00070D;
   color: white;
   display: flex;
+  flex-shrink: 1;
   height: 100%;
   gap: 32px;
   overflow-x: scroll;
@@ -982,12 +989,15 @@
 }
 
 .photography-board-content-sections-element {
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .photography-board-content-sections-image {
+  align-self: center;
   inline-size: 100%;
   width: 36vw;
   -o-object-fit: contain;
@@ -1012,15 +1022,21 @@
 }
 
 .photography-board-content-sections-imageTop {
+  align-self: stretch;
   justify-content: flex-start;
+  max-height: 100%;
 }
 
 .photography-board-content-sections-imageMiddle {
+  align-self: stretch;
   justify-content: center;
+  max-height: 100%;
 }
 
 .photography-board-content-sections-imageBottom {
+  align-self: stretch;
   justify-content: flex-end;
+  max-height: 100%;
 }
 
 .photography-board-content-sections-alt {
@@ -1030,43 +1046,44 @@
 }
 
 .photography-board-content-sections-textTop {
+  align-self: stretch;
   box-sizing: border-box;
   color: #F3F3F3;
-  display: flex;
+  flex: 1;
   flex-direction: column;
   flex-grow: 1;
-  justify-content: flex-start;
-  height: 100%;
-  max-width: 600px;
-  min-width: 400px;
+  flex-shrink: 1;
+  min-width: 36vw;
   overflow: scroll;
-  width: 36vw;
 }
 
 .photography-board-content-sections-textMiddle {
+  align-self: stretch;
   box-sizing: border-box;
   color: #F3F3F3;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  flex-shrink: 1;
+  height: 100%;
   justify-content: center;
-  max-height: 100%;
-  max-width: 600px;
-  min-width: 400px;
+  min-width: 36vw;
   overflow: scroll;
   width: 36vw;
 }
 
 .photography-board-content-sections-textBottom {
+  align-self: stretch;
   box-sizing: border-box;
   color: #F3F3F3;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  height: 100%;
   justify-content: flex-end;
-  max-height: 100%;
+  max-height: 80vh;
   max-width: 600px;
-  min-width: 400px;
+  min-width: 36vw;
   overflow: scroll;
   width: 36vw;
 }
@@ -1075,7 +1092,12 @@
   width: 100%;
 }
 
+.photography-board-content-sections-textDescription {
+  width: 100%;
+}
+
 #photography-board > .galleryFooter {
+  background-color: #00070D;
   display: flex;
   height: 40px;
   justify-content: center;
@@ -1149,15 +1171,27 @@
     display: none;
   }
   .photography-board-content-sections-textTop {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
     min-width: unset;
+    padding: 32px 0;
     width: 100%;
   }
   .photography-board-content-sections-textMiddle {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
     min-width: unset;
+    padding: 32px auto;
     width: 100%;
   }
   .photography-board-content-sections-textBottom {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
     min-width: unset;
+    padding: 32px auto;
     width: 100%;
   }
   .photography-board-content-sections-textTitle {
@@ -1189,6 +1223,15 @@
     overflow-x: scroll;
     overscroll-behavior-inline: contain;
     padding: 16px 40px 40px 40px;
+  }
+  .photography-board-content-sections-textTop {
+    min-width: 600px;
+  }
+  .photography-board-content-sections-textMiddle {
+    min-width: 600px;
+  }
+  .photography-board-content-sections-textBottom {
+    min-width: 600px;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -1724,6 +1767,10 @@ section#snow {
 }
 
 @media screen and (max-width: 600px) {
+  .globalLightTransitionCover-animation-box {
+    width: 98px;
+    height: 98px;
+  }
   /* root stylings */
   .ubuntu-9xl-144px-bold {
     font-size: 24vw;
