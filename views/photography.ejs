@@ -401,7 +401,7 @@
 
     let lastScreenLeft = 0;
     scrollContainer.addEventListener("wheel", (evt) => {
-      if ( screenWidth >= 600 ) {
+      if ( screenWidth >= 600 && deviceType() === "desktop" ) {
         evt.preventDefault();
         lastScreenLeft = scrollContainer.scrollLeft;
         scrollContainer.scrollLeft += evt.deltaY;
@@ -414,14 +414,14 @@
       // let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
       // lastScreenLeft = scrollContainer.scrollLeft;
       // move(deltaY);
-      if ( screenWidth >= 600 && scrollContainer.scrollLeft && deviceType() !== "desktop" ) {
+      if ( deviceType() === "desktop" ) { 
+        return;
+      } else if ( screenWidth >= 600 && scrollContainer.scrollLeft ) {
         // evt.preventDefault();
         let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
         lastScreenLeft = scrollContainer.scrollLeft;
         // scrollContainer.scrollLeft += evt.deltaY;
         move(deltaY); 
-      } else {
-        
       }
     });
 

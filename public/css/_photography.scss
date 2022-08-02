@@ -8,8 +8,7 @@
     height: 100vh;
   }
   #photography-board {
-    // background-color: a.$primary-100;
-    background-color: red;
+    background-color: a.$primary-100;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -20,8 +19,7 @@
     flex-shrink: 0;
   }
   .photography-board-content {
-    // background-color: a.$primary-100;
-    background-color: blue;
+    background-color: a.$primary-100;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -60,18 +58,16 @@
   }
   .photography-board-content-sections-imageLarge {
     flex-basis: 0;
+    min-height: unset;
     min-width: a.$photography-images-width-desktop;
-    width: a.$photography-images-width-desktop;
   }
   .photography-board-content-sections-imageMedium {
     flex-basis: 0;
     min-width: a.$photography-images-medium-width-desktop;
-    width: a.$photography-images-medium-width-desktop;
   }
   .photography-board-content-sections-imageSmall {
     flex-basis: 0;
     min-width: a.$photography-images-small-width-desktop;
-    width: a.$photography-images-small-width-desktop;
   }
   .photography-board-content-sections-element-imageTop {
     display: flex;
@@ -92,26 +88,24 @@
     justify-content: flex-end;
   }
   .photography-board-content-sections-image {
-    // flex: 1;
-    // inline-size: 100%;
-    width: 100%;
-    // max-height: 100%;
-    // object-fit: contain;
     // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    inline-size: 100%;
+    max-height: 60vh;
+    object-fit: contain;
+    width: 100%;
   }
   .photography-board-content-sections-image-medium {
-    // align-self: center;
-    // inline-size: 100%;
-    // object-fit: contain;
-    width: 100%;
+    inline-size: 100%;
+    object-fit: contain;
     // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    max-height: 80vh;
+    width: 100%;
   }
   .photography-board-content-sections-image-small {
-    // align-self: center;
-    // inline-size: 100%;
-    // object-fit: contain;
-    width: 100%;
+    inline-size: 100%;
+    object-fit: contain;
     // box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    width: 100%;
   }
   .photography-board-content-sections-alt {
     color: a.$text-400;
@@ -124,7 +118,8 @@
     color: a.$background-400;
     display: table;
     min-height: 0;
-    height: calc(60vh + 100px);
+    // height: calc(60vh + 100px);
+    height: 100%;
     min-width: a.$photography-images-width-desktop;
   }
   .photography-board-content-sections-textMiddle {
@@ -133,7 +128,8 @@
     color: a.$background-400;
     display: table;
     min-height: 0;
-    height: calc(60vh + 100px);
+    // height: calc(60vh + 100px);
+    height: 100%;
     min-width: a.$photography-images-width-desktop;
   }
   .photography-board-content-sections-textBottom {
@@ -143,7 +139,8 @@
     display: table;
     height: 100%;
     max-height: 0;
-    height: calc(60vh + 100px);
+    // height: calc(60vh + 100px);
+    height: 100%;
     min-width: a.$photography-images-width-desktop;
   }
 
