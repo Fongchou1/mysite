@@ -933,29 +933,24 @@
 }
 
 #photography-board {
-  /* background-color: #cccccc; */
-  background-color: #00070D;
+  background-color: red;
   display: flex;
   flex-direction: column;
   height: 100vh;
-  flex-grow: 1;
-  justify-content: space-between;
 }
 
 .photography-board-nav {
   /* background-color: black; */
   flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .photography-board-content {
-  background-color: #00070D;
+  background-color: blue;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  flex-grow: 1;
-  height: auto;
-  /* max-height: calc(100vw*9/16); */
-  /* overflow-x: scroll; */
+  flex: 1;
   position: relative;
   resize: horizontal;
 }
@@ -974,69 +969,72 @@
   color: white;
 }
 
-/* photography sections */
 .photography-board-content-sections {
-  align-self: stretch;
-  background-color: #00070D;
   color: white;
   display: flex;
-  flex-shrink: 1;
-  height: 100%;
+  flex-shrink: 0;
+  flex-grow: 1;
   gap: 32px;
   overflow-x: scroll;
   overscroll-behavior-inline: contain;
   padding: 16px 100px 40px 240px;
 }
 
-.photography-board-content-sections-element {
-  align-self: stretch;
+.photography-board-content-sections > * {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 1;
+  padding: 0;
+}
+
+.photography-board-content-sections-imageLarge {
+  flex-basis: 0;
+  min-width: 36vw;
+  width: 36vw;
+}
+
+.photography-board-content-sections-imageMedium {
+  flex-basis: 0;
+  min-width: 28.8vw;
+  width: 28.8vw;
+}
+
+.photography-board-content-sections-imageSmall {
+  flex-basis: 0;
+  min-width: 21.6vw;
+  width: 21.6vw;
+}
+
+.photography-board-content-sections-element-imageTop {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.photography-board-content-sections-element-imageMiddle {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+}
+
+.photography-board-content-sections-element-imageBottom {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .photography-board-content-sections-image {
-  align-self: center;
-  inline-size: 100%;
-  width: 36vw;
-  -o-object-fit: contain;
-     object-fit: contain;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  width: 100%;
 }
 
 .photography-board-content-sections-image-medium {
-  inline-size: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  width: 28.8vw;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  width: 100%;
 }
 
 .photography-board-content-sections-image-small {
-  inline-size: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  width: 21.6vw;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
-}
-
-.photography-board-content-sections-imageTop {
-  align-self: stretch;
-  justify-content: flex-start;
-  max-height: 100%;
-}
-
-.photography-board-content-sections-imageMiddle {
-  align-self: stretch;
-  justify-content: center;
-  max-height: 100%;
-}
-
-.photography-board-content-sections-imageBottom {
-  align-self: stretch;
-  justify-content: flex-end;
-  max-height: 100%;
+  width: 100%;
 }
 
 .photography-board-content-sections-alt {
@@ -1046,46 +1044,40 @@
 }
 
 .photography-board-content-sections-textTop {
-  align-self: stretch;
+  align-self: flex-start;
   box-sizing: border-box;
   color: #F3F3F3;
-  flex: 1;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 1;
+  display: table;
+  min-height: 0;
+  height: calc(60vh + 100px);
   min-width: 36vw;
-  overflow: scroll;
 }
 
 .photography-board-content-sections-textMiddle {
-  align-self: stretch;
+  align-self: center;
   box-sizing: border-box;
   color: #F3F3F3;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  flex-shrink: 1;
-  height: 100%;
-  justify-content: center;
+  display: table;
+  min-height: 0;
+  height: calc(60vh + 100px);
   min-width: 36vw;
-  overflow: scroll;
-  width: 36vw;
 }
 
 .photography-board-content-sections-textBottom {
-  align-self: stretch;
+  align-self: flex-end;
   box-sizing: border-box;
   color: #F3F3F3;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  display: table;
   height: 100%;
-  justify-content: flex-end;
-  max-height: 80vh;
-  max-width: 600px;
+  max-height: 0;
+  height: calc(60vh + 100px);
   min-width: 36vw;
-  overflow: scroll;
-  width: 36vw;
+}
+
+.photography-board-content-sections-element-textContent {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
 }
 
 .photography-board-content-sections-textTitle {
@@ -1099,25 +1091,22 @@
 #photography-board > .galleryFooter {
   background-color: #00070D;
   display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
   height: 40px;
   justify-content: center;
 }
 
 #photography-board > .galleryFooter > .progress {
-  /* width: 60px; */
-  /* height: 4px; */
   align-items: center;
-  /* background-color: var(--secondary-400); */
   background-color: #2185D5;
   display: flex;
   height: 100%;
 }
 
 #photography-board > .galleryFooter > .bar-mask > .progress > #bar {
-  /* width: 100vw; */
   width: 60px;
   height: 30px;
-  /* background-color: var(--primary-400); */
   background-color: #00070D;
   position: absolute;
 }
@@ -1145,6 +1134,7 @@
     text-align: center;
   }
   .photography-board-content-sections {
+    align-items: center;
     flex-direction: column;
     height: unset;
     justify-content: center;
@@ -1158,14 +1148,24 @@
     display: flex;
     flex-direction: column;
   }
-  .photography-board-content-sections-image {
-    width: 100%;
+  .photography-board-content-sections-imageLarge {
+    min-width: 100%;
   }
-  .photography-board-content-sections-image-medium {
-    width: 80vw;
+  .photography-board-content-sections-imageMedium {
+    min-width: 80vw;
   }
-  .photography-board-content-sections-image-small {
-    width: 60vw;
+  .photography-board-content-sections-imageSmall {
+    min-width: 60vw;
+  }
+  .photography-board-content-sections-element-imageTop {
+    justify-content: center;
+  }
+  .photography-board-content-sections-element-imageMiddle {
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .photography-board-content-sections-element-imageBottom {
+    justify-content: center;
   }
   .photography-board-content-sections-alt {
     display: none;
@@ -1175,6 +1175,8 @@
     flex-direction: column;
     flex: auto;
     min-width: unset;
+    min-height: unset;
+    height: unset;
     padding: 32px 0;
     width: 100%;
   }
@@ -1183,6 +1185,8 @@
     flex-direction: column;
     flex: auto;
     min-width: unset;
+    min-height: unset;
+    height: unset;
     padding: 32px auto;
     width: 100%;
   }
@@ -1190,7 +1194,9 @@
     display: flex;
     flex-direction: column;
     flex: auto;
+    min-height: unset;
     min-width: unset;
+    height: unset;
     padding: 32px auto;
     width: 100%;
   }
@@ -1218,7 +1224,6 @@
   .photography-board-content-sections {
     color: white;
     display: flex;
-    height: 100%;
     gap: 32px;
     overflow-x: scroll;
     overscroll-behavior-inline: contain;
@@ -1488,6 +1493,11 @@ div {
 
 nav {
   z-index: 999;
+}
+
+#text {
+  margin: 0;
+  padding: 0;
 }
 
 .ubuntu-9xl-144px-bold {

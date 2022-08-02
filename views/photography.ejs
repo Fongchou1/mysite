@@ -138,148 +138,176 @@
       </div>
       <div class="photography-board-content-sections snaps-inline">
         <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
+          <%# large images %>
           <% if ( Object.values(sections)[i].type === 'image-top' ) { %>
-            <div class="photography-board-content-sections-imageTop photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageLarge photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageTop">
+                <img 
+                  class="photography-board-content-sections-image"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-middle' ) { %>
-            <div class="photography-board-content-sections-imageMiddle photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageLarge photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageMiddle">
+                <img 
+                  class="photography-board-content-sections-image"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom' ) { %>
-            <div class="photography-board-content-sections-imageBottom photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageBottomLarge photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageBottom">
+                <img 
+                  class="photography-board-content-sections-image"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
+          <%# medium images %>
           <% } else if ( Object.values(sections)[i].type === 'image-top-medium' ) { %>
-            <div class="photography-board-content-sections-imageTop photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image-medium"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageMedium photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageTop">
+                <img 
+                  class="photography-board-content-sections-image-medium"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-middle-medium' ) { %>
-            <div class="photography-board-content-sections-imageMiddle photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image-medium"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageMedium photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageMiddle">
+                <img 
+                  class="photography-board-content-sections-image-medium"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom-medium' ) { %>
-            <div class="photography-board-content-sections-imageBottom photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image-medium"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageMedium photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageBottom">
+                <img 
+                  class="photography-board-content-sections-image-medium"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
+          <%# small images %>
           <% } else if ( Object.values(sections)[i].type === 'image-top-small' ) { %>
-            <div class="photography-board-content-sections-imageTop photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image-small photography-board-content-sections-element"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageSmall photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageTop">
+                <img 
+                  class="photography-board-content-sections-image-small photography-board-content-sections-element"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-middle-small' ) { %>
-            <div class="photography-board-content-sections-imageMiddle photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image-small"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
+            <div class="photography-board-content-sections-imageSmall photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageMiddle">
+                <img 
+                  class="photography-board-content-sections-image-small"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
+              </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'image-bottom-small' ) { %>
-            <div class="photography-board-content-sections-imageBottom photography-board-content-sections-element">
-              <img 
-                class="photography-board-content-sections-image-small"
-                src=<%= Object.values(sections)[i].photo[0].url %>
-                alt=<%= Object.values(sections)[i].alt %>
-              >
-              <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
-                <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
-                  <%= Object.values(sections)[i]['photo-alt'] %>
-                </div>
-              <% } %>
-            </div>
-          <% } else if ( Object.values(sections)[i].type === 'text-top' ) { %>
-            <div class="photography-board-content-sections-textTop">
-              <div class="photography-board-content-sections-textTitle ubuntu-h3-48px-bold">
-                <%= Object.values(sections)[i]['title-en'] %>
+            <div class="photography-board-content-sections-imageSmall photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-imageBottom">
+                <img 
+                  class="photography-board-content-sections-image-small"
+                  src=<%= Object.values(sections)[i].photo[0].url %>
+                  alt=<%= Object.values(sections)[i].alt %>
+                >
+                <% if ( Object.values(sections)[i]['display-alt'] === true ) { %>
+                  <div class="photography-board-content-sections-alt ubuntu-body2-14px-light">
+                    <%= Object.values(sections)[i]['photo-alt'] %>
+                  </div>
+                <% } %>
               </div>
-              <div class="photography-board-content-sections-textDescription">
-                <%= Object.values(sections)[i]['description-en'] %>
+            </div>
+          <%# texts %>
+          <% } else if ( Object.values(sections)[i].type === 'text-top' ) { %>
+            <div class="photography-board-content-sections-textTop photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-textContent">
+                <div class="photography-board-content-sections-textTitle ubuntu-h3-48px-bold">
+                  <%= Object.values(sections)[i]['title-en'] %>
+                </div>
+                <div class="photography-board-content-sections-textDescription">
+                  <%= Object.values(sections)[i]['description-en'] %>
+                </div>
               </div>
             </div>
           <%} else if ( Object.values(sections)[i].type === 'text-middle' ) { %>
-            <div class="photography-board-content-sections-textMiddle">
-              <div class="photography-board-content-sections-textTitle ubuntu-h3-48px-bold">
-                <%= Object.values(sections)[i]['title-en'] %>
-              </div>
-              <div class="photography-board-content-sections-textDescription">
-                <%= Object.values(sections)[i]['description-en'] %>
+            <div class="photography-board-content-sections-textMiddle photography-board-content-sections-element">
+              <div class="photography-board-content-sections-element-textContent">
+                <div class="photography-board-content-sections-textTitle ubuntu-h3-48px-bold">
+                  <%= Object.values(sections)[i]['title-en'] %>
+                </div>
+                <div class="photography-board-content-sections-textDescription">
+                  <%= Object.values(sections)[i]['description-en'] %>
+                </div>
               </div>
             </div>
           <% } else if ( Object.values(sections)[i].type === 'text-bottom' ) { %>
             <div class="photography-board-content-sections-textBottom photography-board-content-sections-element">
-              <div class="photography-board-content-sections-textTitle ubuntu-h3-48px-bold">
-                <%= Object.values(sections)[i]['title-en'] %>
-              </div>
-              <div class="photography-board-content-sections-textDescription">
-                <%= Object.values(sections)[i]['description-en'] %>
+              <div class="photography-board-content-sections-element-textContent">
+                <div class="photography-board-content-sections-textTitle ubuntu-h3-48px-bold">
+                  <%= Object.values(sections)[i]['title-en'] %>
+                </div>
+                <div class="photography-board-content-sections-textDescription">
+                  <%= Object.values(sections)[i]['description-en'] %>
+                </div>
               </div>
             </div>
           <% } %>
@@ -388,7 +416,6 @@
       // move(deltaY);
       if ( screenWidth >= 600 && scrollContainer.scrollLeft && deviceType() !== "desktop" ) {
         // evt.preventDefault();
-        console.log(deviceType())
         let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
         lastScreenLeft = scrollContainer.scrollLeft;
         // scrollContainer.scrollLeft += evt.deltaY;
