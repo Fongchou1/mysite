@@ -416,8 +416,15 @@
       // move(deltaY);
       if ( deviceType() === "desktop" ) { 
         return;
-      } else if ( screenWidth >= 600 && scrollContainer.scrollLeft ) {
+      } 
+      else if ( screenWidth >= 600 && scrollContainer.scrollLeft ) {
         // evt.preventDefault();
+        let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
+        lastScreenLeft = scrollContainer.scrollLeft;
+        // scrollContainer.scrollLeft += evt.deltaY;
+        move(deltaY); 
+      }
+      else {
         let deltaY = scrollContainer.scrollLeft - lastScreenLeft;
         lastScreenLeft = scrollContainer.scrollLeft;
         // scrollContainer.scrollLeft += evt.deltaY;
