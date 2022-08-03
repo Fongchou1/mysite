@@ -42,6 +42,7 @@ width: 440px;
 .hero-infoAndDescription-description-links {
 display: flex;
 gap: 16px;
+justify-content: space-between;
 }
 .hero-infoAndDescription-description-links-link {
 color: a.$link-400;

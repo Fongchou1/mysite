@@ -42,6 +42,7 @@
 .hero-infoAndDescription-description-links {
   display: flex;
   gap: 16px;
+  justify-content: space-between;
 }
 
 .hero-infoAndDescription-description-links-link {
@@ -989,17 +990,17 @@
 .photography-board-content-sections-imageLarge {
   flex-basis: 0;
   min-height: unset;
-  min-width: 36vw;
+  min-width: 63vw;
 }
 
 .photography-board-content-sections-imageMedium {
   flex-basis: 0;
-  min-width: 28.8vw;
+  min-width: 50.4vw;
 }
 
 .photography-board-content-sections-imageSmall {
   flex-basis: 0;
-  min-width: 21.6vw;
+  min-width: 37.8vw;
 }
 
 .photography-board-content-sections-element-imageTop {
@@ -1033,14 +1034,15 @@
 
 .photography-board-content-sections-image-medium {
   inline-size: 100%;
+  max-height: 50vh;
   -o-object-fit: contain;
      object-fit: contain;
-  max-height: 80vh;
   width: 100%;
 }
 
 .photography-board-content-sections-image-small {
   inline-size: 100%;
+  max-height: 35vh;
   -o-object-fit: contain;
      object-fit: contain;
   width: 100%;
@@ -1049,7 +1051,7 @@
 .photography-board-content-sections-alt {
   color: #303841;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .photography-board-content-sections-textTop {
@@ -1059,7 +1061,7 @@
   display: table;
   min-height: 0;
   height: 100%;
-  min-width: 36vw;
+  min-width: 63vw;
 }
 
 .photography-board-content-sections-textMiddle {
@@ -1069,7 +1071,7 @@
   display: table;
   min-height: 0;
   height: 100%;
-  min-width: 36vw;
+  min-width: 63vw;
 }
 
 .photography-board-content-sections-textBottom {
@@ -1080,7 +1082,7 @@
   height: 100%;
   max-height: 0;
   height: 100%;
-  min-width: 36vw;
+  min-width: 63vw;
 }
 
 .photography-board-content-sections-element-textContent {
@@ -1831,5 +1833,8 @@ section#snow {
   }
   .ubuntu-body1-18px-bold {
     font-size: 1.2vw;
+  }
+  .ubuntu-body2-14px-light {
+    font-size: 1vw;
   }
 }/*# sourceMappingURL=styles.css.map */
