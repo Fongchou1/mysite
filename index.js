@@ -36,6 +36,7 @@ var berlineatsBase = airtable.base('appOMXVGZbdHaqfVx');
 var graphicsBase = airtable.base('app8jeAyfHpy7jXmX');
 var photographyBase = airtable.base('appSfjdiCQWegHcDt');
 var contactBase = airtable.base('appOWuesPEqLFvSF8');
+var videoManagementAppBase = airtable.base('app3xgRXiWzfvc6Sy');
 
 function readFields( outputObject , records ){
   for( let i = 0; i < records.length; i++){
@@ -572,6 +573,95 @@ app.get("/berlineats", function(req, res){
             
             // fetch BerlinEats images
             berlineatsBase('images').select({
+              view: 'DB'
+            }).all(function(err, records) {
+        
+              if(err) { console.error(err); return; }
+              
+              // BerlinEats images fetched from airtable
+              readFields(images, records);
+              
+              // fetched all required data and send
+              res.render("project",
+                {
+                  rootTexts: rootTexts,
+                  links: links,
+                  sections: sections,
+                  images: images,
+                  footerRootTexts: footerRootTexts,
+                  footerLinks: footerLinks
+                }
+              );
+        
+            })
+          })
+        })
+      })
+    })
+  })
+});
+
+app.get("/video-management-app", function(req, res){
+
+  let rootTexts = {};
+  let links = {};
+  let sections = {};
+  let images = {};
+  let footerRootTexts = {};
+  let footerLinks = {};
+
+  //fetch footer root text
+  footerBase('root-texts').select({
+    view: 'DB'
+  }).all(function(err, records) {
+
+    if(err) { console.error(err); return; }
+    
+    // footer root text fetched from airtable
+    readFields(footerRootTexts, records);
+
+    // fetch footer links
+    footerBase('links').select({
+      view: 'DB'
+    }).all(function(err, records) {
+
+      if(err) { console.error(err); return; }
+      
+      // footer links fetched from airtable
+      readFields(footerLinks, records);
+
+      // fetch BerlinEats root texts
+      videoManagementAppBase('root-texts').select({
+        view: 'DB'
+      }).all(function(err, records) {
+  
+        if(err) { console.error(err); return; }
+        
+        // BerlinEats root texts fetched from airtable
+        readFields(rootTexts, records);
+        
+        // fetch BerlinEats links
+        videoManagementAppBase('links').select({
+          view: 'DB'
+        }).all(function(err, records) {
+    
+          if(err) { console.error(err); return; }
+          
+          // BerlinEats links fetched from airtable
+          readFields(links, records);
+          
+          // fetch BerlinEats sections
+          videoManagementAppBase('sections').select({
+            view: 'DB'
+          }).all(function(err, records) {
+      
+            if(err) { console.error(err); return; }
+            
+            // BerlinEats sections fetched from airtable
+            readFields(sections, records);
+            
+            // fetch BerlinEats images
+            videoManagementAppBase('images').select({
               view: 'DB'
             }).all(function(err, records) {
         
