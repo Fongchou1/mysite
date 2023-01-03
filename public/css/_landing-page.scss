@@ -242,6 +242,11 @@ gap: 16px;
 margin-top: calc(100vh*40/695);
 }
 
+#sections {
+    background-color: a.$primary-100;
+    color: a.$background-400;
+}
+
 @media screen and (max-width: 600px) {
     /*  */
     /*  */

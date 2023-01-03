@@ -4,6 +4,7 @@
 @use './photography';
 @use './contact';
 @use './footer';
+@use './sections';
 
 * {
   box-sizing: border-box;
@@ -68,6 +69,14 @@ nav {
   line-height: 100%;
   letter-spacing: -0.04em;
 }
+.ubuntu-9xl-144px-light {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 144px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+}
 .ubuntu-h3-48px-bold {
   font-family: 'Ubuntu';
   font-style: normal;
@@ -117,6 +126,24 @@ nav {
   font-weight: 300;
   font-size: 14px;
   line-height: 160%;
+}
+.ubuntu-body2-14px-bold {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+}
+.ubuntu-body2-14px-medium {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+}
+.hr {
+  width: 100%;
+  margin-top: calc(100vh*40/695);
 }
 .hr-main {
   border: 0 none;
@@ -317,6 +344,9 @@ section#snow {
   .ubuntu-9xl-144px-bold {
     font-size: 10vw;
   }
+  .ubuntu-9xl-144px-light {
+    font-size: 10vw;
+  }
   .ubuntu-h3-48px-bold {
     font-size: 3vw;
   }
@@ -336,6 +366,12 @@ section#snow {
     font-size: 1.2vw;
   }
   .ubuntu-body2-14px-light {
+    font-size: 1vw;
+  }
+  .ubuntu-body2-14px-bold {
+    font-size: 1vw;
+  }
+  .ubuntu-body2-14px-medium {
     font-size: 1vw;
   }
 }

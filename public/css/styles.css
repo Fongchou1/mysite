@@ -258,6 +258,11 @@
   margin-top: 5.7553956835vh;
 }
 
+#sections {
+  background-color: #00070D;
+  color: #F3F3F3;
+}
+
 @media screen and (max-width: 600px) {
   /*  */
   /*  */
@@ -1446,6 +1451,293 @@
     flex-direction: column;
   }
 }
+/*  */
+/*  */
+/* section styling */
+.sections-section-header {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  min-width: 100%;
+}
+
+.sections-section-title {
+  min-width: 100%;
+}
+
+.sections-holdedImage-img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.sections-texCards {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  padding: 80px 24px;
+  gap: 72px;
+}
+
+.sections-texCards-cards {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  gap: 16px;
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+}
+
+.sections-textCards-cards-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 40px 32px 16px;
+  gap: 10px;
+  border: 1px solid #62686E;
+  border-radius: 10px;
+  max-width: 326px;
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+
+.sections-textCards-cards-item-hightlightText-dot {
+  color: #2185D5;
+}
+
+.sections-simpleImageTextCards {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+  gap: 72px;
+}
+
+.sections-simpleImageTextCards-cards {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+}
+
+.sections-simpleImageTextCards-cards-item-imageHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 80px;
+}
+
+.sections-simpleImageTextCards-cards-item {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+  width: 27vw;
+}
+
+.sections-simpleImageTextCards-cards-item-texts {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+}
+
+.sections-testimonialCards {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+  gap: 72px;
+}
+
+.sections-testimonialCards-cards {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+}
+
+.sections-testimonialCards-cards-item {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  max-width: 480px;
+}
+
+.sections-testimonialCards-cards-item-textBox {
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 32px 40px 32px 16px;
+  gap: 10px;
+  border: 1px solid #62686E;
+  border-radius: 10px;
+}
+
+.sections-testimonialCards-cards-item-personBox {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  align-self: stretch;
+}
+
+.sections-testimonialCards-cards-item-personBox-imageHolder {
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 40px;
+}
+
+.sections-testimonialCards-cards-item-personBox-texts {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 16px;
+  flex-grow: 1;
+}
+
+.sections-largeTitleImageTextsButtons {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 80px 24px;
+  gap: 72px;
+  color: #E5E7EA;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox-imageHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  max-width: 360px;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox-texts {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox-texts-title {
+  padding-right: 440px;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox-texts-content {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox-texts-actions {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+}
+
+.sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 12px;
+}
+
+@media screen and (min-width: 1920px) {
+  .sections-textCards-cards-item {
+    max-width: unset;
+  }
+  .sections-testimonialCards-cards-item {
+    max-width: unset;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .sections-texCards-cards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+  }
+  .sections-textCards-cards-item {
+    max-width: unset;
+  }
+  .sections-simpleImageTextCards-cards-item {
+    width: 382px;
+  }
+  .sections-testimonialCards-cards {
+    /* Auto layout */
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 600px) {
+  .sections-simpleImageTextCards-cards-item {
+    flex-direction: column;
+    width: 100%;
+  }
+  .sections-largeTitleImageTextsButtons-infoBox {
+    /* Auto layout */
+    flex-direction: column;
+  }
+  .sections-largeTitleImageTextsButtons-infoBox-texts-title {
+    padding-right: unset;
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -1520,6 +1812,15 @@ nav {
   letter-spacing: -0.04em;
 }
 
+.ubuntu-9xl-144px-light {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 144px;
+  line-height: 100%;
+  letter-spacing: -0.04em;
+}
+
 .ubuntu-h3-48px-bold {
   font-family: "Ubuntu";
   font-style: normal;
@@ -1575,6 +1876,27 @@ nav {
   font-weight: 300;
   font-size: 14px;
   line-height: 160%;
+}
+
+.ubuntu-body2-14px-bold {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.ubuntu-body2-14px-medium {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+.hr {
+  width: 100%;
+  margin-top: 5.7553956835vh;
 }
 
 .hr-main {
@@ -1816,6 +2138,9 @@ section#snow {
   .ubuntu-9xl-144px-bold {
     font-size: 10vw;
   }
+  .ubuntu-9xl-144px-light {
+    font-size: 10vw;
+  }
   .ubuntu-h3-48px-bold {
     font-size: 3vw;
   }
@@ -1835,6 +2160,12 @@ section#snow {
     font-size: 1.2vw;
   }
   .ubuntu-body2-14px-light {
+    font-size: 1vw;
+  }
+  .ubuntu-body2-14px-bold {
+    font-size: 1vw;
+  }
+  .ubuntu-body2-14px-medium {
     font-size: 1vw;
   }
 }/*# sourceMappingURL=styles.css.map */

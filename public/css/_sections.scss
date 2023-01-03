@@ -1,0 +1,303 @@
+@use 'abstracts' as a;
+/*  */
+/*  */
+/* section styling */
+
+// general
+.sections-section-header {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+    min-width: 100%;
+}
+.sections-section-title {
+    min-width: 100%;
+}
+.sections-holdedImage-img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+// text cards
+.sections-texCards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    padding: 80px 24px;
+    gap: 72px;
+}
+.sections-texCards-cards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0px;
+    gap: 16px;
+
+    /* Inside auto layout */
+    flex: none;
+    // order: 1;
+    flex-grow: 0;
+}
+.sections-textCards-cards-item {
+    box-sizing: border-box;
+
+    // auto layout
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 40px 32px 16px;
+    gap: 10px;
+
+    border: 1px solid #62686E;
+    border-radius: 10px;
+
+    max-width: 326px;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+.sections-textCards-cards-item-hightlightText-dot {
+    color: a.$primary-400;
+}
+
+// simple image text cards
+.sections-simpleImageTextCards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px;
+    gap: 72px;
+}
+.sections-simpleImageTextCards-cards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+.sections-simpleImageTextCards-cards-item-imageHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 80px;
+}
+.sections-simpleImageTextCards-cards-item {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+
+    width: 27vw;
+}
+.sections-simpleImageTextCards-cards-item-texts {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+}
+
+// testimonial cards
+.sections-testimonialCards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 24px;
+    gap: 72px;
+}
+.sections-testimonialCards-cards {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+}
+.sections-testimonialCards-cards-item {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    max-width: 480px;
+}
+.sections-testimonialCards-cards-item-textBox {
+    box-sizing: border-box;
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 32px 40px 32px 16px;
+    gap: 10px;
+
+    border: 1px solid #62686E;
+    border-radius: 10px;
+
+}
+.sections-testimonialCards-cards-item-personBox {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    // gap: 16px;
+
+    align-self: stretch;
+}
+.sections-testimonialCards-cards-item-personBox-imageHolder{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 40px;
+}
+.sections-testimonialCards-cards-item-personBox-texts {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 16px;
+
+    flex-grow: 1;
+
+}
+
+//large title image texts buttons
+.sections-largeTitleImageTextsButtons {
+
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 24px;
+    gap: 72px;
+
+    color: a.$background-600;
+}
+.sections-largeTitleImageTextsButtons-infoBox {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+.sections-largeTitleImageTextsButtons-infoBox-imageHolder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    max-width: 360px;
+}
+.sections-largeTitleImageTextsButtons-infoBox-texts {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+}
+.sections-largeTitleImageTextsButtons-infoBox-texts-title {
+    padding-right: 440px;
+}
+.sections-largeTitleImageTextsButtons-infoBox-texts-content {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+}
+.sections-largeTitleImageTextsButtons-infoBox-texts-actions {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+}
+.sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 12px;
+}
+
+@media screen and (min-width: 1920px) {
+    //text cards
+    .sections-textCards-cards-item {
+        max-width: unset;
+    }
+
+    //testimonial cards
+    .sections-testimonialCards-cards-item {
+        max-width: unset;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    // text cards
+    .sections-texCards-cards {
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 16px;
+    }
+    .sections-textCards-cards-item {
+        max-width: unset;
+    }
+
+    // simple image text cards
+    .sections-simpleImageTextCards-cards-item {
+        width: 382px;
+    }
+
+    // testimonial cards
+    .sections-testimonialCards-cards {
+        /* Auto layout */
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    // simple image text cards
+    .sections-simpleImageTextCards-cards-item {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    // large title image texts buttons
+    .sections-largeTitleImageTextsButtons-infoBox {
+        /* Auto layout */
+        flex-direction: column;
+    }
+    .sections-largeTitleImageTextsButtons-infoBox-texts-title {
+        padding-right: unset;
+    }
+}
