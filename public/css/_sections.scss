@@ -300,4 +300,8 @@
     .sections-largeTitleImageTextsButtons-infoBox-texts-title {
         padding-right: unset;
     }
+    .sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
+        /* Auto layout */
+        flex-direction: column;
+    }
 }

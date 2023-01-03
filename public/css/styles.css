@@ -367,7 +367,7 @@
     width: 100%;
   }
   .aboutMe-content-portraitHolder-portrait {
-    width: 32vw;
+    width: 64vw;
   }
   .aboutMe-content-texts {
     margin-top: 32px;
@@ -1737,6 +1737,10 @@
   .sections-largeTitleImageTextsButtons-infoBox-texts-title {
     padding-right: unset;
   }
+  .sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
+    /* Auto layout */
+    flex-direction: column;
+  }
 }
 * {
   box-sizing: border-box;
@@ -2116,6 +2120,9 @@ section#snow {
   }
   /* root stylings */
   .ubuntu-9xl-144px-bold {
+    font-size: 24vw;
+  }
+  .ubuntu-9xl-144px-light {
     font-size: 24vw;
   }
   .ubuntu-h3-48px-bold {
