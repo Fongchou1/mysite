@@ -37,51 +37,27 @@
                         <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <%= rootTexts['active-page'].en %>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    onclick='redirect(`<%= links['nav-page-1'].url %>`)'
-                                    rel="noreferrer noopener" 
-                                    role="button"
-                                >
-                                    <%= rootTexts['nav-page-1'].en %>
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    onclick='redirect(`<%= links['nav-page-2'].url %>`)'
-                                    rel="noreferrer noopener" 
-                                    role="button"
-                                >
-                                    <%= rootTexts['nav-page-2'].en %>
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    onclick='redirect(`<%= links['nav-page-3'].url %>`)'
-                                    rel="noreferrer noopener" 
-                                    role="button"
-                                >
-                                    <%= rootTexts['nav-page-3'].en %>
-                                </a>
-                            </li>
-                            <li>
-                                <a 
-                                    class="dropdown-item" 
-                                    onclick='redirect(`<%= links['nav-page-4'].url %>`)'
-                                    rel="noreferrer noopener" 
-                                    role="button"
-                                >
-                                    <%= rootTexts['nav-page-4'].en %>
-                                </a>
-                            </li>
-                            <!-- <li>
-                                <hr class="dropdown-divider">
-                            </li> -->
-                        </ul>
+                        <% if(rootTexts['nav-page-1']){ %>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <% let navLinksCount = 1 %>
+                                <% while(rootTexts['nav-page-' + navLinksCount]){ %>
+                                    <li>
+                                        <a 
+                                            class="dropdown-item" 
+                                            onclick='redirect(`<%= links['nav-page-' + navLinksCount].url %>`)'
+                                            rel="noreferrer noopener" 
+                                            role="button"
+                                        >
+                                            <%= rootTexts['nav-page-' + navLinksCount].en %>
+                                        </a>
+                                    </li>
+                                    <% navLinksCount++ %>
+                                <% } %>
+                                <!-- <li>
+                                    <hr class="dropdown-divider">
+                                </li> -->
+                            </ul>
+                        <% } %>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
@@ -136,60 +112,63 @@
             </div>
         </div>
     </nav>
-    <section id="project-hero">
-        <div class="project-hero-content">
-            <div class="project-hero-content-header">
-                <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
-                    <%= rootTexts['project-title'].en %>
+
+    <% if (rootTexts['project-title']) { %>
+        <section id="project-hero">
+            <div class="project-hero-content">
+                <div class="project-hero-content-header">
+                    <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
+                        <%= rootTexts['project-title'].en %>
+                    </div>
+                    <div class="project-hero-content-header-subtitle">
+                        <%= rootTexts['project-subtitle'].en %>
+                    </div>
+                    <div class="project-hero-content-header-description">
+                        <%= rootTexts['project-description'].en %>
+                    </div>
                 </div>
-                <div class="project-hero-content-header-subtitle">
-                    <%= rootTexts['project-subtitle'].en %>
-                </div>
-                <div class="project-hero-content-header-description">
-                    <%= rootTexts['project-description'].en %>
-                </div>
+                <% if ( rootTexts['project-assignment'] && rootTexts['project-objective'] && rootTexts['project-scope'] && rootTexts['project-yearTitle'] ) { %>
+                    <div class="project-hero-content-features">
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-assignment'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-assignment-content'].en %>
+                            </div>
+                        </div>
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-objective'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-objective-content'].en %>
+                            </div>
+                        </div>
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-scope'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-scope-content'].en %>
+                            </div>
+                        </div>
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-yearTitle'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-year'].en %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
             </div>
-            <% if ( rootTexts['project-assignment'] && rootTexts['project-objective'] && rootTexts['project-scope'] && rootTexts['project-yearTitle'] ) { %>
-                <div class="project-hero-content-features">
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-assignment'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-assignment-content'].en %>
-                        </div>
-                    </div>
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-objective'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-objective-content'].en %>
-                        </div>
-                    </div>
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-scope'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-scope-content'].en %>
-                        </div>
-                    </div>
-                    <div class="project-hero-content-features-item">
-                        <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                            <%= rootTexts['project-yearTitle'].en %>
-                        </div>
-                        <div class="project-hero-content-features-item-content">
-                            <%= rootTexts['project-year'].en %>
-                        </div>
-                    </div>
-                </div>
-            <% } %>
-        </div>
-        <div class="project-hero-hr">
-            <div class='hr-main'></div>
-        </div>
-    </section>
+            <div class="project-hero-hr">
+                <div class='hr-main'></div>
+            </div>
+        </section>
+    <% } %>
 
     <section id="project-projects">
         <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
@@ -517,7 +496,7 @@
             <% } %>
         <% } %>
     </section>
-    <% if ( links['cta-button'].url ) { %>
+    <% if ( rootTexts['project-title'] && links['cta-button'].url ) { %>
         <section id="project-cta">
             <div class="project-cta-hr">
                 <div class='hr-main'></div>
