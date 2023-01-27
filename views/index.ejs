@@ -2,31 +2,8 @@
 <%- include("header") -%>
 <body class="mine">
   <div data-scroll-container>
-  
-  <!-- <section id="snow">
-    <div class="snowflakes" aria-hidden="true">
-      <% for (let i = 0; i < 10; i++) { %>
-        <div class="snowflake">
-        ❄️
-        </div>
-      <% } %>
-    </div>
-  </section> -->
-  <div id="globalLightTransitionCover">
-    <div class="globalLightTransitionCover-animation-box">
-      <div class="globalLightTransitionCover-animation-spinContainer">
-        <div class="globalLightTransitionCover-animation-holder">
-          <div class="globalLightTransitionCover-animation-holder-bd">
-            <img 
-              class="globalLightTransitionCover-animation-img"
-              src='<%= images.loading.attachment[0].url %>'
-              alt='<%= images.loading.alt %>'
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <%- include("loading") -%>
     <!-- New Section 1 -->
     <section id="hero" data-scroll-section>
       <div class="hero-nameAndLogo">

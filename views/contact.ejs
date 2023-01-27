@@ -3,21 +3,7 @@
 <body id="contact-body">
   <div data-scroll-container>
 
-  <div id="globalLightTransitionCover">
-    <div class="globalLightTransitionCover-animation-box">
-      <div class="globalLightTransitionCover-animation-spinContainer">
-        <div class="globalLightTransitionCover-animation-holder">
-          <div class="globalLightTransitionCover-animation-holder-bd">
-            <img 
-              class="globalLightTransitionCover-animation-img"
-              src='<%= images.loading.attachment[0].url %>'
-              alt='<%= images.loading.alt %>'
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%- include("loading") -%>
 
   <div class="contact">
     <section id="contact-nav">

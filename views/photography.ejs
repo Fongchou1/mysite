@@ -3,21 +3,7 @@
 
 <body class="photography">
 
-  <div id="globalLightTransitionCover">
-    <div class="globalLightTransitionCover-animation-box">
-      <div class="globalLightTransitionCover-animation-spinContainer">
-        <div class="globalLightTransitionCover-animation-holder">
-          <div class="globalLightTransitionCover-animation-holder-bd">
-            <img 
-              class="globalLightTransitionCover-animation-img"
-              src='<%= images.loading.attachment[0].url %>'
-              alt='<%= images.loading.alt %>'
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <%- include("loading") -%>
 
   <section id="photography-board">
     <nav class="navbar navbar-expand-lg navbar-dark photography-board-nav">
@@ -453,24 +439,6 @@
     });
     
     // console.log(scrollContainerWidth)
-
-    //transition
-    //transition
-    function startTransitionOverlay() {
-        document.getElementById("globalLightTransitionCover").classList.add('show-globalLightTransitionCover');
-        }
-        function endTransitionOverlay() {
-          document.getElementById("globalLightTransitionCover").classList.add('hide-globalLightTransitionCover');
-        }
-        function redirectAction(url) {
-            window.location.href = url;
-        }
-        function redirect(url) {
-            endTransitionOverlay();
-            const myTimeout = setTimeout(redirectAction(url), 300);
-        }
-        startTransitionOverlay()
-        // const myTimeout = setTimeout(startTransitionOverlay, 2000);
 
   
   </script>

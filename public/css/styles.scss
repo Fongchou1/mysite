@@ -160,22 +160,41 @@ nav {
 i.social {
   margin-right: 0.625rem;
 }
+#loadingSection {
+  @include a.flexRowCenterXY;
+
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
 #globalLightTransitionCover {
   @include a.flexRowCenterXY;
   // left: 0;
   // background-color: rgba(0,0,0,0.5);
-  background-color: black;
+  background-color: rgba(23, 100, 161, 0.5);
   height: 100%;
   position: fixed;
   bottom: 0%;
   // display: block;
   width: 100%;
-  z-index: 99;
+  z-index: 9999;
+}
+#loadingSection-intro{
+  height: 100%;
+  width: 100%;
+}
+.loadingSection-intro-video {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
 }
 .globalLightTransitionCover-animation-box {
   width: 8vw;
   height: 8vw;
   // border: 1px dashed rgba(255,255,255,0.4);
+  border-radius: 100%;
   position: relative;
 }
 .globalLightTransitionCover-animation-spinContainer {
@@ -213,7 +232,7 @@ i.social {
   background-size: 100%;
   background-position: center center;
   display: flex;
-  color: #003;
+  color: #1764A1;
   font-size: 5vw;
   font-weight: bold;
   align-items: center;
@@ -224,17 +243,23 @@ i.social {
   opacity: 1;
   z-index: 2;
 }
-.globalLightTransitionCover-animation-img {
-  width: 80%;
-  height: 80%;
+.globalLightTransitionCover-animation-video {
+  width: 110%;
+  height: 110%;
 }
-.show-globalLightTransitionCover {
-  animation: revealCover 0.5s forwards;
-  -webkit-animation: revealCover 0.5s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
+.default-hidden-globalLightTransitionCover {
+  // animation: revealCover 0.5s forwards;
+  // -webkit-animation: revealCover 0.5s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
+  display: none !important;
+}
+.noDisplay {
+  // animation: revealCover 0.5s forwards;
+  // -webkit-animation: revealCover 0.5s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
+  display: none !important;
 }
 .hide-globalLightTransitionCover {
-  animation: putCover 0.5s forwards;
-  -webkit-animation: putCover 0.3s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
+  animation: putCover 0.05s forwards;
+  -webkit-animation: putCover 0.05s cubic-bezier(0.42, 0.0, 1.0, 1.0) forwards;
 }
 .photography-board-content-sections::-webkit-scrollbar{
   height: 4px;
@@ -253,20 +278,23 @@ i.social {
 @keyframes revealCover {
   0% {
     bottom: 0%;
+    // display: none;
   }
   99% {
-    bottom: 100%;
+    bottom: 0%;
   }
   100% {
-    bottom: 100%;
+    bottom: 0%;
+    display: none;
   }
 }
 @keyframes putCover {
   from {
-    bottom: 100%;
+    opacity: 0;
   }
   to {
-    bottom: 0%;
+    opacity: 1;
+    // display: none;
   }
 }
 @keyframes morph {
@@ -314,8 +342,8 @@ section#snow {
 @media screen and (max-width: 600px) {
 
   .globalLightTransitionCover-animation-box {
-    width: 98px;
-    height: 98px;
+    width: 25vw;
+    height: 25vw;
   }
 
   /* root stylings */

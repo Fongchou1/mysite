@@ -1002,8 +1002,7 @@ app.get("/kickstart", function (req, res) {
                                                                         footerRootTexts,
                                                                     footerLinks:
                                                                         footerLinks,
-                                                                    cards:
-                                                                        cards,
+                                                                    cards: cards,
                                                                 }
                                                             );
                                                         });
@@ -1016,287 +1015,285 @@ app.get("/kickstart", function (req, res) {
 });
 
 app.get("/take-off-day", function (req, res) {
-  let rootTexts = {};
-  let links = {};
-  let sections = {};
-  let images = {};
-  let cards = {};
-  let footerRootTexts = {};
-  let footerLinks = {};
+    let rootTexts = {};
+    let links = {};
+    let sections = {};
+    let images = {};
+    let cards = {};
+    let footerRootTexts = {};
+    let footerLinks = {};
 
-  //fetch footer root text
-  footerBase("root-texts")
-      .select({
-          view: "DB",
-      })
-      .all(function (err, records) {
-          if (err) {
-              console.error(err);
-              return;
-          }
+    //fetch footer root text
+    footerBase("root-texts")
+        .select({
+            view: "DB",
+        })
+        .all(function (err, records) {
+            if (err) {
+                console.error(err);
+                return;
+            }
 
-          // footer root text fetched from airtable
-          readFields(footerRootTexts, records);
+            // footer root text fetched from airtable
+            readFields(footerRootTexts, records);
 
-          // fetch footer links
-          footerBase("links")
-              .select({
-                  view: "DB",
-              })
-              .all(function (err, records) {
-                  if (err) {
-                      console.error(err);
-                      return;
-                  }
+            // fetch footer links
+            footerBase("links")
+                .select({
+                    view: "DB",
+                })
+                .all(function (err, records) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
 
-                  // footer links fetched from airtable
-                  readFields(footerLinks, records);
+                    // footer links fetched from airtable
+                    readFields(footerLinks, records);
 
-                  // fetch e-mission web root texts
-                  sectionsBase("root-texts")
-                      .select({
-                          view: "Take Off Day",
-                      })
-                      .all(function (err, records) {
-                          if (err) {
-                              console.error(err);
-                              return;
-                          }
+                    // fetch e-mission web root texts
+                    sectionsBase("root-texts")
+                        .select({
+                            view: "Take Off Day",
+                        })
+                        .all(function (err, records) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
 
-                          // e-mission web root texts fetched from airtable
-                          readFields(rootTexts, records);
+                            // e-mission web root texts fetched from airtable
+                            readFields(rootTexts, records);
 
-                          // fetch e-mission web links
-                          sectionsBase("links")
-                              .select({
-                                  view: "Take Off Day",
-                              })
-                              .all(function (err, records) {
-                                  if (err) {
-                                      console.error(err);
-                                      return;
-                                  }
+                            // fetch e-mission web links
+                            sectionsBase("links")
+                                .select({
+                                    view: "Take Off Day",
+                                })
+                                .all(function (err, records) {
+                                    if (err) {
+                                        console.error(err);
+                                        return;
+                                    }
 
-                                  // e-mission web links fetched from airtable
-                                  readFields(links, records);
+                                    // e-mission web links fetched from airtable
+                                    readFields(links, records);
 
-                                  // fetch e-mission web sections
-                                  sectionsBase("sections")
-                                      .select({
-                                          view: "Take Off Day",
-                                      })
-                                      .all(function (err, records) {
-                                          if (err) {
-                                              console.error(err);
-                                              return;
-                                          }
+                                    // fetch e-mission web sections
+                                    sectionsBase("sections")
+                                        .select({
+                                            view: "Take Off Day",
+                                        })
+                                        .all(function (err, records) {
+                                            if (err) {
+                                                console.error(err);
+                                                return;
+                                            }
 
-                                          // e-mission web sections fetched from airtable
-                                          readFields(sections, records);
+                                            // e-mission web sections fetched from airtable
+                                            readFields(sections, records);
 
-                                          // fetch e-mission web images
-                                          sectionsBase("images")
-                                              .select({
-                                                  view: "Take Off Day",
-                                              })
-                                              .all(function (err, records) {
-                                                  if (err) {
-                                                      console.error(err);
-                                                      return;
-                                                  }
+                                            // fetch e-mission web images
+                                            sectionsBase("images")
+                                                .select({
+                                                    view: "Take Off Day",
+                                                })
+                                                .all(function (err, records) {
+                                                    if (err) {
+                                                        console.error(err);
+                                                        return;
+                                                    }
 
-                                                  // e-mission web images fetched from airtable
-                                                  readFields(images, records);
+                                                    // e-mission web images fetched from airtable
+                                                    readFields(images, records);
 
-                                                  //fetch kickstart cards
-                                                  sectionsBase("cards")
-                                                      .select({
-                                                          view: "Take Off Day",
-                                                      })
-                                                      .all(function (
-                                                          err,
-                                                          records
-                                                      ) {
-                                                          if (err) {
-                                                              console.error(
-                                                                  err
-                                                              );
-                                                              return;
-                                                          }
+                                                    //fetch kickstart cards
+                                                    sectionsBase("cards")
+                                                        .select({
+                                                            view: "Take Off Day",
+                                                        })
+                                                        .all(function (
+                                                            err,
+                                                            records
+                                                        ) {
+                                                            if (err) {
+                                                                console.error(
+                                                                    err
+                                                                );
+                                                                return;
+                                                            }
 
-                                                          // e-mission web images fetched from airtable
-                                                          readFields(
-                                                              cards,
-                                                              records
-                                                          );
+                                                            // e-mission web images fetched from airtable
+                                                            readFields(
+                                                                cards,
+                                                                records
+                                                            );
 
-                                                          // fetched all required data and send
-                                                          res.render(
-                                                              "project",
-                                                              {
-                                                                  rootTexts:
-                                                                      rootTexts,
-                                                                  links: links,
-                                                                  sections:
-                                                                      sections,
-                                                                  images: images,
-                                                                  footerRootTexts:
-                                                                      footerRootTexts,
-                                                                  footerLinks:
-                                                                      footerLinks,
-                                                                  cards:
-                                                                      cards,
-                                                              }
-                                                          );
-                                                      });
-                                              });
-                                      });
-                              });
-                      });
-              });
-      });
+                                                            // fetched all required data and send
+                                                            res.render(
+                                                                "project",
+                                                                {
+                                                                    rootTexts:
+                                                                        rootTexts,
+                                                                    links: links,
+                                                                    sections:
+                                                                        sections,
+                                                                    images: images,
+                                                                    footerRootTexts:
+                                                                        footerRootTexts,
+                                                                    footerLinks:
+                                                                        footerLinks,
+                                                                    cards: cards,
+                                                                }
+                                                            );
+                                                        });
+                                                });
+                                        });
+                                });
+                        });
+                });
+        });
 });
 
 app.get("/designlab", function (req, res) {
-  let rootTexts = {};
-  let links = {};
-  let sections = {};
-  let images = {};
-  let cards = {};
-  let footerRootTexts = {};
-  let footerLinks = {};
+    let rootTexts = {};
+    let links = {};
+    let sections = {};
+    let images = {};
+    let cards = {};
+    let footerRootTexts = {};
+    let footerLinks = {};
 
-  //fetch footer root text
-  footerBase("root-texts")
-      .select({
-          view: "DB",
-      })
-      .all(function (err, records) {
-          if (err) {
-              console.error(err);
-              return;
-          }
+    //fetch footer root text
+    footerBase("root-texts")
+        .select({
+            view: "DB",
+        })
+        .all(function (err, records) {
+            if (err) {
+                console.error(err);
+                return;
+            }
 
-          // footer root text fetched from airtable
-          readFields(footerRootTexts, records);
+            // footer root text fetched from airtable
+            readFields(footerRootTexts, records);
 
-          // fetch footer links
-          footerBase("links")
-              .select({
-                  view: "DB",
-              })
-              .all(function (err, records) {
-                  if (err) {
-                      console.error(err);
-                      return;
-                  }
+            // fetch footer links
+            footerBase("links")
+                .select({
+                    view: "DB",
+                })
+                .all(function (err, records) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
 
-                  // footer links fetched from airtable
-                  readFields(footerLinks, records);
+                    // footer links fetched from airtable
+                    readFields(footerLinks, records);
 
-                  // fetch e-mission web root texts
-                  sectionsBase("root-texts")
-                      .select({
-                          view: "Designlab",
-                      })
-                      .all(function (err, records) {
-                          if (err) {
-                              console.error(err);
-                              return;
-                          }
+                    // fetch e-mission web root texts
+                    sectionsBase("root-texts")
+                        .select({
+                            view: "Designlab",
+                        })
+                        .all(function (err, records) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
 
-                          // e-mission web root texts fetched from airtable
-                          readFields(rootTexts, records);
+                            // e-mission web root texts fetched from airtable
+                            readFields(rootTexts, records);
 
-                          // fetch e-mission web links
-                          sectionsBase("links")
-                              .select({
-                                  view: "Designlab",
-                              })
-                              .all(function (err, records) {
-                                  if (err) {
-                                      console.error(err);
-                                      return;
-                                  }
+                            // fetch e-mission web links
+                            sectionsBase("links")
+                                .select({
+                                    view: "Designlab",
+                                })
+                                .all(function (err, records) {
+                                    if (err) {
+                                        console.error(err);
+                                        return;
+                                    }
 
-                                  // e-mission web links fetched from airtable
-                                  readFields(links, records);
+                                    // e-mission web links fetched from airtable
+                                    readFields(links, records);
 
-                                  // fetch e-mission web sections
-                                  sectionsBase("sections")
-                                      .select({
-                                          view: "Designlab",
-                                      })
-                                      .all(function (err, records) {
-                                          if (err) {
-                                              console.error(err);
-                                              return;
-                                          }
+                                    // fetch e-mission web sections
+                                    sectionsBase("sections")
+                                        .select({
+                                            view: "Designlab",
+                                        })
+                                        .all(function (err, records) {
+                                            if (err) {
+                                                console.error(err);
+                                                return;
+                                            }
 
-                                          // e-mission web sections fetched from airtable
-                                          readFields(sections, records);
+                                            // e-mission web sections fetched from airtable
+                                            readFields(sections, records);
 
-                                          // fetch e-mission web images
-                                          sectionsBase("images")
-                                              .select({
-                                                  view: "Designlab",
-                                              })
-                                              .all(function (err, records) {
-                                                  if (err) {
-                                                      console.error(err);
-                                                      return;
-                                                  }
+                                            // fetch e-mission web images
+                                            sectionsBase("images")
+                                                .select({
+                                                    view: "Designlab",
+                                                })
+                                                .all(function (err, records) {
+                                                    if (err) {
+                                                        console.error(err);
+                                                        return;
+                                                    }
 
-                                                  // e-mission web images fetched from airtable
-                                                  readFields(images, records);
+                                                    // e-mission web images fetched from airtable
+                                                    readFields(images, records);
 
-                                                  //fetch kickstart cards
-                                                  sectionsBase("cards")
-                                                      .select({
-                                                          view: "Designlab",
-                                                      })
-                                                      .all(function (
-                                                          err,
-                                                          records
-                                                      ) {
-                                                          if (err) {
-                                                              console.error(
-                                                                  err
-                                                              );
-                                                              return;
-                                                          }
+                                                    //fetch kickstart cards
+                                                    sectionsBase("cards")
+                                                        .select({
+                                                            view: "Designlab",
+                                                        })
+                                                        .all(function (
+                                                            err,
+                                                            records
+                                                        ) {
+                                                            if (err) {
+                                                                console.error(
+                                                                    err
+                                                                );
+                                                                return;
+                                                            }
 
-                                                          // e-mission web images fetched from airtable
-                                                          readFields(
-                                                              cards,
-                                                              records
-                                                          );
+                                                            // e-mission web images fetched from airtable
+                                                            readFields(
+                                                                cards,
+                                                                records
+                                                            );
 
-                                                          // fetched all required data and send
-                                                          res.render(
-                                                              "project",
-                                                              {
-                                                                  rootTexts:
-                                                                      rootTexts,
-                                                                  links: links,
-                                                                  sections:
-                                                                      sections,
-                                                                  images: images,
-                                                                  footerRootTexts:
-                                                                      footerRootTexts,
-                                                                  footerLinks:
-                                                                      footerLinks,
-                                                                  cards:
-                                                                      cards,
-                                                              }
-                                                          );
-                                                      });
-                                              });
-                                      });
-                              });
-                      });
-              });
-      });
+                                                            // fetched all required data and send
+                                                            res.render(
+                                                                "project",
+                                                                {
+                                                                    rootTexts:
+                                                                        rootTexts,
+                                                                    links: links,
+                                                                    sections:
+                                                                        sections,
+                                                                    images: images,
+                                                                    footerRootTexts:
+                                                                        footerRootTexts,
+                                                                    footerLinks:
+                                                                        footerLinks,
+                                                                    cards: cards,
+                                                                }
+                                                            );
+                                                        });
+                                                });
+                                        });
+                                });
+                        });
+                });
+        });
 });
 
 app.get("/graphics", function (req, res) {
