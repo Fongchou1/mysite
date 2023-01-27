@@ -9,10 +9,11 @@
             autoplay
             muted
             playsinline
+            preload="yes"
         >
             <source
                 src="<%= images['intro1_mp4'].attachment[0].url %>"
-                type='video/mp4; codecs="hvcl"'
+                type='video/mp4'
             />
             <source
                 src="<%= images['intro1_webm'].attachment[0].url %>"
@@ -29,15 +30,16 @@
                         <video
                             class="globalLightTransitionCover-animation-video"
                             width="100%"
-                            height="700%"
+                            height="100%"
                             autoplay
                             loop
                             muted
                             playsinline
+                            preload="yes"
                         >
                             <source
                                 src="<%= images['loading2_mp4'].attachment[0].url %>"
-                                type='video/mp4; codecs="hvcl"'
+                                type='video/mp4'
                             />
                             <source
                                 src="<%= images['loading2_webm'].attachment[0].url %>"
@@ -68,8 +70,8 @@
         }
         function redirect(url) {
             endTransitionOverlay();
-            redirectAction(url)
-            // const myTimeout = setTimeout(redirectAction(url), 50);
+            // redirectAction(url)
+            const myTimeout = setTimeout(redirectAction(url), 50);
         }
         // document.getElementById("loadingSection").classList.add('default-hidden-globalLightTransitionCover');
         const myTimeout = setTimeout(startTransitionOverlay, 2300);
