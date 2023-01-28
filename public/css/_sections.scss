@@ -25,14 +25,16 @@
 }
 
 // text cards
-.sections-texCards {
+.sections-textCards {
     /* Auto layout */
+    background-color: a.$primary-100;
+    color: a.$background-400;
     display: flex;
     flex-direction: column;
     padding: 80px 24px;
     gap: 72px;
 }
-.sections-texCards-cards {
+.sections-textCards-cards {
     /* Auto layout */
     display: flex;
     flex-direction: row;
@@ -74,6 +76,8 @@
 // simple image text cards
 .sections-simpleImageTextCards {
     /* Auto layout */
+    background-color: a.$primary-100;
+    color: a.$background-400;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,6 +121,8 @@
 // testimonial cards
 .sections-testimonialCards {
     /* Auto layout */
+    background-color: a.$primary-100;
+    color: a.$background-400;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -186,8 +192,9 @@
 
 //large title image texts buttons
 .sections-largeTitleImageTextsButtons {
-
     /* Auto layout */
+    background-color: a.$primary-100;
+    color: a.$background-400;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -261,7 +268,7 @@
 
 @media screen and (max-width: 1200px) {
     // text cards
-    .sections-texCards-cards {
+    .sections-textCards-cards {
         /* Auto layout */
         display: flex;
         flex-direction: column;

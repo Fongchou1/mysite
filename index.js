@@ -182,19 +182,14 @@ app.get("/", async function (req, res) {
                                                                     res.render(
                                                                         "index",
                                                                         {
-                                                                            rootTexts:
-                                                                                rootTexts,
+                                                                            rootTexts: rootTexts,
                                                                             links: links,
                                                                             images: images,
-                                                                            sections:
-                                                                                sections,
-                                                                            projects:
-                                                                                projects,
+                                                                            sections: sections,
+                                                                            projects: projects,
                                                                             cards: cards,
-                                                                            footerRootTexts:
-                                                                                footerRootTexts,
-                                                                            footerLinks:
-                                                                                footerLinks,
+                                                                            footerRootTexts: footerRootTexts,
+                                                                            footerLinks: footerLinks,
                                                                         }
                                                                     );
                                                                 });
@@ -208,6 +203,7 @@ app.get("/", async function (req, res) {
 });
 
 app.get("/e-mission-web", function (req, res) {
+    // console.log(req);
     let rootTexts = {};
     let links = {};
     let sections = {};
@@ -305,10 +301,8 @@ app.get("/e-mission-web", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -416,10 +410,8 @@ app.get("/e-mission-application", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -527,10 +519,8 @@ app.get("/tarocchi", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -638,121 +628,8 @@ app.get("/pos-app", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
-                                                    });
-                                                });
-                                        });
-                                });
-                        });
-                });
-        });
-});
-
-app.get("/berlineats", function (req, res) {
-    let rootTexts = {};
-    let links = {};
-    let sections = {};
-    let images = {};
-    let footerRootTexts = {};
-    let footerLinks = {};
-
-    //fetch footer root text
-    footerBase("root-texts")
-        .select({
-            view: "DB",
-        })
-        .all(function (err, records) {
-            if (err) {
-                console.error(err);
-                return;
-            }
-
-            // footer root text fetched from airtable
-            readFields(footerRootTexts, records);
-
-            // fetch footer links
-            footerBase("links")
-                .select({
-                    view: "DB",
-                })
-                .all(function (err, records) {
-                    if (err) {
-                        console.error(err);
-                        return;
-                    }
-
-                    // footer links fetched from airtable
-                    readFields(footerLinks, records);
-
-                    // fetch BerlinEats root texts
-                    sectionsBase("root-texts")
-                        .select({
-                            view: "BerlinEats",
-                        })
-                        .all(function (err, records) {
-                            if (err) {
-                                console.error(err);
-                                return;
-                            }
-
-                            // BerlinEats root texts fetched from airtable
-                            readFields(rootTexts, records);
-
-                            // fetch BerlinEats links
-                            sectionsBase("links")
-                                .select({
-                                    view: "BerlinEats",
-                                })
-                                .all(function (err, records) {
-                                    if (err) {
-                                        console.error(err);
-                                        return;
-                                    }
-
-                                    // BerlinEats links fetched from airtable
-                                    readFields(links, records);
-
-                                    // fetch BerlinEats sections
-                                    sectionsBase("sections")
-                                        .select({
-                                            view: "BerlinEats",
-                                        })
-                                        .all(function (err, records) {
-                                            if (err) {
-                                                console.error(err);
-                                                return;
-                                            }
-
-                                            // BerlinEats sections fetched from airtable
-                                            readFields(sections, records);
-
-                                            // fetch BerlinEats images
-                                            sectionsBase("images")
-                                                .select({
-                                                    view: "BerlinEats",
-                                                })
-                                                .all(function (err, records) {
-                                                    if (err) {
-                                                        console.error(err);
-                                                        return;
-                                                    }
-
-                                                    // BerlinEats images fetched from airtable
-                                                    readFields(images, records);
-
-                                                    // fetched all required data and send
-                                                    res.render("project", {
-                                                        rootTexts: rootTexts,
-                                                        links: links,
-                                                        sections: sections,
-                                                        images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -843,7 +720,8 @@ app.get("/video-management-app", function (req, res) {
                                             // fetch BerlinEats images
                                             sectionsBase("images")
                                                 .select({
-                                                    view: "Video Management App",
+                                                    view:
+                                                        "Video Management App",
                                                 })
                                                 .all(function (err, records) {
                                                     if (err) {
@@ -860,11 +738,150 @@ app.get("/video-management-app", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
+                                                });
+                                        });
+                                });
+                        });
+                });
+        });
+});
+
+app.get("/services", async function (req, res) {
+    // res.sendFile(__dirname + "/index.html");
+
+    let rootTexts = {};
+    let links = {};
+    let images = {};
+    let sections = {};
+    let cards = {};
+    let footerRootTexts = {};
+    let footerLinks = {};
+
+    // airtable
+    await sectionsBase("root-texts")
+        .select({
+            view: "Services",
+        })
+        .all(function (err, records) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            // root texts fetched from airtable
+            readFields(rootTexts, records);
+
+            // move forward to fetch another table
+            sectionsBase("links")
+                .select({
+                    view: "Services",
+                })
+                .all(function (err, records) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+
+                    // links fetched from airtable
+                    readFields(links, records);
+
+                    // move forward to fetch another table
+                    sectionsBase("images")
+                        .select({
+                            view: "Services",
+                        })
+                        .all(function (err, records) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
+
+                            // images fetched from airtable
+                            readFields(images, records);
+
+                            //move forward to fetch another table
+                            sectionsBase("sections")
+                                .select({
+                                    view: "Services",
+                                })
+                                .all(function (err, records) {
+                                    if (err) {
+                                        console.error(err);
+                                        return;
+                                    }
+
+                                    // sections fetched from airtable
+                                    readFields(sections, records);
+
+                                    sectionsBase("cards")
+                                        .select({
+                                            view: "Services",
+                                        })
+                                        .all(function (err, records) {
+                                            if (err) {
+                                                console.error(err);
+                                                return;
+                                            }
+
+                                            // cards fetched from airtable
+                                            readFields(cards, records);
+
+                                            //fetch footer root text
+                                            footerBase("root-texts")
+                                                .select({
+                                                    view: "DB",
+                                                })
+                                                .all(function (err, records) {
+                                                    if (err) {
+                                                        console.error(err);
+                                                        return;
+                                                    }
+
+                                                    // footer root text fetched from airtable
+                                                    readFields(
+                                                        footerRootTexts,
+                                                        records
+                                                    );
+
+                                                    // fetch footer links
+                                                    footerBase("links")
+                                                        .select({
+                                                            view: "DB",
+                                                        })
+                                                        .all(function (
+                                                            err,
+                                                            records
+                                                        ) {
+                                                            if (err) {
+                                                                console.error(
+                                                                    err
+                                                                );
+                                                                return;
+                                                            }
+
+                                                            // footer links fetched from airtable
+                                                            readFields(
+                                                                footerLinks,
+                                                                records
+                                                            );
+
+                                                            // fetched all required data and send
+                                                            res.render(
+                                                                "sectionsPage",
+                                                                {
+                                                                    rootTexts: rootTexts,
+                                                                    links: links,
+                                                                    images: images,
+                                                                    sections: sections,
+                                                                    cards: cards,
+                                                                    footerRootTexts: footerRootTexts,
+                                                                    footerLinks: footerLinks,
+                                                                }
+                                                            );
+                                                        });
                                                 });
                                         });
                                 });
@@ -992,16 +1009,12 @@ app.get("/kickstart", function (req, res) {
                                                             res.render(
                                                                 "project",
                                                                 {
-                                                                    rootTexts:
-                                                                        rootTexts,
+                                                                    rootTexts: rootTexts,
                                                                     links: links,
-                                                                    sections:
-                                                                        sections,
+                                                                    sections: sections,
                                                                     images: images,
-                                                                    footerRootTexts:
-                                                                        footerRootTexts,
-                                                                    footerLinks:
-                                                                        footerLinks,
+                                                                    footerRootTexts: footerRootTexts,
+                                                                    footerLinks: footerLinks,
                                                                     cards: cards,
                                                                 }
                                                             );
@@ -1110,7 +1123,8 @@ app.get("/take-off-day", function (req, res) {
                                                     //fetch kickstart cards
                                                     sectionsBase("cards")
                                                         .select({
-                                                            view: "Take Off Day",
+                                                            view:
+                                                                "Take Off Day",
                                                         })
                                                         .all(function (
                                                             err,
@@ -1133,16 +1147,12 @@ app.get("/take-off-day", function (req, res) {
                                                             res.render(
                                                                 "project",
                                                                 {
-                                                                    rootTexts:
-                                                                        rootTexts,
+                                                                    rootTexts: rootTexts,
                                                                     links: links,
-                                                                    sections:
-                                                                        sections,
+                                                                    sections: sections,
                                                                     images: images,
-                                                                    footerRootTexts:
-                                                                        footerRootTexts,
-                                                                    footerLinks:
-                                                                        footerLinks,
+                                                                    footerRootTexts: footerRootTexts,
+                                                                    footerLinks: footerLinks,
                                                                     cards: cards,
                                                                 }
                                                             );
@@ -1274,16 +1284,12 @@ app.get("/designlab", function (req, res) {
                                                             res.render(
                                                                 "project",
                                                                 {
-                                                                    rootTexts:
-                                                                        rootTexts,
+                                                                    rootTexts: rootTexts,
                                                                     links: links,
-                                                                    sections:
-                                                                        sections,
+                                                                    sections: sections,
                                                                     images: images,
-                                                                    footerRootTexts:
-                                                                        footerRootTexts,
-                                                                    footerLinks:
-                                                                        footerLinks,
+                                                                    footerRootTexts: footerRootTexts,
+                                                                    footerLinks: footerLinks,
                                                                     cards: cards,
                                                                 }
                                                             );
@@ -1389,15 +1395,13 @@ app.get("/graphics", function (req, res) {
                                                     readFields(images, records);
 
                                                     // fetched all required data and send
-                                                    res.render("graphics", {
+                                                    res.render("project", {
                                                         rootTexts: rootTexts,
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -1506,10 +1510,8 @@ app.get("/photography-lockdown", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -1618,10 +1620,8 @@ app.get("/photography-embodiment", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -1730,10 +1730,8 @@ app.get("/photography-the-third", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -1842,10 +1840,8 @@ app.get("/photography-berlin-wall", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -1954,10 +1950,8 @@ app.get("/photography-untitled", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts:
-                                                            footerRootTexts,
-                                                        footerLinks:
-                                                            footerLinks,
+                                                        footerRootTexts: footerRootTexts,
+                                                        footerLinks: footerLinks,
                                                     });
                                                 });
                                         });
@@ -2049,8 +2043,7 @@ app.get("/contact", function (req, res) {
                                                 rootTexts: rootTexts,
                                                 links: links,
                                                 images: images,
-                                                footerRootTexts:
-                                                    footerRootTexts,
+                                                footerRootTexts: footerRootTexts,
                                                 footerLinks: footerLinks,
                                             });
                                         });
@@ -2111,6 +2104,6 @@ app.get("/webProjects", function (req, res) {
 //   res.sendFile(__dirname + "/personalwebsite/public/index.html");
 // });
 
-app.listen(process.env.PORT || 3000, function () {
-    console.log("Server started at port 3000.");
+app.listen(process.env.PORT || 5500, function () {
+    console.log("Server started at port 5500.");
 });

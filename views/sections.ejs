@@ -1,0 +1,412 @@
+<section id="project-projects">
+  <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
+  <% if ( Object.values(sections)[i].type === 'textCards' ) { %>
+  <div class="sections-textCards">
+    <div class="sections-section-header">
+      <div class="sections-section-title ubuntu-h3-48px-bold">
+        <%= Object.values(sections)[i]['title-en'] %>
+      </div>
+      <div class="sections-section-description ubuntu-body1-18px-light">
+        <%= Object.values(sections)[i]['subtitle-en'] %>
+      </div>
+    </div>
+    <div class="sections-textCards-cards">
+      <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
+      <div class="sections-textCards-cards-item">
+        <div class="sections-textCards-cards-item-subtitle ubuntu-body2-14px-bold">
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]].subtitle %>
+        </div>
+        <div class="sections-textCards-cards-item-cardTitle ubuntu-body1-18px-bold">
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['card-title'] %>
+        </div>
+        <% let featuresCount = 1 %>
+        <% while(cards[Object.values(sections)[i]['card-links-title'][j]]['feature-' + featuresCount]){ %>
+        <div class="sections-textCards-cards-item-feature ubuntu-body2-14px-light">
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['feature-' + featuresCount] %>
+        </div>
+        <% featuresCount++ %>
+        <% } %>
+        <div class="sections-textCards-cards-item-cardSubtitle ubuntu-body2-14px-medium">
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['card-subtitle'] %>
+        </div>
+        <% let cardSubtitleItemCount = 1 %>
+        <% while(cards[Object.values(sections)[i]['card-links-title'][j]]['card-subtitle-item-' + cardSubtitleItemCount]){ %>
+        <div class="sections-textCards-cards-item-CardSubtitle-item ubuntu-body2-14px-light">
+          <span class="sections-textCards-cards-item-CardSubtitle-item-dot">
+            <i class="fa-solid fa-circle fa-2xs"></i>
+          </span>
+          &nbsp;
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['card-subtitle-item-' + cardSubtitleItemCount] %>
+        </div>
+        <% cardSubtitleItemCount++ %>
+        <% } %>
+        <div class="sections-textCards-cards-item-note ubuntu-body2-14px-light">
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['note'] %>
+        </div>
+        <div class="sections-textCards-cards-item-hightlightText ubuntu-body1-18px-bold">
+          <span class="sections-textCards-cards-item-hightlightText-dot">
+            <i class="fa-solid fa-circle"></i>
+          </span>
+          &nbsp;
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['highlight-text'] %>
+        </div>
+        <div class="sections-textCards-cards-item-cta ubuntu-body1-18px-bold">
+          <a class="project-cta-button-text-primary" href=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['cta-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+            <button type="button" class="btn btn-primary ubuntu-body1-18px-regular">
+              <%= cards[Object.values(sections)[i]['card-links-title'][j]].cta %>
+            </button>
+          </a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="hr">
+      <div class='hr-tertiary'></div>
+    </div>
+  </div>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'simpleImageTextCards' ) { %>
+  <div class="sections-simpleImageTextCards">
+    <div class="sections-section-title ubuntu-h3-48px-bold">
+      <%= Object.values(sections)[i]['title-en'] %>
+    </div>
+    <div class="sections-simpleImageTextCards-cards">
+      <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
+      <div class="sections-simpleImageTextCards-cards-item">
+        <div class="sections-simpleImageTextCards-cards-item-imageHolder">
+          <img class="sections-holdedImage-img" src=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].url %>>
+        </div>
+        <div class="sections-simpleImageTextCards-cards-item-texts">
+          <div class="sections-simpleImageTextCards-cards-item-texts-title ubuntu-body1-18px-bold">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]]['card-title'] %>
+          </div>
+          <div class="sections-simpleImageTextCards-cards-item-texts-content ubuntu-body2-14px-light">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]]['subtitle'] %>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="hr">
+      <div class='hr-tertiary'></div>
+    </div>
+  </div>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'testimonialCards' ) { %>
+  <div class="sections-testimonialCards">
+    <div class="sections-section-header">
+      <div class="sections-section-title ubuntu-h3-48px-bold">
+        <%= Object.values(sections)[i]['title-en'] %>
+      </div>
+      <div class="sections-section-description ubuntu-body1-18px-light">
+        <%= Object.values(sections)[i]['subtitle-en'] %>
+      </div>
+    </div>
+    <div class="sections-testimonialCards-cards">
+      <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
+      <div class="sections-testimonialCards-cards-item">
+        <div class="sections-testimonialCards-cards-item-textBox ubuntu-body2-14px-light">
+          <%= cards[Object.values(sections)[i]['card-links-title'][j]]['subtitle'] %>
+        </div>
+        <div class="sections-testimonialCards-cards-item-personBox">
+          <% if(cards[Object.values(sections)[i]['card-links-title'][j]]['image-1']){ %>
+          <div class="sections-testimonialCards-cards-item-personBox-imageHolder">
+            <img class="sections-holdedImage-img" src=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].thumbnails.large.url %>>
+          </div>
+          <% } %>
+          <div class="sections-testimonialCards-cards-item-personBox-texts">
+            <div class="sections-testimonialCards-cards-item-personBox-texts-title ubuntu-body1-18px-bold">
+              <%= cards[Object.values(sections)[i]['card-links-title'][j]]['card-title'] %>
+            </div>
+            <div class="sections-testimonialCards-cards-item-personBox-texts-subtitle ubuntu-body2-14px-light">
+              <%= cards[Object.values(sections)[i]['card-links-title'][j]]['feature-1'] %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+    </div>
+    <div class="hr">
+      <div class='hr-tertiary'></div>
+    </div>
+  </div>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'largeTitleImageTextsButtons' ) { %>
+  <div class="sections-largeTitleImageTextsButtons">
+    <div class="sections-largeTitleImageTextsButtons-title ubuntu-9xl-144px-light">
+      <%= Object.values(sections)[i]['title-en'] %>
+      <%= Object.values(sections)[i]['subtitle-en'] %>
+    </div>
+    <div class="sections-largeTitleImageTextsButtons-infoBox">
+      <div class="sections-largeTitleImageTextsButtons-infoBox-imageHolder">
+        <img class="sections-holdedImage-img" src=<%= Object.values(sections)[i].attachment[0].url %>>
+      </div>
+      <div class="sections-largeTitleImageTextsButtons-infoBox-texts ubuntu-body1-18px-bold">
+        <div class="sections-largeTitleImageTextsButtons-infoBox-texts-title">
+          <%= Object.values(sections)[i]['description-en'] %>
+        </div>
+        <div class="sections-largeTitleImageTextsButtons-infoBox-texts-content">
+          <div class="sections-largeTitleImageTextsButtons-infoBox-texts-email ubuntu-body1-18px-light">
+            <%= Object.values(sections)[i]['text-1'] %>
+          </div>
+          <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions">
+            <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-title ubuntu-body1-18px-light">
+              <%= Object.values(sections)[i]['text-2'] %>
+            </div>
+            <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-main">
+              <!-- button main -->
+              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-1-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                <button type="button" class="btn btn-primary ubuntu-body1-18px-regular">
+                  <%= Object.values(sections)[i]['action-1'] %>
+                </button>
+              </a>
+            </div>
+            <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs">
+              <!-- button 1 -->
+              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-2-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
+                  <%= Object.values(sections)[i]['action-2'] %>
+                </button>
+              </a>
+              <!-- button 2 -->
+              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-3-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
+                  <%= Object.values(sections)[i]['action-3'] %>
+                </button>
+              </a>
+              <!-- button 3 -->
+              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-4-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
+                  <%= Object.values(sections)[i]['action-4'] %>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hr">
+      <div class='hr-tertiary'></div>
+    </div>
+  </div>
+  <% } %>
+
+  <!-- from projects -->
+  <% if ( Object.values(sections)[i].type === 'simpleVideo' ) { %>
+  <div class="project-projects-simpleVideo">
+    <div class="project-projects-simpleVideo-videoHolder">
+      <video class="project-projects-simpleVideo-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
+        <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/mp4">
+        <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/ogg">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <% } else if( Object.values(sections)[i].type === 'simpleImage' ) { %>
+  <div class="project-projects-simpleImage">
+    <div class="project-projects-simpleImage-imageHolder">
+      <img class="project-projects-simpleImage-image" src=<%= Object.values(sections)[i]['attachment'][0].url %> alt=<%= Object.values(sections)[i].alt %>>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'text' ) { %>
+  <div class="project-projects-text">
+    <div class="project-projects-text-hr">
+      <div class='hr-main'></div>
+    </div>
+    <div class="project-projects-text-title ubuntu-h3-48px-bold">
+      <%= Object.values(sections)[i]['title-en'] %>
+    </div>
+    <div class="project-projects-text-description">
+      <%= Object.values(sections)[i]['description-en'] %>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'mobile3Image' ) { %>
+  <div class="project-projects-mobile3Image">
+    <div class="project-projects-mobile3Image-content">
+      <!-- device 1 -->
+      <div class="project-projects-mobile3Image-content-deviceHolder">
+        <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
+          <img class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image" src=<%= Object.values(sections)[i]['mobileMedia-1'][0].url %> alt=<%= Object.values(sections)[i]['mobileMedia-1-alt'] %>>
+        </div>
+        <div class="project-projects-mobile3Image-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+      <!-- device 2 -->
+      <div class="project-projects-mobile3Image-content-deviceHolder">
+        <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
+          <img class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image" src=<%= Object.values(sections)[i]['mobileMedia-2'][0].url %> alt=<%= Object.values(sections)[i]['mobileMedia-2-alt'] %>>
+        </div>
+        <div class="project-projects-mobile3Image-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+      <!-- device 3 -->
+      <div class="project-projects-mobile3Image-content-deviceHolder">
+        <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
+          <img class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image" src=<%= Object.values(sections)[i]['mobileMedia-3'][0].url %> alt=<%= Object.values(sections)[i]['mobileMedia-3-alt'] %>>
+        </div>
+        <div class="project-projects-mobile3Image-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'mobile3Video' ) { %>
+  <div class="project-projects-mobile3Video">
+    <div class="project-projects-mobile3Video-content">
+      <!-- device 1 -->
+      <div class="project-projects-mobile3Video-content-deviceHolder">
+        <div class="project-projects-mobile3Video-content-deviceHolder-videoHolder">
+          <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
+            <source src=<%= Object.values(sections)[i]['mobileMedia-1'][0].url %> type="video/mp4">
+            <source src=<%= Object.values(sections)[i]['mobileMedia-1'][0].url %> type="video/ogg">
+            <%= Object.values(sections)[i]['mobileMedia-1-alt'] %>
+          </video>
+        </div>
+        <div class="project-projects-mobile3Video-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+      <!-- device 2 -->
+      <div class="project-projects-mobile3Video-content-deviceHolder">
+        <div class="project-projects-mobile3Video-content-deviceHolder-videoHolder">
+          <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
+            <source src=<%= Object.values(sections)[i]['mobileMedia-2'][0].url %> type="video/mp4">
+            <source src=<%= Object.values(sections)[i]['mobileMedia-2'][0].url %> type="video/ogg">
+            <%= Object.values(sections)[i]['mobileMedia-2-alt'] %>
+          </video>
+        </div>
+        <div class="project-projects-mobile3Video-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+      <!-- device 3 -->
+      <div class="project-projects-mobile3Video-content-deviceHolder">
+        <div class="project-projects-mobile3Video-content-deviceHolder-videoHolder">
+          <video class="project-projects-mobile3Video-content-deviceHolder-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
+            <source src=<%= Object.values(sections)[i]['mobileMedia-3'][0].url %> type="video/mp4">
+            <source src=<%= Object.values(sections)[i]['mobileMedia-3'][0].url %> type="video/ogg">
+            <%= Object.values(sections)[i]['mobileMedia-3-alt'] %>
+          </video>
+        </div>
+        <div class="project-projects-mobile3Video-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Video-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'laptopVideo' ) { %>
+  <div class="project-projects-laptopVideo">
+    <div class="project-projects-laptopVideo-macbook">
+      <div class="project-projects-laptopVideo-macbook-videoHolder">
+        <video class="project-projects-laptopVideo-macbook-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
+          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/mp4">
+          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="project-projects-laptopVideo-maskGroup" style="
+                    mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
+                    -webkit-mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
+                    mask-size: 100%;
+                    -webkit-mask-size: 100%;  
+                    ">
+        <img class="project-projects-laptopVideo-maskGroup-macbookBody" src=<%= images['macbook-body'].attachment[0].url %> <!-- mask="url(#mask)" -->
+        >
+      </div>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'laptopImage' ) { %>
+  <div class="project-projects-laptopImage">
+    <div class="project-projects-laptopImage-macbook">
+      <div class="project-projects-laptopImage-macbook-imageHolder">
+        <img class="project-projects-laptopImage-macbook-imageHolder-image" src=<%= Object.values(sections)[i]['attachment'][0].url %> alt=<%= Object.values(sections)[i].alt %> <!-- mask="url(#mask)" -->
+        >
+      </div>
+      <div class="project-projects-laptopImage-maskGroup" style="
+                    mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
+                    -webkit-mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
+                    mask-size: 100%;
+                    -webkit-mask-size: 100%;  
+                    ">
+        <img class="project-projects-laptopImage-maskGroup-macbookBody" src=<%= images['macbook-body'].attachment[0].url %> <!-- mask="url(#mask)" -->
+        >
+      </div>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'mobileSE1Video' ) { %>
+  <div class="project-projects-mobileSE1Video">
+    <div class="project-projects-mobileSE1Video-mobile">
+      <div class="project-projects-mobileSE1Video-mobile-videoHolder">
+        <video class="project-projects-mobileSE1Video-mobile-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" playsinline autoplay muted loop>
+          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/mp4">
+          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="project-projects-mobileSE1Video-mobile-maskGroup" style="
+                    mask-image: url(<%= images['mobile-mask'].attachment[0].url %>);
+                    -webkit-mask-image: url(<%= images['mobile-mask'].attachment[0].url %>);
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
+                    mask-size: 100%;
+                    -webkit-mask-size: 100%;  
+                    ">
+        <img class="project-projects-mobileSE1Video-mobile-mobileBody" src=<%= images['mobile-body'].attachment[0].url %>>
+      </div>
+    </div>
+  </div>
+  <% } %>
+
+  <% } %>
+</section>

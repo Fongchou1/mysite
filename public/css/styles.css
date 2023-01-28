@@ -459,8 +459,6 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  gap: 16px;
-  margin: 0 24px;
 }
 
 /* simple video */
@@ -468,7 +466,8 @@
   display: flex;
   background-color: #E5E7EA;
   justify-content: center;
-  margin: 16px 0;
+  margin: 0 24px;
+  padding: 16px 0;
 }
 
 .project-projects-simpleVideo-videoHolder {
@@ -484,7 +483,8 @@
   display: flex;
   background-color: #E5E7EA;
   justify-content: center;
-  margin: 16px 0;
+  margin: 0 24px;
+  padding: 16px 0;
 }
 
 .project-projects-simpleImage-imageHolder {
@@ -500,14 +500,14 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  margin: 56px 0;
+  padding: 56px 24px;
 }
 
 /* mobile with 3 images */
 .project-projects-mobile3Image {
   background-color: #E5E7EA;
-  margin: 16px 0;
-  padding: 40px 0;
+  margin: 0 24px;
+  padding: 56px 0;
 }
 
 .project-projects-mobile3Image-content {
@@ -562,8 +562,8 @@
 /* mobile with 3 video */
 .project-projects-mobile3Video {
   background-color: #E5E7EA;
-  margin: 16px 0;
-  padding: 40px 0;
+  margin: 0 24px;
+  padding: 56px 0;
 }
 
 .project-projects-mobile3Video-content {
@@ -620,8 +620,8 @@
   background-color: #E5E7EA;
   display: flex;
   justify-content: center;
-  margin: 16px 0;
-  padding: 40px 0;
+  margin: 0 24px;
+  padding: 56px 0;
 }
 
 .project-projects-laptopVideo-macbook {
@@ -672,8 +672,8 @@
   background-color: #E5E7EA;
   display: flex;
   justify-content: center;
-  margin: 16px 0;
-  padding: 40px 0;
+  margin: 0 24px;
+  padding: 56px 0;
 }
 
 .project-projects-laptopImage-macbook {
@@ -724,8 +724,8 @@
   background-color: #E5E7EA;
   display: flex;
   justify-content: center;
-  margin: 16px 0;
-  padding: 40px 0;
+  margin: 0 24px;
+  padding: 56px 0;
 }
 
 .project-projects-mobileSE1Video-mobile {
@@ -1476,15 +1476,17 @@
   background-position: center;
 }
 
-.sections-texCards {
+.sections-textCards {
   /* Auto layout */
+  background-color: #00070D;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   padding: 80px 24px;
   gap: 72px;
 }
 
-.sections-texCards-cards {
+.sections-textCards-cards {
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -1520,6 +1522,8 @@
 
 .sections-simpleImageTextCards {
   /* Auto layout */
+  background-color: #00070D;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1565,6 +1569,8 @@
 
 .sections-testimonialCards {
   /* Auto layout */
+  background-color: #00070D;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1632,6 +1638,8 @@
 
 .sections-largeTitleImageTextsButtons {
   /* Auto layout */
+  background-color: #00070D;
+  color: #F3F3F3;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1706,7 +1714,7 @@
   }
 }
 @media screen and (max-width: 1200px) {
-  .sections-texCards-cards {
+  .sections-textCards-cards {
     /* Auto layout */
     display: flex;
     flex-direction: column;
