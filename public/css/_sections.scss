@@ -254,6 +254,27 @@
     gap: 12px;
 }
 
+//setOf3Images
+.sections-setOf3Images {
+    display: flex;
+    margin: 16px 24px;
+}
+.sections-setOf3Images-content {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+.sections-setOf3Images-content-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 1;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    // min-height: 200px;
+    // min-width: 200px;
+}
+
 @media screen and (min-width: 1920px) {
     //text cards
     .sections-textCards-cards-item {
@@ -309,6 +330,9 @@
     }
     .sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
         /* Auto layout */
+        flex-direction: column;
+    }
+    .sections-setOf3Images-content {
         flex-direction: column;
     }
 }

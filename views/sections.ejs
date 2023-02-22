@@ -406,7 +406,74 @@
       </div>
     </div>
   </div>
-  <% } %>
+  <% } else if ( Object.values(sections)[i].type === 'mobile3Image' ) { %>
+  <div class="project-projects-mobile3Image">
+    <div class="project-projects-mobile3Image-content">
+      <!-- device 1 -->
+      <div class="project-projects-mobile3Image-content-deviceHolder">
+        <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
+          <img class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image" src=<%= Object.values(sections)[i]['mobileMedia-1'][0].url %> alt=<%= Object.values(sections)[i]['mobileMedia-1-alt'] %>>
+        </div>
+        <div class="project-projects-mobile3Image-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+      <!-- device 2 -->
+      <div class="project-projects-mobile3Image-content-deviceHolder">
+        <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
+          <img class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image" src=<%= Object.values(sections)[i]['mobileMedia-2'][0].url %> alt=<%= Object.values(sections)[i]['mobileMedia-2-alt'] %>>
+        </div>
+        <div class="project-projects-mobile3Image-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+      <!-- device 3 -->
+      <div class="project-projects-mobile3Image-content-deviceHolder">
+        <div class="project-projects-mobile3Image-content-deviceHolder-imageHolder">
+          <img class="project-projects-mobile3Image-content-deviceHolder-imageHolder-image" src=<%= Object.values(sections)[i]['mobileMedia-3'][0].url %> alt=<%= Object.values(sections)[i]['mobileMedia-3-alt'] %>>
+        </div>
+        <div class="project-projects-mobile3Image-content-deviceHolder-maskGroup" style="
+                        mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-image: url(<%= images['mobile-mask-iphone12'].attachment[0].url %>);
+                        -webkit-mask-repeat: no-repeat;
+                        mask-repeat: no-repeat;
+                        mask-size: 100%;
+                        -webkit-mask-size: 100%;  
+                        ">
+          <img class="project-projects-mobile3Image-content-deviceHolder-maskGroup-mobileBody-iphone12" src=<%= images['mobile-body-iphone12'].attachment[0].url %>>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% } else if ( Object.values(sections)[i].type === 'setOf3Images' ) { %>
+    <div class="sections-setOf3Images">
+      <div class="sections-setOf3Images-content">
+        <!-- device 1 -->
+        <div class="sections-setOf3Images-content-img" style="background-image: url(<%= Object.values(sections)[i]['setOf3Images-1'][0].url %>);">
+        </div>
+        <!-- device 2 -->
+        <div class="sections-setOf3Images-content-img" style="background-image: url(<%= Object.values(sections)[i]['setOf3Images-2'][0].url %>);">
+        </div>
+        <!-- device 3 -->
+        <div class="sections-setOf3Images-content-img" style="background-image: url(<%= Object.values(sections)[i]['setOf3Images-3'][0].url %>);">
+        </div>
+      </div>
+    </div>
+    <% } %>
 
   <% } %>
 </section>
