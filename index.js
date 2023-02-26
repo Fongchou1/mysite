@@ -26,7 +26,6 @@ app.set("view engine", "ejs");
 // get airtable
 var airtable = new Airtable({ apiKey: "keyUVmbar6wiZjmrx" });
 var photographyBase = airtable.base("appSfjdiCQWegHcDt");
-var landingPageBase = airtable.base("appKYRnm4BMdQAbEs");
 var footerBase = airtable.base("appW37UpLfSwnHVtS");
 var photographyBase = airtable.base("appSfjdiCQWegHcDt");
 var contactBase = airtable.base("appOWuesPEqLFvSF8");
@@ -183,15 +182,21 @@ app.get("/", async function (req, res) {
                                                                     res.render(
                                                                         "index",
                                                                         {
-                                                                            rootRoute: "",
-                                                                            rootTexts: rootTexts,
+                                                                            rootRoute:
+                                                                                "",
+                                                                            rootTexts:
+                                                                                rootTexts,
                                                                             links: links,
                                                                             images: images,
-                                                                            sections: sections,
-                                                                            projects: projects,
+                                                                            sections:
+                                                                                sections,
+                                                                            projects:
+                                                                                projects,
                                                                             cards: cards,
-                                                                            footerRootTexts: footerRootTexts,
-                                                                            footerLinks: footerLinks,
+                                                                            footerRootTexts:
+                                                                                footerRootTexts,
+                                                                            footerLinks:
+                                                                                footerLinks,
                                                                         }
                                                                     );
                                                                 });
@@ -306,8 +311,10 @@ app.get("/projects/:project", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts: footerRootTexts,
-                                                        footerLinks: footerLinks,
+                                                        footerRootTexts:
+                                                            footerRootTexts,
+                                                        footerLinks:
+                                                            footerLinks,
                                                     });
                                                 });
                                         });
@@ -317,6 +324,373 @@ app.get("/projects/:project", function (req, res) {
         });
 });
 
+//blogs
+app.get("/blogs/:category", function (req, res) {
+    // console.log(req.params);
+    let category = req.params.category;
+    let rootTexts = {};
+    let links = {};
+    let sections = {};
+    let images = {};
+    let footerRootTexts = {};
+    let footerLinks = {};
+    let blogThumbnails = {};
+    let blogCategories = {};
+
+    //fetch footer root text
+    footerBase("root-texts")
+        .select({
+            view: "DB",
+        })
+        .all(function (err, records) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            // footer root text fetched from airtable
+            readFields(footerRootTexts, records);
+
+            // fetch footer links
+            footerBase("links")
+                .select({
+                    view: "DB",
+                })
+                .all(function (err, records) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+
+                    // footer links fetched from airtable
+                    readFields(footerLinks, records);
+
+                    // fetch e-mission web root texts
+                    sectionsBase("root-texts")
+                        .select({
+                            view: "blogs",
+                        })
+                        .all(function (err, records) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
+
+                            // e-mission web root texts fetched from airtable
+                            readFields(rootTexts, records);
+
+                            // fetch e-mission web links
+                            sectionsBase("links")
+                                .select({
+                                    view: "blogs",
+                                })
+                                .all(function (err, records) {
+                                    if (err) {
+                                        console.error(err);
+                                        return;
+                                    }
+
+                                    // e-mission web links fetched from airtable
+                                    readFields(links, records);
+
+                                    // fetch e-mission web sections
+                                    sectionsBase("sections")
+                                        .select({
+                                            view: "blogs",
+                                        })
+                                        .all(function (err, records) {
+                                            if (err) {
+                                                console.error(err);
+                                                return;
+                                            }
+
+                                            // e-mission web sections fetched from airtable
+                                            readFields(sections, records);
+
+                                            // fetch e-mission web images
+                                            sectionsBase("images")
+                                                .select({
+                                                    view: "blogs",
+                                                })
+                                                .all(function (err, records) {
+                                                    if (err) {
+                                                        console.error(err);
+                                                        return;
+                                                    }
+
+                                                    // e-mission web images fetched from airtable
+                                                    readFields(images, records);
+
+                                                    //fetch blog thumbnails
+                                                    sectionsBase(
+                                                        "blog-thumbnails"
+                                                    )
+                                                        .select({
+                                                            view: "blog-thumbnails",
+                                                        })
+                                                        .all(function (
+                                                            err,
+                                                            records
+                                                        ) {
+                                                            if (err) {
+                                                                console.error(
+                                                                    err
+                                                                );
+                                                                return;
+                                                            }
+
+                                                            // blog thumbnails fetched from airtable
+                                                            readFields(
+                                                                blogThumbnails,
+                                                                records
+                                                            );
+
+                                                            // fetch blog categories
+                                                            sectionsBase(
+                                                                "blog-categories"
+                                                            )
+                                                                .select({
+                                                                    view: "blog-categories",
+                                                                })
+                                                                .all(function (
+                                                                    err,
+                                                                    records
+                                                                ) {
+                                                                    if (err) {
+                                                                        console.error(
+                                                                            err
+                                                                        );
+                                                                        return;
+                                                                    }
+
+                                                                    // e-mission web images fetched from airtable
+                                                                    readFields(
+                                                                        blogCategories,
+                                                                        records
+                                                                    );
+
+                                                                    // fetched all required data and send
+                                                                    res.render(
+                                                                        "blogsPage",
+                                                                        {
+                                                                            rootRoute:
+                                                                                "",
+                                                                            category:
+                                                                                category,
+                                                                            rootTexts:
+                                                                                rootTexts,
+                                                                            links: links,
+                                                                            sections:
+                                                                                sections,
+                                                                            images: images,
+                                                                            blogThumbnails:
+                                                                                blogThumbnails,
+                                                                            blogCategories:
+                                                                                blogCategories,
+                                                                            footerRootTexts:
+                                                                                footerRootTexts,
+                                                                            footerLinks:
+                                                                                footerLinks,
+                                                                        }
+                                                                    );
+                                                                });
+                                                        });
+                                                });
+                                        });
+                                });
+                        });
+                });
+        });
+});
+
+app.get("/blogs/:category/:blog", function (req, res) {
+    // console.log(req.params);
+    let category = req.params.category;
+    let blogTitle = req.params.blog;
+    let rootTexts = {};
+    let links = {};
+    let sections = {};
+    let images = {};
+    let footerRootTexts = {};
+    let footerLinks = {};
+    let blogThumbnails = {};
+    let blog = {};
+    let selectedBlog = {}
+    let selectedBlogThumbnail = {}
+
+    //fetch footer root text
+    footerBase("root-texts")
+        .select({
+            view: "DB",
+        })
+        .all(function (err, records) {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            // footer root text fetched from airtable
+            readFields(footerRootTexts, records);
+
+            // fetch footer links
+            footerBase("links")
+                .select({
+                    view: "DB",
+                })
+                .all(function (err, records) {
+                    if (err) {
+                        console.error(err);
+                        return;
+                    }
+
+                    // footer links fetched from airtable
+                    readFields(footerLinks, records);
+
+                    // fetch e-mission web root texts
+                    sectionsBase("root-texts")
+                        .select({
+                            view: "blog",
+                        })
+                        .all(function (err, records) {
+                            if (err) {
+                                console.error(err);
+                                return;
+                            }
+
+                            // e-mission web root texts fetched from airtable
+                            readFields(rootTexts, records);
+
+                            // fetch e-mission web links
+                            sectionsBase("links")
+                                .select({
+                                    view: "blog",
+                                })
+                                .all(function (err, records) {
+                                    if (err) {
+                                        console.error(err);
+                                        return;
+                                    }
+
+                                    // e-mission web links fetched from airtable
+                                    readFields(links, records);
+
+                                    // fetch e-mission web sections
+                                    sectionsBase("sections")
+                                        .select({
+                                            view: "blog",
+                                        })
+                                        .all(function (err, records) {
+                                            if (err) {
+                                                console.error(err);
+                                                return;
+                                            }
+
+                                            // e-mission web sections fetched from airtable
+                                            readFields(sections, records);
+
+                                            // fetch e-mission web images
+                                            sectionsBase("images")
+                                                .select({
+                                                    view: "blog",
+                                                })
+                                                .all(function (err, records) {
+                                                    if (err) {
+                                                        console.error(err);
+                                                        return;
+                                                    }
+
+                                                    // e-mission web images fetched from airtable
+                                                    readFields(images, records);
+
+                                                    //fetch blog thumbnails
+                                                    sectionsBase(
+                                                        "blog-thumbnails"
+                                                    )
+                                                        .select({
+                                                            view: "blog-thumbnails",
+                                                        })
+                                                        .all(function (
+                                                            err,
+                                                            records
+                                                        ) {
+                                                            if (err) {
+                                                                console.error(
+                                                                    err
+                                                                );
+                                                                return;
+                                                            }
+
+                                                            const selectedBlogThumbnailAsArray = records.filter( record => (record.fields['blog-title-link'][0]) === blogTitle)
+                                                            selectedBlogThumbnail = selectedBlogThumbnailAsArray[0];
+
+                                                            // blog thumbnails fetched from airtable
+                                                            readFields(
+                                                                blogThumbnails,
+                                                                records
+                                                            );
+
+                                                            // fetch blog categories
+                                                            sectionsBase(
+                                                                "blog"
+                                                            )
+                                                                .select({
+                                                                    view: "blog",
+                                                                })
+                                                                .all(function (
+                                                                    err,
+                                                                    records
+                                                                ) {
+                                                                    if (err) {
+                                                                        console.error(
+                                                                            err
+                                                                        );
+                                                                        return;
+                                                                    }
+
+                                                                    const selectedBlogAsArray = records.filter( record => record.fields.title === blogTitle)
+                                                                    selectedBlog = selectedBlogAsArray[0];
+
+                                                                    // e-mission web images fetched from airtable
+                                                                    // readFields(
+                                                                    //     blog,
+                                                                    //     records
+                                                                    // );
+
+                                                                    // fetched all required data and send
+                                                                    res.render(
+                                                                        "blog",
+                                                                        {
+                                                                            rootRoute:
+                                                                                "../../",
+                                                                            category:
+                                                                                category,
+                                                                            rootTexts:
+                                                                                rootTexts,
+                                                                            links: links,
+                                                                            sections:
+                                                                                sections,
+                                                                            images: images,
+                                                                            blogThumbnails:
+                                                                                blogThumbnails,
+                                                                            selectedBlogThumbnail: 
+                                                                                selectedBlogThumbnail,
+                                                                            selectedBlog:
+                                                                                selectedBlog,
+                                                                            footerRootTexts:
+                                                                                footerRootTexts,
+                                                                            footerLinks:
+                                                                                footerLinks,
+                                                                        }
+                                                                    );
+                                                                });
+                                                        });
+                                                });
+                                        });
+                                });
+                        });
+                });
+        });
+});
 
 app.get("/services", async function (req, res) {
     // res.sendFile(__dirname + "/index.html");
@@ -441,14 +815,19 @@ app.get("/services", async function (req, res) {
                                                             res.render(
                                                                 "sectionsPage",
                                                                 {
-                                                                    rootRoute: "",
-                                                                    rootTexts: rootTexts,
+                                                                    rootRoute:
+                                                                        "",
+                                                                    rootTexts:
+                                                                        rootTexts,
                                                                     links: links,
                                                                     images: images,
-                                                                    sections: sections,
+                                                                    sections:
+                                                                        sections,
                                                                     cards: cards,
-                                                                    footerRootTexts: footerRootTexts,
-                                                                    footerLinks: footerLinks,
+                                                                    footerRootTexts:
+                                                                        footerRootTexts,
+                                                                    footerLinks:
+                                                                        footerLinks,
                                                                 }
                                                             );
                                                         });
@@ -560,8 +939,10 @@ app.get("/photography-lockdown", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts: footerRootTexts,
-                                                        footerLinks: footerLinks,
+                                                        footerRootTexts:
+                                                            footerRootTexts,
+                                                        footerLinks:
+                                                            footerLinks,
                                                     });
                                                 });
                                         });
@@ -671,8 +1052,10 @@ app.get("/photography-embodiment", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts: footerRootTexts,
-                                                        footerLinks: footerLinks,
+                                                        footerRootTexts:
+                                                            footerRootTexts,
+                                                        footerLinks:
+                                                            footerLinks,
                                                     });
                                                 });
                                         });
@@ -782,8 +1165,10 @@ app.get("/photography-the-third", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts: footerRootTexts,
-                                                        footerLinks: footerLinks,
+                                                        footerRootTexts:
+                                                            footerRootTexts,
+                                                        footerLinks:
+                                                            footerLinks,
                                                     });
                                                 });
                                         });
@@ -893,8 +1278,10 @@ app.get("/photography-berlin-wall", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts: footerRootTexts,
-                                                        footerLinks: footerLinks,
+                                                        footerRootTexts:
+                                                            footerRootTexts,
+                                                        footerLinks:
+                                                            footerLinks,
                                                     });
                                                 });
                                         });
@@ -1004,8 +1391,10 @@ app.get("/photography-untitled", function (req, res) {
                                                         links: links,
                                                         sections: sections,
                                                         images: images,
-                                                        footerRootTexts: footerRootTexts,
-                                                        footerLinks: footerLinks,
+                                                        footerRootTexts:
+                                                            footerRootTexts,
+                                                        footerLinks:
+                                                            footerLinks,
                                                     });
                                                 });
                                         });
@@ -1098,7 +1487,8 @@ app.get("/contact", function (req, res) {
                                                 rootTexts: rootTexts,
                                                 links: links,
                                                 images: images,
-                                                footerRootTexts: footerRootTexts,
+                                                footerRootTexts:
+                                                    footerRootTexts,
                                                 footerLinks: footerLinks,
                                             });
                                         });
@@ -1139,6 +1529,6 @@ app.post("/post-message", function (req, res) {
 //   res.sendFile(__dirname + "/personalwebsite/public/index.html");
 // });
 
-app.listen(process.env.PORT || 5500, function () {
-    console.log("Server started at port 5500.");
+app.listen(process.env.PORT || 8080, function () {
+    console.log("Server started at port 8080.");
 });

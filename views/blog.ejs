@@ -1,0 +1,202 @@
+<%- include("blog-header") -%>
+
+<body class="mine">
+    <%- include("loading") -%>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a
+                class="btn btn-link navbar navbar-expand-lg bg-dark mx-3"
+                onclick="redirect(`<%= links.blogs.url %>`)"
+                rel="noreferrer noopener"
+                role="button"
+            >
+                <i class="fa-solid fa-arrow-left-long"></i> &nbsp; <%=
+                rootTexts.blogs.en %>
+            </a>
+            <div>
+                <ul class="navbar-nav me-3 ms-3 mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                        <a
+                            class="btn btn-link navbar navbar-expand-lg bg-dark"
+                            onclick="redirect(`<%= links.link1.url %>`)"
+                            rel="noreferrer noopener"
+                            role="button"
+                        >
+                            <%= rootTexts['link1'].en %>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a
+                            class="btn btn-link navbar navbar-expand-lg bg-dark"
+                            onclick="redirect(`<%= links.link2.url %>`)"
+                            rel="noreferrer noopener"
+                            role="button"
+                        >
+                            <%= rootTexts['link2'].en %>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a
+                            class="btn btn-link navbar navbar-expand-lg bg-dark"
+                            onclick="redirect(`<%= links.link3.url %>`)"
+                            rel="noreferrer noopener"
+                            role="button"
+                        >
+                            <%= rootTexts['link3'].en %>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a
+                            class="btn btn-link navbar navbar-expand-lg bg-dark"
+                            onclick="redirect(`<%= links.link4.url %>`)"
+                            rel="noreferrer noopener"
+                            role="button"
+                        >
+                            <%= rootTexts['link4'].en %>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--====== Post Details Start ======-->
+    <section class="post-details-area">
+        <div class="container container-1000">
+            <div class="post-details">
+                <div class="entry-header">
+                    <h2 class="title">
+                        <%= selectedBlogThumbnail.fields['blog-title'] %>
+                    </h2>
+                    <ul class="post-meta">
+                        <li>
+                            <%= selectedBlogThumbnail.fields['date'] %>
+                        </li>
+                        <li>
+                            <% for(let i = 0; i < selectedBlogThumbnail.fields.tags.length; i++) { %>
+                                <% if (i === 0) { %>
+                                    <%= selectedBlogThumbnail.fields.tags[i] %>
+                                <% } else { %>
+                                    , <%= selectedBlogThumbnail.fields.tags[i] %>
+                                <% } %>
+                            <% } %>
+                        </li>
+                    </ul>
+                    <p class="short-desc">
+                        <%= selectedBlogThumbnail.fields['blog-text'] %>
+                    </p>
+                </div>
+                <% let i = 1; %>
+                <% while( selectedBlog.fields[`${i}-blog-section-type`] ) { %>
+                    <% switch( selectedBlog.fields[`${i}-blog-section-type-title`][0] ) {
+                        case "headline-simple": %>
+                            <div class="entry-content">
+                                <p class="headline-simple">
+                                    <%= selectedBlog.fields[`${i}-headline`] %>
+                                </p>
+                            </div>
+                            <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
+                                <div class="entry-media text-center">
+                                    <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                                </div>
+                            <% } %>
+                            <% break;
+                        case "headline-capitalization": %>
+                            <div class="entry-content">
+                                <p class="headline-capitalization">
+                                    <%= selectedBlog.fields[`${i}-headline`] %>
+                                </p>
+                            </div>
+                            <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
+                                <div class="entry-media text-center">
+                                    <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                                </div>
+                            <% } %>
+                            <% break;
+                        case "paragraph-largeFirstCharactor": %>
+                            <div class="entry-content">
+                                <p class="has-dropcap">
+                                    <%= selectedBlog.fields[`${i}-paragraph`] %>
+                                </p>
+                            </div>
+                            <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
+                                <div class="entry-media text-center">
+                                    <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                                </div>
+                            <% } %>
+                            <% break;
+                        case "paragraph-simple": %>
+                            <div class="entry-content">
+                                <p>
+                                    <%= selectedBlog.fields[`${i}-paragraph`] %>
+                                </p>
+                            </div>
+                            <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
+                                <div class="entry-media text-center">
+                                    <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                                </div>
+                            <% } %>
+                            <% break;
+                        case "image-horizontalFull": %>
+                            <div class="entry-media text-center">
+                                <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                            </div>
+                            <% break;
+                        case "image-vertical": %>
+                            <div class="entry-media text-left">
+                                <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                            </div>
+                            <% break;
+                        case "list-withTitle": %>
+                            <div class="entry-content">
+                                <p class="list-header">
+                                    <%= selectedBlog.fields[`${i}-headline`] %>
+                                </p>
+                                <ul>
+                                    <% for( let j = 0; j < selectedBlog.fields[`${i}-list`].length; j++ ){ %>
+                                        <li class="list-item">
+                                            <i class="fa-solid fa-1x list-item-dot">&#xf192;</i>
+                                            <p>
+                                                <%= selectedBlog.fields[`${i}-list`][j] %>
+                                            </p>
+                                        </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                            <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
+                                <div class="entry-media text-center">
+                                    <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                                </div>
+                            <% } %>
+                            <% break;
+                    } %>
+                    
+                    <% i++ %>
+                <% } %>
+                <div class="entry-footer">
+                    <div class="post-author">
+                        <div class="author-img">
+                            <img
+                                src=<%= images['fong-photo']['attachment'][0].url %>
+                                alt="PostAuthor"
+                            />
+                        </div>
+                        <h5>
+                            <p>
+                                <%= rootTexts['personal-title'].en %>
+                            </p>
+                        </h5>
+                        <p>
+                            <%= rootTexts['personal-message'].en %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Post Details End ======-->
+
+    <%- include("sections") -%> <%- include("blogJsPackage") %> <%-
+    include("footer") -%>
+</body>

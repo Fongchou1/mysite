@@ -1773,6 +1773,10 @@
     flex-direction: column;
   }
 }
+.banner-section {
+  margin: 32px 0;
+}
+
 * {
   box-sizing: border-box;
 }
