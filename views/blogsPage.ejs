@@ -80,7 +80,11 @@
                                 <div class="banner-bg" style="background-image: url(<%= Object.values(blogThumbnails)[i]['image'][0].url %>);"></div>
                                 <div class="banner-content" data-animation="fadeInUp" data-delay="0.3s">
                                     <h3 class="title" data-animation="fadeInUp" data-delay="0.6s">
-                                        <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-title']}/${Object.values(blogThumbnails)[i]['blog-title-link']}` %>>
+                                        <a 
+                                            onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)'
+                                            rel="noreferrer noopener" 
+                                            role="button"
+                                        >
                                             <%= Object.values(blogThumbnails)[i]['blog-title'] %>
                                         </a>
                                     </h3>
@@ -99,7 +103,12 @@
                                     <p data-animation="fadeInUp" data-delay="1s">
                                         <%= Object.values(blogThumbnails)[i]['blog-text'] %>
                                     </p>
-                                    <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-title']}/${Object.values(blogThumbnails)[i]['blog-title-link']}` %> class="read-more" data-animation="fadeInUp" data-delay="1.2s">
+                                    <a 
+                                        onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)' 
+                                        class="read-more" data-animation="fadeInUp" data-delay="1.2s"
+                                        rel="noreferrer noopener" 
+                                        role="button"
+                                    >
                                         <%= rootTexts['read-more'].en %> <i class="fas fa-long-arrow-right"></i>
                                     </a>
                                 </div>
@@ -131,7 +140,11 @@
                                     </div>
                                     <div class="entry-content">
                                         <h4 class="title">
-                                            <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-title']}/${Object.values(blogThumbnails)[i]['blog-title-link']}` %> >
+                                            <a
+                                                onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)' 
+                                                rel="noreferrer noopener" 
+                                                role="button"
+                                            >
                                                 <%= Object.values(blogThumbnails)[i]['blog-title'] %>
                                             </a>
                                         </h4>
@@ -152,7 +165,12 @@
                                         <p>
                                             <%= Object.values(blogThumbnails)[i]['blog-text'] %>
                                         </p>
-                                        <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-title']}/${Object.values(blogThumbnails)[i]['blog-title-link']}` %> class="read-more">
+                                        <a 
+                                            onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)' 
+                                            rel="noreferrer noopener" 
+                                            role="button"
+                                            class="read-more"
+                                        >
                                             <%= rootTexts['read-more'].en %> <i class="fas fa-long-arrow-right"></i>
                                         </a>
                                     </div>
@@ -197,7 +215,11 @@
                                             <%= rootTexts['all'].en %>
                                         </a>
                                     <% } else { %>
-                                        <a href='/blogs/all' >
+                                        <a 
+                                            onclick='redirect(`/blogs/all`)' 
+                                            rel="noreferrer noopener" 
+                                            role="button"
+                                        >
                                             <%= rootTexts['all'].en %>
                                         </a>
                                     <% } %>
@@ -209,7 +231,11 @@
                                                 <%= Object.values(blogCategories)[i]['category-name'] %> 
                                             </a>
                                         <% } else { %>
-                                            <a href=<%= `/blogs/${Object.values(blogCategories)[i]['title']}` %> >
+                                            <a 
+                                                onclick='redirect(`/blogs/<%= Object.values(blogCategories)[i]['title'] %>`)' 
+                                                rel="noreferrer noopener" 
+                                                role="button"
+                                            >
                                                 <%= Object.values(blogCategories)[i]['category-name'] %>
                                             </a>
                                         <% } %>
@@ -223,7 +249,11 @@
                             </h5>
 							<div class="social-links">
                                 <% for(let i =0; i < Object.values(blogThumbnails)[0]['social-media-names'].length ; i++){ %>
-                                    <a href=<%= Object.values(blogThumbnails)[0]['social-media-links'][i] %>>
+                                    <a 
+                                        onclick='redirect(`<%= Object.values(blogThumbnails)[0]['social-media-links'][i] %>`)' 
+                                        rel="noreferrer noopener" 
+                                        role="button"
+                                    >
                                         <% switch( Object.values(blogThumbnails)[0]['social-media-titles'][i] ) {
                                             case "facebook": %>
                                                 <i class="fab fa-facebook-f"></i>
@@ -263,7 +293,11 @@
                                                 </div>
                                                 <div class="desc">
                                                     <h6>
-                                                        <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-title']}/${Object.values(blogThumbnails)[i]['blog-title-link']}` %>>
+                                                        <a 
+                                                            onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)' 
+                                                            rel="noreferrer noopener" 
+                                                            role="button"
+                                                        >
                                                             <%= Object.values(blogThumbnails)[i]['blog-title'] %>
                                                         </a>
                                                     </h6>

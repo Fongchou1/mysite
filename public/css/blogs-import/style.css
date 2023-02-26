@@ -1591,7 +1591,7 @@ header.sticky-header.sticky-on {
 
 /*======= Post Details =======*/
 .post-details-area {
-    padding-top: 120px;
+    padding-top: 0px;
     padding-bottom: 120px;
 }
 
@@ -4304,4 +4304,14 @@ footer .footer-copyright-area .copyright-text span {
 }
 .post-details .entry-content .list-item-dot {
     padding-top: 7px;
+}
+.entry-media.text-center.header-imageBox {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: min(50vh,500px);
+    margin-bottom: 80px;
+}
+.entry-media.text-center.header-imageBox-image {
+    width: 100%;
 }
