@@ -1,0 +1,274 @@
+<%- include("blog-header") -%>
+<body class="mine">
+    <%- include("loading") -%>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a 
+                class="btn btn-link navbar navbar-expand-lg bg-dark mx-3" 
+                onclick='redirect(`<%= links.home.url %>`)'
+                rel="noreferrer noopener" 
+                role="button"
+            >
+                <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home.en %>
+            </a>
+            <div>
+                <ul class="navbar-nav me-3 ms-3 mb-2 mb-lg-0">
+                    <li class="nav-item px-3">
+                        <a 
+                            class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                            onclick='redirect(`<%= links.link1.url %>`)'
+                            rel="noreferrer noopener" 
+                            role="button"
+                        >
+                            <%= rootTexts['link1'].en %>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a 
+                            class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                            onclick='redirect(`<%= links.link2.url %>`)'
+                            rel="noreferrer noopener" 
+                            role="button"
+                        >
+                            <%= rootTexts['link2'].en %>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a 
+                            class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                            onclick='redirect(`<%= links.link3.url %>`)'
+                            rel="noreferrer noopener" 
+                            role="button"
+                        >
+                            <%= rootTexts['link3'].en %>
+                        </a>
+                    </li>
+                    <li class="nav-item px-3">
+                        <a 
+                            class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                            onclick='redirect(`<%= links.link4.url %>`)'
+                            rel="noreferrer noopener" 
+                            role="button"
+                        >
+                            <%= rootTexts['link4'].en %>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--====== Banner Area Start ======-->
+	<section class="banner-section">
+		<div class="banner-slider">
+            <% for( let i = 0; i < Object.values(blogThumbnails).length; i++ ) { %>
+                <% if ( Object.values(blogThumbnails)[i].featured === true ) { %>
+                    <div class="sinlge-banner">
+                        <div class="banner-wrapper">
+                            <div class="banner-bg" style="background-image: url(<%= Object.values(blogThumbnails)[i]['image'][0].url %>);"></div>
+                            <div class="banner-content" data-animation="fadeInUp" data-delay="0.3s">
+                                <h3 class="title" data-animation="fadeInUp" data-delay="0.6s">
+                                    <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-name']}/${Object.values(blogThumbnails)[i]['blog-text']}` %>
+                                        <%= Object.values(blogThumbnails)[i]['blog-title'] %>
+                                    </a>
+                                </h3>
+                                <ul class="meta" data-animation="fadeInUp" data-delay="0.8s">
+                                    <li><%= Object.values(blogThumbnails)[i]['authors-name'] %></li>
+                                    <li>
+                                        <% for(let j = 0; j < Object.values(blogThumbnails)[i].tags.length; j++) { %>
+                                            <% if (j === 0) { %>
+                                                / <%= Object.values(blogThumbnails)[i].tags[j] %>
+                                            <% } else { %>
+                                                , <%= Object.values(blogThumbnails)[i].tags[j] %>
+                                            <% } %>
+                                        <% } %>
+                                    </li>
+                                </ul>
+                                <p data-animation="fadeInUp" data-delay="1s">
+                                    <%= Object.values(blogThumbnails)[i]['blog-text'] %>
+                                </p>
+                                <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-name']}/${Object.values(blogThumbnails)[i]['blog-text']}` %> class="read-more" data-animation="fadeInUp" data-delay="1.2s">
+                                    <%= rootTexts['read-more'].en %> <i class="fas fa-long-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+		</div>
+		<div class="banner-nav"></div>
+	</section>
+	<!--====== Banner Area End ======-->
+
+    <!--====== Post Area Start ======-->
+	<section class="post-area with-sidebar" id="postWarpperLoaded">
+		<div class="container container-1250">
+			<div class="post-area-inner">
+				<div class="entry-posts two-column masonary-posts row">
+                    <!-- loop posts -->
+                    <% let visibleBlogs = 2 %>
+                    <% let show = "show" %>
+                    <% let hidden = "hidden" %>
+                    <% for( let i = 0; i < Object.values(blogThumbnails).length; i++ ) { %>
+                        <div class="col-lg-6 col-sm-6 index-<%= i %>  ">
+                            <div class="entry-post">
+                                <div class="entry-thumbnail">
+                                    <img src=<%= Object.values(blogThumbnails)[i]['image'][0].url %> alt="Image">
+                                </div>
+                                <div class="entry-content">
+                                    <h4 class="title">
+                                        <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-name']}/${Object.values(blogThumbnails)[i]['blog-text']}` %> >
+                                            <%= Object.values(blogThumbnails)[i]['blog-title'] %>
+                                        </a>
+                                    </h4>
+                                    <ul class="post-meta">
+                                        <li class="date">
+                                            <%= Object.values(blogThumbnails)[i].date %>
+                                        </li>
+                                        <li class="categories">
+                                            <% for(let j = 0; j < Object.values(blogThumbnails)[i].tags.length; j++) { %>
+                                                <% if (j === 0) { %>
+                                                    / <%= Object.values(blogThumbnails)[i].tags[j] %>
+                                                <% } else { %>
+                                                    , <%= Object.values(blogThumbnails)[i].tags[j] %>
+                                                <% } %>
+                                            <% } %>
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        <%= Object.values(blogThumbnails)[i]['blog-text'] %>
+                                    </p>
+                                    <a href=<%= `/blogs/${Object.values(blogThumbnails)[i]['category-name']}/${Object.values(blogThumbnails)[i]['blog-text']}` %> class="read-more">
+                                        <%= rootTexts['read-more'].en %> <i class="fas fa-long-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+					
+					<!-- <div class="col-12">
+						<div class="text-center">
+							<a class="load-more-btn">
+                                <%= rootTexts['load-more'].en %>
+                            </a>
+						</div>
+					</div> -->
+				</div>
+
+				<div class="primary-sidebar clearfix">
+					<div class="sidebar-masonary row justify-content-center">
+						<div class="col-lg-12 col-md-6 col-sm-8 widget author-widget">
+							<div class="author-img">
+								<img src=<%= images['fong-photo']['attachment'][0].url %> alt=<%= images['fong-photo'].alt %>>
+							</div>
+							<h5 class="widget-title"><%= rootTexts['personal-title'].en %></h5>
+							<p>
+								<%= rootTexts['personal-message'].en %>
+							</p>
+							<div class="author-signature">
+								<img src=<%= images['signature']['attachment'][0].url %> alt=<%= images['signature'].alt %>>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-6 col-sm-8 widget categories-widget">
+							<h5 class="widget-title">
+                                <%= rootTexts['category-label'].en %>
+                            </h5>
+							<div class="categories">
+                                <% for(let i = 0; i < Object.values(blogCategories).length; i++) { %>
+								    <div class="categories" style="background-image: url(assets/img/sidebar/cat/01.jpg);">
+                                        <a href="#">
+                                            Business
+                                        </a>
+                                    </div>
+                                <% } %>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-6 col-sm-8 widget social-widget">
+							<h5 class="widget-title">Subscribe</h5>
+							<div class="social-links">
+								<a href="#">
+									<i class="fab fa-facebook-f"></i>Facebook
+								</a>
+								<a href="#">
+									<i class="fab fa-twitter"></i>Twitter
+								</a>
+								<a href="#">
+									<i class="fab fa-instagram"></i>Instagram
+								</a>
+								<a href="#">
+									<i class="fab fa-youtube"></i>YouTube
+								</a>
+								<a href="#">
+									<i class="fab fa-pinterest-p"></i>Pinterest
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-6 col-sm-8 widget popular-articles">
+							<h5 class="widget-title">Popular Articles</h5>
+							<div class="articles">
+								<div class="article">
+									<div class="thumb">
+										<img src="assets/img/sidebar/articles/01.jpg" alt="Image">
+									</div>
+									<div class="desc">
+										<h6><a href="blog-details.html">Best Wordpress Theme of 2018</a></h6>
+										<span class="post-date">Audust 23, 2015</span>
+									</div>
+								</div>
+								<div class="article">
+									<div class="thumb">
+										<img src="assets/img/sidebar/articles/02.jpg" alt="Image">
+									</div>
+									<div class="desc">
+										<h6><a href="blog-details.html">Dating While Studying Abroad—Maximize Fun
+												Minimize Heartbreak</a></h6>
+										<span class="post-date">Audust 23, 2015</span>
+									</div>
+								</div>
+								<div class="article">
+									<div class="thumb">
+										<img src="assets/img/sidebar/articles/03.jpg" alt="Image">
+									</div>
+									<div class="desc">
+										<h6><a href="blog-details.html">Nature Photography Best Place Focus</a></h6>
+										<span class="post-date">Audust 23, 2015</span>
+									</div>
+								</div>
+								<div class="article">
+									<div class="thumb">
+										<img src="assets/img/sidebar/articles/04.jpg" alt="Image">
+									</div>
+									<div class="desc">
+										<h6><a href="blog-details.html">Best Wordpress Theme of 2018</a></h6>
+										<span class="post-date">Audust 23, 2015</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12 col-md-6 col-sm-8 widget ad-widget">
+							<img src="assets/img/sidebar/ad.jpg" alt="Image">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--====== Post Area End ======-->
+
+    <%- include("sections") -%> 
+
+    <%- include("blogJsPackage") %>
+
+    <script>
+        let visibleBlogs = <%= visibleBlogs %>
+        let amountOfIncrements = 2;
+        $( ".load-more-btn" ).click(function() {
+            for(let i = 0; i < amountOfIncrements; i++) {
+                $(".index-" + visibleBlogs).removeClass('hidden');
+                visibleBlogs++
+            }
+        });
+    </script>
+
+<%- include("footer") -%>

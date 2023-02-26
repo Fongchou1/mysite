@@ -1,0 +1,183 @@
+
+<%- include("header") -%>
+<body class="mine">
+  <div data-scroll-container>
+
+  <%- include("loading") -%>
+    <!-- New Section 1 -->
+    <section id="hero" data-scroll-section>
+      <div class="hero-nameAndLogo">
+        <img
+          class="hero-nameAndLogo-logo"
+          src="<%= images.logo.attachment[0].url %>"
+        >
+        <div class="hero-nameAndLogo-name ubuntu-9xl-144px-bold">
+          <%= rootTexts['my-name'].en %>
+        </div>
+      </div>
+      <div class="hero-infoAndDescription">
+        <div class="hero-infoAndDescription-info">
+          <div class="hero-infoAndDescription-info-email ubuntu-body1-18px-regular">
+            <p>
+              <%= rootTexts.email.en %>
+            </p>
+          </div>
+          <div class="hero-infoAndDescription-info-title ubuntu-h5-24px-bold">
+            <div class="hero-infoAndDescription-info-title-1">
+              <%= rootTexts['roll-1'].en %>
+            </div>
+            <div class="hero-infoAndDescription-info-title-2">
+              <%= rootTexts['roll-2'].en %>
+            </div>
+          </div>
+        </div>
+        <div class="hero-infoAndDescription-description">
+          <div class="hero-infoAndDescription-description-aboutMe ubuntu-body1-18px-regular">
+            <%= rootTexts['what-i-do'].en %>
+          </div>
+          <div class="hero-infoAndDescription-description-links ubuntu-body1-18px-regular">
+            <div class="hero-infoAndDescription-description-links-link">
+              <a class="btn btn-link" onclick='redirect(`<%= links.link1.url %> `)' rel="noreferrer noopener" role="button" >
+                <%= rootTexts['link1'].en %>
+              </a>
+            </div>
+            <div class="hero-infoAndDescription-description-links-link">
+              <a class="btn btn-link" onclick='redirect(`<%= links.link2.url %> `)' rel="noreferrer noopener" role="button" >
+                <%= rootTexts['link2'].en %>
+              </a>
+            </div>
+            <div class="hero-infoAndDescription-description-links-link">
+              <a 
+                class="btn btn-link" 
+                onclick='redirect(`<%= links.link3.url %> `)'
+                rel="noreferrer noopener" 
+                role="button"
+              >
+                <%= rootTexts['link3'].en %>
+              </a>
+            </div>
+            <div class="hero-infoAndDescription-description-links-link">
+              <a class="btn btn-link" 
+                onclick='redirect(`<%= links.link4.url %>`)'
+                rel="noreferrer noopener" role="button" >
+                <%= rootTexts['link4'].en %>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-hr">
+        <div class='hr-main'></div>
+      </div>
+    </section>
+
+    <!-- New Section 2 -->
+    <section id="projects" data-scroll-section>
+      <% for( let i = 0; i < Object.values(projects).length; i++ ) { %>
+      
+        <div class="projects-project">
+          <div class="projects-project-texts" >
+            <div class="projects-project-texts-title ubuntu-body1-18px-medium" >
+              <%= Object.values(projects)[i]['project-label'] %>
+            </div>
+            <div class="projects-project-texts-content" >
+              <div class="projects-project-texts-content-title ubuntu-h3-48px-bold">
+                <%= Object.values(projects)[i]['title-en'] %>
+              </div>
+              <div class="projects-project-texts-content-subtitle">
+                <%= Object.values(projects)[i]['subtitle-en'] %>
+              </div>
+              <div class="projects-project-texts-content-description">
+                <%= Object.values(projects)[i]['description-en'] %>
+              </div>
+              <div class="projects-project-texts-content-button">
+                <a 
+                  class="btn btn-link" 
+                  onclick='redirect(`<%= Object.values(projects)[i].url %>`)'
+                  rel="noreferrer noopener" 
+                  role="button"
+                >
+                  <%= rootTexts['project-button'].en %> &nbsp; <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="projects-project-device">
+            <% if ( Object.values(projects)[i].device === 'laptop' ) { %>
+              <div class="projects-project-device-macbook">
+                <div 
+                  class="projects-project-device-macbook-maskGroup-videoHolder"
+                >
+                  <video class="projects-project-device-macbook-maskGroup-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
+                    <source 
+                      src=<%= Object.values(projects)[i]['attachment'][0].url %>
+                      type="video/mp4"
+                    >
+                    <source
+                      src=<%= Object.values(projects)[i]['attachment'][0].url %>
+                      type="video/ogg"
+                    >
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div 
+                  class="projects-project-device-macbook-maskGroup"
+                  style="
+                    mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
+                    -webkit-mask-image: url(<%= images['macbook-mask'].attachment[0].url %>);
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
+                    mask-size: 100%;
+                    -webkit-mask-size: 100%;  
+                  "
+                >
+                  <img
+                    class="projects-project-device-macbook-macbookBody"
+                    src=<%= images['macbook-body'].attachment[0].url %>
+                    <!-- mask="url(#mask)" -->
+                  >
+                </div>
+              </div>
+            <% } else if ( Object.values(projects)[i].device === 'mobile' ) { %>
+              <div class="projects-project-device-mobile">
+                <div class="projects-project-device-mobile-videoHolder">
+                  <video class="projects-project-device-mobile-videoHolder-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
+                    <source 
+                      src=<%= Object.values(projects)[i]['attachment'][0].url %>
+                      type="video/mp4"
+                    >
+                    <source
+                      src=<%= Object.values(projects)[i]['attachment'][0].url %>
+                      type="video/ogg"
+                    >
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div 
+                  class="projects-project-device-mobile-maskGroup"
+                  style="
+                    mask-image: url(<%= images['mobile-mask'].attachment[0].url %>);
+                    -webkit-mask-image: url(<%= images['mobile-mask'].attachment[0].url %>);
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
+                    mask-size: 100%;
+                    -webkit-mask-size: 100%;  
+                  "
+                >
+                  <img
+                    class="projects-project-device-mobile-mobileBody"
+                    src=<%= images['mobile-body'].attachment[0].url %>
+                  >
+                </div>
+              </div>
+            <% } %>
+          </div>
+        </div>
+        <div class="projects-hr">
+          <div class='hr-secondary'></div>
+        </div>
+      <% } %>
+    </section>
+
+
+<%- include("footer") -%>

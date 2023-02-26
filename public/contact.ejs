@@ -1,0 +1,184 @@
+<%- include("header") -%>
+
+<body id="contact-body">
+  <div data-scroll-container>
+
+  <%- include("loading") -%>
+
+  <div class="contact">
+    <section id="contact-nav">
+      <nav class="navbar navbar-expand-lg navbar-dark contact-content-nav">
+        <div class="container-fluid">
+          <a 
+            class="navbar-brand" 
+            onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
+          >
+            <img
+              class="photography-board-logo"
+              src=<%= images.logo.attachment[0].url %>
+            >
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a 
+                  class="nav-link" 
+                  onclick='redirect(`<%= rootTexts['design-works-url'].en %>`)'
+                >
+                  <%= rootTexts['design-works'].en %>
+                </a>
+              </li>
+              <!-- dropdown -->
+              <li class="nav-item dropdown">
+                <a 
+                  class="nav-link dropdown-toggle" 
+                  id="navbarDropdown" 
+                  role="button" 
+                  data-bs-toggle="dropdown" 
+                  aria-expanded="false"
+                >
+                    <%= rootTexts['gallery'].en %>
+                </a>
+                <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                    <% for( let i = 0; i < Object.values(links).length; i++ ) { %>
+                      <li class="photography-board-content-navLinks-link">
+                        <a 
+                          class="btn btn-link dropdown-item"
+                          onclick='redirect(`<%= links[Object.values(links)[i].title].url %>`)' 
+                          rel="noreferrer noopener" 
+                          role="button" 
+                        >
+                          <%= rootTexts[Object.values(links)[i].title].en %>
+                        </a>
+                      </li>
+                    <% } %>
+                </ul>
+              </li>
+  
+              <li class="nav-item">
+                <a 
+                  class="nav-link active" 
+                  onclick='redirect(`<%= rootTexts['contact-url'].en %>`)' 
+                >
+                  <%= rootTexts['contact'].en %>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <section id="contact-content" data-scroll-section>
+      <div class="contact-content-formFrame">
+        <div class="contact-content-formFrameTitle ubuntu-h3-48px-bold">
+          <%= rootTexts['hero-text'].en %>
+        </div>
+        <form id="form" class="contact-content-formFrameElement" action="/post-message" method="post">
+          <div class="contact-content-formFrame-form">
+            <div class="contact-content-formFrame-form-inputs">
+              <div class="mb-3">
+                <!-- <label for="inputName" class="form-label">
+                  <%= rootTexts['name-label'].en %>
+                </label> -->
+                <input 
+                  id="inputName" 
+                  class="form-control form-control-lg" 
+                  type="text" 
+                  name="name"
+                  placeholder=<%= rootTexts['name-label'].en %> 
+                  aria-label="default input example"
+                >
+              </div>
+              <div class="mb-3">
+                <!-- <label for="inputEmail" class="form-label">
+                  <%= rootTexts['email'].en %>
+                </label> -->
+                <input 
+                  id="inputEmail" 
+                  class="form-control form-control-lg" 
+                  type="email"
+                  name="email"
+                  placeholder=<%= rootTexts['email'].en %> 
+                  aria-describedby="emailHelp"
+                >
+                <div id="emailHelp" class="form-text contact-content-formFrame-form-inputs-helperText">
+                  <%= rootTexts['email-helperText'].en %>
+                </div>
+              </div>
+              <div class="mb-3">
+                <!-- <label for="inputPhone" class="form-label">
+                  <%= rootTexts['phone'].en %>
+                </label> -->
+                <input 
+                  id="inputPhone" 
+                  class="form-control form-control-lg" 
+                  type="text"
+                  name="phone"
+                  placeholder=<%= rootTexts['phone'].en %> 
+                  aria-label="default input example"
+                >
+              </div>
+            </div>
+            <div class="contact-content-formFrame-form-message">
+              <div class="pb-3 h-100">
+                <!-- <label for="formControlTextarea" class="form-label">
+                  <%= rootTexts['message-label'].en %>
+                </label> -->
+                <textarea 
+                  id="formControlTextarea" 
+                  class="form-control h-100 form-control-lg" 
+                  placeholder=<%= rootTexts['message-label'].en %>
+                  name="message"
+                >
+                </textarea>
+              </div>
+            </div>
+          </div>
+          <div class="contact-content-formFrame-button">
+            <button type="submit" class="btn btn-primary ubuntu-body1-18px-regular">
+              <%= rootTexts['submit'].en %>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="contact-content-imageFrame">
+        <div class="contact-content-imageFrame-mountain">
+          <img 
+            class="contact-content-imageFrame-mountain-data" 
+            src=<%= images['mountain'].attachment[0].url %>
+            alt=<%= images['ground-image'].alt %>
+          >
+        </div>
+        <div class="contact-content-imageFrame-photo">
+          <img 
+            class="contact-content-imageFrame-photo-data" 
+            src=<%= images['ground-image'].attachment[0].url %>
+            alt=<%= images['ground-image'].alt %>
+          >
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    document.getElementById('form').addEventListener(
+      'submit', 
+      (e) => checker(e)
+      )
+
+      function checker(e) {
+      if(!confirm(`<%= rootTexts['alert-confirmation'].en %>`)) {
+        e.preventDefault()
+        alert(`<%= rootTexts['alert-declined'].en %>`)
+      }else {
+        alert(`<%= rootTexts['alert-success'].en %>`)
+      }
+    }
+
+  </script>
+
+<%- include("footer") -%>

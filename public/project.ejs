@@ -1,0 +1,192 @@
+<%- include("header") -%>
+<body class="mine">
+    <%- include("loading") -%>
+
+    <div>
+
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a 
+                class="btn btn-link navbar navbar-expand-lg bg-dark mx-3" 
+                onclick='redirect(`<%= links.home.url %>`)'
+                rel="noreferrer noopener" 
+                role="button"
+            >
+                <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home.en %>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <% if(rootTexts['nav-page-1']){ %>
+                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <%= rootTexts['active-page'].en %>
+                            </a>
+                        <% } else { %>
+                            <a class="nav-link active" >
+                                <%= rootTexts['active-page'].en %>
+                            </a>
+                        <% } %>
+                        <% if(rootTexts['nav-page-1']){ %>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <% let navLinksCount = 1 %>
+                                <% while(rootTexts['nav-page-' + navLinksCount]){ %>
+                                    <li>
+                                        <a 
+                                            class="dropdown-item" 
+                                            onclick='redirect(`<%= links['nav-page-' + navLinksCount].url %>`)'
+                                            rel="noreferrer noopener" 
+                                            role="button"
+                                        >
+                                            <%= rootTexts['nav-page-' + navLinksCount].en %>
+                                        </a>
+                                    </li>
+                                    <% navLinksCount++ %>
+                                <% } %>
+                                <!-- <li>
+                                    <hr class="dropdown-divider">
+                                </li> -->
+                            </ul>
+                        <% } %>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled">Disabled</a>
+                    </li> -->
+                </ul>
+                <div>
+                    <ul class="navbar-nav me-3 ms-3 mb-2 mb-lg-0">
+                        <li class="nav-item px-3">
+                            <a 
+                                class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                                onclick='redirect(`<%= links.link1.url %>`)'
+                                rel="noreferrer noopener" 
+                                role="button"
+                            >
+                                <%= rootTexts['link1'].en %>
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a 
+                                class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                                onclick='redirect(`<%= links.link2.url %>`)'
+                                rel="noreferrer noopener" 
+                                role="button"
+                            >
+                                <%= rootTexts['link2'].en %>
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a 
+                                class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                                onclick='redirect(`<%= links.link3.url %>`)'
+                                rel="noreferrer noopener" 
+                                role="button"
+                            >
+                                <%= rootTexts['link3'].en %>
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a 
+                                class="btn btn-link navbar navbar-expand-lg bg-dark" 
+                                onclick='redirect(`<%= links.link4.url %>`)'
+                                rel="noreferrer noopener" 
+                                role="button"
+                            >
+                                <%= rootTexts['link4'].en %>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <% if (rootTexts['project-title']) { %>
+        <section id="project-hero">
+            <div class="project-hero-content">
+                <div class="project-hero-content-header">
+                    <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
+                        <%= rootTexts['project-title'].en %>
+                    </div>
+                    <div class="project-hero-content-header-subtitle">
+                        <%= rootTexts['project-subtitle'].en %>
+                    </div>
+                    <div class="project-hero-content-header-description">
+                        <%= rootTexts['project-description'].en %>
+                    </div>
+                </div>
+                <% if ( rootTexts['project-assignment'] && rootTexts['project-objective'] && rootTexts['project-scope'] && rootTexts['project-yearTitle'] ) { %>
+                    <div class="project-hero-content-features">
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-assignment'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-assignment-content'].en %>
+                            </div>
+                        </div>
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-objective'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-objective-content'].en %>
+                            </div>
+                        </div>
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-scope'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-scope-content'].en %>
+                            </div>
+                        </div>
+                        <div class="project-hero-content-features-item">
+                            <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
+                                <%= rootTexts['project-yearTitle'].en %>
+                            </div>
+                            <div class="project-hero-content-features-item-content">
+                                <%= rootTexts['project-year'].en %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            <div class="project-hero-hr">
+                <div class='hr-main'></div>
+            </div>
+        </section>
+    <% } %>
+
+    <%- include("sections") -%> 
+
+    <% if ( rootTexts['project-title'] && links['cta-button'] && links['cta-button'].url ) { %>
+        <section id="project-cta">
+            <div class="project-cta-hr">
+                <div class='hr-main'></div>
+            </div>
+            <div class="project-cta-title ubuntu-h3-48px-bold">
+                <%= rootTexts['cta-title'].en %>
+            </div>
+            <div class="project-cta-description">
+    
+            </div>
+            <div class="project-cta-button">
+                <a 
+                    class="project-cta-button-text-primary" 
+                    href=<%= links['cta-button'].url %> 
+                    rel="noreferrer noopener" 
+                    role="button"
+                    target='_blank'
+                >
+                    <button type="button" class="btn btn-primary ubuntu-body1-18px-regular" >
+                        <%= rootTexts['cta-button'].en %>
+                    </button>
+                </a>
+            </div>
+        </section>
+    <% } %>
+
+<%- include("footer") -%>

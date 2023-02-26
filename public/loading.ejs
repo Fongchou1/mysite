@@ -1,0 +1,81 @@
+
+<section id="loadingSection">
+
+    <div id="loadingSection-intro">
+        <video
+            class="loadingSection-intro-video"
+            width="100%"
+            height="100%"
+            autoplay
+            muted
+            playsinline
+            preload="yes"
+        >
+            <source
+                src="<%= images['intro1_mp4'].attachment[0].url %>"
+                type='video/mp4'
+            />
+            <source
+                src="<%= images['intro1_webm'].attachment[0].url %>"
+                type="video/webm"
+            />
+        </video>
+    </div>
+
+    <div id="globalLightTransitionCover" class="default-hidden-globalLightTransitionCover">
+        <div class="globalLightTransitionCover-animation-box">
+            <div class="globalLightTransitionCover-animation-spinContainer">
+                <div class="globalLightTransitionCover-animation-holder">
+                    <div class="globalLightTransitionCover-animation-holder-bd">
+                        <video
+                            class="globalLightTransitionCover-animation-video"
+                            width="100%"
+                            height="100%"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="yes"
+                        >
+                            <source
+                                src="<%= images['loading2_mp4'].attachment[0].url %>"
+                                type='video/mp4'
+                            />
+                            <source
+                                src="<%= images['loading2_webm'].attachment[0].url %>"
+                                type="video/webm"
+                            />
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        //transition
+        function startTransitionOverlay() {
+            document.getElementById("loadingSection").classList.add('noDisplay');
+            document.getElementById("loadingSection-intro").classList.add('noDisplay');
+        }
+        function endTransitionOverlay() {
+            document.getElementById("loadingSection").classList.remove('noDisplay');
+            var element = document.getElementById("globalLightTransitionCover");
+            element.classList.remove('default-hidden-globalLightTransitionCover');
+            element.classList.add('hide-globalLightTransitionCover');
+        }
+        function redirectAction(url) {
+            window.location.href = url;
+        }
+        function redirect(url) {
+            endTransitionOverlay();
+            // redirectAction(url)
+            const myTimeout = setTimeout(redirectAction(url), 50);
+        }
+        // document.getElementById("loadingSection").classList.add('default-hidden-globalLightTransitionCover');
+        const myTimeout = setTimeout(startTransitionOverlay, 2300);
+    </script>
+
+</section>
+
