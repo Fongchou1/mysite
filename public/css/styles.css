@@ -1032,24 +1032,21 @@
 .photography-board-content-sections-image {
   inline-size: 100%;
   max-height: 60vh;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 100%;
 }
 
 .photography-board-content-sections-image-medium {
   inline-size: 100%;
   max-height: 50vh;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 100%;
 }
 
 .photography-board-content-sections-image-small {
   inline-size: 100%;
   max-height: 35vh;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   width: 100%;
 }
 
@@ -1986,10 +1983,8 @@ i.social {
 
 .loadingSection-intro-video {
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   width: 100%;
 }
 
@@ -2204,4 +2199,6 @@ section#snow {
   .ubuntu-body2-14px-medium {
     font-size: 1vw;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/*# sourceMappingURL=styles.css.map */

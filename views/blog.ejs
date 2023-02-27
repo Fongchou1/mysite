@@ -138,8 +138,7 @@
                             <% break;
                         case "paragraph-simple": %>
                             <div class="entry-content">
-                                <p>
-                                    <%= selectedBlog.fields[`${i}-paragraph`] %>
+                                <p id="<%= `${i}-paragraph` %>"
                                 </p>
                             </div>
                             <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
@@ -206,7 +205,79 @@
         </div>
     </section>
     <!--====== Post Details End ======-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        let k = 1;
+        let currParagraph = k + "-paragraph";
+        while ( k < 11 ) {
+            switch(k){
+                case 1:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["1-paragraph"] %>`);
+                    }
+                    break;
+                case 2:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["2-paragraph"] %>`);
+                    }
+                    break;
+                case 3:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["3-paragraph"] %>`);
+                    }
+                    break;
+                case 4:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["4-paragraph"] %>`);
+                    }
+                    break;
+                case 5:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["5-paragraph"] %>`);
+                    }
+                    break;
+                case 6:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["6-paragraph"] %>`);
+                    }
+                    break;
+                case 7:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["7-paragraph"] %>`);
+                    }
+                    break;
+                case 8:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["8-paragraph"] %>`);
+                    }
+                    break;
+                case 9:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["9-paragraph"] %>`);
+                    }
+                    break;
+                case 10:
+                    if(document.getElementById(currParagraph)){
+                        document.getElementById(currParagraph).innerHTML =
+                            marked.parse(`<%= selectedBlog.fields["10-paragraph"] %>`);
+                    }
+                    break;
+            }
+
+            k++;
+            currParagraph = k + "-paragraph"
+        }
+    </script>
 
     <%- include("sections") -%> <%- include("blogJsPackage") %> <%-
     include("footer") -%>
-</body>
+
