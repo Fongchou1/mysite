@@ -147,6 +147,22 @@
                                 </div>
                             <% } %>
                             <% break;
+                        case "headline-with-paragraph": %>
+                            <div class="entry-content combo-content combo-header">
+                                <p class="headline-simple">
+                                    <%= selectedBlog.fields[`${i}-headline`] %>
+                                </p>
+                            </div>
+                            <div class="entry-content combo-content">
+                                <p id="<%= `${i}-paragraph` %>"
+                                </p>
+                            </div>
+                            <% if ( selectedBlog.fields[`${i}-attachment`] ) { %>
+                                <div class="entry-media text-center">
+                                    <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
+                                </div>
+                            <% } %>
+                            <% break;
                         case "image-horizontalFull": %>
                             <div class="entry-media text-center">
                                 <img src=<%= selectedBlog.fields[`${i}-attachment`][0].url %> alt="image" />
@@ -182,7 +198,7 @@
                     } %>
                     
                     <% i++ %>
-                <% } %>
+                <% } %> 
                 <div class="entry-footer">
                     <div class="post-author">
                         <div class="author-img">
