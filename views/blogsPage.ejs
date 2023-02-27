@@ -101,7 +101,11 @@
                                         </li>
                                     </ul>
                                     <p data-animation="fadeInUp" data-delay="1s">
-                                        <%= Object.values(blogThumbnails)[i]['blog-text'] %>
+                                        <% if ( Object.values(blogThumbnails)[i]['blog-text'].split(" ").length > 50 ) { %>
+                                            <%= Object.values(blogThumbnails)[i]['blog-text'].split(" ").splice(0,50).join(" ") %> ...
+                                        <% } else { %>
+                                            <%= Object.values(blogThumbnails)[i]['blog-text'] %>
+                                        <% } %>
                                     </p>
                                     <a 
                                         onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)' 
@@ -163,7 +167,11 @@
                                             </li>
                                         </ul>
                                         <p>
-                                            <%= Object.values(blogThumbnails)[i]['blog-text'] %>
+                                            <% if ( Object.values(blogThumbnails)[i]['blog-text'].split(" ").length > 50 ) { %>
+                                                <%= Object.values(blogThumbnails)[i]['blog-text'].split(" ").splice(0,50).join(" ") %> ...
+                                            <% } else { %>
+                                                <%= Object.values(blogThumbnails)[i]['blog-text'] %>
+                                            <% } %>
                                         </p>
                                         <a 
                                             onclick='redirect(`/blogs/<%=Object.values(blogThumbnails)[i]['category-title']%>/<%= Object.values(blogThumbnails)[i]['blog-title-link'] %>`)' 
