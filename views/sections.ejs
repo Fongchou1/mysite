@@ -75,7 +75,11 @@
       <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
       <div class="sections-simpleImageTextCards-cards-item">
         <div class="sections-simpleImageTextCards-cards-item-imageHolder">
-          <img class="sections-holdedImage-img" src=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].url %>>
+          <img 
+            class="sections-holdedImage-img" 
+            src=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].url %>
+            alt="<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1-alt'] %>"
+          >
         </div>
         <div class="sections-simpleImageTextCards-cards-item-texts">
           <div class="sections-simpleImageTextCards-cards-item-texts-title ubuntu-body1-18px-bold">
@@ -113,7 +117,11 @@
         <div class="sections-testimonialCards-cards-item-personBox">
           <% if(cards[Object.values(sections)[i]['card-links-title'][j]]['image-1']){ %>
           <div class="sections-testimonialCards-cards-item-personBox-imageHolder">
-            <img class="sections-holdedImage-img" src=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].thumbnails.large.url %>>
+            <img 
+              class="sections-holdedImage-img" 
+              src=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].thumbnails.large.url %>
+              alt="<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1-alt'] %>"
+            >
           </div>
           <% } %>
           <div class="sections-testimonialCards-cards-item-personBox-texts">
@@ -142,7 +150,11 @@
     </div>
     <div class="sections-largeTitleImageTextsButtons-infoBox">
       <div class="sections-largeTitleImageTextsButtons-infoBox-imageHolder">
-        <img class="sections-holdedImage-img" src=<%= Object.values(sections)[i].attachment[0].url %>>
+        <img 
+          class="sections-holdedImage-img" 
+          src=<%= Object.values(sections)[i].attachment[0].url %>
+          alt="<%= Object.values(sections)[i].alt %>"
+        >
       </div>
       <div class="sections-largeTitleImageTextsButtons-infoBox-texts ubuntu-body1-18px-bold">
         <div class="sections-largeTitleImageTextsButtons-infoBox-texts-title">
