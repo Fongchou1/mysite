@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config()
 var path = require("path");
 var ejs = require("ejs");
 const cors = require("cors");
@@ -25,12 +26,11 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // get airtable
-var airtable = new Airtable({ apiKey: "keyUVmbar6wiZjmrx" });
-var photographyBase = airtable.base("appSfjdiCQWegHcDt");
-var footerBase = airtable.base("appW37UpLfSwnHVtS");
-var photographyBase = airtable.base("appSfjdiCQWegHcDt");
-var contactBase = airtable.base("appOWuesPEqLFvSF8");
-var sectionsBase = airtable.base("appRuYKIRNhEu7TZi");
+var airtable = new Airtable({ apiKey: process.env.AIRTABLE_ACCESS });
+var photographyBase = airtable.base(process.env.PHOTOGRAPHY_BASE);
+var footerBase = airtable.base(process.env.FOOTER_BASE);
+var contactBase = airtable.base(process.env.CONTACT_BASE);
+var sectionsBase = airtable.base(process.env.SECTIONS_BASE);
 
 function readFields(outputObject, records) {
     for (let i = 0; i < records.length; i++) {
@@ -39,8 +39,113 @@ function readFields(outputObject, records) {
     }
 }
 
-app.get("/", async function (req, res) {
+// for redirect
+//root
+app.get('/', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+    res.redirect('/' + acceptedLanguage);
+})
+//projects
+app.get('/projects/:project', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    const nameOfDatabaseView = req.params.project;
+
+    res.redirect('/' + acceptedLanguage + '/projects/' + nameOfDatabaseView);
+})
+//blogs
+app.get('/blogs/:category', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    const nameOfDatabaseView = req.params.category;
+
+    res.redirect('/' + acceptedLanguage + '/blogs/' + nameOfDatabaseView);
+})
+//blog
+app.get('/blogs/:category/:blog', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    const nameOfDatabaseView = req.params.category;
+    const nameOfdatabaseViewOfBlog = req.params.blog;
+
+    res.redirect('/' + acceptedLanguage + '/blogs/' + nameOfDatabaseView + '/' + nameOfdatabaseViewOfBlog);
+})
+//services
+app.get('/services', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/services');
+})
+//lockdown
+app.get('/photography-lockdown', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/photography-lockdown');
+})
+//embodiment
+app.get('/photography-embodiment', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/photography-embodiment');
+})
+//the third
+app.get('/photography-the-third', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/photography-the-third');
+})
+//berlin wall
+app.get('/photography-berlin-wall', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/photography-berlin-wall');
+})
+//untitled
+app.get('/photography-untitled', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/photography-untitled');
+})
+//contact
+app.get('/contact', async function(req, res) {
+    const defaultLanguage = 'en';
+    const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+
+    res.redirect('/' + acceptedLanguage + '/contact');
+})
+
+
+//end points
+app.get("/:language", async function (req, res) {
     // res.sendFile(__dirname + "/index.html");
+
+    // const defaultLanguage = 'en';
+    // const supportedLanguages = ['en', 'zh']; // Define your supported languages
+    // let acceptedLanguage = req.acceptsLanguages(supportedLanguages) || defaultLanguage;
+    // console.log(req.acceptsLanguages(supportedLanguages))
+
+    const inputLanguage = req.params.language;
 
     let rootTexts = {};
     let links = {};
@@ -183,6 +288,8 @@ app.get("/", async function (req, res) {
                                                                     res.render(
                                                                         "index",
                                                                         {
+                                                                            language:
+                                                                                inputLanguage,
                                                                             rootRoute:
                                                                                 "",
                                                                             rootTexts:
@@ -211,8 +318,12 @@ app.get("/", async function (req, res) {
 });
 
 //projects
-app.get("/projects/:project", function (req, res) {
+app.get("/:language/projects/:project", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     const nameOfDatabaseView = req.params.project;
+
     // console.log(req);
     let rootTexts = {};
     let links = {};
@@ -307,6 +418,8 @@ app.get("/projects/:project", function (req, res) {
 
                                                     // fetched all required data and send
                                                     res.render("project", {
+                                                        language:
+                                                            inputLanguage,
                                                         rootRoute: "../",
                                                         rootTexts: rootTexts,
                                                         links: links,
@@ -326,7 +439,10 @@ app.get("/projects/:project", function (req, res) {
 });
 
 //blogs
-app.get("/blogs/:category", function (req, res) {
+app.get("/:language/blogs/:category", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     // console.log(req.params);
     let category = req.params.category;
     let rootTexts = {};
@@ -474,6 +590,8 @@ app.get("/blogs/:category", function (req, res) {
                                                                     res.render(
                                                                         "blogsPage",
                                                                         {
+                                                                            language:
+                                                                                inputLanguage,
                                                                             rootRoute:
                                                                                 "",
                                                                             category:
@@ -504,7 +622,10 @@ app.get("/blogs/:category", function (req, res) {
         });
 });
 
-app.get("/blogs/:category/:blog", function (req, res) {
+app.get("/:language/blogs/:category/:blog", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     // console.log(req.params);
     let category = req.params.category;
     let blogTitle = req.params.blog;
@@ -661,6 +782,8 @@ app.get("/blogs/:category/:blog", function (req, res) {
                                                                     res.render(
                                                                         "blog",
                                                                         {
+                                                                            language:
+                                                                                inputLanguage,
                                                                             rootRoute:
                                                                                 "../../",
                                                                             category:
@@ -693,7 +816,10 @@ app.get("/blogs/:category/:blog", function (req, res) {
         });
 });
 
-app.get("/services", async function (req, res) {
+app.get("/:language/services", async function (req, res) {
+    
+    const inputLanguage = req.params.language;
+    
     // res.sendFile(__dirname + "/index.html");
 
     let rootTexts = {};
@@ -816,6 +942,8 @@ app.get("/services", async function (req, res) {
                                                             res.render(
                                                                 "sectionsPage",
                                                                 {
+                                                                    language:
+                                                                        inputLanguage,
                                                                     rootRoute:
                                                                         "",
                                                                     rootTexts:
@@ -840,7 +968,10 @@ app.get("/services", async function (req, res) {
         });
 });
 
-app.get("/photography-lockdown", function (req, res) {
+app.get("/:language/photography-lockdown", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     let rootTexts = {};
     let links = {};
     let sections = {};
@@ -934,6 +1065,8 @@ app.get("/photography-lockdown", function (req, res) {
 
                                                     // fetched all required data and send
                                                     res.render("photography", {
+                                                        language:
+                                                            inputLanguage,
                                                         rootRoute: "",
                                                         page: req.url,
                                                         rootTexts: rootTexts,
@@ -953,7 +1086,10 @@ app.get("/photography-lockdown", function (req, res) {
         });
 });
 
-app.get("/photography-embodiment", function (req, res) {
+app.get("/:language/photography-embodiment", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     let rootTexts = {};
     let links = {};
     let sections = {};
@@ -1047,6 +1183,8 @@ app.get("/photography-embodiment", function (req, res) {
 
                                                     // fetched all required data and send
                                                     res.render("photography", {
+                                                        language:
+                                                            inputLanguage,
                                                         rootRoute: "",
                                                         page: req.url,
                                                         rootTexts: rootTexts,
@@ -1066,7 +1204,10 @@ app.get("/photography-embodiment", function (req, res) {
         });
 });
 
-app.get("/photography-the-third", function (req, res) {
+app.get("/:language/photography-the-third", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     let rootTexts = {};
     let links = {};
     let sections = {};
@@ -1160,6 +1301,8 @@ app.get("/photography-the-third", function (req, res) {
 
                                                     // fetched all required data and send
                                                     res.render("photography", {
+                                                        language:
+                                                            inputLanguage,
                                                         rootRoute: "",
                                                         page: req.url,
                                                         rootTexts: rootTexts,
@@ -1179,7 +1322,10 @@ app.get("/photography-the-third", function (req, res) {
         });
 });
 
-app.get("/photography-berlin-wall", function (req, res) {
+app.get("/:language/photography-berlin-wall", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     let rootTexts = {};
     let links = {};
     let sections = {};
@@ -1273,6 +1419,8 @@ app.get("/photography-berlin-wall", function (req, res) {
 
                                                     // fetched all required data and send
                                                     res.render("photography", {
+                                                        language:
+                                                            inputLanguage,
                                                         rootRoute: "",
                                                         page: req.url,
                                                         rootTexts: rootTexts,
@@ -1292,7 +1440,10 @@ app.get("/photography-berlin-wall", function (req, res) {
         });
 });
 
-app.get("/photography-untitled", function (req, res) {
+app.get("/:language/photography-untitled", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     let rootTexts = {};
     let links = {};
     let sections = {};
@@ -1386,6 +1537,8 @@ app.get("/photography-untitled", function (req, res) {
 
                                                     // fetched all required data and send
                                                     res.render("photography", {
+                                                        language:
+                                                            inputLanguage,
                                                         rootRoute: "",
                                                         page: req.url,
                                                         rootTexts: rootTexts,
@@ -1405,7 +1558,10 @@ app.get("/photography-untitled", function (req, res) {
         });
 });
 
-app.get("/contact", function (req, res) {
+app.get("/:language/contact", function (req, res) {
+
+    const inputLanguage = req.params.language;
+
     let rootTexts = {};
     let links = {};
     let images = {};
@@ -1484,6 +1640,8 @@ app.get("/contact", function (req, res) {
 
                                             // fetched all required data and send
                                             res.render("contact", {
+                                                language:
+                                                    inputLanguage,
                                                 rootRoute: "",
                                                 rootTexts: rootTexts,
                                                 links: links,

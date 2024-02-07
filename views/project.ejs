@@ -12,7 +12,7 @@
                 rel="noreferrer noopener" 
                 role="button"
             >
-                <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home.en %>
+                <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home[`${language}`] %>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,11 +22,11 @@
                     <li class="nav-item dropdown">
                         <% if(rootTexts['nav-page-1']){ %>
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <%= rootTexts['active-page'].en %>
+                                <%= rootTexts['active-page'][`${language}`] %>
                             </a>
                         <% } else { %>
                             <a class="nav-link active" >
-                                <%= rootTexts['active-page'].en %>
+                                <%= rootTexts['active-page'][`${language}`] %>
                             </a>
                         <% } %>
                         <% if(rootTexts['nav-page-1']){ %>
@@ -40,7 +40,7 @@
                                             rel="noreferrer noopener" 
                                             role="button"
                                         >
-                                            <%= rootTexts['nav-page-' + navLinksCount].en %>
+                                            <%= rootTexts['nav-page-' + navLinksCount][`${language}`] %>
                                         </a>
                                     </li>
                                     <% navLinksCount++ %>
@@ -64,7 +64,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link1'].en %>
+                                <%= rootTexts['link1'][`${language}`] %>
                             </a>
                         </li>
                         <li class="nav-item px-3">
@@ -74,7 +74,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link2'].en %>
+                                <%= rootTexts['link2'][`${language}`] %>
                             </a>
                         </li>
                         <li class="nav-item px-3">
@@ -84,7 +84,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link3'].en %>
+                                <%= rootTexts['link3'][`${language}`] %>
                             </a>
                         </li>
                         <li class="nav-item px-3">
@@ -94,7 +94,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link4'].en %>
+                                <%= rootTexts['link4'][`${language}`] %>
                             </a>
                         </li>
                     </ul>
@@ -108,47 +108,47 @@
             <div class="project-hero-content">
                 <div class="project-hero-content-header">
                     <div class="project-hero-content-header-title ubuntu-h3-48px-bold">
-                        <%= rootTexts['project-title'].en %>
+                        <%= rootTexts['project-title'][`${language}`] %>
                     </div>
                     <div class="project-hero-content-header-subtitle">
-                        <%= rootTexts['project-subtitle'].en %>
+                        <%= rootTexts['project-subtitle'][`${language}`] %>
                     </div>
                     <div class="project-hero-content-header-description">
-                        <%= rootTexts['project-description'].en %>
+                        <%= rootTexts['project-description'][`${language}`] %>
                     </div>
                 </div>
                 <% if ( rootTexts['project-assignment'] && rootTexts['project-objective'] && rootTexts['project-scope'] && rootTexts['project-yearTitle'] ) { %>
                     <div class="project-hero-content-features">
                         <div class="project-hero-content-features-item">
                             <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                                <%= rootTexts['project-assignment'].en %>
+                                <%= rootTexts['project-assignment'][`${language}`] %>
                             </div>
                             <div class="project-hero-content-features-item-content">
-                                <%= rootTexts['project-assignment-content'].en %>
+                                <%= rootTexts['project-assignment-content'][`${language}`] %>
                             </div>
                         </div>
                         <div class="project-hero-content-features-item">
                             <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                                <%= rootTexts['project-objective'].en %>
+                                <%= rootTexts['project-objective'][`${language}`] %>
                             </div>
                             <div class="project-hero-content-features-item-content">
-                                <%= rootTexts['project-objective-content'].en %>
+                                <%= rootTexts['project-objective-content'][`${language}`] %>
                             </div>
                         </div>
                         <div class="project-hero-content-features-item">
                             <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                                <%= rootTexts['project-scope'].en %>
+                                <%= rootTexts['project-scope'][`${language}`] %>
                             </div>
                             <div class="project-hero-content-features-item-content">
-                                <%= rootTexts['project-scope-content'].en %>
+                                <%= rootTexts['project-scope-content'][`${language}`] %>
                             </div>
                         </div>
                         <div class="project-hero-content-features-item">
                             <div class="project-hero-content-features-item-title ubuntu-body1-18px-bold">
-                                <%= rootTexts['project-yearTitle'].en %>
+                                <%= rootTexts['project-yearTitle'][`${language}`] %>
                             </div>
                             <div class="project-hero-content-features-item-content">
-                                <%= rootTexts['project-year'].en %>
+                                <%= rootTexts['project-year'][`${language}`] %>
                             </div>
                         </div>
                     </div>
@@ -168,7 +168,7 @@
                 <div class='hr-main'></div>
             </div>
             <div class="project-cta-title ubuntu-h3-48px-bold">
-                <%= rootTexts['cta-title'].en %>
+                <%= rootTexts['cta-title'][`${language}`] %>
             </div>
             <div class="project-cta-description">
     
@@ -182,7 +182,7 @@
                     target='_blank'
                 >
                     <button type="button" class="btn btn-primary ubuntu-body1-18px-regular" >
-                        <%= rootTexts['cta-button'].en %>
+                        <%= rootTexts['cta-button'][`${language}`] %>
                     </button>
                 </a>
             </div>

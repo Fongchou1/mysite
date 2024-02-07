@@ -10,7 +10,7 @@
   <title>Fong Chou</title>
   <!-- Favicon -->
   <% if( rootRoute ) { %>
-    <link rel="icon" href=<%= `${rootRoute}images/favicon.ico` %>>
+    <link rel="icon" href='/images/favicon.ico'>
   <% } else { %>
     <link rel="icon" href="images/favicon.ico">
   <% } %>
@@ -30,9 +30,9 @@
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css"> -->
   <!-- css -->
   <% if( rootRoute ) { %>
-    <link rel="stylesheet" href= <%= `${rootRoute}css/styles.css` %>>
+    <link rel="stylesheet" href='/css/styles.css'>
   <% } else { %>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
   <% } %>
   <!-- <link rel="stylesheet" href="css/snow.css"> -->
   <!-- fontawesome icons -->
@@ -58,4 +58,5 @@
 
     gtag('config', 'G-NH4N694VPS');
   </script>
+  <script src='/js/detectLanguage.js'></script>
 </head>

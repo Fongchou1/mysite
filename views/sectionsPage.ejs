@@ -12,7 +12,7 @@
                 rel="noreferrer noopener" 
                 role="button"
             >
-                <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home.en %>
+                <i class="fa-solid fa-arrow-left-long"></i>  &nbsp;  <%= rootTexts.home[`${language}`] %>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,11 +22,11 @@
                     <li class="nav-item dropdown">
                         <% if(rootTexts['nav-page-1']){ %>
                             <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <%= rootTexts['active-page'].en %>
+                                <%= rootTexts['active-page'][`${language}`] %>
                             </a>
                         <% } else { %>
                             <a class="nav-link active" >
-                                <%= rootTexts['active-page'].en %>
+                                <%= rootTexts['active-page'][`${language}`] %>
                             </a>
                         <% } %>
                         <% if(rootTexts['nav-page-1']){ %>
@@ -40,7 +40,7 @@
                                             rel="noreferrer noopener" 
                                             role="button"
                                         >
-                                            <%= rootTexts['nav-page-' + navLinksCount].en %>
+                                            <%= rootTexts['nav-page-' + navLinksCount][`${language}`] %>
                                         </a>
                                     </li>
                                     <% navLinksCount++ %>
@@ -64,7 +64,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link1'].en %>
+                                <%= rootTexts['link1'][`${language}`] %>
                             </a>
                         </li>
                         <li class="nav-item px-3">
@@ -74,7 +74,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link2'].en %>
+                                <%= rootTexts['link2'][`${language}`] %>
                             </a>
                         </li>
                         <li class="nav-item px-3">
@@ -84,7 +84,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link3'].en %>
+                                <%= rootTexts['link3'][`${language}`] %>
                             </a>
                         </li>
                         <li class="nav-item px-3">
@@ -94,7 +94,7 @@
                                 rel="noreferrer noopener" 
                                 role="button"
                             >
-                                <%= rootTexts['link4'].en %>
+                                <%= rootTexts['link4'][`${language}`] %>
                             </a>
                         </li>
                     </ul>
@@ -107,46 +107,46 @@
     <section id="services" data-scroll-section>
         <div class="services-header">
           <div class="services-header-title ubuntu-h3-48px-bold">
-            <%= rootTexts['services-title'].en %>
+            <%= rootTexts['services-title'][`${language}`] %>
           </div>
           <div class="services-header-description ubuntu-body1-18px-light">
-            <%= rootTexts['services-content'].en %>
+            <%= rootTexts['services-content'][`${language}`] %>
           </div>
         </div>
         <div class="services-content">
           <div class="services-content-group">
             <div class="services-content-group-item">
               <div class="services-content-group-item-title ubuntu-h5-24px-bold">
-                <%= rootTexts['services-item-title-1'].en %>
+                <%= rootTexts['services-item-title-1'][`${language}`] %>
               </div>
               <div class="services-content-group-item-description ubuntu-body1-18px-light">
-                <%= rootTexts['services-item-description-1'].en %>
+                <%= rootTexts['services-item-description-1'][`${language}`] %>
               </div>
             </div>
             <div class="services-content-group-item">
               <div class="services-content-group-item-title ubuntu-h5-24px-bold">
-                <%= rootTexts['services-item-title-2'].en %>
+                <%= rootTexts['services-item-title-2'][`${language}`] %>
               </div>
               <div class="services-content-group-item-description ubuntu-body1-18px-light">
-                <%= rootTexts['services-item-description-2'].en %>
+                <%= rootTexts['services-item-description-2'][`${language}`] %>
               </div>
             </div>
           </div>
           <div class="services-content-group">
             <div class="services-content-group-item">
               <div class="services-content-group-item-title ubuntu-h5-24px-bold">
-                <%= rootTexts['services-item-title-3'].en %>
+                <%= rootTexts['services-item-title-3'][`${language}`] %>
               </div>
               <div class="services-content-group-item-description ubuntu-body1-18px-light">
-                <%= rootTexts['services-item-description-3'].en %>
+                <%= rootTexts['services-item-description-3'][`${language}`] %>
               </div>
             </div>
             <div class="services-content-group-item">
               <div class="services-content-group-item-title ubuntu-h5-24px-bold">
-                <%= rootTexts['services-item-title-4'].en %>
+                <%= rootTexts['services-item-title-4'][`${language}`] %>
               </div>
               <div class="services-content-group-item-description ubuntu-body1-18px-light">
-                <%= rootTexts['services-item-description-4'].en %>
+                <%= rootTexts['services-item-description-4'][`${language}`] %>
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@
     <!-- New Section  -->
     <section id="aboutMe" data-scroll-section>
       <div class="aboutMe-header ubuntu-h3-48px-bold">
-        <%= rootTexts['about-title'].en %>
+        <%= rootTexts['about-title'][`${language}`] %>
       </div>
       <div class="aboutMe-content">
         <div class="aboutMe-content-portraitHolder">
@@ -171,10 +171,10 @@
         </div>
         <div class="aboutMe-content-texts">
           <div class="aboutMe-content-texts-title ubuntu-h5-24px-bold">
-            <%= rootTexts['about-greeting'].en %>
+            <%= rootTexts['about-greeting'][`${language}`] %>
           </div>
           <div class="aboutMe-content-texts-description ubuntu-body1-18px-light">
-            <%= rootTexts['about-description'].en %>
+            <%= rootTexts['about-description'][`${language}`] %>
           </div>
         </div>
       </div>
