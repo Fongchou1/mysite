@@ -1,6 +1,7 @@
 <section id="project-projects">
   <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
-  <% if ( Object.values(sections)[i].type === 'textCards' ) { %>
+  <% if (Object.values(sections)[i].state === 'enabled') { %>
+  <% if ( Object.values(sections)[i].type === 'textCards' && Object.values(sections)[i].state === 'enabled' ) { %>
   <div class="sections-textCards">
     <div class="sections-section-header">
       <div class="sections-section-title ubuntu-h3-48px-bold">
@@ -486,6 +487,6 @@
       </div>
     </div>
     <% } %>
-
+  <% } %>
   <% } %>
 </section>

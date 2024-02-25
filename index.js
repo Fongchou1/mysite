@@ -1,5 +1,5 @@
 const express = require("express");
-require('dotenv').config()
+require('dotenv').config();
 var path = require("path");
 var ejs = require("ejs");
 const cors = require("cors");
