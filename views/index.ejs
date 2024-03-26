@@ -5,6 +5,8 @@
   <div data-scroll-container>
 
   <%- include("loading") -%>
+  <% let landingPageSwitch = false %>
+  <% if ( landingPageSwitch === true ) { %>
     <!-- New Section 1 -->
     <section id="hero" data-scroll-section>
       <div class="hero-nameAndLogo">
@@ -184,6 +186,9 @@
         <% } %>
       <% } %>
     </section>
+  <% } %>
+
+    <%- include("sections") -%> 
 
 
 <%- include("footer") -%>

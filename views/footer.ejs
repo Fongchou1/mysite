@@ -19,66 +19,23 @@
             <%= footerRootTexts.email[`${language}`] %>
         </div>
         <div class="footer-links">
-            <div class="footer-links-1">
-                <a 
-                    class="footer-links-link btn btn-link"
-                    onclick='redirect(`<%= footerLinks.link1.url %>`)'
-                    rel="noreferrer noopener"
-                    role="button"
-                >
-                    <%= footerRootTexts['link1'][`${language}`] %>
-                </a>
-            </div>
-            <div class="footer-links-2">
-                <a 
-                    class="footer-links-link btn btn-link"
-                    onclick='redirect(`<%= footerLinks.link2.url %>`)'
-                    rel="noreferrer noopener"
-                    role="button"
-                >
-                    <%= footerRootTexts['link2'][`${language}`] %>
-                </a>
-            </div>
-            <div class="footer-links-3">
-                <a 
-                    class="footer-links-link btn btn-link"
-                    onclick='redirect(`<%= footerLinks.link3.url %>`)'
-                    rel="noreferrer noopener"
-                    role="button"
-                >
-                    <%= footerRootTexts['link3'][`${language}`] %>
-                </a>
-            </div>
-            <div class="footer-links-4">
-                <a 
-                    class="footer-links-link btn btn-link"
-                    onclick='redirect(`<%= footerLinks.link4.url %>`)'
-                    rel="noreferrer noopener"
-                    role="button"
-                >
-                    <%= footerRootTexts['link4'][`${language}`] %>
-                </a>
-            </div>
-            <div class="footer-links-5">
-                <a 
-                    class="footer-links-link btn btn-link"
-                    onclick='redirect(`<%= footerLinks.link5.url %>`)'
-                    rel="noreferrer noopener"
-                    role="button"
-                >
-                    <%= footerRootTexts['link5'][`${language}`] %>
-                </a>
-            </div>
-            <div class="footer-links-6">
-                <a 
-                    class="footer-links-link btn btn-link"
-                    onclick='redirect(`<%= footerLinks.link6.url %>`)'
-                    rel="noreferrer noopener"
-                    role="button"
-                >
-                    <%= footerRootTexts['link6'][`${language}`] %>
-                </a>
-            </div>
+            <% let currNumber = 1; %>
+            <% let linkLabel = 'link' + currNumber ;%>
+            <% while ( footerRootTexts[linkLabel] ) { %>
+                <div class='<% 'footer-links-' + currNumber %>'>
+                    <a 
+                        class="footer-links-link btn btn-link"
+                        onclick='redirect(`<%= footerLinks[linkLabel].url %>`)'
+                        rel="noreferrer noopener"
+                        role="button"
+                        >
+                        <%= footerRootTexts[linkLabel][`${language}`] %>
+                    </a>
+                </div>
+                <% currNumber++ %>
+                <% linkLabel = 'link' + currNumber %>
+            <% } %>
+
         </div>
         <% const date = new Date(); %>
         <% let currYear = date.getYear(); %>

@@ -1032,21 +1032,24 @@
 .photography-board-content-sections-image {
   inline-size: 100%;
   max-height: 60vh;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 
 .photography-board-content-sections-image-medium {
   inline-size: 100%;
   max-height: 50vh;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 
 .photography-board-content-sections-image-small {
   inline-size: 100%;
   max-height: 35vh;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
 }
 
@@ -1481,22 +1484,22 @@
   flex-direction: column;
   padding: 80px 24px;
   gap: 72px;
+  width: 100%;
 }
-
-.sections-textCards-cards {
+.sections-textCards .sections-textCards-cards {
   /* Auto layout */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0px;
   gap: 16px;
   /* Inside auto layout */
-  flex: none;
-  flex-grow: 0;
+  flex: 1;
+  flex-grow: 1;
+  width: 100%;
 }
-
-.sections-textCards-cards-item {
+.sections-textCards .sections-textCards-cards-item {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -1507,10 +1510,14 @@
   border-radius: 10px;
   max-width: 326px;
   /* Inside auto layout */
-  flex: none;
+  flex: 1;
   order: 0;
   align-self: stretch;
-  flex-grow: 0;
+  flex-grow: 1;
+  width: 100%;
+}
+.sections-textCards .hr {
+  margin: 0;
 }
 
 .sections-textCards-cards-item-hightlightText-dot {
@@ -1524,8 +1531,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 24px;
-  gap: 72px;
+  padding: 32px 20px;
+  gap: 32px;
+  align-self: stretch;
 }
 
 .sections-simpleImageTextCards-cards {
@@ -1533,16 +1541,19 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
   gap: 24px;
+  align-self: stretch;
 }
 
 .sections-simpleImageTextCards-cards-item-imageHolder {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   overflow: hidden;
-  max-width: 80px;
+  min-width: 64px;
+  max-width: 64px;
+  min-height: 64px;
+  max-height: 64px;
 }
 
 .sections-simpleImageTextCards-cards-item {
@@ -1550,9 +1561,8 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
-  gap: 32px;
-  width: 27vw;
+  gap: 8px;
+  align-self: stretch;
 }
 
 .sections-simpleImageTextCards-cards-item-texts {
@@ -1634,72 +1644,93 @@
 }
 
 .sections-largeTitleImageTextsButtons {
-  /* Auto layout */
   background-color: #00070D;
-  color: #F3F3F3;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 80px 24px;
-  gap: 72px;
   color: #E5E7EA;
-}
-
-.sections-largeTitleImageTextsButtons-infoBox {
-  /* Auto layout */
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-}
-
-.sections-largeTitleImageTextsButtons-infoBox-imageHolder {
-  display: flex;
-  justify-content: center;
+  padding: 32px 20px;
+  flex-direction: column;
   align-items: center;
-  overflow: hidden;
-  max-width: 360px;
-}
-
-.sections-largeTitleImageTextsButtons-infoBox-texts {
-  /* Auto layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
   gap: 32px;
+  align-self: stretch;
 }
-
-.sections-largeTitleImageTextsButtons-infoBox-texts-title {
-  padding-right: 440px;
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  align-self: stretch;
 }
-
-.sections-largeTitleImageTextsButtons-infoBox-texts-content {
-  /* Auto layout */
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-imageHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-texts-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
+  align-self: stretch;
 }
-
-.sections-largeTitleImageTextsButtons-infoBox-texts-actions {
-  /* Auto layout */
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-action-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0px;
   gap: 8px;
+  align-self: stretch;
 }
-
-.sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
-  /* Auto layout */
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-action-content-text {
   display: flex;
-  flex-direction: row;
   align-items: flex-start;
-  padding: 0px;
+  gap: 10px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 12px;
+  align-self: stretch;
+}
+.sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-otherButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
 }
 
 .sections-setOf3Images {
@@ -1722,6 +1753,272 @@
   aspect-ratio: 1/1;
 }
 
+.section-LargeTextAndImage {
+  display: flex;
+  padding: 32px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.section-LargeTextAndImage-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+  align-self: stretch;
+}
+.section-LargeTextAndImage-content .body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+.section-LargeTextAndImage-content .text-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+.section-LargeTextAndImage-content .LargeTextAndImage-imageBox {
+  display: none;
+}
+.section-LargeTextAndImage-content .hr {
+  height: 4px;
+  align-self: stretch;
+  background-color: #3A4750;
+  margin: 0;
+}
+
+.section-LargeTextAndImage-nav {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  width: calc(50% - 12px);
+}
+.section-LargeTextAndImage-nav .navbar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1 0 0;
+}
+
+.section-LargeTextAndImage-content-logo {
+  width: 48px;
+}
+
+.largeText {
+  display: flex;
+  padding: 32px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.largeText .largeText-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  align-self: stretch;
+}
+.largeText .largeText-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+.largeText .largeText-icon {
+  color: #E1E1E2;
+  display: none;
+}
+.largeText .largeTex-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  flex: 1 0 0;
+}
+.largeText .normal {
+  color: #E1E1E2;
+}
+.largeText .emphasize {
+  color: #303841;
+}
+
+.largePlainTextLinks {
+  display: flex;
+  min-height: 768px;
+  padding: 32px 16px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.largePlainTextLinks .largePlainTextLinks-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+.largePlainTextLinks .largePlainTextLinks-projectItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.largePlainTextLinks .largePlainTextLinks-category {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  color: #898C8F;
+}
+.largePlainTextLinks .largePlainTextLinks-projectText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  color: #303841;
+}
+
+.simpleTextAndImageAndTitle {
+  display: flex;
+  padding: 64px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-imageBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-image {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-title {
+  display: flex;
+  padding: 2px 0px;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+.simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+
+.listOfSmallImagesAndTexts {
+  display: flex;
+  padding: 32px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+.listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+}
+.listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-stepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: stretch;
+}
+.listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+.listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-imageBox {
+  width: 64px;
+  height: 64px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  flex: 1 0 0;
+}
+.fullVideo {
+  display: flex;
+  padding: 16px 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.fullVideo .fullVideo-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+}
+.fullVideo .fullVideo-video {
+  width: 100%;
+}
+
 @media screen and (min-width: 1920px) {
   .sections-textCards-cards-item {
     max-width: unset;
@@ -1742,32 +2039,377 @@
   .sections-textCards-cards-item {
     max-width: unset;
   }
-  .sections-simpleImageTextCards-cards-item {
-    width: 382px;
-  }
   .sections-testimonialCards-cards {
     /* Auto layout */
     flex-direction: column;
   }
 }
-@media screen and (max-width: 600px) {
-  .sections-simpleImageTextCards-cards-item {
+@media screen and (max-width: 991px) {
+  .section-LargeTextAndImage {
+    display: flex;
+    padding: 32px 20px;
     flex-direction: column;
-    width: 100%;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
   }
+  .section-LargeTextAndImage-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+    align-self: stretch;
+  }
+  .section-LargeTextAndImage-nav {
+    width: unset;
+  }
+}
+@media screen and (max-width: 600px) {
   .sections-largeTitleImageTextsButtons-infoBox {
     /* Auto layout */
-    flex-direction: column;
-  }
-  .sections-largeTitleImageTextsButtons-infoBox-texts-title {
-    padding-right: unset;
-  }
-  .sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
-    /* Auto layout */
-    flex-direction: column;
   }
   .sections-setOf3Images-content {
     flex-direction: column;
+  }
+}
+@media screen and (min-width: 600px) {
+  .sections-textCards {
+    display: flex;
+    padding: 64px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 72px;
+    align-self: stretch;
+  }
+  .sections-textCards .sections-textCards-cards {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    align-self: stretch;
+  }
+  .sections-textCards .section-textCards-cards-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-grow: 1;
+  }
+  .sections-testimonialCards-cards-item {
+    max-width: unset;
+  }
+  .section-LargeTextAndImage .ubuntu-h3-48px-bold {
+    font-size: 96px;
+    line-height: 93%;
+    letter-spacing: -2.88px;
+  }
+  .section-LargeTextAndImage .ubuntu-h5-24px-regular {
+    font-size: 32px;
+    font-weight: 300;
+  }
+  .largeText .largeText-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+  }
+  .largeText .largeText-icon {
+    display: block;
+  }
+  .simpleTextAndImageAndTitle {
+    display: flex;
+    padding: 64px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+    align-self: stretch;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-content {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 16px;
+    align-self: stretch;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-imageBox {
+    display: flex;
+    align-self: stretch;
+    flex: 1;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-image {
+    width: 100%;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    flex: 1;
+  }
+  .sections-simpleImageTextCards {
+    padding: 80px 16px;
+    gap: 72px;
+  }
+  .sections-simpleImageTextCards .sections-simpleImageTextCards-cards-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+  }
+  .listOfSmallImagesAndTexts {
+    display: flex;
+    padding: 64px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+  }
+  .listOfSmallImagesAndTexts .first {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: stretch;
+    justify-content: flex-start;
+  }
+  .listOfSmallImagesAndTexts .second {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: stretch;
+    justify-content: center;
+  }
+  .listOfSmallImagesAndTexts .third {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-imageBox {
+    width: 130px;
+    height: 130px;
+    flex-shrink: 0;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-step {
+    display: flex;
+    width: 422px;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-imageHolder {
+    display: flex;
+    width: 309px;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: unset;
+  }
+  .sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-title {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .sections-largeTitleImageTextsButtons .ubuntu-h3-48px-bold {
+    font-size: 96px;
+    line-height: 93%; /* 89.28px */
+    letter-spacing: -2.88px;
+  }
+  .sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-texts {
+    width: 387px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .section-LargeTextAndImage-content .body {
+    flex-direction: row;
+  }
+  .section-LargeTextAndImage-content .LargeTextAndImage-imageBox {
+    display: flex;
+    max-width: 168px;
+    aspect-ratio: auto 3/4;
+  }
+  .section-LargeTextAndImage-content .LargeTextAndImage-img {
+    width: 100%;
+    height: auto;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .largeText .largeText-body {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .largeText .largeText-container {
+    display: flex;
+    width: 535px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .sections-simpleImageTextCards {
+    justify-content: center;
+  }
+  .sections-simpleImageTextCards .sections-simpleImageTextCards-cards {
+    align-self: center;
+    width: 536px;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-step {
+    width: 536px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .section-LargeTextAndImage .text-content {
+    width: 100%;
+  }
+  .section-LargeTextAndImage .LargeTextAndImage-imageBox {
+    width: 100%;
+    max-width: unset;
+    aspect-ratio: unset;
+  }
+  .section-LargeTextAndImage .LargeTextAndImage-img {
+    width: 393px;
+    height: 524px;
+  }
+  .largeText .largeText-container {
+    width: 725px;
+  }
+  .sections-textCards .sections-textCards-cards-item {
+    max-width: 393px;
+    width: 100%;
+  }
+  .largePlainTextLinks .largePlainTextLinks-projectItem {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .largePlainTextLinks .largePlainTextLinks-category {
+    align-items: flex-end;
+    order: 2;
+  }
+  .largePlainTextLinks .largePlainTextLinks-link {
+    order: 1;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-texts {
+    justify-content: flex-end;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-step {
+    width: 643px;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-imageBox {
+    width: 226px;
+    height: 226px;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-texts {
+    padding-top: 32px;
+  }
+  .sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-content {
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .section-LargeTextAndImage .section-LargeTextAndImage-content {
+    align-self: center;
+    width: 1352px;
+  }
+  .section-LargeTextAndImage .ubuntu-h3-48px-bold {
+    /* Ubuntu-9xl-144px-bold */
+    font-family: Ubuntu;
+    font-size: 144px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; /* 144px */
+    letter-spacing: -5.76px;
+  }
+  .section-LargeTextAndImage .ubuntu-h5-24px-regular {
+    font-family: Ubuntu;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 120%; /* 57.6px */
+    letter-spacing: -0.48px;
+  }
+  .section-LargeTextAndImage .LargeTextAndImage-imageBox {
+    justify-content: center;
+  }
+  .section-LargeTextAndImage .LargeTextAndImage-img {
+    width: 441px;
+    height: 588px;
+  }
+  .largeText .largeText-body {
+    align-self: center;
+    width: 1352px;
+  }
+  .largeText .largeText-container {
+    gap: 64px;
+    width: 782px;
+  }
+  .sections-textCards .sections-section-header {
+    min-width: unset;
+    width: 1352px;
+  }
+  .sections-textCards .sections-textCards-cards {
+    align-self: center;
+    width: 1352px;
+  }
+  .sections-textCards .hr {
+    width: 1352px;
+  }
+  .largePlainTextLinks .largePlainTextLinks-projectItem .ubuntu-h3-48px-bold {
+    font-size: 5vw;
+    text-align: left;
+  }
+  .simpleTextAndImageAndTitle .simpleTextAndImageAndTitle-body {
+    align-self: center;
+    width: 1352px;
+  }
+  .sections-simpleImageTextCards .sections-section-title {
+    align-self: center;
+    min-width: unset;
+    width: 1352px;
+  }
+  .sections-simpleImageTextCards .sections-simpleImageTextCards-cards {
+    align-self: center;
+  }
+  .sections-simpleImageTextCards .hr {
+    align-self: center;
+    width: 1352px;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-body {
+    align-self: center;
+    width: 1352px;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-step {
+    width: 668px;
+  }
+  .listOfSmallImagesAndTexts .listOfSmallImagesAndTexts-imageBox {
+    width: 212px;
+    height: 212px;
+  }
+  .sections-testimonialCards .sections-section-header {
+    align-self: center;
+    min-width: unset;
+    width: 1352px;
+  }
+  .sections-testimonialCards .sections-testimonialCards-cards {
+    align-self: center;
+    width: 1352px;
+  }
+  .sections-testimonialCards .hr {
+    align-self: center;
+    width: 1352px;
+  }
+  .sections-largeTitleImageTextsButtons .largeTitleImageTextsButtons-body {
+    align-self: center;
+    width: 1352px;
+  }
+  .sections-largeTitleImageTextsButtons .ubuntu-h3-48px-bold {
+    font-size: 144px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%; /* 144px */
+    letter-spacing: -5.76px;
   }
 }
 .banner-section {
@@ -1874,12 +2516,20 @@ nav {
   line-height: 140%;
 }
 
+.ubuntu-h5-24px-regular {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+}
+
 .ubuntu-body1-18px-regular {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 150%;
+  line-height: 180%;
 }
 
 .ubuntu-body1-18px-light {
@@ -1983,8 +2633,10 @@ i.social {
 
 .loadingSection-intro-video {
   display: block;
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   width: 100%;
 }
 
@@ -2149,12 +2801,6 @@ section#snow {
   .ubuntu-9xl-144px-light {
     font-size: 24vw;
   }
-  .ubuntu-h3-48px-bold {
-    font-size: max(8vw, 24px);
-  }
-  .ubuntu-h5-24px-bold {
-    font-size: max(4vw, 18px);
-  }
 }
 @media screen and (min-width: 1400px) {
   body {
@@ -2199,6 +2845,4 @@ section#snow {
   .ubuntu-body2-14px-medium {
     font-size: 1vw;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

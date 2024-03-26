@@ -20,36 +20,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-3 mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
-                        <% if(rootTexts['nav-page-1']){ %>
-                            <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <%= rootTexts['active-page'][`${language}`] %>
-                            </a>
-                        <% } else { %>
-                            <a class="nav-link active" >
-                                <%= rootTexts['active-page'][`${language}`] %>
-                            </a>
-                        <% } %>
-                        <% if(rootTexts['nav-page-1']){ %>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <% let navLinksCount = 1 %>
-                                <% while(rootTexts['nav-page-' + navLinksCount]){ %>
-                                    <li>
-                                        <a 
-                                            class="dropdown-item" 
-                                            onclick='redirect(`<%= links['nav-page-' + navLinksCount].url %>`)'
-                                            rel="noreferrer noopener" 
-                                            role="button"
-                                        >
-                                            <%= rootTexts['nav-page-' + navLinksCount][`${language}`] %>
-                                        </a>
-                                    </li>
-                                    <% navLinksCount++ %>
-                                <% } %>
-                                <!-- <li>
-                                    <hr class="dropdown-divider">
-                                </li> -->
-                            </ul>
-                        <% } %>
+                        <a class="nav-link active" >
+                            <%= rootTexts['active-page'][`${language}`] %>
+                        </a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>

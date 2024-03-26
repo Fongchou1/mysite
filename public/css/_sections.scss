@@ -33,41 +33,47 @@
     flex-direction: column;
     padding: 80px 24px;
     gap: 72px;
-}
-.sections-textCards-cards {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    gap: 16px;
-
-    /* Inside auto layout */
-    flex: none;
-    // order: 1;
-    flex-grow: 0;
-}
-.sections-textCards-cards-item {
-    box-sizing: border-box;
-
-    // auto layout
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 40px 32px 16px;
-    gap: 10px;
-
-    border: 1px solid #62686E;
-    border-radius: 10px;
-
-    max-width: 326px;
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
+    width: 100%;
+    .sections-textCards-cards {
+        /* Auto layout */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        gap: 16px;
+    
+        /* Inside auto layout */
+        flex: 1;
+        // order: 1;
+        flex-grow: 1;
+        width: 100%;
+    }
+    .sections-textCards-cards-item {
+        box-sizing: border-box;
+    
+        // auto layout
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 32px 40px 32px 16px;
+        gap: 10px;
+    
+        border: 1px solid #62686E;
+        border-radius: 10px;
+    
+        max-width: 326px;
+    
+        /* Inside auto layout */
+        flex: 1;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 1;
+        width: 100%;
+    }
+    .hr {
+        margin: 0;
+    }
 }
 .sections-textCards-cards-item-hightlightText-dot {
     color: a.$primary-400;
@@ -81,33 +87,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 24px;
-    gap: 72px;
+    padding: 32px 20px;
+    gap: 32px;
+    align-self: stretch;
 }
 .sections-simpleImageTextCards-cards {
     /* Auto layout */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px;
     gap: 24px;
+    align-self: stretch;
 }
 .sections-simpleImageTextCards-cards-item-imageHolder {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     overflow: hidden;
-    max-width: 80px;
+    min-width: 64px;
+    max-width: 64px;
+    min-height: 64px;
+    max-height: 64px;
 }
 .sections-simpleImageTextCards-cards-item {
     /* Auto layout */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    padding: 0px;
-    gap: 32px;
-
-    width: 27vw;
+    gap: 8px;
+    align-self: stretch;
 }
 .sections-simpleImageTextCards-cards-item-texts {
     /* Auto layout */
@@ -192,66 +200,94 @@
 
 //large title image texts buttons
 .sections-largeTitleImageTextsButtons {
-    /* Auto layout */
     background-color: a.$primary-100;
-    color: a.$background-400;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 24px;
-    gap: 72px;
-
     color: a.$background-600;
-}
-.sections-largeTitleImageTextsButtons-infoBox {
-    /* Auto layout */
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
-}
-.sections-largeTitleImageTextsButtons-infoBox-imageHolder {
-    display: flex;
-    justify-content: center;
+    padding: 32px 20px;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
-    max-width: 360px;
-}
-.sections-largeTitleImageTextsButtons-infoBox-texts {
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
     gap: 32px;
-}
-.sections-largeTitleImageTextsButtons-infoBox-texts-title {
-    padding-right: 440px;
-}
-.sections-largeTitleImageTextsButtons-infoBox-texts-content {
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 16px;
-}
-.sections-largeTitleImageTextsButtons-infoBox-texts-actions {
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-}
-.sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 12px;
+    align-self: stretch;
+
+    .largeTitleImageTextsButtons-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-imageHolder {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 32px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-texts-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-action-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-action-content-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+    }
+    .largeTitleImageTextsButtons-otherButtons {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        align-self: stretch;
+    }
 }
 
 //setOf3Images
@@ -273,6 +309,279 @@
     aspect-ratio: 1 / 1;
     // min-height: 200px;
     // min-width: 200px;
+}
+
+//LargeTextAndImage
+.section-LargeTextAndImage {
+    display: flex;
+    padding: 32px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+.section-LargeTextAndImage-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 64px;
+    align-self: stretch;
+    .body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .LargeTextAndImage-imageBox {
+        display: none;
+    }
+    .hr {
+        height: 4px;
+        align-self: stretch;
+        background-color: a.$secondary-400;
+        margin: 0;
+    }
+}
+.section-LargeTextAndImage-nav {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    width: calc(50% - 12px);
+    .navbar-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex: 1 0 0;
+    }
+}
+.section-LargeTextAndImage-content-logo {
+    width: 48px;
+}
+
+// largeText
+.largeText {
+    display: flex;
+    padding: 32px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+
+    .largeText-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .largeText-container {
+        display: flex;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+    .largeText-icon {
+        color: a.$text-900;
+        display: none;
+    }
+    .largeTex-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        flex: 1 0 0;
+    }
+    .normal {
+        color: a.$text-900;
+    }
+    .emphasize {
+        color: a.$text-400;
+    }
+}
+
+//largePlainTextLinks
+.largePlainTextLinks {
+    display: flex;
+    min-height: 768px;
+    padding: 32px 16px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    .largePlainTextLinks-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .largePlainTextLinks-projectItem {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+    .largePlainTextLinks-category {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        color: a.$link-400;
+    }
+    .largePlainTextLinks-projectText {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+        color: a.$text-400;
+    }
+}
+
+//simpleTextAndImageAndTitle
+.simpleTextAndImageAndTitle {
+    display: flex;
+    padding: 64px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    .simpleTextAndImageAndTitle-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 64px;
+        align-self: stretch;
+    }
+    .simpleTextAndImageAndTitle-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .simpleTextAndImageAndTitle-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        align-self: stretch;
+    }
+    .simpleTextAndImageAndTitle-imageBox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .simpleTextAndImageAndTitle-image {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        align-self: stretch;
+    }
+    .simpleTextAndImageAndTitle-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+    .simpleTextAndImageAndTitle-title {
+        display: flex;
+        padding: 2px 0px;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .simpleTextAndImageAndTitle-text {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+}
+
+//listOfSmallImagesAndTexts
+.listOfSmallImagesAndTexts {
+    display: flex;
+    padding: 32px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+    .listOfSmallImagesAndTexts-body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        align-self: stretch;
+    }
+    .listOfSmallImagesAndTexts-stepContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .listOfSmallImagesAndTexts-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        align-self: stretch;
+    }
+    .listOfSmallImagesAndTexts-imageBox {
+        width: 64px;
+        height: 64px;
+        object-fit: fill;
+    }
+    .listOfSmallImagesAndTexts-img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        object-fit: cover;
+    }
+    .listOfSmallImagesAndTexts-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        flex: 1 0 0;
+    }
+    .listOfSmallImagesAndTexts-title {
+
+    }
+    .listOfSmallImagesAndTexts-description {
+
+    }
+}
+.fullVideo {
+    display: flex;
+    padding: 16px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+    .fullVideo-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .fullVideo-video {
+        width: 100%;
+    }
 }
 
 @media screen and (min-width: 1920px) {
@@ -303,7 +612,7 @@
 
     // simple image text cards
     .sections-simpleImageTextCards-cards-item {
-        width: 382px;
+
     }
 
     // testimonial cards
@@ -313,26 +622,526 @@
     }
 }
 
+@media screen and (max-width: 991px) {
+    //LargeTextAndImage
+    .section-LargeTextAndImage {
+        display: flex;
+        padding: 32px 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+    }
+    .section-LargeTextAndImage-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 64px;
+        align-self: stretch;
+    }
+    .section-LargeTextAndImage-nav {
+        width: unset;
+    }
+}
+
 @media screen and (max-width: 600px) {
     // simple image text cards
     .sections-simpleImageTextCards-cards-item {
-        flex-direction: column;
-        width: 100%;
+
     }
 
     // large title image texts buttons
     .sections-largeTitleImageTextsButtons-infoBox {
         /* Auto layout */
-        flex-direction: column;
+
     }
     .sections-largeTitleImageTextsButtons-infoBox-texts-title {
-        padding-right: unset;
+
     }
     .sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs {
-        /* Auto layout */
-        flex-direction: column;
+
     }
     .sections-setOf3Images-content {
         flex-direction: column;
+    }
+}
+
+//sm
+@media screen and (min-width: 600px) {
+    //text cards
+    .sections-textCards {
+        display: flex;
+        padding: 64px 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 72px;
+        align-self: stretch;
+
+        .sections-textCards-cards {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            gap: 16px;
+            align-self: stretch;
+        }
+        .section-textCards-cards-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            flex-grow: 1;
+        }
+    }
+
+    //testimonial cards
+    .sections-testimonialCards-cards-item {
+        max-width: unset;
+    }
+
+    //LargeTextAndImage
+    .section-LargeTextAndImage {
+        .body {
+
+        }
+        .ubuntu-h3-48px-bold {
+            font-size: 96px;
+            line-height: 93%;
+            letter-spacing: -2.88px;
+        }
+        .ubuntu-h5-24px-regular {
+            font-size: 32px;
+            font-weight: 300;
+        }
+    }
+
+    //largeText
+    .largeText {
+        .largeText-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+        }
+        .largeText-icon {
+            display: block;
+        }
+    }
+
+    //simpleTextAndImageAndTitle
+    .simpleTextAndImageAndTitle {
+        display: flex;
+        padding: 64px 16px;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        align-self: stretch;
+
+        .simpleTextAndImageAndTitle-body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 64px;
+            align-self: stretch;
+        }
+        .simpleTextAndImageAndTitle-content {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: row;
+            gap: 16px;
+            align-self: stretch;
+        }
+        .simpleTextAndImageAndTitle-imageBox {
+            display: flex;
+            align-self: stretch;
+            flex: 1;
+        }
+        .simpleTextAndImageAndTitle-image {
+            width: 100%;
+        }
+        .simpleTextAndImageAndTitle-texts {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 40px;
+            flex: 1;
+        }
+    }
+
+    //simpleimagetextcards
+    .sections-simpleImageTextCards {
+        padding: 80px 16px;
+        gap: 72px;
+
+        .sections-simpleImageTextCards-cards-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            align-self: stretch;
+        }
+    }
+
+    //listOfSmallImagesAndTexts
+    .listOfSmallImagesAndTexts {
+        display: flex;
+        padding: 64px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        align-self: stretch;
+
+        .listOfSmallImagesAndTexts-stepContainer {
+
+        }
+        .first {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-self: stretch;
+            justify-content: flex-start;
+        }
+        .second {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-self: stretch;
+            justify-content: center;
+        }
+        .third {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-self: stretch;
+            justify-content: flex-end;
+        }
+
+        .listOfSmallImagesAndTexts-imageBox {
+            width: 130px;
+            height: 130px;
+            flex-shrink: 0;
+        }
+        .listOfSmallImagesAndTexts-step {
+            display: flex;
+            width: 422px;
+            align-items: flex-start;
+            gap: 16px;
+        }
+    }
+
+    //largetitleimagetextsbuttons
+    .sections-largeTitleImageTextsButtons {
+        
+        .largeTitleImageTextsButtons-imageHolder {
+            display: flex;
+            width: 309px;
+            flex-direction: column;
+            align-items: flex-start;
+            align-self: unset;
+        }
+        .largeTitleImageTextsButtons-title {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .ubuntu-h3-48px-bold {
+            font-size: 96px;
+            line-height: 93%; /* 89.28px */
+            letter-spacing: -2.88px;
+        }
+        .largeTitleImageTextsButtons-texts {
+            width: 387px;
+        }
+    }
+}
+
+//md
+@media screen and (min-width: 768px) {
+    
+    //LargeTextAndImage
+    .section-LargeTextAndImage-content {
+
+        .body {
+            flex-direction: row;
+        }
+        .LargeTextAndImage-imageBox {
+            display: flex;
+            max-width: 168px;
+            aspect-ratio: auto 3/4;
+        }
+        .LargeTextAndImage-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    //largeText
+    .largeText {
+        .largeText-body {
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+        .largeText-container {
+            display: flex;
+            width: 535px;
+            align-items: flex-start;
+            gap: 24px;
+        }
+    }
+
+    //sections-simpleImageTextCards
+    .sections-simpleImageTextCards {
+        justify-content: center;
+        .sections-simpleImageTextCards-cards {
+            align-self: center;
+            width: 536px;
+        }
+
+    }
+
+    //listOfSmallImagesAndTexts
+    .listOfSmallImagesAndTexts {
+
+        .listOfSmallImagesAndTexts-step{
+            width: 536px;
+        }
+    }
+}
+
+//lg
+@media screen and (min-width: 1024px) {
+    
+    //LargeTextAndImage
+    .section-LargeTextAndImage {
+        .text-content{
+            width: 100%;
+        }
+        .LargeTextAndImage-imageBox {
+            width: 100%;
+            max-width: unset;
+            aspect-ratio: unset;
+        }
+        .LargeTextAndImage-img {
+            width: 393px;
+            height: 524px;
+        }
+    }
+
+    //largeText
+    .largeText {
+        
+        .largeText-body {
+
+        }
+        .largeText-container {
+            width: 725px;
+        }
+    }
+
+    //textCards
+    .sections-textCards {
+        .sections-textCards-cards-item {
+            max-width: 393px;
+            width: 100%;
+        }
+    }
+
+    //largePlainTextLinks
+    .largePlainTextLinks {
+        .largePlainTextLinks-projectItem {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        .largePlainTextLinks-category {
+            align-items: flex-end;
+            order: 2;
+        }
+        .largePlainTextLinks-link {
+            order: 1;
+        }
+    }
+
+    //simpletextandimageandtitle
+    .simpleTextAndImageAndTitle {
+        .simpleTextAndImageAndTitle-texts {
+            justify-content: flex-end;
+        }
+    }
+
+    //listOfSmallImagesAndTexts
+    .listOfSmallImagesAndTexts {
+        .listOfSmallImagesAndTexts-step {
+            width: 643px;
+        }
+        .listOfSmallImagesAndTexts-imageBox {
+            width: 226px;
+            height: 226px;
+        }
+        .listOfSmallImagesAndTexts-texts {
+            padding-top: 32px;
+        }
+    }
+
+    //sections-largeTitleImageTextsButtons
+    .sections-largeTitleImageTextsButtons {
+        .largeTitleImageTextsButtons-content {
+            flex-direction: row;
+        }
+    }
+
+}
+
+//xl
+@media screen and (min-width: 1400px) {
+    
+    //LargeTextAndImage
+    .section-LargeTextAndImage {
+        .section-LargeTextAndImage-content {
+            align-self: center;
+            width: 1352px;
+        }
+        .ubuntu-h3-48px-bold {
+            /* Ubuntu-9xl-144px-bold */
+            font-family: Ubuntu;
+            font-size: 144px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%; /* 144px */
+            letter-spacing: -5.76px;
+        }
+        .ubuntu-h5-24px-regular{
+            font-family: Ubuntu;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 120%; /* 57.6px */
+            letter-spacing: -0.48px;
+        }
+        .LargeTextAndImage-imageBox {
+            justify-content: center;
+        }
+        .LargeTextAndImage-img {
+            width: 441px;
+            height: 588px;
+        }
+    }
+
+    //largeText
+    .largeText {
+        
+        .largeText-body {
+            align-self: center;
+            width: 1352px;
+        }
+        .largeText-container {
+            gap: 64px;
+            width: 782px;
+        }
+    }
+
+    //textCards
+    .sections-textCards {
+        .sections-section-header {
+            min-width: unset;
+            width: 1352px;
+        }
+        .sections-textCards-cards {
+            align-self: center;
+            width: 1352px;
+        }
+        .hr {
+            width: 1352px;
+        }
+    }
+
+    //largePlainTextLinks
+    .largePlainTextLinks {
+        .largePlainTextLinks-projectItem {
+            .ubuntu-h3-48px-bold {
+                font-size: 5vw;
+                text-align: left;
+            }
+        }
+        .largePlainTextLinks-category {
+
+        }
+        .largePlainTextLinks-link {
+
+        }
+    }
+
+    //simpletextandimageandtitle
+    .simpleTextAndImageAndTitle {
+        .simpleTextAndImageAndTitle-body {
+            align-self: center;
+            width: 1352px;
+        }
+    }
+
+    //simpleImageTextCards
+    .sections-simpleImageTextCards {
+        .sections-section-title {
+            align-self: center;
+            min-width: unset;
+            width: 1352px;
+        }
+        .sections-simpleImageTextCards-cards {
+            align-self: center;
+        }
+        .hr {
+            align-self: center;
+            width: 1352px;
+        }
+    }
+
+    //listOfSmallImagesAndTexts
+    .listOfSmallImagesAndTexts {
+        .listOfSmallImagesAndTexts-body {
+            align-self: center;
+            width: 1352px;
+        }
+        .listOfSmallImagesAndTexts-step {
+            width: 668px;
+        }
+        .listOfSmallImagesAndTexts-imageBox {
+            width: 212px;
+            height: 212px;
+        }
+        .listOfSmallImagesAndTexts-texts {
+        }
+    }
+
+    //sections-testimonialCards
+    .sections-testimonialCards{
+        .sections-section-header {
+            align-self: center;
+            min-width: unset;
+            width: 1352px;
+        }
+        .sections-testimonialCards-cards {
+            align-self: center;
+            width: 1352px;
+        }
+        .hr {
+            align-self: center;
+            width: 1352px;
+        }
+    }
+
+    //sections-largeTitleImageTextsButtons
+    .sections-largeTitleImageTextsButtons {
+        .largeTitleImageTextsButtons-body {
+            align-self: center;
+            width: 1352px;
+        }
+        .ubuntu-h3-48px-bold {
+            font-size: 144px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 100%; /* 144px */
+            letter-spacing: -5.76px;
+        }
+        .largeTitleImageTextsButtons-content {
+
+        }
     }
 }

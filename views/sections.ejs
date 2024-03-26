@@ -2,7 +2,11 @@
   <% for( let i = 0; i < Object.values(sections).length; i++ ) { %>
   <% if (Object.values(sections)[i].state === 'enabled') { %>
   <% if ( Object.values(sections)[i].type === 'textCards' && Object.values(sections)[i].state === 'enabled' ) { %>
-  <div class="sections-textCards">
+  <div class="sections-textCards"
+    <% if( Object.values(sections)[i]['color-1'] && Object.values(sections)[i]['color-2'] ){ %>
+      style='<%= 'background-color:' + Object.values(sections)[i]['color-1'] + ';' + 'color:' + Object.values(sections)[i]['color-2'] + ';' %>'
+    <% } %>
+  >
     <div class="sections-section-header">
       <div class="sections-section-title ubuntu-h3-48px-bold">
         <%= Object.values(sections)[i][`title-${language}`] %>
@@ -13,52 +17,52 @@
     </div>
     <div class="sections-textCards-cards">
       <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
-      <div class="sections-textCards-cards-item">
-        <div class="sections-textCards-cards-item-subtitle ubuntu-body2-14px-bold">
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`subtitle-${language}`] %>
+        <div class="sections-textCards-cards-item">
+          <div class="sections-textCards-cards-item-subtitle ubuntu-body2-14px-bold">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`subtitle-${language}`] %>
+          </div>
+          <div class="sections-textCards-cards-item-cardTitle ubuntu-body1-18px-bold">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-title-${language}`] %>
+          </div>
+          <% let featuresCount = 1 %>
+          <% while(cards[Object.values(sections)[i]['card-links-title'][j]][`feature-${featuresCount}-${language}`]){ %>
+          <div class="sections-textCards-cards-item-feature ubuntu-body2-14px-light">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`feature-${featuresCount}-${language}`] %>
+          </div>
+          <% featuresCount++ %>
+          <% } %>
+          <div class="sections-textCards-cards-item-cardSubtitle ubuntu-body2-14px-medium">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-subtitle-${language}`] %>
+          </div>
+          <% let cardSubtitleItemCount = 1 %>
+          <% while(cards[Object.values(sections)[i]['card-links-title'][j]][`card-subtitle-item-${cardSubtitleItemCount}-${language}`]){ %>
+          <div class="sections-textCards-cards-item-CardSubtitle-item ubuntu-body2-14px-light">
+            <span class="sections-textCards-cards-item-CardSubtitle-item-dot">
+              <i class="fa-solid fa-circle fa-2xs"></i>
+            </span>
+            &nbsp;
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-subtitle-item-${cardSubtitleItemCount}-${language}`] %>
+          </div>
+          <% cardSubtitleItemCount++ %>
+          <% } %>
+          <div class="sections-textCards-cards-item-note ubuntu-body2-14px-light">
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`note-${language}`] %>
+          </div>
+          <div class="sections-textCards-cards-item-hightlightText ubuntu-body1-18px-bold">
+            <span class="sections-textCards-cards-item-hightlightText-dot">
+              <i class="fa-solid fa-circle"></i>
+            </span>
+            &nbsp;
+            <%= cards[Object.values(sections)[i]['card-links-title'][j]][`highlight-text-${language}`] %>
+          </div>
+          <div class="sections-textCards-cards-item-cta ubuntu-body1-18px-bold">
+            <a class="project-cta-button-text-primary" href=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['cta-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+              <button type="button" class="btn btn-primary ubuntu-body1-18px-regular">
+                <%= cards[Object.values(sections)[i]['card-links-title'][j]][`cta-${language}`] %>
+              </button>
+            </a>
+          </div>
         </div>
-        <div class="sections-textCards-cards-item-cardTitle ubuntu-body1-18px-bold">
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-title-${language}`] %>
-        </div>
-        <% let featuresCount = 1 %>
-        <% while(cards[Object.values(sections)[i]['card-links-title'][j]][`feature-${featuresCount}-${language}`]){ %>
-        <div class="sections-textCards-cards-item-feature ubuntu-body2-14px-light">
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`feature-${featuresCount}-${language}`] %>
-        </div>
-        <% featuresCount++ %>
-        <% } %>
-        <div class="sections-textCards-cards-item-cardSubtitle ubuntu-body2-14px-medium">
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-subtitle-${language}`] %>
-        </div>
-        <% let cardSubtitleItemCount = 1 %>
-        <% while(cards[Object.values(sections)[i]['card-links-title'][j]][`card-subtitle-item-${cardSubtitleItemCount}-${language}`]){ %>
-        <div class="sections-textCards-cards-item-CardSubtitle-item ubuntu-body2-14px-light">
-          <span class="sections-textCards-cards-item-CardSubtitle-item-dot">
-            <i class="fa-solid fa-circle fa-2xs"></i>
-          </span>
-          &nbsp;
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-subtitle-item-${cardSubtitleItemCount}-${language}`] %>
-        </div>
-        <% cardSubtitleItemCount++ %>
-        <% } %>
-        <div class="sections-textCards-cards-item-note ubuntu-body2-14px-light">
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`note-${language}`] %>
-        </div>
-        <div class="sections-textCards-cards-item-hightlightText ubuntu-body1-18px-bold">
-          <span class="sections-textCards-cards-item-hightlightText-dot">
-            <i class="fa-solid fa-circle"></i>
-          </span>
-          &nbsp;
-          <%= cards[Object.values(sections)[i]['card-links-title'][j]][`highlight-text-${language}`] %>
-        </div>
-        <div class="sections-textCards-cards-item-cta ubuntu-body1-18px-bold">
-          <a class="project-cta-button-text-primary" href=<%= cards[Object.values(sections)[i]['card-links-title'][j]]['cta-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
-            <button type="button" class="btn btn-primary ubuntu-body1-18px-regular">
-              <%= cards[Object.values(sections)[i]['card-links-title'][j]][`cta-${language}`] %>
-            </button>
-          </a>
-        </div>
-      </div>
       <% } %>
     </div>
     <div class="hr">
@@ -68,7 +72,11 @@
   <% } %>
 
   <% if ( Object.values(sections)[i].type === 'simpleImageTextCards' ) { %>
-  <div class="sections-simpleImageTextCards">
+  <div class="sections-simpleImageTextCards"
+    <% if( Object.values(sections)[i]['color-1'] && Object.values(sections)[i]['color-2'] ){ %>
+      style='<%= 'background-color:' + Object.values(sections)[i]['color-1'] + ';' + 'color:' + Object.values(sections)[i]['color-2'] + ';' %>'
+    <% } %>
+  >
     <div class="sections-section-title ubuntu-h3-48px-bold">
       <%= Object.values(sections)[i][`title-${language}`] %>
     </div>
@@ -144,72 +152,135 @@
   <% } %>
 
   <% if ( Object.values(sections)[i].type === 'largeTitleImageTextsButtons' ) { %>
+  <!-- section start -->
   <div class="sections-largeTitleImageTextsButtons">
-    <div class="sections-largeTitleImageTextsButtons-title ubuntu-9xl-144px-light">
-      <%= Object.values(sections)[i][`title-${language}`] %>
-      <%= Object.values(sections)[i][`subtitle-${language}`] %>
-    </div>
-    <div class="sections-largeTitleImageTextsButtons-infoBox">
-      <div class="sections-largeTitleImageTextsButtons-infoBox-imageHolder">
-        <img 
-          class="sections-holdedImage-img" 
-          src=<%= Object.values(sections)[i].attachment[0].url %>
-          alt="<%= Object.values(sections)[i].alt %>"
-        >
-      </div>
-      <div class="sections-largeTitleImageTextsButtons-infoBox-texts ubuntu-body1-18px-bold">
-        <div class="sections-largeTitleImageTextsButtons-infoBox-texts-title">
-          <%= Object.values(sections)[i][`description-${language}`] %>
-        </div>
-        <div class="sections-largeTitleImageTextsButtons-infoBox-texts-content">
-          <div class="sections-largeTitleImageTextsButtons-infoBox-texts-email ubuntu-body1-18px-light">
-            <%= Object.values(sections)[i]['text-1'] %>
+    <!-- body start -->
+    <div class="largeTitleImageTextsButtons-body">
+      <!-- header start -->
+      <div class="largeTitleImageTextsButtons-header ubuntu-h3-48px-bold">
+        <!-- title 1 start -->
+        <% if ( Object.values(sections)[i][`title-${language}`] ) { %>
+          <div class="largeTitleImageTextsButtons-title">
+            <%= Object.values(sections)[i][`title-${language}`] %>
           </div>
-          <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions">
-            <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-title ubuntu-body1-18px-light">
-              <%= Object.values(sections)[i]['text-2'] %>
-            </div>
-            <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-main">
-              <!-- button main -->
-              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-1-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
-                <button type="button" class="btn btn-primary ubuntu-body1-18px-regular">
-                  <%= Object.values(sections)[i][`action-1-${language}`] %>
-                </button>
-              </a>
-            </div>
-            <div class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs">
-              <!-- button 1 -->
-              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-2-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
-                <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
-                  <%= Object.values(sections)[i][`action-2-${language}`] %>
-                </button>
-              </a>
-              <!-- button 2 -->
-              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-3-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
-                <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
-                  <%= Object.values(sections)[i][`action-3-${language}`] %>
-                </button>
-              </a>
-              <!-- button 3 -->
-              <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-4-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
-                <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
-                  <%= Object.values(sections)[i][`action-4-${language}`] %>
-                </button>
-              </a>
-            </div>
+        <% } %>
+        <!-- title 1 end -->
+        <!-- title 2 start -->
+        <% if ( Object.values(sections)[i][`subtitle-${language}`] ) { %>
+          <div class="largeTitleImageTextsButtons-title">
+            <%= Object.values(sections)[i][`subtitle-${language}`] %>
           </div>
-        </div>
+        <% } %>
+        <!-- title 2 end -->
       </div>
+      <!-- header end -->
+      <!-- content start -->
+      <div class="largeTitleImageTextsButtons-content">
+        <!-- image holder start -->
+        <% if( Object.values(sections)[i].attachment[0] ) { %>
+          <div class="largeTitleImageTextsButtons-imageHolder">
+            <img 
+              class="sections-holdedImage-img" 
+              src=<%= Object.values(sections)[i].attachment[0].url %>
+              alt="<%= Object.values(sections)[i].alt %>"
+            >
+          </div>
+        <% } %>
+        <!-- image holder end -->
+        <!-- texts start -->
+        <div class="largeTitleImageTextsButtons-texts ubuntu-body1-18px-bold">
+          <!-- title start -->
+          <% if ( Object.values(sections)[i][`description-${language}`] ) { %>
+            <div class="largeTitleImageTextsButtons-title">
+              <%= Object.values(sections)[i][`description-${language}`] %>
+            </div>
+          <% } %>
+          <!-- title end -->
+          <!-- texts content start -->
+          <div class="largeTitleImageTextsButtons-texts-content">
+            <!-- text 1 start -->
+            <% if ( Object.values(sections)[i]['text-1'] ) { %>
+              <div class="sections-largeTitleImageTextsButtons-infoBox-texts-email ubuntu-body1-18px-light">
+                <%= Object.values(sections)[i]['text-1'] %>
+              </div>
+            <% } %>
+            <!-- text 1 end -->
+            <!-- action content start -->
+            <div class="largeTitleImageTextsButtons-action-content">
+              <!-- action content text - text 2 start -->
+              <% if ( Object.values(sections)[i]['text-2'] ) { %>
+                <div class="largeTitleImageTextsButtons-action-content-text ubuntu-body1-18px-light">
+                  <%= Object.values(sections)[i]['text-2'] %>
+                </div>
+              <% } %>
+              <!-- action content text - text 2 end -->
+              <!-- buttons start -->
+              <div class="largeTitleImageTextsButtons-buttons">
+                <!-- button main start -->
+                <% if ( Object.values(sections)[i][`action-1-${language}`] ) { %>
+                  <a class="sections-largeTitleImageTextsButtons-infoBox-texts-actions-subs-a" href=<%= Object.values(sections)[i]['action-1-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                    <button type="button" class="btn btn-primary ubuntu-body1-18px-regular">
+                      <%= Object.values(sections)[i][`action-1-${language}`] %>
+                    </button>
+                  </a>
+                <% } %>
+                <!-- button main end -->
+                <!-- other buttons start -->
+                <% if ( Object.values(sections)[i][`action-2-${language}`] ) { %>
+                  <div class="largeTitleImageTextsButtons-otherButtons">
+                    <!-- button 1 -->
+                      <a class="largeTitleImageTextsButtons-otherButtons-singleButton" href=<%= Object.values(sections)[i]['action-2-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                        <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
+                          <%= Object.values(sections)[i][`action-2-${language}`] %>
+                        </button>
+                      </a>
+                    <!-- button 2 -->
+                    <% if ( Object.values(sections)[i][`action-3-${language}`] ) { %>
+                      <a class="largeTitleImageTextsButtons-otherButtons-singleButton" href=<%= Object.values(sections)[i]['action-3-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                        <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
+                          <%= Object.values(sections)[i][`action-3-${language}`] %>
+                        </button>
+                      </a>
+                    <% } %>
+                    <!-- button 3 -->
+                    <% if ( Object.values(sections)[i][`action-4-${language}`] ) { %>
+                      <a class="largeTitleImageTextsButtons-otherButtons-singleButton" href=<%= Object.values(sections)[i]['action-4-link'] %> rel="noreferrer noopener" role="button" target='_blank'>
+                        <button type="button" class="btn btn-outline-primary ubuntu-body1-18px-regular">
+                          <%= Object.values(sections)[i][`action-4-${language}`] %>
+                        </button>
+                      </a>
+                    <% } %>
+                  </div>
+                <% } %>
+                <!-- other buttons end -->
+              </div>
+              <!-- buttons end -->
+            </div>
+            <!-- action content end -->
+          </div>
+          <!-- texts content end -->
+        </div>
+        <!-- texts end -->
+      </div>
+      <!-- content end -->
+      <!-- divider start -->
+      <div class="hr">
+        <div class='hr-tertiary'></div>
+      </div>
+      <!-- divider end -->
     </div>
-    <div class="hr">
-      <div class='hr-tertiary'></div>
-    </div>
+    <!-- body end -->
   </div>
   <% } %>
+  <!-- section end -->
 
   <!-- from projects -->
   <% if ( Object.values(sections)[i].type === 'simpleVideo' ) { %>
-  <div class="project-projects-simpleVideo">
+  <div class="project-projects-simpleVideo"
+    <% if( Object.values(sections)[i]['color-1'] ){ %>
+      style='<%= 'background-color:' + Object.values(sections)[i]['color-1'] + ';' %>'
+    <% } %>
+  >
     <div class="project-projects-simpleVideo-videoHolder">
       <video class="project-projects-simpleVideo-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
         <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/mp4">
@@ -218,7 +289,20 @@
       </video>
     </div>
   </div>
-  <% } else if( Object.values(sections)[i].type === 'simpleImage' ) { %>
+  <% } else if ( Object.values(sections)[i].type === 'fullVideo' ) { %>
+    <div class="fullVideo"
+      <% if( Object.values(sections)[i]['color-1'] ){ %>
+        style='<%= 'background-color:' + Object.values(sections)[i]['color-1'] + ';' %>'
+      <% } %>
+    >
+      <div class="fullVideo-body">
+        <video class="fullVideo-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
+          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/mp4">
+          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/ogg">
+        </video>
+      </div>
+    </div>
+  <% } else if ( Object.values(sections)[i].type === 'simpleImage' ) { %>
   <div class="project-projects-simpleImage">
     <div class="project-projects-simpleImage-imageHolder">
       <img class="project-projects-simpleImage-image" src=<%= Object.values(sections)[i]['attachment'][0].url %> alt=<%= Object.values(sections)[i].alt %>>
@@ -289,7 +373,9 @@
       </div>
     </div>
   </div>
-  <% } else if ( Object.values(sections)[i].type === 'mobile3Video' ) { %>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'mobile3Video' ) { %>
   <div class="project-projects-mobile3Video">
     <div class="project-projects-mobile3Video-content">
       <!-- device 1 -->
@@ -354,7 +440,9 @@
       </div>
     </div>
   </div>
-  <% } else if ( Object.values(sections)[i].type === 'laptopVideo' ) { %>
+  <% } %> 
+
+  <% if ( Object.values(sections)[i].type === 'laptopVideo' ) { %>
   <div class="project-projects-laptopVideo">
     <div class="project-projects-laptopVideo-macbook">
       <div class="project-projects-laptopVideo-macbook-videoHolder">
@@ -377,7 +465,9 @@
       </div>
     </div>
   </div>
-  <% } else if ( Object.values(sections)[i].type === 'laptopImage' ) { %>
+  <% } %>
+  
+  <% if ( Object.values(sections)[i].type === 'laptopImage' ) { %>
   <div class="project-projects-laptopImage">
     <div class="project-projects-laptopImage-macbook">
       <div class="project-projects-laptopImage-macbook-imageHolder">
@@ -397,7 +487,9 @@
       </div>
     </div>
   </div>
-  <% } else if ( Object.values(sections)[i].type === 'mobileSE1Video' ) { %>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'mobileSE1Video' ) { %>
   <div class="project-projects-mobileSE1Video">
     <div class="project-projects-mobileSE1Video-mobile">
       <div class="project-projects-mobileSE1Video-mobile-videoHolder">
@@ -419,7 +511,9 @@
       </div>
     </div>
   </div>
-  <% } else if ( Object.values(sections)[i].type === 'mobile3Image' ) { %>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'mobile3Image' ) { %>
   <div class="project-projects-mobile3Image">
     <div class="project-projects-mobile3Image-content">
       <!-- device 1 -->
@@ -472,7 +566,9 @@
       </div>
     </div>
   </div>
-  <% } else if ( Object.values(sections)[i].type === 'setOf3Images' ) { %>
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'setOf3Images' ) { %>
     <div class="sections-setOf3Images">
       <div class="sections-setOf3Images-content">
         <!-- device 1 -->
@@ -486,7 +582,333 @@
         </div>
       </div>
     </div>
-    <% } %>
+  <% } %> 
+    
+  <% if ( Object.values(sections)[i].type === 'LargeTextAndImage' ) { %>
+    <!-- section start -->
+    <div class="section-LargeTextAndImage">
+      <!-- section container start -->
+      <div class="section-LargeTextAndImage-content">
+        <!-- nav start -->
+        <nav class="section-LargeTextAndImage-nav navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <% if(Object.values(sections)[i]['action-1-link'] && images.logo.attachment[0]){ %>
+              <a class="navbar-brand" href=<%= Object.values(sections)[i]['action-1-link'] %> >
+                <img
+                  class="section-LargeTextAndImage-content-logo"
+                  src="<%= images.logo.attachment[0].url %>"
+                >
+              </a>
+            <% } %>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <%= rootTexts['menu'][language] %>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <% let linksCount = 1 %>
+                <%while ( linksCount <= 4 && Object.values(sections)[i]['action-' + linksCount + '-link'] ) { %>
+                  <% let stateClass = '' %>
+                  <% let label = '' %>
+                  <% if( Object.values(sections)[i]['action-' + linksCount].includes(':active') ) { %>
+                    <% stateClass = 'nav-link active' %>
+                    <% Object.values(sections)[i]['action-' + linksCount].indexOf(":active") %>
+                    <% label = Object.values(sections)[i]['action-' + linksCount].substring(0, Object.values(sections)[i]['action-' + linksCount].indexOf(":active") ) %>
+                  <% } else { %>
+                    <% stateClass = 'nav-link' %>
+                    <% label = Object.values(sections)[i]['action-' + linksCount] %>
+                  <% } %>
+                  <li class="nav-item">
+                    <a class='<%= stateClass %>' aria-current="page" href=<%= Object.values(sections)[i]['action-' + linksCount + '-link'] %> ><%= label %></a>
+                  </li>
+                  <% linksCount++ %>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- nav end -->
+        <!-- content body start -->
+        <div class="body">
+          <!-- text-content start -->
+          <div class="text-content">
+            <div class="ubuntu-h3-48px-bold">
+              <%= Object.values(sections)[i]['title-' + language] %>
+            </div>
+            <div class="ubuntu-h5-24px-regular">
+              <%= Object.values(sections)[i]['subtitle-' + language] %>
+            </div>
+            <a 
+                class="project-cta-button-text-primary" 
+                href=<%= Object.values(sections)[i]['action-' + linksCount + '-link'] %> 
+                rel="noreferrer noopener" 
+                role="button"
+                target='_blank'
+            >
+                <button type="button" class="btn btn-primary ubuntu-body1-18px-regular" >
+                  <%= Object.values(sections)[i]['action-' + linksCount] %>
+                </button>
+            </a>
+          </div>
+          <!-- text-content end -->
+          <!-- image start -->
+          <div class="LargeTextAndImage-imageBox">
+            <img
+              class="LargeTextAndImage-img"
+              src="<%= Object.values(sections)[i]['attachment'][0].url %>"
+              alt="<%= Object.values(sections)[i]['alt'] %>"
+            >
+          </div>
+          <!-- image end -->
+        </div>
+        <!-- content body end -->
+        <!-- divider start -->
+        <div class='hr'></div>
+        <!-- divider end -->
+      </div>
+      <!-- section container end -->
+    </div>
+    <!-- section end -->
+  <% } %>
+    
+  <% if ( Object.values(sections)[i].type === 'largeText' ) { %>
+    <!-- section start -->
+    <div class="largeText"> <!-- section start -->
+      <!-- section body -->
+      <div class="largeText-body"> <!-- section body -->
+        <!-- section container start -->
+        <div class="largeText-container"> <!-- section container start -->
+          <!-- icon start -->
+          <div class="largeText-icon">
+            <i class="fa-solid fa-arrow-right-long fa-3x"></i> &nbsp;
+          </div><!-- icon start -->
+          <!-- icon end -->
+          <!-- texts start -->
+          <div class="largeText-texts">
+            <!-- title start -->
+            <% if ( Object.values(sections)[i]['title-' + language] ) { %>
+              <div class="ubuntu-h3-48px-bold">
+                <% let words = Object.values(sections)[i]['title-' + language].split(' '); %>
+                <% let wordHierarchy = 'normal' %>
+                <% let currWord = '' %>
+                <% for(let i = 0; i < words.length; i++ ) { %>
+      
+                  <% currWord = words[i]; %>
+                  <% if ( words[i].includes(':normal:') ) { %>
+                    <% wordHierarchy = 'normal' %>
+                    <% currWord = words[i].replace(':normal:','') %>
+                  <% } %>
+                  <% if ( words[i].includes(':emphasize:') ) { %>
+                    <% wordHierarchy = 'emphasize' %>
+                    <% currWord = words[i].replace(':emphasize:','') %>
+                  <% } %>
+      
+                  <% if ( wordHierarchy === 'normal' ) { %>
+                    <span class="normal"><%= currWord %></span>
+                  <% } %>
+                  <% if ( wordHierarchy === 'emphasize' ) { %>
+                    <span class="emphasize"><%= currWord %></span>
+                  <% } %>
+  
+                <% } %>
+                  </div>
+            <% } %><!-- title start -->
+            <!-- title end -->
+            <!-- description start -->
+            <% if ( Object.values(sections)[i]['subtitle-' + language] ) { %>
+              <div class="ubuntu-body1-18px-regular">
+                <% let words = Object.values(sections)[i]['subtitle-' + language].split(' '); %>
+                <% let wordHierarchy = 'normal' %>
+                <% let currWord = '' %>
+                <% for(let i = 0; i < words.length; i++ ) { %>
+      
+                  <% currWord = words[i]; %>
+                  <% if ( words[i].includes(':normal:') ) { %>
+                    <% wordHierarchy = 'normal' %>
+                    <% currWord = words[i].replace(':normal:','') %>
+                  <% } %>
+                  <% if ( words[i].includes(':emphasize:') ) { %>
+                    <% wordHierarchy = 'emphasize' %>
+                    <% currWord = words[i].replace(':emphasize:','') %>
+                  <% } %>
+      
+                  <% if ( wordHierarchy === 'normal' ) { %>
+                    <span class="normal"><%= currWord %></span>
+                  <% } %>
+                  <% if ( wordHierarchy === 'emphasize' ) { %>
+                    <span class="emphasize"><%= currWord %></span>
+                  <% } %>
+  
+                <% } %>
+              </div>
+            <% } %>
+            <!-- description end -->
+          </div><!-- texts start -->
+          <!-- texts end -->
+        </div> <!-- section container start -->
+        <!-- section container end -->
+      </div> <!-- section body -->
+      <!-- section body -->
+    </div> <!-- section start -->
+    <!-- section end -->
+  <% } %>
+    
+  <% if ( Object.values(sections)[i].type === 'largePlainTextLinks' ) { %>
+    <!-- section largePlainTextLinks start -->
+    <div class="largePlainTextLinks">
+      <!-- largePlainTextLinks body start -->
+      <div class="largePlainTextLinks-body">
+        <!-- links start -->
+        <% if ( Object.values(sections)[i]['card-links'] ) { %>
+          <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
+            <!-- project item start -->
+            <div class="largePlainTextLinks-projectItem">
+              <!-- category start -->
+              <% if ( cards[Object.values(sections)[i]['card-links-title'][j]][`subtitle-${language}`] ) { %>
+                <div class="largePlainTextLinks-category ubuntu-body1-18px-bold">
+                  <%= cards[Object.values(sections)[i]['card-links-title'][j]][`subtitle-${language}`] %>
+                </div>
+              <% } %>
+              <!-- category end -->
+              <!-- project start -->
+              <% if ( cards[Object.values(sections)[i]['card-links-title'][j]][`card-title-${language}`] ) { %>
+                <a href="<%= cards[Object.values(sections)[i]['card-links-title'][j]]['cta-link'] %>" class="largePlainTextLinks-link">
+                  <button type="button" class="btn btn-light largePlainTextLinks-projectText ubuntu-h3-48px-bold">
+                    <%= cards[Object.values(sections)[i]['card-links-title'][j]][`card-title-${language}`] %>
+                  </button>
+                </a>
+              <% } %>
+              <!-- project end -->
+            </div>
+            <!-- project item end -->
+          <% } %>
+        <% } %>
+        <!-- links end -->
+      </div>
+      <!-- largePlainTextLinks body end -->
+    </div>
+    <!-- section largePlainTextLinks end -->
+  <% } %>
+  <% if ( Object.values(sections)[i].type === 'simpleTextAndImageAndTitle' ) { %>
+    <!-- simple image and text and title start -->
+    <div class="simpleTextAndImageAndTitle">
+      <!-- simpleTextAndImageAndTitle body start -->
+      <div class="simpleTextAndImageAndTitle-body">
+        <!-- header start -->
+        <% if ( Object.values(sections)[i]['title-' + language] ) { %>
+          <div class="simpleTextAndImageAndTitle-header ubuntu-h3-48px-bold">
+            <%= Object.values(sections)[i]['title-' + language] %>
+          </div>
+        <% } %>
+        <!-- header end -->
+        <!-- content start -->
+        <div class="simpleTextAndImageAndTitle-content">
+          <!-- image start -->
+          <% if ( Object.values(sections)[i]['attachment'] ) { %>
+            <div class="simpleTextAndImageAndTitle-imageBox">
+              <img 
+                src=<%= Object.values(sections)[i]['attachment'][0].url %>
+                alt=<%= Object.values(sections)[i]['alt'] %>
+                class="simpleTextAndImageAndTitle-image"
+              >
+            </div>
+          <% } %>
+          <!-- image end -->
+          <!-- texts start -->
+          <div class="simpleTextAndImageAndTitle-texts">
+            <!-- title start -->
+            <% if ( Object.values(sections)[i]['subtitle-' + language] ) { %>
+              <div class="simpleTextAndImageAndTitle-title ubuntu-h5-24px-bold">
+                <%= Object.values(sections)[i]['subtitle-' + language] %>
+              </div>
+            <% } %>
+            <!-- title end -->
+            <!-- description start -->
+            <% if ( Object.values(sections)[i]['text-1'] ) { %>
+              <% let currTextIndex = 1; %>
+              <% while ( Object.values(sections)[i]['text-' + currTextIndex] ) { %>
+                <div class="simpleTextAndImageAndTitle-text ubuntu-body1-18px-light">
+                  <%= Object.values(sections)[i]['text-' + currTextIndex] %>
+                </div>
+                <% currTextIndex++ %>
+              <% } %>
+            <% } %>
+            <!-- description end -->
+          </div>
+          <!-- texts end -->
+        </div>
+        <!-- content end -->
+        <!-- divider start -->
+        <div class="hr">
+          <div class='hr-tertiary'></div>
+        </div>
+        <!-- divider end -->
+      </div>
+      <!-- simpleTextAndImageAndTitle body end -->
+    </div>
+    <!-- simple image and text and title end -->
+  <% } %>
+
+  <% if ( Object.values(sections)[i].type === 'listOfSmallImagesAndTexts' ) { %>
+    <!-- listOfSmallImagesAndTexts start -->
+    <div class="listOfSmallImagesAndTexts">
+      <!-- body start -->
+      <div class="listOfSmallImagesAndTexts-body">
+        <!-- step container start -->
+        <% let currNumber = 1; %>
+        <% if ( Object.values(sections)[i]['card-links'] ) { %>
+          <% for( let j = 0; j < Object.values(sections)[i]['card-links'].length; j++ ) { %>
+            <% let layoutString = '' %>
+            <% if( currNumber % 3 == 1 ) { %>
+              <% layoutString = 'first' %>
+            <% } else if ( currNumber % 3 == 2 ) { %>
+              <% layoutString = 'second' %>
+            <% } else if ( currNumber % 3 == 0 ) { %>
+              <% layoutString = 'third' %>
+            <% } %> %>
+            <div class='<%= 'listOfSmallImagesAndTexts-stepContainer ' + layoutString %>' >
+              <!-- step start -->
+              <div class="listOfSmallImagesAndTexts-step">
+                <!-- image start -->
+                <% if ( cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0] ) { %>
+                  <div class="listOfSmallImagesAndTexts-imageBox">
+                    <img
+                    class="listOfSmallImagesAndTexts-img"
+                    src="<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1'][0].url %>"
+                    alt="<%= cards[Object.values(sections)[i]['card-links-title'][j]]['image-1-alt'] %>"
+                    >
+                  </div>
+                <% } %>
+                <!-- image end -->
+                <!-- texts start -->
+                <div class="listOfSmallImagesAndTexts-texts">
+                  <!-- title start -->
+                  <% if( cards[Object.values(sections)[i]['card-links-title'][j]]['card-title-' + language] ) { %>
+                    <div class="listOfSmallImagesAndTexts-title ubuntu-body1-18px-bold">
+                      <%= cards[Object.values(sections)[i]['card-links-title'][j]]['card-title-' + language] %>
+                    </div>
+                  <% } %>
+                  <!-- title end -->
+                  <!-- description start -->
+                  <% if ( cards[Object.values(sections)[i]['card-links-title'][j]]['subtitle-' + language] ) { %>
+                    <div class="listOfSmallImagesAndTexts-description ubuntu-body2-14px-light">
+                      <%= cards[Object.values(sections)[i]['card-links-title'][j]]['subtitle-' + language] %>
+                    </div>
+                  <% } %>
+                  <!-- description end -->
+                </div>
+                <!-- text end -->
+              </div>
+              <!-- step end -->
+            </div>
+            <% currNumber++ %>
+          <% } %>
+        <% } %>
+        <!-- step container end -->
+      </div>
+      <!-- body end -->
+    </div>
+    <!-- listOfSmallImagesAndTexts end -->
+  <% } %>
   <% } %>
   <% } %>
 </section>
