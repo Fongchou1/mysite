@@ -40,33 +40,22 @@
             <%= rootTexts['what-i-do'][`${language}`] %>
           </div>
           <div class="hero-infoAndDescription-description-links ubuntu-body1-18px-regular">
-            <div class="hero-infoAndDescription-description-links-link">
-              <a class="btn btn-link" onclick='redirect(`<%= links.link1.url %> `)' rel="noreferrer noopener" role="button" >
-                <%= rootTexts['link1'][`${language}`] %>
-              </a>
-            </div>
-            <div class="hero-infoAndDescription-description-links-link">
-              <a class="btn btn-link" onclick='redirect(`<%= links.link2.url %> `)' rel="noreferrer noopener" role="button" >
-                <%= rootTexts['link2'][`${language}`] %>
-              </a>
-            </div>
-            <div class="hero-infoAndDescription-description-links-link">
-              <a 
-                class="btn btn-link" 
-                onclick='redirect(`<%= links.link3.url %> `)'
-                rel="noreferrer noopener" 
-                role="button"
-              >
-                <%= rootTexts['link3'][`${language}`] %>
-              </a>
-            </div>
-            <div class="hero-infoAndDescription-description-links-link">
-              <a class="btn btn-link" 
-                onclick='redirect(`<%= links.link4.url %>`)'
-                rel="noreferrer noopener" role="button" >
-                <%= rootTexts['link4'][`${language}`] %>
-              </a>
-            </div>
+            <% let currNumber = 1; %>
+            <% let linkLabel = 'link' + currNumber ;%>
+            <% while ( footerRootTexts[linkLabel] ) { %>
+                <div class='hero-infoAndDescription-description-links-link'>
+                    <a 
+                        class="btn btn-link"
+                        onclick='redirect(`<%= links[linkLabel].url %> `)'
+                        rel="noreferrer noopener"
+                        role="button"
+                        >
+                        <%= rootTexts[linkLabel][`${language}`] %>
+                    </a>
+                </div>
+                <% currNumber++ %>
+                <% linkLabel = 'link' + currNumber %>
+            <% } %>
           </div>
         </div>
       </div>

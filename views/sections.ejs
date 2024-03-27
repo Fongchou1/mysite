@@ -295,11 +295,29 @@
         style='<%= 'background-color:' + Object.values(sections)[i]['color-1'] + ';' %>'
       <% } %>
     >
-      <div class="fullVideo-body">
-        <video class="fullVideo-video" defaultMuted oncontextmenu="return false;" preload="auto" autoplay muted loop playsinline>
-          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/mp4">
-          <source src=<%= Object.values(sections)[i]['attachment'][0].url %> type="video/ogg">
-        </video>
+    <div class="fullVideo-body">
+      <div class="fullVideo-video" style="position:relative;">
+        <div id="full-vimeo-player"></div>
+
+      </div>
+      <!-- Load the Vimeo Player API -->
+      <script src="https://player.vimeo.com/api/player.js"></script>
+      <script>
+          var options = {
+              id: <%= Object.values(sections)[i]['title-' + language] %>,
+              loop: true,
+              autoplay: true,
+              muted: true,
+              background: true
+          };
+
+          var player = new Vimeo.Player('full-vimeo-player', options);
+
+          player.on('play', function() {
+          });
+
+          player.setVolume(0);
+      </script>
       </div>
     </div>
   <% } else if ( Object.values(sections)[i].type === 'simpleImage' ) { %>
@@ -618,7 +636,11 @@
                     <% label = Object.values(sections)[i]['action-' + linksCount] %>
                   <% } %>
                   <li class="nav-item">
-                    <a class='<%= stateClass %>' aria-current="page" href=<%= Object.values(sections)[i]['action-' + linksCount + '-link'] %> ><%= label %></a>
+                    <a 
+                      class='<%= stateClass %>' 
+                      aria-current="page" 
+                      href=<%= Object.values(sections)[i]['action-' + linksCount + '-link'] %> ><%= label %>
+                    </a>
                   </li>
                   <% linksCount++ %>
                 <% } %>
